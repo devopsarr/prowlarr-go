@@ -22,35 +22,35 @@ import (
 
 // IndexerStatsApiService IndexerStatsApi service
 type IndexerStatsApiService service
-type ApiGetApiV1IndexerstatsRequest struct {
+type ApiGetApiV1IndexerStatsRequest struct {
 	ctx context.Context
 	ApiService *IndexerStatsApiService
 	startDate *time.Time
 	endDate *time.Time
 }
 
-func (r ApiGetApiV1IndexerstatsRequest) StartDate(startDate time.Time) ApiGetApiV1IndexerstatsRequest {
+func (r ApiGetApiV1IndexerStatsRequest) StartDate(startDate time.Time) ApiGetApiV1IndexerStatsRequest {
 	r.startDate = &startDate
 	return r
 }
 
-func (r ApiGetApiV1IndexerstatsRequest) EndDate(endDate time.Time) ApiGetApiV1IndexerstatsRequest {
+func (r ApiGetApiV1IndexerStatsRequest) EndDate(endDate time.Time) ApiGetApiV1IndexerStatsRequest {
 	r.endDate = &endDate
 	return r
 }
 
-func (r ApiGetApiV1IndexerstatsRequest) Execute() (*IndexerStatsResource, *http.Response, error) {
-	return r.ApiService.GetApiV1IndexerstatsExecute(r)
+func (r ApiGetApiV1IndexerStatsRequest) Execute() (*IndexerStatsResource, *http.Response, error) {
+	return r.ApiService.GetApiV1IndexerStatsExecute(r)
 }
 
 /*
-GetApiV1Indexerstats Method for GetApiV1Indexerstats
+GetApiV1IndexerStats Method for GetApiV1IndexerStats
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1IndexerstatsRequest
+ @return ApiGetApiV1IndexerStatsRequest
 */
-func (a *IndexerStatsApiService) GetApiV1Indexerstats(ctx context.Context) ApiGetApiV1IndexerstatsRequest {
-	return ApiGetApiV1IndexerstatsRequest{
+func (a *IndexerStatsApiService) GetApiV1IndexerStats(ctx context.Context) ApiGetApiV1IndexerStatsRequest {
+	return ApiGetApiV1IndexerStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -58,7 +58,7 @@ func (a *IndexerStatsApiService) GetApiV1Indexerstats(ctx context.Context) ApiGe
 
 // Execute executes the request
 //  @return IndexerStatsResource
-func (a *IndexerStatsApiService) GetApiV1IndexerstatsExecute(r ApiGetApiV1IndexerstatsRequest) (*IndexerStatsResource, *http.Response, error) {
+func (a *IndexerStatsApiService) GetApiV1IndexerStatsExecute(r ApiGetApiV1IndexerStatsRequest) (*IndexerStatsResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *IndexerStatsApiService) GetApiV1IndexerstatsExecute(r ApiGetApiV1Indexe
 		localVarReturnValue  *IndexerStatsResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatsApiService.GetApiV1Indexerstats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatsApiService.GetApiV1IndexerStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

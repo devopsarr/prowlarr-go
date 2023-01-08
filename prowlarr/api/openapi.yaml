@@ -211,7 +211,7 @@ paths:
       - Application
   /api/v1/appprofile:
     get:
-      operationId: ListApiV1Appprofile
+      operationId: ListApiV1AppProfile
       responses:
         "200":
           content:
@@ -224,7 +224,7 @@ paths:
       tags:
       - AppProfile
     post:
-      operationId: CreateApiV1Appprofile
+      operationId: CreateApiV1AppProfile
       requestBody:
         content:
           application/json:
@@ -247,7 +247,7 @@ paths:
       - AppProfile
   /api/v1/appprofile/{id}:
     delete:
-      operationId: DeleteApiV1Appprofile
+      operationId: DeleteApiV1AppProfile
       parameters:
       - explode: false
         in: path
@@ -263,7 +263,7 @@ paths:
       tags:
       - AppProfile
     get:
-      operationId: GetApiV1AppprofileById
+      operationId: GetApiV1AppProfileById
       parameters:
       - explode: false
         in: path
@@ -293,7 +293,7 @@ paths:
       tags:
       - AppProfile
     put:
-      operationId: UpdateApiV1Appprofile
+      operationId: UpdateApiV1AppProfile
       parameters:
       - explode: false
         in: path
@@ -512,7 +512,7 @@ paths:
       - Command
   /api/v1/customfilter/{id}:
     delete:
-      operationId: DeleteApiV1Customfilter
+      operationId: DeleteApiV1CustomFilter
       parameters:
       - explode: false
         in: path
@@ -528,7 +528,7 @@ paths:
       tags:
       - CustomFilter
     get:
-      operationId: GetApiV1CustomfilterById
+      operationId: GetApiV1CustomFilterById
       parameters:
       - explode: false
         in: path
@@ -554,7 +554,7 @@ paths:
       tags:
       - CustomFilter
     put:
-      operationId: UpdateApiV1Customfilter
+      operationId: UpdateApiV1CustomFilter
       parameters:
       - explode: false
         in: path
@@ -585,7 +585,7 @@ paths:
       - CustomFilter
   /api/v1/customfilter:
     get:
-      operationId: ListApiV1Customfilter
+      operationId: ListApiV1CustomFilter
       responses:
         "200":
           content:
@@ -598,7 +598,7 @@ paths:
       tags:
       - CustomFilter
     post:
-      operationId: CreateApiV1Customfilter
+      operationId: CreateApiV1CustomFilter
       requestBody:
         content:
           application/json:
@@ -690,7 +690,7 @@ paths:
       - DevelopmentConfig
   /api/v1/downloadclient/{id}:
     delete:
-      operationId: DeleteApiV1Downloadclient
+      operationId: DeleteApiV1DownloadClient
       parameters:
       - explode: false
         in: path
@@ -706,7 +706,7 @@ paths:
       tags:
       - DownloadClient
     get:
-      operationId: GetApiV1DownloadclientById
+      operationId: GetApiV1DownloadClientById
       parameters:
       - explode: false
         in: path
@@ -732,7 +732,7 @@ paths:
       tags:
       - DownloadClient
     put:
-      operationId: UpdateApiV1Downloadclient
+      operationId: UpdateApiV1DownloadClient
       parameters:
       - explode: false
         in: path
@@ -763,7 +763,7 @@ paths:
       - DownloadClient
   /api/v1/downloadclient:
     get:
-      operationId: ListApiV1Downloadclient
+      operationId: ListApiV1DownloadClient
       responses:
         "200":
           content:
@@ -776,7 +776,7 @@ paths:
       tags:
       - DownloadClient
     post:
-      operationId: CreateApiV1Downloadclient
+      operationId: CreateApiV1DownloadClient
       requestBody:
         content:
           application/json:
@@ -799,7 +799,7 @@ paths:
       - DownloadClient
   /api/v1/downloadclient/schema:
     get:
-      operationId: ListApiV1DownloadclientSchema
+      operationId: ListApiV1DownloadClientSchema
       responses:
         "200":
           content:
@@ -813,7 +813,7 @@ paths:
       - DownloadClient
   /api/v1/downloadclient/test:
     post:
-      operationId: TestApiV1Downloadclient
+      operationId: TestApiV1DownloadClient
       requestBody:
         content:
           application/json:
@@ -832,7 +832,7 @@ paths:
       - DownloadClient
   /api/v1/downloadclient/testall:
     post:
-      operationId: TestallApiV1Downloadclient
+      operationId: TestallApiV1DownloadClient
       responses:
         "200":
           description: Success
@@ -840,7 +840,7 @@ paths:
       - DownloadClient
   /api/v1/downloadclient/action/{name}:
     post:
-      operationId: CreateApiV1DownloadclientActionByName
+      operationId: CreateApiV1DownloadClientActionByName
       parameters:
       - explode: false
         in: path
@@ -936,7 +936,7 @@ paths:
       - DownloadClientConfig
   /api/v1/filesystem:
     get:
-      operationId: GetApiV1Filesystem
+      operationId: GetApiV1FileSystem
       parameters:
       - explode: true
         in: query
@@ -968,7 +968,7 @@ paths:
       - FileSystem
   /api/v1/filesystem/type:
     get:
-      operationId: GetApiV1FilesystemType
+      operationId: GetApiV1FileSystemType
       parameters:
       - explode: true
         in: query
@@ -1416,7 +1416,7 @@ paths:
       - IndexerEditor
   /api/v1/indexerproxy/{id}:
     delete:
-      operationId: DeleteApiV1Indexerproxy
+      operationId: DeleteApiV1IndexerProxy
       parameters:
       - explode: false
         in: path
@@ -1432,7 +1432,7 @@ paths:
       tags:
       - IndexerProxy
     get:
-      operationId: GetApiV1IndexerproxyById
+      operationId: GetApiV1IndexerProxyById
       parameters:
       - explode: false
         in: path
@@ -1458,7 +1458,7 @@ paths:
       tags:
       - IndexerProxy
     put:
-      operationId: UpdateApiV1Indexerproxy
+      operationId: UpdateApiV1IndexerProxy
       parameters:
       - explode: false
         in: path
@@ -1489,7 +1489,7 @@ paths:
       - IndexerProxy
   /api/v1/indexerproxy:
     get:
-      operationId: ListApiV1Indexerproxy
+      operationId: ListApiV1IndexerProxy
       responses:
         "200":
           content:
@@ -1502,7 +1502,7 @@ paths:
       tags:
       - IndexerProxy
     post:
-      operationId: CreateApiV1Indexerproxy
+      operationId: CreateApiV1IndexerProxy
       requestBody:
         content:
           application/json:
@@ -1525,7 +1525,7 @@ paths:
       - IndexerProxy
   /api/v1/indexerproxy/schema:
     get:
-      operationId: ListApiV1IndexerproxySchema
+      operationId: ListApiV1IndexerProxySchema
       responses:
         "200":
           content:
@@ -1539,7 +1539,7 @@ paths:
       - IndexerProxy
   /api/v1/indexerproxy/test:
     post:
-      operationId: TestApiV1Indexerproxy
+      operationId: TestApiV1IndexerProxy
       requestBody:
         content:
           application/json:
@@ -1558,7 +1558,7 @@ paths:
       - IndexerProxy
   /api/v1/indexerproxy/testall:
     post:
-      operationId: TestallApiV1Indexerproxy
+      operationId: TestallApiV1IndexerProxy
       responses:
         "200":
           description: Success
@@ -1566,7 +1566,7 @@ paths:
       - IndexerProxy
   /api/v1/indexerproxy/action/{name}:
     post:
-      operationId: CreateApiV1IndexerproxyActionByName
+      operationId: CreateApiV1IndexerProxyActionByName
       parameters:
       - explode: false
         in: path
@@ -1593,7 +1593,7 @@ paths:
       - IndexerProxy
   /api/v1/indexerstats:
     get:
-      operationId: GetApiV1Indexerstats
+      operationId: GetApiV1IndexerStats
       parameters:
       - explode: true
         in: query
@@ -1628,7 +1628,7 @@ paths:
       - IndexerStats
   /api/v1/indexerstatus/{id}:
     get:
-      operationId: GetApiV1IndexerstatusById
+      operationId: GetApiV1IndexerStatusById
       parameters:
       - explode: false
         in: path
@@ -1655,7 +1655,7 @@ paths:
       - IndexerStatus
   /api/v1/indexerstatus:
     get:
-      operationId: ListApiV1Indexerstatus
+      operationId: ListApiV1IndexerStatus
       responses:
         "200":
           content:

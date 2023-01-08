@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Appprofile**](AppProfileApi.md#CreateApiV1Appprofile) | **Post** /api/v1/appprofile | 
-[**DeleteApiV1Appprofile**](AppProfileApi.md#DeleteApiV1Appprofile) | **Delete** /api/v1/appprofile/{id} | 
-[**GetApiV1AppprofileById**](AppProfileApi.md#GetApiV1AppprofileById) | **Get** /api/v1/appprofile/{id} | 
-[**ListApiV1Appprofile**](AppProfileApi.md#ListApiV1Appprofile) | **Get** /api/v1/appprofile | 
-[**UpdateApiV1Appprofile**](AppProfileApi.md#UpdateApiV1Appprofile) | **Put** /api/v1/appprofile/{id} | 
+[**CreateApiV1AppProfile**](AppProfileApi.md#CreateApiV1AppProfile) | **Post** /api/v1/appprofile | 
+[**DeleteApiV1AppProfile**](AppProfileApi.md#DeleteApiV1AppProfile) | **Delete** /api/v1/appprofile/{id} | 
+[**GetApiV1AppProfileById**](AppProfileApi.md#GetApiV1AppProfileById) | **Get** /api/v1/appprofile/{id} | 
+[**ListApiV1AppProfile**](AppProfileApi.md#ListApiV1AppProfile) | **Get** /api/v1/appprofile | 
+[**UpdateApiV1AppProfile**](AppProfileApi.md#UpdateApiV1AppProfile) | **Put** /api/v1/appprofile/{id} | 
 
 
 
-## CreateApiV1Appprofile
+## CreateApiV1AppProfile
 
-> AppProfileResource CreateApiV1Appprofile(ctx).AppProfileResource(appProfileResource).Execute()
+> AppProfileResource CreateApiV1AppProfile(ctx).AppProfileResource(appProfileResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppProfileApi.CreateApiV1Appprofile(context.Background()).AppProfileResource(appProfileResource).Execute()
+    resp, r, err := apiClient.AppProfileApi.CreateApiV1AppProfile(context.Background()).AppProfileResource(appProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.CreateApiV1Appprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.CreateApiV1AppProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Appprofile`: AppProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.CreateApiV1Appprofile`: %v\n", resp)
+    // response from `CreateApiV1AppProfile`: AppProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.CreateApiV1AppProfile`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1AppprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiV1AppProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Appprofile
+## DeleteApiV1AppProfile
 
-> DeleteApiV1Appprofile(ctx, id).Execute()
+> DeleteApiV1AppProfile(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppProfileApi.DeleteApiV1Appprofile(context.Background(), id).Execute()
+    resp, r, err := apiClient.AppProfileApi.DeleteApiV1AppProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.DeleteApiV1Appprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.DeleteApiV1AppProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1AppprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiV1AppProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1AppprofileById
+## GetApiV1AppProfileById
 
-> AppProfileResource GetApiV1AppprofileById(ctx, id).Execute()
+> AppProfileResource GetApiV1AppProfileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppProfileApi.GetApiV1AppprofileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.AppProfileApi.GetApiV1AppProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.GetApiV1AppprofileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.GetApiV1AppProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1AppprofileById`: AppProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.GetApiV1AppprofileById`: %v\n", resp)
+    // response from `GetApiV1AppProfileById`: AppProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.GetApiV1AppProfileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1AppprofileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1AppProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Appprofile
+## ListApiV1AppProfile
 
-> []AppProfileResource ListApiV1Appprofile(ctx).Execute()
+> []AppProfileResource ListApiV1AppProfile(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppProfileApi.ListApiV1Appprofile(context.Background()).Execute()
+    resp, r, err := apiClient.AppProfileApi.ListApiV1AppProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.ListApiV1Appprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.ListApiV1AppProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Appprofile`: []AppProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.ListApiV1Appprofile`: %v\n", resp)
+    // response from `ListApiV1AppProfile`: []AppProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.ListApiV1AppProfile`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1AppprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1AppProfileRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiListApiV1AppprofileRequest
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Appprofile
+## UpdateApiV1AppProfile
 
-> AppProfileResource UpdateApiV1Appprofile(ctx, id).AppProfileResource(appProfileResource).Execute()
+> AppProfileResource UpdateApiV1AppProfile(ctx, id).AppProfileResource(appProfileResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppProfileApi.UpdateApiV1Appprofile(context.Background(), id).AppProfileResource(appProfileResource).Execute()
+    resp, r, err := apiClient.AppProfileApi.UpdateApiV1AppProfile(context.Background(), id).AppProfileResource(appProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.UpdateApiV1Appprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileApi.UpdateApiV1AppProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Appprofile`: AppProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.UpdateApiV1Appprofile`: %v\n", resp)
+    // response from `UpdateApiV1AppProfile`: AppProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `AppProfileApi.UpdateApiV1AppProfile`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1AppprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiV1AppProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

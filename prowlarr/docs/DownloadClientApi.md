@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Downloadclient**](DownloadClientApi.md#CreateApiV1Downloadclient) | **Post** /api/v1/downloadclient | 
-[**CreateApiV1DownloadclientActionByName**](DownloadClientApi.md#CreateApiV1DownloadclientActionByName) | **Post** /api/v1/downloadclient/action/{name} | 
-[**DeleteApiV1Downloadclient**](DownloadClientApi.md#DeleteApiV1Downloadclient) | **Delete** /api/v1/downloadclient/{id} | 
-[**GetApiV1DownloadclientById**](DownloadClientApi.md#GetApiV1DownloadclientById) | **Get** /api/v1/downloadclient/{id} | 
-[**ListApiV1Downloadclient**](DownloadClientApi.md#ListApiV1Downloadclient) | **Get** /api/v1/downloadclient | 
-[**ListApiV1DownloadclientSchema**](DownloadClientApi.md#ListApiV1DownloadclientSchema) | **Get** /api/v1/downloadclient/schema | 
-[**TestApiV1Downloadclient**](DownloadClientApi.md#TestApiV1Downloadclient) | **Post** /api/v1/downloadclient/test | 
-[**TestallApiV1Downloadclient**](DownloadClientApi.md#TestallApiV1Downloadclient) | **Post** /api/v1/downloadclient/testall | 
-[**UpdateApiV1Downloadclient**](DownloadClientApi.md#UpdateApiV1Downloadclient) | **Put** /api/v1/downloadclient/{id} | 
+[**CreateApiV1DownloadClient**](DownloadClientApi.md#CreateApiV1DownloadClient) | **Post** /api/v1/downloadclient | 
+[**CreateApiV1DownloadClientActionByName**](DownloadClientApi.md#CreateApiV1DownloadClientActionByName) | **Post** /api/v1/downloadclient/action/{name} | 
+[**DeleteApiV1DownloadClient**](DownloadClientApi.md#DeleteApiV1DownloadClient) | **Delete** /api/v1/downloadclient/{id} | 
+[**GetApiV1DownloadClientById**](DownloadClientApi.md#GetApiV1DownloadClientById) | **Get** /api/v1/downloadclient/{id} | 
+[**ListApiV1DownloadClient**](DownloadClientApi.md#ListApiV1DownloadClient) | **Get** /api/v1/downloadclient | 
+[**ListApiV1DownloadClientSchema**](DownloadClientApi.md#ListApiV1DownloadClientSchema) | **Get** /api/v1/downloadclient/schema | 
+[**TestApiV1DownloadClient**](DownloadClientApi.md#TestApiV1DownloadClient) | **Post** /api/v1/downloadclient/test | 
+[**TestallApiV1DownloadClient**](DownloadClientApi.md#TestallApiV1DownloadClient) | **Post** /api/v1/downloadclient/testall | 
+[**UpdateApiV1DownloadClient**](DownloadClientApi.md#UpdateApiV1DownloadClient) | **Put** /api/v1/downloadclient/{id} | 
 
 
 
-## CreateApiV1Downloadclient
+## CreateApiV1DownloadClient
 
-> DownloadClientResource CreateApiV1Downloadclient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource CreateApiV1DownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.CreateApiV1Downloadclient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.CreateApiV1DownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateApiV1Downloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateApiV1DownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Downloadclient`: DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.CreateApiV1Downloadclient`: %v\n", resp)
+    // response from `CreateApiV1DownloadClient`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.CreateApiV1DownloadClient`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1DownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiV1DownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateApiV1DownloadclientActionByName
+## CreateApiV1DownloadClientActionByName
 
-> CreateApiV1DownloadclientActionByName(ctx, name).DownloadClientResource(downloadClientResource).Execute()
+> CreateApiV1DownloadClientActionByName(ctx, name).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.CreateApiV1DownloadclientActionByName(context.Background(), name).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.CreateApiV1DownloadClientActionByName(context.Background(), name).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateApiV1DownloadclientActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateApiV1DownloadClientActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1DownloadclientActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiV1DownloadClientActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Downloadclient
+## DeleteApiV1DownloadClient
 
-> DeleteApiV1Downloadclient(ctx, id).Execute()
+> DeleteApiV1DownloadClient(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.DeleteApiV1Downloadclient(context.Background(), id).Execute()
+    resp, r, err := apiClient.DownloadClientApi.DeleteApiV1DownloadClient(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.DeleteApiV1Downloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.DeleteApiV1DownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1DownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiV1DownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1DownloadclientById
+## GetApiV1DownloadClientById
 
-> DownloadClientResource GetApiV1DownloadclientById(ctx, id).Execute()
+> DownloadClientResource GetApiV1DownloadClientById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.GetApiV1DownloadclientById(context.Background(), id).Execute()
+    resp, r, err := apiClient.DownloadClientApi.GetApiV1DownloadClientById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.GetApiV1DownloadclientById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.GetApiV1DownloadClientById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1DownloadclientById`: DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.GetApiV1DownloadclientById`: %v\n", resp)
+    // response from `GetApiV1DownloadClientById`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.GetApiV1DownloadClientById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1DownloadclientByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1DownloadClientByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Downloadclient
+## ListApiV1DownloadClient
 
-> []DownloadClientResource ListApiV1Downloadclient(ctx).Execute()
+> []DownloadClientResource ListApiV1DownloadClient(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.ListApiV1Downloadclient(context.Background()).Execute()
+    resp, r, err := apiClient.DownloadClientApi.ListApiV1DownloadClient(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListApiV1Downloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListApiV1DownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Downloadclient`: []DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListApiV1Downloadclient`: %v\n", resp)
+    // response from `ListApiV1DownloadClient`: []DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListApiV1DownloadClient`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1DownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1DownloadClientRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ Other parameters are passed through a pointer to a apiListApiV1DownloadclientReq
 [[Back to README]](../README.md)
 
 
-## ListApiV1DownloadclientSchema
+## ListApiV1DownloadClientSchema
 
-> []DownloadClientResource ListApiV1DownloadclientSchema(ctx).Execute()
+> []DownloadClientResource ListApiV1DownloadClientSchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.ListApiV1DownloadclientSchema(context.Background()).Execute()
+    resp, r, err := apiClient.DownloadClientApi.ListApiV1DownloadClientSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListApiV1DownloadclientSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListApiV1DownloadClientSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1DownloadclientSchema`: []DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListApiV1DownloadclientSchema`: %v\n", resp)
+    // response from `ListApiV1DownloadClientSchema`: []DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListApiV1DownloadClientSchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1DownloadclientSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1DownloadClientSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ Other parameters are passed through a pointer to a apiListApiV1DownloadclientSch
 [[Back to README]](../README.md)
 
 
-## TestApiV1Downloadclient
+## TestApiV1DownloadClient
 
-> TestApiV1Downloadclient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> TestApiV1DownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.TestApiV1Downloadclient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.TestApiV1DownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestApiV1Downloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestApiV1DownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestApiV1DownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestApiV1DownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TestallApiV1Downloadclient
+## TestallApiV1DownloadClient
 
-> TestallApiV1Downloadclient(ctx).Execute()
+> TestallApiV1DownloadClient(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.TestallApiV1Downloadclient(context.Background()).Execute()
+    resp, r, err := apiClient.DownloadClientApi.TestallApiV1DownloadClient(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestallApiV1Downloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestallApiV1DownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallApiV1DownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallApiV1DownloadClientRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ Other parameters are passed through a pointer to a apiTestallApiV1Downloadclient
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Downloadclient
+## UpdateApiV1DownloadClient
 
-> DownloadClientResource UpdateApiV1Downloadclient(ctx, id).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource UpdateApiV1DownloadClient(ctx, id).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.UpdateApiV1Downloadclient(context.Background(), id).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.UpdateApiV1DownloadClient(context.Background(), id).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.UpdateApiV1Downloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.UpdateApiV1DownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Downloadclient`: DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.UpdateApiV1Downloadclient`: %v\n", resp)
+    // response from `UpdateApiV1DownloadClient`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.UpdateApiV1DownloadClient`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1DownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiV1DownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

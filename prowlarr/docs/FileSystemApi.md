@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Filesystem**](FileSystemApi.md#GetApiV1Filesystem) | **Get** /api/v1/filesystem | 
-[**GetApiV1FilesystemType**](FileSystemApi.md#GetApiV1FilesystemType) | **Get** /api/v1/filesystem/type | 
+[**GetApiV1FileSystem**](FileSystemApi.md#GetApiV1FileSystem) | **Get** /api/v1/filesystem | 
+[**GetApiV1FileSystemType**](FileSystemApi.md#GetApiV1FileSystemType) | **Get** /api/v1/filesystem/type | 
 
 
 
-## GetApiV1Filesystem
+## GetApiV1FileSystem
 
-> GetApiV1Filesystem(ctx).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
+> GetApiV1FileSystem(ctx).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FileSystemApi.GetApiV1Filesystem(context.Background()).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
+    resp, r, err := apiClient.FileSystemApi.GetApiV1FileSystem(context.Background()).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1Filesystem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FileSystem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1FilesystemRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1FileSystemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1FilesystemType
+## GetApiV1FileSystemType
 
-> GetApiV1FilesystemType(ctx).Path(path).Execute()
+> GetApiV1FileSystemType(ctx).Path(path).Execute()
 
 
 
@@ -98,9 +98,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FileSystemApi.GetApiV1FilesystemType(context.Background()).Path(path).Execute()
+    resp, r, err := apiClient.FileSystemApi.GetApiV1FileSystemType(context.Background()).Path(path).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FilesystemType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FileSystemType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -112,7 +112,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1FilesystemTypeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1FileSystemTypeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
