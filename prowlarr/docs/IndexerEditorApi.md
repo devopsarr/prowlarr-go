@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1IndexerEditor**](IndexerEditorApi.md#DeleteApiV1IndexerEditor) | **Delete** /api/v1/indexer/editor | 
-[**PutApiV1IndexerEditor**](IndexerEditorApi.md#PutApiV1IndexerEditor) | **Put** /api/v1/indexer/editor | 
+[**DeleteIndexerEditor**](IndexerEditorApi.md#DeleteIndexerEditor) | **Delete** /api/v1/indexer/editor | 
+[**PutIndexerEditor**](IndexerEditorApi.md#PutIndexerEditor) | **Put** /api/v1/indexer/editor | 
 
 
 
-## DeleteApiV1IndexerEditor
+## DeleteIndexerEditor
 
-> DeleteApiV1IndexerEditor(ctx).IndexerEditorResource(indexerEditorResource).Execute()
+> DeleteIndexerEditor(ctx).IndexerEditorResource(indexerEditorResource).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerEditorApi.DeleteApiV1IndexerEditor(context.Background()).IndexerEditorResource(indexerEditorResource).Execute()
+    resp, r, err := apiClient.IndexerEditorApi.DeleteIndexerEditor(context.Background()).IndexerEditorResource(indexerEditorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerEditorApi.DeleteApiV1IndexerEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerEditorApi.DeleteIndexerEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -46,7 +46,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1IndexerEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteIndexerEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,9 +71,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutApiV1IndexerEditor
+## PutIndexerEditor
 
-> PutApiV1IndexerEditor(ctx).IndexerEditorResource(indexerEditorResource).Execute()
+> PutIndexerEditor(ctx).IndexerEditorResource(indexerEditorResource).Execute()
 
 
 
@@ -94,9 +94,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerEditorApi.PutApiV1IndexerEditor(context.Background()).IndexerEditorResource(indexerEditorResource).Execute()
+    resp, r, err := apiClient.IndexerEditorApi.PutIndexerEditor(context.Background()).IndexerEditorResource(indexerEditorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerEditorApi.PutApiV1IndexerEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerEditorApi.PutIndexerEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -108,7 +108,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1IndexerEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutIndexerEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

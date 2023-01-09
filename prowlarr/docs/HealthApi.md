@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1HealthById**](HealthApi.md#GetApiV1HealthById) | **Get** /api/v1/health/{id} | 
-[**ListApiV1Health**](HealthApi.md#ListApiV1Health) | **Get** /api/v1/health | 
+[**GetHealthById**](HealthApi.md#GetHealthById) | **Get** /api/v1/health/{id} | 
+[**ListHealth**](HealthApi.md#ListHealth) | **Get** /api/v1/health | 
 
 
 
-## GetApiV1HealthById
+## GetHealthById
 
-> HealthResource GetApiV1HealthById(ctx, id).Execute()
+> HealthResource GetHealthById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HealthApi.GetApiV1HealthById(context.Background(), id).Execute()
+    resp, r, err := apiClient.HealthApi.GetHealthById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.GetApiV1HealthById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.GetHealthById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1HealthById`: HealthResource
-    fmt.Fprintf(os.Stdout, "Response from `HealthApi.GetApiV1HealthById`: %v\n", resp)
+    // response from `GetHealthById`: HealthResource
+    fmt.Fprintf(os.Stdout, "Response from `HealthApi.GetHealthById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1HealthByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHealthByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Health
+## ListHealth
 
-> []HealthResource ListApiV1Health(ctx).Execute()
+> []HealthResource ListHealth(ctx).Execute()
 
 
 
@@ -99,13 +99,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HealthApi.ListApiV1Health(context.Background()).Execute()
+    resp, r, err := apiClient.HealthApi.ListHealth(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.ListApiV1Health``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.ListHealth``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Health`: []HealthResource
-    fmt.Fprintf(os.Stdout, "Response from `HealthApi.ListApiV1Health`: %v\n", resp)
+    // response from `ListHealth`: []HealthResource
+    fmt.Fprintf(os.Stdout, "Response from `HealthApi.ListHealth`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HealthRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHealthRequest struct via the builder pattern
 
 
 ### Return type

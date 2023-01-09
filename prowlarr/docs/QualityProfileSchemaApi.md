@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1AppprofileSchema**](QualityProfileSchemaApi.md#GetApiV1AppprofileSchema) | **Get** /api/v1/appprofile/schema | 
+[**GetAppprofileSchema**](QualityProfileSchemaApi.md#GetAppprofileSchema) | **Get** /api/v1/appprofile/schema | 
 
 
 
-## GetApiV1AppprofileSchema
+## GetAppprofileSchema
 
-> AppProfileResource GetApiV1AppprofileSchema(ctx).Execute()
+> AppProfileResource GetAppprofileSchema(ctx).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityProfileSchemaApi.GetApiV1AppprofileSchema(context.Background()).Execute()
+    resp, r, err := apiClient.QualityProfileSchemaApi.GetAppprofileSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileSchemaApi.GetApiV1AppprofileSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileSchemaApi.GetAppprofileSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1AppprofileSchema`: AppProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityProfileSchemaApi.GetApiV1AppprofileSchema`: %v\n", resp)
+    // response from `GetAppprofileSchema`: AppProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityProfileSchemaApi.GetAppprofileSchema`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1AppprofileSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAppprofileSchemaRequest struct via the builder pattern
 
 
 ### Return type

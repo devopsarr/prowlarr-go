@@ -21,23 +21,23 @@ import (
 
 // QualityProfileSchemaApiService QualityProfileSchemaApi service
 type QualityProfileSchemaApiService service
-type ApiGetApiV1AppprofileSchemaRequest struct {
+type ApiGetAppprofileSchemaRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileSchemaApiService
 }
 
-func (r ApiGetApiV1AppprofileSchemaRequest) Execute() (*AppProfileResource, *http.Response, error) {
-	return r.ApiService.GetApiV1AppprofileSchemaExecute(r)
+func (r ApiGetAppprofileSchemaRequest) Execute() (*AppProfileResource, *http.Response, error) {
+	return r.ApiService.GetAppprofileSchemaExecute(r)
 }
 
 /*
-GetApiV1AppprofileSchema Method for GetApiV1AppprofileSchema
+GetAppprofileSchema Method for GetAppprofileSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1AppprofileSchemaRequest
+ @return ApiGetAppprofileSchemaRequest
 */
-func (a *QualityProfileSchemaApiService) GetApiV1AppprofileSchema(ctx context.Context) ApiGetApiV1AppprofileSchemaRequest {
-	return ApiGetApiV1AppprofileSchemaRequest{
+func (a *QualityProfileSchemaApiService) GetAppprofileSchema(ctx context.Context) ApiGetAppprofileSchemaRequest {
+	return ApiGetAppprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *QualityProfileSchemaApiService) GetApiV1AppprofileSchema(ctx context.Co
 
 // Execute executes the request
 //  @return AppProfileResource
-func (a *QualityProfileSchemaApiService) GetApiV1AppprofileSchemaExecute(r ApiGetApiV1AppprofileSchemaRequest) (*AppProfileResource, *http.Response, error) {
+func (a *QualityProfileSchemaApiService) GetAppprofileSchemaExecute(r ApiGetAppprofileSchemaRequest) (*AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *QualityProfileSchemaApiService) GetApiV1AppprofileSchemaExecute(r ApiGe
 		localVarReturnValue  *AppProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaApiService.GetApiV1AppprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaApiService.GetAppprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

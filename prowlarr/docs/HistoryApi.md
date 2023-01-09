@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1History**](HistoryApi.md#GetApiV1History) | **Get** /api/v1/history | 
-[**ListApiV1HistoryIndexer**](HistoryApi.md#ListApiV1HistoryIndexer) | **Get** /api/v1/history/indexer | 
-[**ListApiV1HistorySince**](HistoryApi.md#ListApiV1HistorySince) | **Get** /api/v1/history/since | 
+[**GetHistory**](HistoryApi.md#GetHistory) | **Get** /api/v1/history | 
+[**ListHistoryIndexer**](HistoryApi.md#ListHistoryIndexer) | **Get** /api/v1/history/indexer | 
+[**ListHistorySince**](HistoryApi.md#ListHistorySince) | **Get** /api/v1/history/since | 
 
 
 
-## GetApiV1History
+## GetHistory
 
-> HistoryResourcePagingResource GetApiV1History(ctx).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.GetApiV1History(context.Background()).Execute()
+    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetApiV1History``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1History`: HistoryResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.GetApiV1History`: %v\n", resp)
+    // response from `GetHistory`: HistoryResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.GetHistory`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1HistoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHistoryRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetApiV1HistoryRequest str
 [[Back to README]](../README.md)
 
 
-## ListApiV1HistoryIndexer
+## ListHistoryIndexer
 
-> []HistoryResource ListApiV1HistoryIndexer(ctx).IndexerId(indexerId).EventType(eventType).Execute()
+> []HistoryResource ListHistoryIndexer(ctx).IndexerId(indexerId).EventType(eventType).Execute()
 
 
 
@@ -93,13 +93,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListApiV1HistoryIndexer(context.Background()).IndexerId(indexerId).EventType(eventType).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistoryIndexer(context.Background()).IndexerId(indexerId).EventType(eventType).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListApiV1HistoryIndexer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistoryIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1HistoryIndexer`: []HistoryResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListApiV1HistoryIndexer`: %v\n", resp)
+    // response from `ListHistoryIndexer`: []HistoryResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListHistoryIndexer`: %v\n", resp)
 }
 ```
 
@@ -109,7 +109,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HistoryIndexerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHistoryIndexerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -135,9 +135,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1HistorySince
+## ListHistorySince
 
-> []HistoryResource ListApiV1HistorySince(ctx).Date(date).EventType(eventType).Execute()
+> []HistoryResource ListHistorySince(ctx).Date(date).EventType(eventType).Execute()
 
 
 
@@ -160,13 +160,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListApiV1HistorySince(context.Background()).Date(date).EventType(eventType).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistorySince(context.Background()).Date(date).EventType(eventType).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListApiV1HistorySince``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistorySince``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1HistorySince`: []HistoryResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListApiV1HistorySince`: %v\n", resp)
+    // response from `ListHistorySince`: []HistoryResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListHistorySince`: %v\n", resp)
 }
 ```
 
@@ -176,7 +176,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HistorySinceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHistorySinceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

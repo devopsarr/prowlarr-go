@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1IndexerProxy**](IndexerProxyApi.md#CreateApiV1IndexerProxy) | **Post** /api/v1/indexerproxy | 
-[**CreateApiV1IndexerProxyActionByName**](IndexerProxyApi.md#CreateApiV1IndexerProxyActionByName) | **Post** /api/v1/indexerproxy/action/{name} | 
-[**DeleteApiV1IndexerProxy**](IndexerProxyApi.md#DeleteApiV1IndexerProxy) | **Delete** /api/v1/indexerproxy/{id} | 
-[**GetApiV1IndexerProxyById**](IndexerProxyApi.md#GetApiV1IndexerProxyById) | **Get** /api/v1/indexerproxy/{id} | 
-[**ListApiV1IndexerProxy**](IndexerProxyApi.md#ListApiV1IndexerProxy) | **Get** /api/v1/indexerproxy | 
-[**ListApiV1IndexerProxySchema**](IndexerProxyApi.md#ListApiV1IndexerProxySchema) | **Get** /api/v1/indexerproxy/schema | 
-[**TestApiV1IndexerProxy**](IndexerProxyApi.md#TestApiV1IndexerProxy) | **Post** /api/v1/indexerproxy/test | 
-[**TestallApiV1IndexerProxy**](IndexerProxyApi.md#TestallApiV1IndexerProxy) | **Post** /api/v1/indexerproxy/testall | 
-[**UpdateApiV1IndexerProxy**](IndexerProxyApi.md#UpdateApiV1IndexerProxy) | **Put** /api/v1/indexerproxy/{id} | 
+[**CreateIndexerProxy**](IndexerProxyApi.md#CreateIndexerProxy) | **Post** /api/v1/indexerproxy | 
+[**CreateIndexerProxyActionByName**](IndexerProxyApi.md#CreateIndexerProxyActionByName) | **Post** /api/v1/indexerproxy/action/{name} | 
+[**DeleteIndexerProxy**](IndexerProxyApi.md#DeleteIndexerProxy) | **Delete** /api/v1/indexerproxy/{id} | 
+[**GetIndexerProxyById**](IndexerProxyApi.md#GetIndexerProxyById) | **Get** /api/v1/indexerproxy/{id} | 
+[**ListIndexerProxy**](IndexerProxyApi.md#ListIndexerProxy) | **Get** /api/v1/indexerproxy | 
+[**ListIndexerProxySchema**](IndexerProxyApi.md#ListIndexerProxySchema) | **Get** /api/v1/indexerproxy/schema | 
+[**TestIndexerProxy**](IndexerProxyApi.md#TestIndexerProxy) | **Post** /api/v1/indexerproxy/test | 
+[**TestallIndexerProxy**](IndexerProxyApi.md#TestallIndexerProxy) | **Post** /api/v1/indexerproxy/testall | 
+[**UpdateIndexerProxy**](IndexerProxyApi.md#UpdateIndexerProxy) | **Put** /api/v1/indexerproxy/{id} | 
 
 
 
-## CreateApiV1IndexerProxy
+## CreateIndexerProxy
 
-> IndexerProxyResource CreateApiV1IndexerProxy(ctx).IndexerProxyResource(indexerProxyResource).Execute()
+> IndexerProxyResource CreateIndexerProxy(ctx).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.CreateApiV1IndexerProxy(context.Background()).IndexerProxyResource(indexerProxyResource).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.CreateIndexerProxy(context.Background()).IndexerProxyResource(indexerProxyResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.CreateApiV1IndexerProxy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.CreateIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1IndexerProxy`: IndexerProxyResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.CreateApiV1IndexerProxy`: %v\n", resp)
+    // response from `CreateIndexerProxy`: IndexerProxyResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.CreateIndexerProxy`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1IndexerProxyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateIndexerProxyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateApiV1IndexerProxyActionByName
+## CreateIndexerProxyActionByName
 
-> CreateApiV1IndexerProxyActionByName(ctx, name).IndexerProxyResource(indexerProxyResource).Execute()
+> CreateIndexerProxyActionByName(ctx, name).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.CreateApiV1IndexerProxyActionByName(context.Background(), name).IndexerProxyResource(indexerProxyResource).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.CreateIndexerProxyActionByName(context.Background(), name).IndexerProxyResource(indexerProxyResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.CreateApiV1IndexerProxyActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.CreateIndexerProxyActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1IndexerProxyActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateIndexerProxyActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1IndexerProxy
+## DeleteIndexerProxy
 
-> DeleteApiV1IndexerProxy(ctx, id).Execute()
+> DeleteIndexerProxy(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.DeleteApiV1IndexerProxy(context.Background(), id).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.DeleteIndexerProxy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.DeleteApiV1IndexerProxy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.DeleteIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1IndexerProxyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteIndexerProxyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1IndexerProxyById
+## GetIndexerProxyById
 
-> IndexerProxyResource GetApiV1IndexerProxyById(ctx, id).Execute()
+> IndexerProxyResource GetIndexerProxyById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.GetApiV1IndexerProxyById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.GetIndexerProxyById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.GetApiV1IndexerProxyById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.GetIndexerProxyById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1IndexerProxyById`: IndexerProxyResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.GetApiV1IndexerProxyById`: %v\n", resp)
+    // response from `GetIndexerProxyById`: IndexerProxyResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.GetIndexerProxyById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1IndexerProxyByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerProxyByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1IndexerProxy
+## ListIndexerProxy
 
-> []IndexerProxyResource ListApiV1IndexerProxy(ctx).Execute()
+> []IndexerProxyResource ListIndexerProxy(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.ListApiV1IndexerProxy(context.Background()).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.ListIndexerProxy(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.ListApiV1IndexerProxy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.ListIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1IndexerProxy`: []IndexerProxyResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.ListApiV1IndexerProxy`: %v\n", resp)
+    // response from `ListIndexerProxy`: []IndexerProxyResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.ListIndexerProxy`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1IndexerProxyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListIndexerProxyRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ Other parameters are passed through a pointer to a apiListApiV1IndexerProxyReque
 [[Back to README]](../README.md)
 
 
-## ListApiV1IndexerProxySchema
+## ListIndexerProxySchema
 
-> []IndexerProxyResource ListApiV1IndexerProxySchema(ctx).Execute()
+> []IndexerProxyResource ListIndexerProxySchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.ListApiV1IndexerProxySchema(context.Background()).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.ListIndexerProxySchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.ListApiV1IndexerProxySchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.ListIndexerProxySchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1IndexerProxySchema`: []IndexerProxyResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.ListApiV1IndexerProxySchema`: %v\n", resp)
+    // response from `ListIndexerProxySchema`: []IndexerProxyResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.ListIndexerProxySchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1IndexerProxySchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListIndexerProxySchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ Other parameters are passed through a pointer to a apiListApiV1IndexerProxySchem
 [[Back to README]](../README.md)
 
 
-## TestApiV1IndexerProxy
+## TestIndexerProxy
 
-> TestApiV1IndexerProxy(ctx).IndexerProxyResource(indexerProxyResource).Execute()
+> TestIndexerProxy(ctx).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.TestApiV1IndexerProxy(context.Background()).IndexerProxyResource(indexerProxyResource).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.TestIndexerProxy(context.Background()).IndexerProxyResource(indexerProxyResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.TestApiV1IndexerProxy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.TestIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestApiV1IndexerProxyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestIndexerProxyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TestallApiV1IndexerProxy
+## TestallIndexerProxy
 
-> TestallApiV1IndexerProxy(ctx).Execute()
+> TestallIndexerProxy(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.TestallApiV1IndexerProxy(context.Background()).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.TestallIndexerProxy(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.TestallApiV1IndexerProxy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.TestallIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallApiV1IndexerProxyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallIndexerProxyRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ Other parameters are passed through a pointer to a apiTestallApiV1IndexerProxyRe
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1IndexerProxy
+## UpdateIndexerProxy
 
-> IndexerProxyResource UpdateApiV1IndexerProxy(ctx, id).IndexerProxyResource(indexerProxyResource).Execute()
+> IndexerProxyResource UpdateIndexerProxy(ctx, id).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.UpdateApiV1IndexerProxy(context.Background(), id).IndexerProxyResource(indexerProxyResource).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.UpdateIndexerProxy(context.Background(), id).IndexerProxyResource(indexerProxyResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.UpdateApiV1IndexerProxy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.UpdateIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1IndexerProxy`: IndexerProxyResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.UpdateApiV1IndexerProxy`: %v\n", resp)
+    // response from `UpdateIndexerProxy`: IndexerProxyResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerProxyApi.UpdateIndexerProxy`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1IndexerProxyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateIndexerProxyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

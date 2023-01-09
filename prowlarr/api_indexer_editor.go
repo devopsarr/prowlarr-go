@@ -21,43 +21,43 @@ import (
 
 // IndexerEditorApiService IndexerEditorApi service
 type IndexerEditorApiService service
-type ApiDeleteApiV1IndexerEditorRequest struct {
+type ApiDeleteIndexerEditorRequest struct {
 	ctx context.Context
 	ApiService *IndexerEditorApiService
 	indexerEditorResource *IndexerEditorResource
 }
 
-func (r ApiDeleteApiV1IndexerEditorRequest) IndexerEditorResource(indexerEditorResource IndexerEditorResource) ApiDeleteApiV1IndexerEditorRequest {
+func (r ApiDeleteIndexerEditorRequest) IndexerEditorResource(indexerEditorResource IndexerEditorResource) ApiDeleteIndexerEditorRequest {
 	r.indexerEditorResource = &indexerEditorResource
 	return r
 }
 
-func (r ApiDeleteApiV1IndexerEditorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1IndexerEditorExecute(r)
+func (r ApiDeleteIndexerEditorRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteIndexerEditorExecute(r)
 }
 
 /*
-DeleteApiV1IndexerEditor Method for DeleteApiV1IndexerEditor
+DeleteIndexerEditor Method for DeleteIndexerEditor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteApiV1IndexerEditorRequest
+ @return ApiDeleteIndexerEditorRequest
 */
-func (a *IndexerEditorApiService) DeleteApiV1IndexerEditor(ctx context.Context) ApiDeleteApiV1IndexerEditorRequest {
-	return ApiDeleteApiV1IndexerEditorRequest{
+func (a *IndexerEditorApiService) DeleteIndexerEditor(ctx context.Context) ApiDeleteIndexerEditorRequest {
+	return ApiDeleteIndexerEditorRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *IndexerEditorApiService) DeleteApiV1IndexerEditorExecute(r ApiDeleteApiV1IndexerEditorRequest) (*http.Response, error) {
+func (a *IndexerEditorApiService) DeleteIndexerEditorExecute(r ApiDeleteIndexerEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerEditorApiService.DeleteApiV1IndexerEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerEditorApiService.DeleteIndexerEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,43 +142,43 @@ func (a *IndexerEditorApiService) DeleteApiV1IndexerEditorExecute(r ApiDeleteApi
 
 	return localVarHTTPResponse, nil
 }
-type ApiPutApiV1IndexerEditorRequest struct {
+type ApiPutIndexerEditorRequest struct {
 	ctx context.Context
 	ApiService *IndexerEditorApiService
 	indexerEditorResource *IndexerEditorResource
 }
 
-func (r ApiPutApiV1IndexerEditorRequest) IndexerEditorResource(indexerEditorResource IndexerEditorResource) ApiPutApiV1IndexerEditorRequest {
+func (r ApiPutIndexerEditorRequest) IndexerEditorResource(indexerEditorResource IndexerEditorResource) ApiPutIndexerEditorRequest {
 	r.indexerEditorResource = &indexerEditorResource
 	return r
 }
 
-func (r ApiPutApiV1IndexerEditorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PutApiV1IndexerEditorExecute(r)
+func (r ApiPutIndexerEditorRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PutIndexerEditorExecute(r)
 }
 
 /*
-PutApiV1IndexerEditor Method for PutApiV1IndexerEditor
+PutIndexerEditor Method for PutIndexerEditor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPutApiV1IndexerEditorRequest
+ @return ApiPutIndexerEditorRequest
 */
-func (a *IndexerEditorApiService) PutApiV1IndexerEditor(ctx context.Context) ApiPutApiV1IndexerEditorRequest {
-	return ApiPutApiV1IndexerEditorRequest{
+func (a *IndexerEditorApiService) PutIndexerEditor(ctx context.Context) ApiPutIndexerEditorRequest {
+	return ApiPutIndexerEditorRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *IndexerEditorApiService) PutApiV1IndexerEditorExecute(r ApiPutApiV1IndexerEditorRequest) (*http.Response, error) {
+func (a *IndexerEditorApiService) PutIndexerEditorExecute(r ApiPutIndexerEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerEditorApiService.PutApiV1IndexerEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerEditorApiService.PutIndexerEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

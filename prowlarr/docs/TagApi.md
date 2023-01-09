@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Tag**](TagApi.md#CreateApiV1Tag) | **Post** /api/v1/tag | 
-[**DeleteApiV1Tag**](TagApi.md#DeleteApiV1Tag) | **Delete** /api/v1/tag/{id} | 
-[**GetApiV1TagById**](TagApi.md#GetApiV1TagById) | **Get** /api/v1/tag/{id} | 
-[**ListApiV1Tag**](TagApi.md#ListApiV1Tag) | **Get** /api/v1/tag | 
-[**UpdateApiV1Tag**](TagApi.md#UpdateApiV1Tag) | **Put** /api/v1/tag/{id} | 
+[**CreateTag**](TagApi.md#CreateTag) | **Post** /api/v1/tag | 
+[**DeleteTag**](TagApi.md#DeleteTag) | **Delete** /api/v1/tag/{id} | 
+[**GetTagById**](TagApi.md#GetTagById) | **Get** /api/v1/tag/{id} | 
+[**ListTag**](TagApi.md#ListTag) | **Get** /api/v1/tag | 
+[**UpdateTag**](TagApi.md#UpdateTag) | **Put** /api/v1/tag/{id} | 
 
 
 
-## CreateApiV1Tag
+## CreateTag
 
-> TagResource CreateApiV1Tag(ctx).TagResource(tagResource).Execute()
+> TagResource CreateTag(ctx).TagResource(tagResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagApi.CreateApiV1Tag(context.Background()).TagResource(tagResource).Execute()
+    resp, r, err := apiClient.TagApi.CreateTag(context.Background()).TagResource(tagResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.CreateApiV1Tag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.CreateTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Tag`: TagResource
-    fmt.Fprintf(os.Stdout, "Response from `TagApi.CreateApiV1Tag`: %v\n", resp)
+    // response from `CreateTag`: TagResource
+    fmt.Fprintf(os.Stdout, "Response from `TagApi.CreateTag`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1TagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Tag
+## DeleteTag
 
-> DeleteApiV1Tag(ctx, id).Execute()
+> DeleteTag(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagApi.DeleteApiV1Tag(context.Background(), id).Execute()
+    resp, r, err := apiClient.TagApi.DeleteTag(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.DeleteApiV1Tag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.DeleteTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1TagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1TagById
+## GetTagById
 
-> TagResource GetApiV1TagById(ctx, id).Execute()
+> TagResource GetTagById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagApi.GetApiV1TagById(context.Background(), id).Execute()
+    resp, r, err := apiClient.TagApi.GetTagById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.GetApiV1TagById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.GetTagById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1TagById`: TagResource
-    fmt.Fprintf(os.Stdout, "Response from `TagApi.GetApiV1TagById`: %v\n", resp)
+    // response from `GetTagById`: TagResource
+    fmt.Fprintf(os.Stdout, "Response from `TagApi.GetTagById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1TagByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTagByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Tag
+## ListTag
 
-> []TagResource ListApiV1Tag(ctx).Execute()
+> []TagResource ListTag(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagApi.ListApiV1Tag(context.Background()).Execute()
+    resp, r, err := apiClient.TagApi.ListTag(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.ListApiV1Tag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.ListTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Tag`: []TagResource
-    fmt.Fprintf(os.Stdout, "Response from `TagApi.ListApiV1Tag`: %v\n", resp)
+    // response from `ListTag`: []TagResource
+    fmt.Fprintf(os.Stdout, "Response from `TagApi.ListTag`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1TagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTagRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiListApiV1TagRequest struct
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Tag
+## UpdateTag
 
-> TagResource UpdateApiV1Tag(ctx, id).TagResource(tagResource).Execute()
+> TagResource UpdateTag(ctx, id).TagResource(tagResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagApi.UpdateApiV1Tag(context.Background(), id).TagResource(tagResource).Execute()
+    resp, r, err := apiClient.TagApi.UpdateTag(context.Background(), id).TagResource(tagResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.UpdateApiV1Tag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagApi.UpdateTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Tag`: TagResource
-    fmt.Fprintf(os.Stdout, "Response from `TagApi.UpdateApiV1Tag`: %v\n", resp)
+    // response from `UpdateTag`: TagResource
+    fmt.Fprintf(os.Stdout, "Response from `TagApi.UpdateTag`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1TagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

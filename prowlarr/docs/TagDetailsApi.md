@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1TagDetailById**](TagDetailsApi.md#GetApiV1TagDetailById) | **Get** /api/v1/tag/detail/{id} | 
-[**ListApiV1TagDetail**](TagDetailsApi.md#ListApiV1TagDetail) | **Get** /api/v1/tag/detail | 
+[**GetTagDetailById**](TagDetailsApi.md#GetTagDetailById) | **Get** /api/v1/tag/detail/{id} | 
+[**ListTagDetail**](TagDetailsApi.md#ListTagDetail) | **Get** /api/v1/tag/detail | 
 
 
 
-## GetApiV1TagDetailById
+## GetTagDetailById
 
-> TagDetailsResource GetApiV1TagDetailById(ctx, id).Execute()
+> TagDetailsResource GetTagDetailById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagDetailsApi.GetApiV1TagDetailById(context.Background(), id).Execute()
+    resp, r, err := apiClient.TagDetailsApi.GetTagDetailById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagDetailsApi.GetApiV1TagDetailById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagDetailsApi.GetTagDetailById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1TagDetailById`: TagDetailsResource
-    fmt.Fprintf(os.Stdout, "Response from `TagDetailsApi.GetApiV1TagDetailById`: %v\n", resp)
+    // response from `GetTagDetailById`: TagDetailsResource
+    fmt.Fprintf(os.Stdout, "Response from `TagDetailsApi.GetTagDetailById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1TagDetailByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTagDetailByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1TagDetail
+## ListTagDetail
 
-> []TagDetailsResource ListApiV1TagDetail(ctx).Execute()
+> []TagDetailsResource ListTagDetail(ctx).Execute()
 
 
 
@@ -99,13 +99,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TagDetailsApi.ListApiV1TagDetail(context.Background()).Execute()
+    resp, r, err := apiClient.TagDetailsApi.ListTagDetail(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TagDetailsApi.ListApiV1TagDetail``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TagDetailsApi.ListTagDetail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1TagDetail`: []TagDetailsResource
-    fmt.Fprintf(os.Stdout, "Response from `TagDetailsApi.ListApiV1TagDetail`: %v\n", resp)
+    // response from `ListTagDetail`: []TagDetailsResource
+    fmt.Fprintf(os.Stdout, "Response from `TagDetailsApi.ListTagDetail`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1TagDetailRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTagDetailRequest struct via the builder pattern
 
 
 ### Return type

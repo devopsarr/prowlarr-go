@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigUi**](UiConfigApi.md#GetApiV1ConfigUi) | **Get** /api/v1/config/ui | 
-[**GetApiV1ConfigUiById**](UiConfigApi.md#GetApiV1ConfigUiById) | **Get** /api/v1/config/ui/{id} | 
-[**UpdateApiV1ConfigUi**](UiConfigApi.md#UpdateApiV1ConfigUi) | **Put** /api/v1/config/ui/{id} | 
+[**GetUiConfig**](UiConfigApi.md#GetUiConfig) | **Get** /api/v1/config/ui | 
+[**GetUiConfigById**](UiConfigApi.md#GetUiConfigById) | **Get** /api/v1/config/ui/{id} | 
+[**UpdateUiConfig**](UiConfigApi.md#UpdateUiConfig) | **Put** /api/v1/config/ui/{id} | 
 
 
 
-## GetApiV1ConfigUi
+## GetUiConfig
 
-> UiConfigResource GetApiV1ConfigUi(ctx).Execute()
+> UiConfigResource GetUiConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UiConfigApi.GetApiV1ConfigUi(context.Background()).Execute()
+    resp, r, err := apiClient.UiConfigApi.GetUiConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UiConfigApi.GetApiV1ConfigUi``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UiConfigApi.GetUiConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigUi`: UiConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `UiConfigApi.GetApiV1ConfigUi`: %v\n", resp)
+    // response from `GetUiConfig`: UiConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `UiConfigApi.GetUiConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigUiRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUiConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetApiV1ConfigUiRequest st
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigUiById
+## GetUiConfigById
 
-> UiConfigResource GetApiV1ConfigUiById(ctx, id).Execute()
+> UiConfigResource GetUiConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UiConfigApi.GetApiV1ConfigUiById(context.Background(), id).Execute()
+    resp, r, err := apiClient.UiConfigApi.GetUiConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UiConfigApi.GetApiV1ConfigUiById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UiConfigApi.GetUiConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigUiById`: UiConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `UiConfigApi.GetApiV1ConfigUiById`: %v\n", resp)
+    // response from `GetUiConfigById`: UiConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `UiConfigApi.GetUiConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigUiByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUiConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigUi
+## UpdateUiConfig
 
-> UiConfigResource UpdateApiV1ConfigUi(ctx, id).UiConfigResource(uiConfigResource).Execute()
+> UiConfigResource UpdateUiConfig(ctx, id).UiConfigResource(uiConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UiConfigApi.UpdateApiV1ConfigUi(context.Background(), id).UiConfigResource(uiConfigResource).Execute()
+    resp, r, err := apiClient.UiConfigApi.UpdateUiConfig(context.Background(), id).UiConfigResource(uiConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UiConfigApi.UpdateApiV1ConfigUi``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UiConfigApi.UpdateUiConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigUi`: UiConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `UiConfigApi.UpdateApiV1ConfigUi`: %v\n", resp)
+    // response from `UpdateUiConfig`: UiConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `UiConfigApi.UpdateUiConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigUiRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateUiConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -22,29 +22,29 @@ import (
 
 // CustomFilterApiService CustomFilterApi service
 type CustomFilterApiService service
-type ApiCreateApiV1CustomFilterRequest struct {
+type ApiCreateCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterApiService
 	customFilterResource *CustomFilterResource
 }
 
-func (r ApiCreateApiV1CustomFilterRequest) CustomFilterResource(customFilterResource CustomFilterResource) ApiCreateApiV1CustomFilterRequest {
+func (r ApiCreateCustomFilterRequest) CustomFilterResource(customFilterResource CustomFilterResource) ApiCreateCustomFilterRequest {
 	r.customFilterResource = &customFilterResource
 	return r
 }
 
-func (r ApiCreateApiV1CustomFilterRequest) Execute() (*CustomFilterResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1CustomFilterExecute(r)
+func (r ApiCreateCustomFilterRequest) Execute() (*CustomFilterResource, *http.Response, error) {
+	return r.ApiService.CreateCustomFilterExecute(r)
 }
 
 /*
-CreateApiV1CustomFilter Method for CreateApiV1CustomFilter
+CreateCustomFilter Method for CreateCustomFilter
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1CustomFilterRequest
+ @return ApiCreateCustomFilterRequest
 */
-func (a *CustomFilterApiService) CreateApiV1CustomFilter(ctx context.Context) ApiCreateApiV1CustomFilterRequest {
-	return ApiCreateApiV1CustomFilterRequest{
+func (a *CustomFilterApiService) CreateCustomFilter(ctx context.Context) ApiCreateCustomFilterRequest {
+	return ApiCreateCustomFilterRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *CustomFilterApiService) CreateApiV1CustomFilter(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return CustomFilterResource
-func (a *CustomFilterApiService) CreateApiV1CustomFilterExecute(r ApiCreateApiV1CustomFilterRequest) (*CustomFilterResource, *http.Response, error) {
+func (a *CustomFilterApiService) CreateCustomFilterExecute(r ApiCreateCustomFilterRequest) (*CustomFilterResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CustomFilterApiService) CreateApiV1CustomFilterExecute(r ApiCreateApiV1
 		localVarReturnValue  *CustomFilterResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.CreateApiV1CustomFilter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.CreateCustomFilter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,25 +154,25 @@ func (a *CustomFilterApiService) CreateApiV1CustomFilterExecute(r ApiCreateApiV1
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1CustomFilterRequest struct {
+type ApiDeleteCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1CustomFilterRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1CustomFilterExecute(r)
+func (r ApiDeleteCustomFilterRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCustomFilterExecute(r)
 }
 
 /*
-DeleteApiV1CustomFilter Method for DeleteApiV1CustomFilter
+DeleteCustomFilter Method for DeleteCustomFilter
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1CustomFilterRequest
+ @return ApiDeleteCustomFilterRequest
 */
-func (a *CustomFilterApiService) DeleteApiV1CustomFilter(ctx context.Context, id int32) ApiDeleteApiV1CustomFilterRequest {
-	return ApiDeleteApiV1CustomFilterRequest{
+func (a *CustomFilterApiService) DeleteCustomFilter(ctx context.Context, id int32) ApiDeleteCustomFilterRequest {
+	return ApiDeleteCustomFilterRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -180,14 +180,14 @@ func (a *CustomFilterApiService) DeleteApiV1CustomFilter(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *CustomFilterApiService) DeleteApiV1CustomFilterExecute(r ApiDeleteApiV1CustomFilterRequest) (*http.Response, error) {
+func (a *CustomFilterApiService) DeleteCustomFilterExecute(r ApiDeleteCustomFilterRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.DeleteApiV1CustomFilter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.DeleteCustomFilter")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -271,25 +271,25 @@ func (a *CustomFilterApiService) DeleteApiV1CustomFilterExecute(r ApiDeleteApiV1
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1CustomFilterByIdRequest struct {
+type ApiGetCustomFilterByIdRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterApiService
 	id int32
 }
 
-func (r ApiGetApiV1CustomFilterByIdRequest) Execute() (*CustomFilterResource, *http.Response, error) {
-	return r.ApiService.GetApiV1CustomFilterByIdExecute(r)
+func (r ApiGetCustomFilterByIdRequest) Execute() (*CustomFilterResource, *http.Response, error) {
+	return r.ApiService.GetCustomFilterByIdExecute(r)
 }
 
 /*
-GetApiV1CustomFilterById Method for GetApiV1CustomFilterById
+GetCustomFilterById Method for GetCustomFilterById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1CustomFilterByIdRequest
+ @return ApiGetCustomFilterByIdRequest
 */
-func (a *CustomFilterApiService) GetApiV1CustomFilterById(ctx context.Context, id int32) ApiGetApiV1CustomFilterByIdRequest {
-	return ApiGetApiV1CustomFilterByIdRequest{
+func (a *CustomFilterApiService) GetCustomFilterById(ctx context.Context, id int32) ApiGetCustomFilterByIdRequest {
+	return ApiGetCustomFilterByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -298,7 +298,7 @@ func (a *CustomFilterApiService) GetApiV1CustomFilterById(ctx context.Context, i
 
 // Execute executes the request
 //  @return CustomFilterResource
-func (a *CustomFilterApiService) GetApiV1CustomFilterByIdExecute(r ApiGetApiV1CustomFilterByIdRequest) (*CustomFilterResource, *http.Response, error) {
+func (a *CustomFilterApiService) GetCustomFilterByIdExecute(r ApiGetCustomFilterByIdRequest) (*CustomFilterResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *CustomFilterApiService) GetApiV1CustomFilterByIdExecute(r ApiGetApiV1Cu
 		localVarReturnValue  *CustomFilterResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.GetApiV1CustomFilterById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.GetCustomFilterById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -399,23 +399,23 @@ func (a *CustomFilterApiService) GetApiV1CustomFilterByIdExecute(r ApiGetApiV1Cu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1CustomFilterRequest struct {
+type ApiListCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterApiService
 }
 
-func (r ApiListApiV1CustomFilterRequest) Execute() ([]*CustomFilterResource, *http.Response, error) {
-	return r.ApiService.ListApiV1CustomFilterExecute(r)
+func (r ApiListCustomFilterRequest) Execute() ([]*CustomFilterResource, *http.Response, error) {
+	return r.ApiService.ListCustomFilterExecute(r)
 }
 
 /*
-ListApiV1CustomFilter Method for ListApiV1CustomFilter
+ListCustomFilter Method for ListCustomFilter
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1CustomFilterRequest
+ @return ApiListCustomFilterRequest
 */
-func (a *CustomFilterApiService) ListApiV1CustomFilter(ctx context.Context) ApiListApiV1CustomFilterRequest {
-	return ApiListApiV1CustomFilterRequest{
+func (a *CustomFilterApiService) ListCustomFilter(ctx context.Context) ApiListCustomFilterRequest {
+	return ApiListCustomFilterRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -423,7 +423,7 @@ func (a *CustomFilterApiService) ListApiV1CustomFilter(ctx context.Context) ApiL
 
 // Execute executes the request
 //  @return []CustomFilterResource
-func (a *CustomFilterApiService) ListApiV1CustomFilterExecute(r ApiListApiV1CustomFilterRequest) ([]*CustomFilterResource, *http.Response, error) {
+func (a *CustomFilterApiService) ListCustomFilterExecute(r ApiListCustomFilterRequest) ([]*CustomFilterResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *CustomFilterApiService) ListApiV1CustomFilterExecute(r ApiListApiV1Cust
 		localVarReturnValue  []*CustomFilterResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.ListApiV1CustomFilter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.ListCustomFilter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -523,31 +523,31 @@ func (a *CustomFilterApiService) ListApiV1CustomFilterExecute(r ApiListApiV1Cust
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1CustomFilterRequest struct {
+type ApiUpdateCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterApiService
 	id string
 	customFilterResource *CustomFilterResource
 }
 
-func (r ApiUpdateApiV1CustomFilterRequest) CustomFilterResource(customFilterResource CustomFilterResource) ApiUpdateApiV1CustomFilterRequest {
+func (r ApiUpdateCustomFilterRequest) CustomFilterResource(customFilterResource CustomFilterResource) ApiUpdateCustomFilterRequest {
 	r.customFilterResource = &customFilterResource
 	return r
 }
 
-func (r ApiUpdateApiV1CustomFilterRequest) Execute() (*CustomFilterResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1CustomFilterExecute(r)
+func (r ApiUpdateCustomFilterRequest) Execute() (*CustomFilterResource, *http.Response, error) {
+	return r.ApiService.UpdateCustomFilterExecute(r)
 }
 
 /*
-UpdateApiV1CustomFilter Method for UpdateApiV1CustomFilter
+UpdateCustomFilter Method for UpdateCustomFilter
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1CustomFilterRequest
+ @return ApiUpdateCustomFilterRequest
 */
-func (a *CustomFilterApiService) UpdateApiV1CustomFilter(ctx context.Context, id string) ApiUpdateApiV1CustomFilterRequest {
-	return ApiUpdateApiV1CustomFilterRequest{
+func (a *CustomFilterApiService) UpdateCustomFilter(ctx context.Context, id string) ApiUpdateCustomFilterRequest {
+	return ApiUpdateCustomFilterRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -556,7 +556,7 @@ func (a *CustomFilterApiService) UpdateApiV1CustomFilter(ctx context.Context, id
 
 // Execute executes the request
 //  @return CustomFilterResource
-func (a *CustomFilterApiService) UpdateApiV1CustomFilterExecute(r ApiUpdateApiV1CustomFilterRequest) (*CustomFilterResource, *http.Response, error) {
+func (a *CustomFilterApiService) UpdateCustomFilterExecute(r ApiUpdateCustomFilterRequest) (*CustomFilterResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -564,7 +564,7 @@ func (a *CustomFilterApiService) UpdateApiV1CustomFilterExecute(r ApiUpdateApiV1
 		localVarReturnValue  *CustomFilterResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.UpdateApiV1CustomFilter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.UpdateCustomFilter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

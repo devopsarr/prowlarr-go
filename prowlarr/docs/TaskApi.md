@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1SystemTaskById**](TaskApi.md#GetApiV1SystemTaskById) | **Get** /api/v1/system/task/{id} | 
-[**ListApiV1SystemTask**](TaskApi.md#ListApiV1SystemTask) | **Get** /api/v1/system/task | 
+[**GetSystemTaskById**](TaskApi.md#GetSystemTaskById) | **Get** /api/v1/system/task/{id} | 
+[**ListSystemTask**](TaskApi.md#ListSystemTask) | **Get** /api/v1/system/task | 
 
 
 
-## GetApiV1SystemTaskById
+## GetSystemTaskById
 
-> TaskResource GetApiV1SystemTaskById(ctx, id).Execute()
+> TaskResource GetSystemTaskById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaskApi.GetApiV1SystemTaskById(context.Background(), id).Execute()
+    resp, r, err := apiClient.TaskApi.GetSystemTaskById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.GetApiV1SystemTaskById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.GetSystemTaskById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1SystemTaskById`: TaskResource
-    fmt.Fprintf(os.Stdout, "Response from `TaskApi.GetApiV1SystemTaskById`: %v\n", resp)
+    // response from `GetSystemTaskById`: TaskResource
+    fmt.Fprintf(os.Stdout, "Response from `TaskApi.GetSystemTaskById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1SystemTaskByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSystemTaskByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1SystemTask
+## ListSystemTask
 
-> []TaskResource ListApiV1SystemTask(ctx).Execute()
+> []TaskResource ListSystemTask(ctx).Execute()
 
 
 
@@ -99,13 +99,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaskApi.ListApiV1SystemTask(context.Background()).Execute()
+    resp, r, err := apiClient.TaskApi.ListSystemTask(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.ListApiV1SystemTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.ListSystemTask``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1SystemTask`: []TaskResource
-    fmt.Fprintf(os.Stdout, "Response from `TaskApi.ListApiV1SystemTask`: %v\n", resp)
+    // response from `ListSystemTask`: []TaskResource
+    fmt.Fprintf(os.Stdout, "Response from `TaskApi.ListSystemTask`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1SystemTaskRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSystemTaskRequest struct via the builder pattern
 
 
 ### Return type

@@ -22,29 +22,29 @@ import (
 
 // NotificationApiService NotificationApi service
 type NotificationApiService service
-type ApiCreateApiV1NotificationRequest struct {
+type ApiCreateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	notificationResource *NotificationResource
 }
 
-func (r ApiCreateApiV1NotificationRequest) NotificationResource(notificationResource NotificationResource) ApiCreateApiV1NotificationRequest {
+func (r ApiCreateNotificationRequest) NotificationResource(notificationResource NotificationResource) ApiCreateNotificationRequest {
 	r.notificationResource = &notificationResource
 	return r
 }
 
-func (r ApiCreateApiV1NotificationRequest) Execute() (*NotificationResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1NotificationExecute(r)
+func (r ApiCreateNotificationRequest) Execute() (*NotificationResource, *http.Response, error) {
+	return r.ApiService.CreateNotificationExecute(r)
 }
 
 /*
-CreateApiV1Notification Method for CreateApiV1Notification
+CreateNotification Method for CreateNotification
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1NotificationRequest
+ @return ApiCreateNotificationRequest
 */
-func (a *NotificationApiService) CreateApiV1Notification(ctx context.Context) ApiCreateApiV1NotificationRequest {
-	return ApiCreateApiV1NotificationRequest{
+func (a *NotificationApiService) CreateNotification(ctx context.Context) ApiCreateNotificationRequest {
+	return ApiCreateNotificationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *NotificationApiService) CreateApiV1Notification(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return NotificationResource
-func (a *NotificationApiService) CreateApiV1NotificationExecute(r ApiCreateApiV1NotificationRequest) (*NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) CreateNotificationExecute(r ApiCreateNotificationRequest) (*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *NotificationApiService) CreateApiV1NotificationExecute(r ApiCreateApiV1
 		localVarReturnValue  *NotificationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.CreateApiV1Notification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.CreateNotification")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,31 +154,31 @@ func (a *NotificationApiService) CreateApiV1NotificationExecute(r ApiCreateApiV1
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiCreateApiV1NotificationActionByNameRequest struct {
+type ApiCreateNotificationActionByNameRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	name string
 	notificationResource *NotificationResource
 }
 
-func (r ApiCreateApiV1NotificationActionByNameRequest) NotificationResource(notificationResource NotificationResource) ApiCreateApiV1NotificationActionByNameRequest {
+func (r ApiCreateNotificationActionByNameRequest) NotificationResource(notificationResource NotificationResource) ApiCreateNotificationActionByNameRequest {
 	r.notificationResource = &notificationResource
 	return r
 }
 
-func (r ApiCreateApiV1NotificationActionByNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1NotificationActionByNameExecute(r)
+func (r ApiCreateNotificationActionByNameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateNotificationActionByNameExecute(r)
 }
 
 /*
-CreateApiV1NotificationActionByName Method for CreateApiV1NotificationActionByName
+CreateNotificationActionByName Method for CreateNotificationActionByName
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiCreateApiV1NotificationActionByNameRequest
+ @return ApiCreateNotificationActionByNameRequest
 */
-func (a *NotificationApiService) CreateApiV1NotificationActionByName(ctx context.Context, name string) ApiCreateApiV1NotificationActionByNameRequest {
-	return ApiCreateApiV1NotificationActionByNameRequest{
+func (a *NotificationApiService) CreateNotificationActionByName(ctx context.Context, name string) ApiCreateNotificationActionByNameRequest {
+	return ApiCreateNotificationActionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -186,14 +186,14 @@ func (a *NotificationApiService) CreateApiV1NotificationActionByName(ctx context
 }
 
 // Execute executes the request
-func (a *NotificationApiService) CreateApiV1NotificationActionByNameExecute(r ApiCreateApiV1NotificationActionByNameRequest) (*http.Response, error) {
+func (a *NotificationApiService) CreateNotificationActionByNameExecute(r ApiCreateNotificationActionByNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.CreateApiV1NotificationActionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.CreateNotificationActionByName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,25 +279,25 @@ func (a *NotificationApiService) CreateApiV1NotificationActionByNameExecute(r Ap
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1NotificationRequest struct {
+type ApiDeleteNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1NotificationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1NotificationExecute(r)
+func (r ApiDeleteNotificationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteNotificationExecute(r)
 }
 
 /*
-DeleteApiV1Notification Method for DeleteApiV1Notification
+DeleteNotification Method for DeleteNotification
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1NotificationRequest
+ @return ApiDeleteNotificationRequest
 */
-func (a *NotificationApiService) DeleteApiV1Notification(ctx context.Context, id int32) ApiDeleteApiV1NotificationRequest {
-	return ApiDeleteApiV1NotificationRequest{
+func (a *NotificationApiService) DeleteNotification(ctx context.Context, id int32) ApiDeleteNotificationRequest {
+	return ApiDeleteNotificationRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -305,14 +305,14 @@ func (a *NotificationApiService) DeleteApiV1Notification(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *NotificationApiService) DeleteApiV1NotificationExecute(r ApiDeleteApiV1NotificationRequest) (*http.Response, error) {
+func (a *NotificationApiService) DeleteNotificationExecute(r ApiDeleteNotificationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.DeleteApiV1Notification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.DeleteNotification")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -396,25 +396,25 @@ func (a *NotificationApiService) DeleteApiV1NotificationExecute(r ApiDeleteApiV1
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1NotificationByIdRequest struct {
+type ApiGetNotificationByIdRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	id int32
 }
 
-func (r ApiGetApiV1NotificationByIdRequest) Execute() (*NotificationResource, *http.Response, error) {
-	return r.ApiService.GetApiV1NotificationByIdExecute(r)
+func (r ApiGetNotificationByIdRequest) Execute() (*NotificationResource, *http.Response, error) {
+	return r.ApiService.GetNotificationByIdExecute(r)
 }
 
 /*
-GetApiV1NotificationById Method for GetApiV1NotificationById
+GetNotificationById Method for GetNotificationById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1NotificationByIdRequest
+ @return ApiGetNotificationByIdRequest
 */
-func (a *NotificationApiService) GetApiV1NotificationById(ctx context.Context, id int32) ApiGetApiV1NotificationByIdRequest {
-	return ApiGetApiV1NotificationByIdRequest{
+func (a *NotificationApiService) GetNotificationById(ctx context.Context, id int32) ApiGetNotificationByIdRequest {
+	return ApiGetNotificationByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -423,7 +423,7 @@ func (a *NotificationApiService) GetApiV1NotificationById(ctx context.Context, i
 
 // Execute executes the request
 //  @return NotificationResource
-func (a *NotificationApiService) GetApiV1NotificationByIdExecute(r ApiGetApiV1NotificationByIdRequest) (*NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) GetNotificationByIdExecute(r ApiGetNotificationByIdRequest) (*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *NotificationApiService) GetApiV1NotificationByIdExecute(r ApiGetApiV1No
 		localVarReturnValue  *NotificationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.GetApiV1NotificationById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.GetNotificationById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -524,23 +524,23 @@ func (a *NotificationApiService) GetApiV1NotificationByIdExecute(r ApiGetApiV1No
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1NotificationRequest struct {
+type ApiListNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 }
 
-func (r ApiListApiV1NotificationRequest) Execute() ([]*NotificationResource, *http.Response, error) {
-	return r.ApiService.ListApiV1NotificationExecute(r)
+func (r ApiListNotificationRequest) Execute() ([]*NotificationResource, *http.Response, error) {
+	return r.ApiService.ListNotificationExecute(r)
 }
 
 /*
-ListApiV1Notification Method for ListApiV1Notification
+ListNotification Method for ListNotification
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1NotificationRequest
+ @return ApiListNotificationRequest
 */
-func (a *NotificationApiService) ListApiV1Notification(ctx context.Context) ApiListApiV1NotificationRequest {
-	return ApiListApiV1NotificationRequest{
+func (a *NotificationApiService) ListNotification(ctx context.Context) ApiListNotificationRequest {
+	return ApiListNotificationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -548,7 +548,7 @@ func (a *NotificationApiService) ListApiV1Notification(ctx context.Context) ApiL
 
 // Execute executes the request
 //  @return []NotificationResource
-func (a *NotificationApiService) ListApiV1NotificationExecute(r ApiListApiV1NotificationRequest) ([]*NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) ListNotificationExecute(r ApiListNotificationRequest) ([]*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -556,7 +556,7 @@ func (a *NotificationApiService) ListApiV1NotificationExecute(r ApiListApiV1Noti
 		localVarReturnValue  []*NotificationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.ListApiV1Notification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.ListNotification")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -648,23 +648,23 @@ func (a *NotificationApiService) ListApiV1NotificationExecute(r ApiListApiV1Noti
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1NotificationSchemaRequest struct {
+type ApiListNotificationSchemaRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 }
 
-func (r ApiListApiV1NotificationSchemaRequest) Execute() ([]*NotificationResource, *http.Response, error) {
-	return r.ApiService.ListApiV1NotificationSchemaExecute(r)
+func (r ApiListNotificationSchemaRequest) Execute() ([]*NotificationResource, *http.Response, error) {
+	return r.ApiService.ListNotificationSchemaExecute(r)
 }
 
 /*
-ListApiV1NotificationSchema Method for ListApiV1NotificationSchema
+ListNotificationSchema Method for ListNotificationSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1NotificationSchemaRequest
+ @return ApiListNotificationSchemaRequest
 */
-func (a *NotificationApiService) ListApiV1NotificationSchema(ctx context.Context) ApiListApiV1NotificationSchemaRequest {
-	return ApiListApiV1NotificationSchemaRequest{
+func (a *NotificationApiService) ListNotificationSchema(ctx context.Context) ApiListNotificationSchemaRequest {
+	return ApiListNotificationSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -672,7 +672,7 @@ func (a *NotificationApiService) ListApiV1NotificationSchema(ctx context.Context
 
 // Execute executes the request
 //  @return []NotificationResource
-func (a *NotificationApiService) ListApiV1NotificationSchemaExecute(r ApiListApiV1NotificationSchemaRequest) ([]*NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) ListNotificationSchemaExecute(r ApiListNotificationSchemaRequest) ([]*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -680,7 +680,7 @@ func (a *NotificationApiService) ListApiV1NotificationSchemaExecute(r ApiListApi
 		localVarReturnValue  []*NotificationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.ListApiV1NotificationSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.ListNotificationSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -772,43 +772,43 @@ func (a *NotificationApiService) ListApiV1NotificationSchemaExecute(r ApiListApi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiTestApiV1NotificationRequest struct {
+type ApiTestNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	notificationResource *NotificationResource
 }
 
-func (r ApiTestApiV1NotificationRequest) NotificationResource(notificationResource NotificationResource) ApiTestApiV1NotificationRequest {
+func (r ApiTestNotificationRequest) NotificationResource(notificationResource NotificationResource) ApiTestNotificationRequest {
 	r.notificationResource = &notificationResource
 	return r
 }
 
-func (r ApiTestApiV1NotificationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestApiV1NotificationExecute(r)
+func (r ApiTestNotificationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestNotificationExecute(r)
 }
 
 /*
-TestApiV1Notification Method for TestApiV1Notification
+TestNotification Method for TestNotification
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestApiV1NotificationRequest
+ @return ApiTestNotificationRequest
 */
-func (a *NotificationApiService) TestApiV1Notification(ctx context.Context) ApiTestApiV1NotificationRequest {
-	return ApiTestApiV1NotificationRequest{
+func (a *NotificationApiService) TestNotification(ctx context.Context) ApiTestNotificationRequest {
+	return ApiTestNotificationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *NotificationApiService) TestApiV1NotificationExecute(r ApiTestApiV1NotificationRequest) (*http.Response, error) {
+func (a *NotificationApiService) TestNotificationExecute(r ApiTestNotificationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.TestApiV1Notification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.TestNotification")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -893,37 +893,37 @@ func (a *NotificationApiService) TestApiV1NotificationExecute(r ApiTestApiV1Noti
 
 	return localVarHTTPResponse, nil
 }
-type ApiTestallApiV1NotificationRequest struct {
+type ApiTestallNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 }
 
-func (r ApiTestallApiV1NotificationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestallApiV1NotificationExecute(r)
+func (r ApiTestallNotificationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestallNotificationExecute(r)
 }
 
 /*
-TestallApiV1Notification Method for TestallApiV1Notification
+TestallNotification Method for TestallNotification
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestallApiV1NotificationRequest
+ @return ApiTestallNotificationRequest
 */
-func (a *NotificationApiService) TestallApiV1Notification(ctx context.Context) ApiTestallApiV1NotificationRequest {
-	return ApiTestallApiV1NotificationRequest{
+func (a *NotificationApiService) TestallNotification(ctx context.Context) ApiTestallNotificationRequest {
+	return ApiTestallNotificationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *NotificationApiService) TestallApiV1NotificationExecute(r ApiTestallApiV1NotificationRequest) (*http.Response, error) {
+func (a *NotificationApiService) TestallNotificationExecute(r ApiTestallNotificationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.TestallApiV1Notification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.TestallNotification")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,31 +1006,31 @@ func (a *NotificationApiService) TestallApiV1NotificationExecute(r ApiTestallApi
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1NotificationRequest struct {
+type ApiUpdateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	id string
 	notificationResource *NotificationResource
 }
 
-func (r ApiUpdateApiV1NotificationRequest) NotificationResource(notificationResource NotificationResource) ApiUpdateApiV1NotificationRequest {
+func (r ApiUpdateNotificationRequest) NotificationResource(notificationResource NotificationResource) ApiUpdateNotificationRequest {
 	r.notificationResource = &notificationResource
 	return r
 }
 
-func (r ApiUpdateApiV1NotificationRequest) Execute() (*NotificationResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1NotificationExecute(r)
+func (r ApiUpdateNotificationRequest) Execute() (*NotificationResource, *http.Response, error) {
+	return r.ApiService.UpdateNotificationExecute(r)
 }
 
 /*
-UpdateApiV1Notification Method for UpdateApiV1Notification
+UpdateNotification Method for UpdateNotification
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1NotificationRequest
+ @return ApiUpdateNotificationRequest
 */
-func (a *NotificationApiService) UpdateApiV1Notification(ctx context.Context, id string) ApiUpdateApiV1NotificationRequest {
-	return ApiUpdateApiV1NotificationRequest{
+func (a *NotificationApiService) UpdateNotification(ctx context.Context, id string) ApiUpdateNotificationRequest {
+	return ApiUpdateNotificationRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -1039,7 +1039,7 @@ func (a *NotificationApiService) UpdateApiV1Notification(ctx context.Context, id
 
 // Execute executes the request
 //  @return NotificationResource
-func (a *NotificationApiService) UpdateApiV1NotificationExecute(r ApiUpdateApiV1NotificationRequest) (*NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) UpdateNotificationExecute(r ApiUpdateNotificationRequest) (*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1047,7 +1047,7 @@ func (a *NotificationApiService) UpdateApiV1NotificationExecute(r ApiUpdateApiV1
 		localVarReturnValue  *NotificationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.UpdateApiV1Notification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.UpdateNotification")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

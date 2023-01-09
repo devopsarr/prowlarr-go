@@ -22,25 +22,25 @@ import (
 
 // BackupApiService BackupApi service
 type BackupApiService service
-type ApiCreateApiV1SystemBackupRestoreByIdRequest struct {
+type ApiCreateSystemBackupRestoreByIdRequest struct {
 	ctx context.Context
 	ApiService *BackupApiService
 	id int32
 }
 
-func (r ApiCreateApiV1SystemBackupRestoreByIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1SystemBackupRestoreByIdExecute(r)
+func (r ApiCreateSystemBackupRestoreByIdRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateSystemBackupRestoreByIdExecute(r)
 }
 
 /*
-CreateApiV1SystemBackupRestoreById Method for CreateApiV1SystemBackupRestoreById
+CreateSystemBackupRestoreById Method for CreateSystemBackupRestoreById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiCreateApiV1SystemBackupRestoreByIdRequest
+ @return ApiCreateSystemBackupRestoreByIdRequest
 */
-func (a *BackupApiService) CreateApiV1SystemBackupRestoreById(ctx context.Context, id int32) ApiCreateApiV1SystemBackupRestoreByIdRequest {
-	return ApiCreateApiV1SystemBackupRestoreByIdRequest{
+func (a *BackupApiService) CreateSystemBackupRestoreById(ctx context.Context, id int32) ApiCreateSystemBackupRestoreByIdRequest {
+	return ApiCreateSystemBackupRestoreByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -48,14 +48,14 @@ func (a *BackupApiService) CreateApiV1SystemBackupRestoreById(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *BackupApiService) CreateApiV1SystemBackupRestoreByIdExecute(r ApiCreateApiV1SystemBackupRestoreByIdRequest) (*http.Response, error) {
+func (a *BackupApiService) CreateSystemBackupRestoreByIdExecute(r ApiCreateSystemBackupRestoreByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.CreateApiV1SystemBackupRestoreById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.CreateSystemBackupRestoreById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,37 +139,37 @@ func (a *BackupApiService) CreateApiV1SystemBackupRestoreByIdExecute(r ApiCreate
 
 	return localVarHTTPResponse, nil
 }
-type ApiCreateApiV1SystemBackupRestoreUploadRequest struct {
+type ApiCreateSystemBackupRestoreUploadRequest struct {
 	ctx context.Context
 	ApiService *BackupApiService
 }
 
-func (r ApiCreateApiV1SystemBackupRestoreUploadRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1SystemBackupRestoreUploadExecute(r)
+func (r ApiCreateSystemBackupRestoreUploadRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateSystemBackupRestoreUploadExecute(r)
 }
 
 /*
-CreateApiV1SystemBackupRestoreUpload Method for CreateApiV1SystemBackupRestoreUpload
+CreateSystemBackupRestoreUpload Method for CreateSystemBackupRestoreUpload
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1SystemBackupRestoreUploadRequest
+ @return ApiCreateSystemBackupRestoreUploadRequest
 */
-func (a *BackupApiService) CreateApiV1SystemBackupRestoreUpload(ctx context.Context) ApiCreateApiV1SystemBackupRestoreUploadRequest {
-	return ApiCreateApiV1SystemBackupRestoreUploadRequest{
+func (a *BackupApiService) CreateSystemBackupRestoreUpload(ctx context.Context) ApiCreateSystemBackupRestoreUploadRequest {
+	return ApiCreateSystemBackupRestoreUploadRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BackupApiService) CreateApiV1SystemBackupRestoreUploadExecute(r ApiCreateApiV1SystemBackupRestoreUploadRequest) (*http.Response, error) {
+func (a *BackupApiService) CreateSystemBackupRestoreUploadExecute(r ApiCreateSystemBackupRestoreUploadRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.CreateApiV1SystemBackupRestoreUpload")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.CreateSystemBackupRestoreUpload")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -252,25 +252,25 @@ func (a *BackupApiService) CreateApiV1SystemBackupRestoreUploadExecute(r ApiCrea
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1SystemBackupRequest struct {
+type ApiDeleteSystemBackupRequest struct {
 	ctx context.Context
 	ApiService *BackupApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1SystemBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1SystemBackupExecute(r)
+func (r ApiDeleteSystemBackupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemBackupExecute(r)
 }
 
 /*
-DeleteApiV1SystemBackup Method for DeleteApiV1SystemBackup
+DeleteSystemBackup Method for DeleteSystemBackup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1SystemBackupRequest
+ @return ApiDeleteSystemBackupRequest
 */
-func (a *BackupApiService) DeleteApiV1SystemBackup(ctx context.Context, id int32) ApiDeleteApiV1SystemBackupRequest {
-	return ApiDeleteApiV1SystemBackupRequest{
+func (a *BackupApiService) DeleteSystemBackup(ctx context.Context, id int32) ApiDeleteSystemBackupRequest {
+	return ApiDeleteSystemBackupRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -278,14 +278,14 @@ func (a *BackupApiService) DeleteApiV1SystemBackup(ctx context.Context, id int32
 }
 
 // Execute executes the request
-func (a *BackupApiService) DeleteApiV1SystemBackupExecute(r ApiDeleteApiV1SystemBackupRequest) (*http.Response, error) {
+func (a *BackupApiService) DeleteSystemBackupExecute(r ApiDeleteSystemBackupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.DeleteApiV1SystemBackup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.DeleteSystemBackup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -369,23 +369,23 @@ func (a *BackupApiService) DeleteApiV1SystemBackupExecute(r ApiDeleteApiV1System
 
 	return localVarHTTPResponse, nil
 }
-type ApiListApiV1SystemBackupRequest struct {
+type ApiListSystemBackupRequest struct {
 	ctx context.Context
 	ApiService *BackupApiService
 }
 
-func (r ApiListApiV1SystemBackupRequest) Execute() ([]*BackupResource, *http.Response, error) {
-	return r.ApiService.ListApiV1SystemBackupExecute(r)
+func (r ApiListSystemBackupRequest) Execute() ([]*BackupResource, *http.Response, error) {
+	return r.ApiService.ListSystemBackupExecute(r)
 }
 
 /*
-ListApiV1SystemBackup Method for ListApiV1SystemBackup
+ListSystemBackup Method for ListSystemBackup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1SystemBackupRequest
+ @return ApiListSystemBackupRequest
 */
-func (a *BackupApiService) ListApiV1SystemBackup(ctx context.Context) ApiListApiV1SystemBackupRequest {
-	return ApiListApiV1SystemBackupRequest{
+func (a *BackupApiService) ListSystemBackup(ctx context.Context) ApiListSystemBackupRequest {
+	return ApiListSystemBackupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -393,7 +393,7 @@ func (a *BackupApiService) ListApiV1SystemBackup(ctx context.Context) ApiListApi
 
 // Execute executes the request
 //  @return []BackupResource
-func (a *BackupApiService) ListApiV1SystemBackupExecute(r ApiListApiV1SystemBackupRequest) ([]*BackupResource, *http.Response, error) {
+func (a *BackupApiService) ListSystemBackupExecute(r ApiListSystemBackupRequest) ([]*BackupResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -401,7 +401,7 @@ func (a *BackupApiService) ListApiV1SystemBackupExecute(r ApiListApiV1SystemBack
 		localVarReturnValue  []*BackupResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.ListApiV1SystemBackup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.ListSystemBackup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

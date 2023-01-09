@@ -22,23 +22,23 @@ import (
 
 // UiConfigApiService UiConfigApi service
 type UiConfigApiService service
-type ApiGetApiV1ConfigUiRequest struct {
+type ApiGetUiConfigRequest struct {
 	ctx context.Context
 	ApiService *UiConfigApiService
 }
 
-func (r ApiGetApiV1ConfigUiRequest) Execute() (*UiConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigUiExecute(r)
+func (r ApiGetUiConfigRequest) Execute() (*UiConfigResource, *http.Response, error) {
+	return r.ApiService.GetUiConfigExecute(r)
 }
 
 /*
-GetApiV1ConfigUi Method for GetApiV1ConfigUi
+GetUiConfig Method for GetUiConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigUiRequest
+ @return ApiGetUiConfigRequest
 */
-func (a *UiConfigApiService) GetApiV1ConfigUi(ctx context.Context) ApiGetApiV1ConfigUiRequest {
-	return ApiGetApiV1ConfigUiRequest{
+func (a *UiConfigApiService) GetUiConfig(ctx context.Context) ApiGetUiConfigRequest {
+	return ApiGetUiConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *UiConfigApiService) GetApiV1ConfigUi(ctx context.Context) ApiGetApiV1Co
 
 // Execute executes the request
 //  @return UiConfigResource
-func (a *UiConfigApiService) GetApiV1ConfigUiExecute(r ApiGetApiV1ConfigUiRequest) (*UiConfigResource, *http.Response, error) {
+func (a *UiConfigApiService) GetUiConfigExecute(r ApiGetUiConfigRequest) (*UiConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *UiConfigApiService) GetApiV1ConfigUiExecute(r ApiGetApiV1ConfigUiReques
 		localVarReturnValue  *UiConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UiConfigApiService.GetApiV1ConfigUi")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UiConfigApiService.GetUiConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,25 +146,25 @@ func (a *UiConfigApiService) GetApiV1ConfigUiExecute(r ApiGetApiV1ConfigUiReques
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigUiByIdRequest struct {
+type ApiGetUiConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *UiConfigApiService
 	id int32
 }
 
-func (r ApiGetApiV1ConfigUiByIdRequest) Execute() (*UiConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigUiByIdExecute(r)
+func (r ApiGetUiConfigByIdRequest) Execute() (*UiConfigResource, *http.Response, error) {
+	return r.ApiService.GetUiConfigByIdExecute(r)
 }
 
 /*
-GetApiV1ConfigUiById Method for GetApiV1ConfigUiById
+GetUiConfigById Method for GetUiConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ConfigUiByIdRequest
+ @return ApiGetUiConfigByIdRequest
 */
-func (a *UiConfigApiService) GetApiV1ConfigUiById(ctx context.Context, id int32) ApiGetApiV1ConfigUiByIdRequest {
-	return ApiGetApiV1ConfigUiByIdRequest{
+func (a *UiConfigApiService) GetUiConfigById(ctx context.Context, id int32) ApiGetUiConfigByIdRequest {
+	return ApiGetUiConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -173,7 +173,7 @@ func (a *UiConfigApiService) GetApiV1ConfigUiById(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return UiConfigResource
-func (a *UiConfigApiService) GetApiV1ConfigUiByIdExecute(r ApiGetApiV1ConfigUiByIdRequest) (*UiConfigResource, *http.Response, error) {
+func (a *UiConfigApiService) GetUiConfigByIdExecute(r ApiGetUiConfigByIdRequest) (*UiConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *UiConfigApiService) GetApiV1ConfigUiByIdExecute(r ApiGetApiV1ConfigUiBy
 		localVarReturnValue  *UiConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UiConfigApiService.GetApiV1ConfigUiById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UiConfigApiService.GetUiConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,31 +274,31 @@ func (a *UiConfigApiService) GetApiV1ConfigUiByIdExecute(r ApiGetApiV1ConfigUiBy
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ConfigUiRequest struct {
+type ApiUpdateUiConfigRequest struct {
 	ctx context.Context
 	ApiService *UiConfigApiService
 	id string
 	uiConfigResource *UiConfigResource
 }
 
-func (r ApiUpdateApiV1ConfigUiRequest) UiConfigResource(uiConfigResource UiConfigResource) ApiUpdateApiV1ConfigUiRequest {
+func (r ApiUpdateUiConfigRequest) UiConfigResource(uiConfigResource UiConfigResource) ApiUpdateUiConfigRequest {
 	r.uiConfigResource = &uiConfigResource
 	return r
 }
 
-func (r ApiUpdateApiV1ConfigUiRequest) Execute() (*UiConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ConfigUiExecute(r)
+func (r ApiUpdateUiConfigRequest) Execute() (*UiConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateUiConfigExecute(r)
 }
 
 /*
-UpdateApiV1ConfigUi Method for UpdateApiV1ConfigUi
+UpdateUiConfig Method for UpdateUiConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ConfigUiRequest
+ @return ApiUpdateUiConfigRequest
 */
-func (a *UiConfigApiService) UpdateApiV1ConfigUi(ctx context.Context, id string) ApiUpdateApiV1ConfigUiRequest {
-	return ApiUpdateApiV1ConfigUiRequest{
+func (a *UiConfigApiService) UpdateUiConfig(ctx context.Context, id string) ApiUpdateUiConfigRequest {
+	return ApiUpdateUiConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -307,7 +307,7 @@ func (a *UiConfigApiService) UpdateApiV1ConfigUi(ctx context.Context, id string)
 
 // Execute executes the request
 //  @return UiConfigResource
-func (a *UiConfigApiService) UpdateApiV1ConfigUiExecute(r ApiUpdateApiV1ConfigUiRequest) (*UiConfigResource, *http.Response, error) {
+func (a *UiConfigApiService) UpdateUiConfigExecute(r ApiUpdateUiConfigRequest) (*UiConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *UiConfigApiService) UpdateApiV1ConfigUiExecute(r ApiUpdateApiV1ConfigUi
 		localVarReturnValue  *UiConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UiConfigApiService.UpdateApiV1ConfigUi")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UiConfigApiService.UpdateUiConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

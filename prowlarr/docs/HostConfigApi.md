@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigHost**](HostConfigApi.md#GetApiV1ConfigHost) | **Get** /api/v1/config/host | 
-[**GetApiV1ConfigHostById**](HostConfigApi.md#GetApiV1ConfigHostById) | **Get** /api/v1/config/host/{id} | 
-[**UpdateApiV1ConfigHost**](HostConfigApi.md#UpdateApiV1ConfigHost) | **Put** /api/v1/config/host/{id} | 
+[**GetHostConfig**](HostConfigApi.md#GetHostConfig) | **Get** /api/v1/config/host | 
+[**GetHostConfigById**](HostConfigApi.md#GetHostConfigById) | **Get** /api/v1/config/host/{id} | 
+[**UpdateHostConfig**](HostConfigApi.md#UpdateHostConfig) | **Put** /api/v1/config/host/{id} | 
 
 
 
-## GetApiV1ConfigHost
+## GetHostConfig
 
-> HostConfigResource GetApiV1ConfigHost(ctx).Execute()
+> HostConfigResource GetHostConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HostConfigApi.GetApiV1ConfigHost(context.Background()).Execute()
+    resp, r, err := apiClient.HostConfigApi.GetHostConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetApiV1ConfigHost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetHostConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigHost`: HostConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetApiV1ConfigHost`: %v\n", resp)
+    // response from `GetHostConfig`: HostConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetHostConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigHostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHostConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetApiV1ConfigHostRequest 
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigHostById
+## GetHostConfigById
 
-> HostConfigResource GetApiV1ConfigHostById(ctx, id).Execute()
+> HostConfigResource GetHostConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HostConfigApi.GetApiV1ConfigHostById(context.Background(), id).Execute()
+    resp, r, err := apiClient.HostConfigApi.GetHostConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetApiV1ConfigHostById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetHostConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigHostById`: HostConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetApiV1ConfigHostById`: %v\n", resp)
+    // response from `GetHostConfigById`: HostConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetHostConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigHostByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHostConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigHost
+## UpdateHostConfig
 
-> HostConfigResource UpdateApiV1ConfigHost(ctx, id).HostConfigResource(hostConfigResource).Execute()
+> HostConfigResource UpdateHostConfig(ctx, id).HostConfigResource(hostConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HostConfigApi.UpdateApiV1ConfigHost(context.Background(), id).HostConfigResource(hostConfigResource).Execute()
+    resp, r, err := apiClient.HostConfigApi.UpdateHostConfig(context.Background(), id).HostConfigResource(hostConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.UpdateApiV1ConfigHost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.UpdateHostConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigHost`: HostConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.UpdateApiV1ConfigHost`: %v\n", resp)
+    // response from `UpdateHostConfig`: HostConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.UpdateHostConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigHostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateHostConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Applications**](ApplicationApi.md#CreateApiV1Applications) | **Post** /api/v1/applications | 
-[**CreateApiV1ApplicationsActionByName**](ApplicationApi.md#CreateApiV1ApplicationsActionByName) | **Post** /api/v1/applications/action/{name} | 
-[**DeleteApiV1Applications**](ApplicationApi.md#DeleteApiV1Applications) | **Delete** /api/v1/applications/{id} | 
-[**GetApiV1ApplicationsById**](ApplicationApi.md#GetApiV1ApplicationsById) | **Get** /api/v1/applications/{id} | 
-[**ListApiV1Applications**](ApplicationApi.md#ListApiV1Applications) | **Get** /api/v1/applications | 
-[**ListApiV1ApplicationsSchema**](ApplicationApi.md#ListApiV1ApplicationsSchema) | **Get** /api/v1/applications/schema | 
-[**TestApiV1Applications**](ApplicationApi.md#TestApiV1Applications) | **Post** /api/v1/applications/test | 
-[**TestallApiV1Applications**](ApplicationApi.md#TestallApiV1Applications) | **Post** /api/v1/applications/testall | 
-[**UpdateApiV1Applications**](ApplicationApi.md#UpdateApiV1Applications) | **Put** /api/v1/applications/{id} | 
+[**CreateApplications**](ApplicationApi.md#CreateApplications) | **Post** /api/v1/applications | 
+[**CreateApplicationsActionByName**](ApplicationApi.md#CreateApplicationsActionByName) | **Post** /api/v1/applications/action/{name} | 
+[**DeleteApplications**](ApplicationApi.md#DeleteApplications) | **Delete** /api/v1/applications/{id} | 
+[**GetApplicationsById**](ApplicationApi.md#GetApplicationsById) | **Get** /api/v1/applications/{id} | 
+[**ListApplications**](ApplicationApi.md#ListApplications) | **Get** /api/v1/applications | 
+[**ListApplicationsSchema**](ApplicationApi.md#ListApplicationsSchema) | **Get** /api/v1/applications/schema | 
+[**TestApplications**](ApplicationApi.md#TestApplications) | **Post** /api/v1/applications/test | 
+[**TestallApplications**](ApplicationApi.md#TestallApplications) | **Post** /api/v1/applications/testall | 
+[**UpdateApplications**](ApplicationApi.md#UpdateApplications) | **Put** /api/v1/applications/{id} | 
 
 
 
-## CreateApiV1Applications
+## CreateApplications
 
-> ApplicationResource CreateApiV1Applications(ctx).ApplicationResource(applicationResource).Execute()
+> ApplicationResource CreateApplications(ctx).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.CreateApiV1Applications(context.Background()).ApplicationResource(applicationResource).Execute()
+    resp, r, err := apiClient.ApplicationApi.CreateApplications(context.Background()).ApplicationResource(applicationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.CreateApiV1Applications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.CreateApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Applications`: ApplicationResource
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.CreateApiV1Applications`: %v\n", resp)
+    // response from `CreateApplications`: ApplicationResource
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.CreateApplications`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApplicationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateApiV1ApplicationsActionByName
+## CreateApplicationsActionByName
 
-> CreateApiV1ApplicationsActionByName(ctx, name).ApplicationResource(applicationResource).Execute()
+> CreateApplicationsActionByName(ctx, name).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.CreateApiV1ApplicationsActionByName(context.Background(), name).ApplicationResource(applicationResource).Execute()
+    resp, r, err := apiClient.ApplicationApi.CreateApplicationsActionByName(context.Background(), name).ApplicationResource(applicationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.CreateApiV1ApplicationsActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.CreateApplicationsActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ApplicationsActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApplicationsActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Applications
+## DeleteApplications
 
-> DeleteApiV1Applications(ctx, id).Execute()
+> DeleteApplications(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.DeleteApiV1Applications(context.Background(), id).Execute()
+    resp, r, err := apiClient.ApplicationApi.DeleteApplications(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.DeleteApiV1Applications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.DeleteApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1ApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApplicationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1ApplicationsById
+## GetApplicationsById
 
-> ApplicationResource GetApiV1ApplicationsById(ctx, id).Execute()
+> ApplicationResource GetApplicationsById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.GetApiV1ApplicationsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ApplicationApi.GetApplicationsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.GetApiV1ApplicationsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.GetApplicationsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ApplicationsById`: ApplicationResource
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.GetApiV1ApplicationsById`: %v\n", resp)
+    // response from `GetApplicationsById`: ApplicationResource
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.GetApplicationsById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ApplicationsByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApplicationsByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Applications
+## ListApplications
 
-> []ApplicationResource ListApiV1Applications(ctx).Execute()
+> []ApplicationResource ListApplications(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.ListApiV1Applications(context.Background()).Execute()
+    resp, r, err := apiClient.ApplicationApi.ListApplications(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.ListApiV1Applications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.ListApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Applications`: []ApplicationResource
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.ListApiV1Applications`: %v\n", resp)
+    // response from `ListApplications`: []ApplicationResource
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.ListApplications`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApplicationsRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ Other parameters are passed through a pointer to a apiListApiV1ApplicationsReque
 [[Back to README]](../README.md)
 
 
-## ListApiV1ApplicationsSchema
+## ListApplicationsSchema
 
-> []ApplicationResource ListApiV1ApplicationsSchema(ctx).Execute()
+> []ApplicationResource ListApplicationsSchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.ListApiV1ApplicationsSchema(context.Background()).Execute()
+    resp, r, err := apiClient.ApplicationApi.ListApplicationsSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.ListApiV1ApplicationsSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.ListApplicationsSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1ApplicationsSchema`: []ApplicationResource
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.ListApiV1ApplicationsSchema`: %v\n", resp)
+    // response from `ListApplicationsSchema`: []ApplicationResource
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.ListApplicationsSchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ApplicationsSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApplicationsSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ Other parameters are passed through a pointer to a apiListApiV1ApplicationsSchem
 [[Back to README]](../README.md)
 
 
-## TestApiV1Applications
+## TestApplications
 
-> TestApiV1Applications(ctx).ApplicationResource(applicationResource).Execute()
+> TestApplications(ctx).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.TestApiV1Applications(context.Background()).ApplicationResource(applicationResource).Execute()
+    resp, r, err := apiClient.ApplicationApi.TestApplications(context.Background()).ApplicationResource(applicationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.TestApiV1Applications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.TestApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestApiV1ApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestApplicationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TestallApiV1Applications
+## TestallApplications
 
-> TestallApiV1Applications(ctx).Execute()
+> TestallApplications(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.TestallApiV1Applications(context.Background()).Execute()
+    resp, r, err := apiClient.ApplicationApi.TestallApplications(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.TestallApiV1Applications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.TestallApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallApiV1ApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallApplicationsRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ Other parameters are passed through a pointer to a apiTestallApiV1ApplicationsRe
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Applications
+## UpdateApplications
 
-> ApplicationResource UpdateApiV1Applications(ctx, id).ApplicationResource(applicationResource).Execute()
+> ApplicationResource UpdateApplications(ctx, id).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.UpdateApiV1Applications(context.Background(), id).ApplicationResource(applicationResource).Execute()
+    resp, r, err := apiClient.ApplicationApi.UpdateApplications(context.Background(), id).ApplicationResource(applicationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.UpdateApiV1Applications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.UpdateApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Applications`: ApplicationResource
-    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.UpdateApiV1Applications`: %v\n", resp)
+    // response from `UpdateApplications`: ApplicationResource
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.UpdateApplications`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApplicationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

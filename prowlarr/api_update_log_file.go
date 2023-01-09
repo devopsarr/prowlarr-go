@@ -22,25 +22,25 @@ import (
 
 // UpdateLogFileApiService UpdateLogFileApi service
 type UpdateLogFileApiService service
-type ApiGetApiV1LogFileUpdateByFilenameRequest struct {
+type ApiGetLogFileUpdateByFilenameRequest struct {
 	ctx context.Context
 	ApiService *UpdateLogFileApiService
 	filename string
 }
 
-func (r ApiGetApiV1LogFileUpdateByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1LogFileUpdateByFilenameExecute(r)
+func (r ApiGetLogFileUpdateByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetLogFileUpdateByFilenameExecute(r)
 }
 
 /*
-GetApiV1LogFileUpdateByFilename Method for GetApiV1LogFileUpdateByFilename
+GetLogFileUpdateByFilename Method for GetLogFileUpdateByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param filename
- @return ApiGetApiV1LogFileUpdateByFilenameRequest
+ @return ApiGetLogFileUpdateByFilenameRequest
 */
-func (a *UpdateLogFileApiService) GetApiV1LogFileUpdateByFilename(ctx context.Context, filename string) ApiGetApiV1LogFileUpdateByFilenameRequest {
-	return ApiGetApiV1LogFileUpdateByFilenameRequest{
+func (a *UpdateLogFileApiService) GetLogFileUpdateByFilename(ctx context.Context, filename string) ApiGetLogFileUpdateByFilenameRequest {
+	return ApiGetLogFileUpdateByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		filename: filename,
@@ -48,14 +48,14 @@ func (a *UpdateLogFileApiService) GetApiV1LogFileUpdateByFilename(ctx context.Co
 }
 
 // Execute executes the request
-func (a *UpdateLogFileApiService) GetApiV1LogFileUpdateByFilenameExecute(r ApiGetApiV1LogFileUpdateByFilenameRequest) (*http.Response, error) {
+func (a *UpdateLogFileApiService) GetLogFileUpdateByFilenameExecute(r ApiGetLogFileUpdateByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateLogFileApiService.GetApiV1LogFileUpdateByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateLogFileApiService.GetLogFileUpdateByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,23 +139,23 @@ func (a *UpdateLogFileApiService) GetApiV1LogFileUpdateByFilenameExecute(r ApiGe
 
 	return localVarHTTPResponse, nil
 }
-type ApiListApiV1LogFileUpdateRequest struct {
+type ApiListLogFileUpdateRequest struct {
 	ctx context.Context
 	ApiService *UpdateLogFileApiService
 }
 
-func (r ApiListApiV1LogFileUpdateRequest) Execute() ([]*LogFileResource, *http.Response, error) {
-	return r.ApiService.ListApiV1LogFileUpdateExecute(r)
+func (r ApiListLogFileUpdateRequest) Execute() ([]*LogFileResource, *http.Response, error) {
+	return r.ApiService.ListLogFileUpdateExecute(r)
 }
 
 /*
-ListApiV1LogFileUpdate Method for ListApiV1LogFileUpdate
+ListLogFileUpdate Method for ListLogFileUpdate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1LogFileUpdateRequest
+ @return ApiListLogFileUpdateRequest
 */
-func (a *UpdateLogFileApiService) ListApiV1LogFileUpdate(ctx context.Context) ApiListApiV1LogFileUpdateRequest {
-	return ApiListApiV1LogFileUpdateRequest{
+func (a *UpdateLogFileApiService) ListLogFileUpdate(ctx context.Context) ApiListLogFileUpdateRequest {
+	return ApiListLogFileUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -163,7 +163,7 @@ func (a *UpdateLogFileApiService) ListApiV1LogFileUpdate(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []LogFileResource
-func (a *UpdateLogFileApiService) ListApiV1LogFileUpdateExecute(r ApiListApiV1LogFileUpdateRequest) ([]*LogFileResource, *http.Response, error) {
+func (a *UpdateLogFileApiService) ListLogFileUpdateExecute(r ApiListLogFileUpdateRequest) ([]*LogFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -171,7 +171,7 @@ func (a *UpdateLogFileApiService) ListApiV1LogFileUpdateExecute(r ApiListApiV1Lo
 		localVarReturnValue  []*LogFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateLogFileApiService.ListApiV1LogFileUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateLogFileApiService.ListLogFileUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1IndexerStatusById**](IndexerStatusApi.md#GetApiV1IndexerStatusById) | **Get** /api/v1/indexerstatus/{id} | 
-[**ListApiV1IndexerStatus**](IndexerStatusApi.md#ListApiV1IndexerStatus) | **Get** /api/v1/indexerstatus | 
+[**GetIndexerStatusById**](IndexerStatusApi.md#GetIndexerStatusById) | **Get** /api/v1/indexerstatus/{id} | 
+[**ListIndexerStatus**](IndexerStatusApi.md#ListIndexerStatus) | **Get** /api/v1/indexerstatus | 
 
 
 
-## GetApiV1IndexerStatusById
+## GetIndexerStatusById
 
-> IndexerStatusResource GetApiV1IndexerStatusById(ctx, id).Execute()
+> IndexerStatusResource GetIndexerStatusById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerStatusApi.GetApiV1IndexerStatusById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IndexerStatusApi.GetIndexerStatusById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatusApi.GetApiV1IndexerStatusById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatusApi.GetIndexerStatusById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1IndexerStatusById`: IndexerStatusResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerStatusApi.GetApiV1IndexerStatusById`: %v\n", resp)
+    // response from `GetIndexerStatusById`: IndexerStatusResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerStatusApi.GetIndexerStatusById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1IndexerStatusByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerStatusByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1IndexerStatus
+## ListIndexerStatus
 
-> []IndexerStatusResource ListApiV1IndexerStatus(ctx).Execute()
+> []IndexerStatusResource ListIndexerStatus(ctx).Execute()
 
 
 
@@ -99,13 +99,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerStatusApi.ListApiV1IndexerStatus(context.Background()).Execute()
+    resp, r, err := apiClient.IndexerStatusApi.ListIndexerStatus(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatusApi.ListApiV1IndexerStatus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatusApi.ListIndexerStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1IndexerStatus`: []IndexerStatusResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerStatusApi.ListApiV1IndexerStatus`: %v\n", resp)
+    // response from `ListIndexerStatus`: []IndexerStatusResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerStatusApi.ListIndexerStatus`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1IndexerStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListIndexerStatusRequest struct via the builder pattern
 
 
 ### Return type

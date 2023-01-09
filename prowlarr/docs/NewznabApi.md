@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1IndexeridDownload**](NewznabApi.md#GetApiV1IndexeridDownload) | **Get** /api/v1/indexer/{id}/download | 
-[**GetApiV1IndexeridNewznab**](NewznabApi.md#GetApiV1IndexeridNewznab) | **Get** /api/v1/indexer/{id}/newznab | 
+[**GetIndexeridDownload**](NewznabApi.md#GetIndexeridDownload) | **Get** /api/v1/indexer/{id}/download | 
+[**GetIndexeridNewznab**](NewznabApi.md#GetIndexeridNewznab) | **Get** /api/v1/indexer/{id}/newznab | 
 [**GetidApi**](NewznabApi.md#GetidApi) | **Get** /{id}/api | 
 [**GetidDownload**](NewznabApi.md#GetidDownload) | **Get** /{id}/download | 
 
 
 
-## GetApiV1IndexeridDownload
+## GetIndexeridDownload
 
-> GetApiV1IndexeridDownload(ctx, id).Link(link).File(file).Execute()
+> GetIndexeridDownload(ctx, id).Link(link).File(file).Execute()
 
 
 
@@ -36,9 +36,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NewznabApi.GetApiV1IndexeridDownload(context.Background(), id).Link(link).File(file).Execute()
+    resp, r, err := apiClient.NewznabApi.GetIndexeridDownload(context.Background(), id).Link(link).File(file).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NewznabApi.GetApiV1IndexeridDownload``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NewznabApi.GetIndexeridDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1IndexeridDownloadRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexeridDownloadRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -81,9 +81,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1IndexeridNewznab
+## GetIndexeridNewznab
 
-> GetApiV1IndexeridNewznab(ctx, id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
+> GetIndexeridNewznab(ctx, id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
 
 
 
@@ -132,9 +132,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NewznabApi.GetApiV1IndexeridNewznab(context.Background(), id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
+    resp, r, err := apiClient.NewznabApi.GetIndexeridNewznab(context.Background(), id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NewznabApi.GetApiV1IndexeridNewznab``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NewznabApi.GetIndexeridNewznab``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1IndexeridNewznabRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexeridNewznabRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

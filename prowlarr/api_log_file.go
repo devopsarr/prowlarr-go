@@ -22,25 +22,25 @@ import (
 
 // LogFileApiService LogFileApi service
 type LogFileApiService service
-type ApiGetApiV1LogFileByFilenameRequest struct {
+type ApiGetLogFileByFilenameRequest struct {
 	ctx context.Context
 	ApiService *LogFileApiService
 	filename string
 }
 
-func (r ApiGetApiV1LogFileByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1LogFileByFilenameExecute(r)
+func (r ApiGetLogFileByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetLogFileByFilenameExecute(r)
 }
 
 /*
-GetApiV1LogFileByFilename Method for GetApiV1LogFileByFilename
+GetLogFileByFilename Method for GetLogFileByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param filename
- @return ApiGetApiV1LogFileByFilenameRequest
+ @return ApiGetLogFileByFilenameRequest
 */
-func (a *LogFileApiService) GetApiV1LogFileByFilename(ctx context.Context, filename string) ApiGetApiV1LogFileByFilenameRequest {
-	return ApiGetApiV1LogFileByFilenameRequest{
+func (a *LogFileApiService) GetLogFileByFilename(ctx context.Context, filename string) ApiGetLogFileByFilenameRequest {
+	return ApiGetLogFileByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		filename: filename,
@@ -48,14 +48,14 @@ func (a *LogFileApiService) GetApiV1LogFileByFilename(ctx context.Context, filen
 }
 
 // Execute executes the request
-func (a *LogFileApiService) GetApiV1LogFileByFilenameExecute(r ApiGetApiV1LogFileByFilenameRequest) (*http.Response, error) {
+func (a *LogFileApiService) GetLogFileByFilenameExecute(r ApiGetLogFileByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileApiService.GetApiV1LogFileByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileApiService.GetLogFileByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,23 +139,23 @@ func (a *LogFileApiService) GetApiV1LogFileByFilenameExecute(r ApiGetApiV1LogFil
 
 	return localVarHTTPResponse, nil
 }
-type ApiListApiV1LogFileRequest struct {
+type ApiListLogFileRequest struct {
 	ctx context.Context
 	ApiService *LogFileApiService
 }
 
-func (r ApiListApiV1LogFileRequest) Execute() ([]*LogFileResource, *http.Response, error) {
-	return r.ApiService.ListApiV1LogFileExecute(r)
+func (r ApiListLogFileRequest) Execute() ([]*LogFileResource, *http.Response, error) {
+	return r.ApiService.ListLogFileExecute(r)
 }
 
 /*
-ListApiV1LogFile Method for ListApiV1LogFile
+ListLogFile Method for ListLogFile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1LogFileRequest
+ @return ApiListLogFileRequest
 */
-func (a *LogFileApiService) ListApiV1LogFile(ctx context.Context) ApiListApiV1LogFileRequest {
-	return ApiListApiV1LogFileRequest{
+func (a *LogFileApiService) ListLogFile(ctx context.Context) ApiListLogFileRequest {
+	return ApiListLogFileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -163,7 +163,7 @@ func (a *LogFileApiService) ListApiV1LogFile(ctx context.Context) ApiListApiV1Lo
 
 // Execute executes the request
 //  @return []LogFileResource
-func (a *LogFileApiService) ListApiV1LogFileExecute(r ApiListApiV1LogFileRequest) ([]*LogFileResource, *http.Response, error) {
+func (a *LogFileApiService) ListLogFileExecute(r ApiListLogFileRequest) ([]*LogFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -171,7 +171,7 @@ func (a *LogFileApiService) ListApiV1LogFileExecute(r ApiListApiV1LogFileRequest
 		localVarReturnValue  []*LogFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileApiService.ListApiV1LogFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileApiService.ListLogFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

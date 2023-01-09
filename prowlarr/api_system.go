@@ -21,37 +21,37 @@ import (
 
 // SystemApiService SystemApi service
 type SystemApiService service
-type ApiCreateApiV1SystemRestartRequest struct {
+type ApiCreateSystemRestartRequest struct {
 	ctx context.Context
 	ApiService *SystemApiService
 }
 
-func (r ApiCreateApiV1SystemRestartRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1SystemRestartExecute(r)
+func (r ApiCreateSystemRestartRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateSystemRestartExecute(r)
 }
 
 /*
-CreateApiV1SystemRestart Method for CreateApiV1SystemRestart
+CreateSystemRestart Method for CreateSystemRestart
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1SystemRestartRequest
+ @return ApiCreateSystemRestartRequest
 */
-func (a *SystemApiService) CreateApiV1SystemRestart(ctx context.Context) ApiCreateApiV1SystemRestartRequest {
-	return ApiCreateApiV1SystemRestartRequest{
+func (a *SystemApiService) CreateSystemRestart(ctx context.Context) ApiCreateSystemRestartRequest {
+	return ApiCreateSystemRestartRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemApiService) CreateApiV1SystemRestartExecute(r ApiCreateApiV1SystemRestartRequest) (*http.Response, error) {
+func (a *SystemApiService) CreateSystemRestartExecute(r ApiCreateSystemRestartRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.CreateApiV1SystemRestart")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.CreateSystemRestart")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,37 +134,37 @@ func (a *SystemApiService) CreateApiV1SystemRestartExecute(r ApiCreateApiV1Syste
 
 	return localVarHTTPResponse, nil
 }
-type ApiCreateApiV1SystemShutdownRequest struct {
+type ApiCreateSystemShutdownRequest struct {
 	ctx context.Context
 	ApiService *SystemApiService
 }
 
-func (r ApiCreateApiV1SystemShutdownRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1SystemShutdownExecute(r)
+func (r ApiCreateSystemShutdownRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateSystemShutdownExecute(r)
 }
 
 /*
-CreateApiV1SystemShutdown Method for CreateApiV1SystemShutdown
+CreateSystemShutdown Method for CreateSystemShutdown
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1SystemShutdownRequest
+ @return ApiCreateSystemShutdownRequest
 */
-func (a *SystemApiService) CreateApiV1SystemShutdown(ctx context.Context) ApiCreateApiV1SystemShutdownRequest {
-	return ApiCreateApiV1SystemShutdownRequest{
+func (a *SystemApiService) CreateSystemShutdown(ctx context.Context) ApiCreateSystemShutdownRequest {
+	return ApiCreateSystemShutdownRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemApiService) CreateApiV1SystemShutdownExecute(r ApiCreateApiV1SystemShutdownRequest) (*http.Response, error) {
+func (a *SystemApiService) CreateSystemShutdownExecute(r ApiCreateSystemShutdownRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.CreateApiV1SystemShutdown")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.CreateSystemShutdown")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -247,37 +247,37 @@ func (a *SystemApiService) CreateApiV1SystemShutdownExecute(r ApiCreateApiV1Syst
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1SystemRoutesRequest struct {
+type ApiGetSystemRoutesRequest struct {
 	ctx context.Context
 	ApiService *SystemApiService
 }
 
-func (r ApiGetApiV1SystemRoutesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1SystemRoutesExecute(r)
+func (r ApiGetSystemRoutesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetSystemRoutesExecute(r)
 }
 
 /*
-GetApiV1SystemRoutes Method for GetApiV1SystemRoutes
+GetSystemRoutes Method for GetSystemRoutes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1SystemRoutesRequest
+ @return ApiGetSystemRoutesRequest
 */
-func (a *SystemApiService) GetApiV1SystemRoutes(ctx context.Context) ApiGetApiV1SystemRoutesRequest {
-	return ApiGetApiV1SystemRoutesRequest{
+func (a *SystemApiService) GetSystemRoutes(ctx context.Context) ApiGetSystemRoutesRequest {
+	return ApiGetSystemRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemApiService) GetApiV1SystemRoutesExecute(r ApiGetApiV1SystemRoutesRequest) (*http.Response, error) {
+func (a *SystemApiService) GetSystemRoutesExecute(r ApiGetSystemRoutesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetApiV1SystemRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSystemRoutes")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -360,37 +360,37 @@ func (a *SystemApiService) GetApiV1SystemRoutesExecute(r ApiGetApiV1SystemRoutes
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1SystemRoutesDuplicateRequest struct {
+type ApiGetSystemRoutesDuplicateRequest struct {
 	ctx context.Context
 	ApiService *SystemApiService
 }
 
-func (r ApiGetApiV1SystemRoutesDuplicateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1SystemRoutesDuplicateExecute(r)
+func (r ApiGetSystemRoutesDuplicateRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetSystemRoutesDuplicateExecute(r)
 }
 
 /*
-GetApiV1SystemRoutesDuplicate Method for GetApiV1SystemRoutesDuplicate
+GetSystemRoutesDuplicate Method for GetSystemRoutesDuplicate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1SystemRoutesDuplicateRequest
+ @return ApiGetSystemRoutesDuplicateRequest
 */
-func (a *SystemApiService) GetApiV1SystemRoutesDuplicate(ctx context.Context) ApiGetApiV1SystemRoutesDuplicateRequest {
-	return ApiGetApiV1SystemRoutesDuplicateRequest{
+func (a *SystemApiService) GetSystemRoutesDuplicate(ctx context.Context) ApiGetSystemRoutesDuplicateRequest {
+	return ApiGetSystemRoutesDuplicateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemApiService) GetApiV1SystemRoutesDuplicateExecute(r ApiGetApiV1SystemRoutesDuplicateRequest) (*http.Response, error) {
+func (a *SystemApiService) GetSystemRoutesDuplicateExecute(r ApiGetSystemRoutesDuplicateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetApiV1SystemRoutesDuplicate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSystemRoutesDuplicate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -473,37 +473,37 @@ func (a *SystemApiService) GetApiV1SystemRoutesDuplicateExecute(r ApiGetApiV1Sys
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1SystemStatusRequest struct {
+type ApiGetSystemStatusRequest struct {
 	ctx context.Context
 	ApiService *SystemApiService
 }
 
-func (r ApiGetApiV1SystemStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1SystemStatusExecute(r)
+func (r ApiGetSystemStatusRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetSystemStatusExecute(r)
 }
 
 /*
-GetApiV1SystemStatus Method for GetApiV1SystemStatus
+GetSystemStatus Method for GetSystemStatus
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1SystemStatusRequest
+ @return ApiGetSystemStatusRequest
 */
-func (a *SystemApiService) GetApiV1SystemStatus(ctx context.Context) ApiGetApiV1SystemStatusRequest {
-	return ApiGetApiV1SystemStatusRequest{
+func (a *SystemApiService) GetSystemStatus(ctx context.Context) ApiGetSystemStatusRequest {
+	return ApiGetSystemStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemApiService) GetApiV1SystemStatusExecute(r ApiGetApiV1SystemStatusRequest) (*http.Response, error) {
+func (a *SystemApiService) GetSystemStatusExecute(r ApiGetSystemStatusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetApiV1SystemStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSystemStatus")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

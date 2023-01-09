@@ -22,29 +22,29 @@ import (
 
 // AppProfileApiService AppProfileApi service
 type AppProfileApiService service
-type ApiCreateApiV1AppProfileRequest struct {
+type ApiCreateAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileApiService
 	appProfileResource *AppProfileResource
 }
 
-func (r ApiCreateApiV1AppProfileRequest) AppProfileResource(appProfileResource AppProfileResource) ApiCreateApiV1AppProfileRequest {
+func (r ApiCreateAppProfileRequest) AppProfileResource(appProfileResource AppProfileResource) ApiCreateAppProfileRequest {
 	r.appProfileResource = &appProfileResource
 	return r
 }
 
-func (r ApiCreateApiV1AppProfileRequest) Execute() (*AppProfileResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1AppProfileExecute(r)
+func (r ApiCreateAppProfileRequest) Execute() (*AppProfileResource, *http.Response, error) {
+	return r.ApiService.CreateAppProfileExecute(r)
 }
 
 /*
-CreateApiV1AppProfile Method for CreateApiV1AppProfile
+CreateAppProfile Method for CreateAppProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1AppProfileRequest
+ @return ApiCreateAppProfileRequest
 */
-func (a *AppProfileApiService) CreateApiV1AppProfile(ctx context.Context) ApiCreateApiV1AppProfileRequest {
-	return ApiCreateApiV1AppProfileRequest{
+func (a *AppProfileApiService) CreateAppProfile(ctx context.Context) ApiCreateAppProfileRequest {
+	return ApiCreateAppProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *AppProfileApiService) CreateApiV1AppProfile(ctx context.Context) ApiCre
 
 // Execute executes the request
 //  @return AppProfileResource
-func (a *AppProfileApiService) CreateApiV1AppProfileExecute(r ApiCreateApiV1AppProfileRequest) (*AppProfileResource, *http.Response, error) {
+func (a *AppProfileApiService) CreateAppProfileExecute(r ApiCreateAppProfileRequest) (*AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *AppProfileApiService) CreateApiV1AppProfileExecute(r ApiCreateApiV1AppP
 		localVarReturnValue  *AppProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.CreateApiV1AppProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.CreateAppProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,25 +154,25 @@ func (a *AppProfileApiService) CreateApiV1AppProfileExecute(r ApiCreateApiV1AppP
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1AppProfileRequest struct {
+type ApiDeleteAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1AppProfileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1AppProfileExecute(r)
+func (r ApiDeleteAppProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAppProfileExecute(r)
 }
 
 /*
-DeleteApiV1AppProfile Method for DeleteApiV1AppProfile
+DeleteAppProfile Method for DeleteAppProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1AppProfileRequest
+ @return ApiDeleteAppProfileRequest
 */
-func (a *AppProfileApiService) DeleteApiV1AppProfile(ctx context.Context, id int32) ApiDeleteApiV1AppProfileRequest {
-	return ApiDeleteApiV1AppProfileRequest{
+func (a *AppProfileApiService) DeleteAppProfile(ctx context.Context, id int32) ApiDeleteAppProfileRequest {
+	return ApiDeleteAppProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -180,14 +180,14 @@ func (a *AppProfileApiService) DeleteApiV1AppProfile(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *AppProfileApiService) DeleteApiV1AppProfileExecute(r ApiDeleteApiV1AppProfileRequest) (*http.Response, error) {
+func (a *AppProfileApiService) DeleteAppProfileExecute(r ApiDeleteAppProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.DeleteApiV1AppProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.DeleteAppProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -271,25 +271,25 @@ func (a *AppProfileApiService) DeleteApiV1AppProfileExecute(r ApiDeleteApiV1AppP
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1AppProfileByIdRequest struct {
+type ApiGetAppProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *AppProfileApiService
 	id int32
 }
 
-func (r ApiGetApiV1AppProfileByIdRequest) Execute() (*AppProfileResource, *http.Response, error) {
-	return r.ApiService.GetApiV1AppProfileByIdExecute(r)
+func (r ApiGetAppProfileByIdRequest) Execute() (*AppProfileResource, *http.Response, error) {
+	return r.ApiService.GetAppProfileByIdExecute(r)
 }
 
 /*
-GetApiV1AppProfileById Method for GetApiV1AppProfileById
+GetAppProfileById Method for GetAppProfileById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1AppProfileByIdRequest
+ @return ApiGetAppProfileByIdRequest
 */
-func (a *AppProfileApiService) GetApiV1AppProfileById(ctx context.Context, id int32) ApiGetApiV1AppProfileByIdRequest {
-	return ApiGetApiV1AppProfileByIdRequest{
+func (a *AppProfileApiService) GetAppProfileById(ctx context.Context, id int32) ApiGetAppProfileByIdRequest {
+	return ApiGetAppProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -298,7 +298,7 @@ func (a *AppProfileApiService) GetApiV1AppProfileById(ctx context.Context, id in
 
 // Execute executes the request
 //  @return AppProfileResource
-func (a *AppProfileApiService) GetApiV1AppProfileByIdExecute(r ApiGetApiV1AppProfileByIdRequest) (*AppProfileResource, *http.Response, error) {
+func (a *AppProfileApiService) GetAppProfileByIdExecute(r ApiGetAppProfileByIdRequest) (*AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *AppProfileApiService) GetApiV1AppProfileByIdExecute(r ApiGetApiV1AppPro
 		localVarReturnValue  *AppProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.GetApiV1AppProfileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.GetAppProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -410,23 +410,23 @@ func (a *AppProfileApiService) GetApiV1AppProfileByIdExecute(r ApiGetApiV1AppPro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1AppProfileRequest struct {
+type ApiListAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileApiService
 }
 
-func (r ApiListApiV1AppProfileRequest) Execute() ([]*AppProfileResource, *http.Response, error) {
-	return r.ApiService.ListApiV1AppProfileExecute(r)
+func (r ApiListAppProfileRequest) Execute() ([]*AppProfileResource, *http.Response, error) {
+	return r.ApiService.ListAppProfileExecute(r)
 }
 
 /*
-ListApiV1AppProfile Method for ListApiV1AppProfile
+ListAppProfile Method for ListAppProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1AppProfileRequest
+ @return ApiListAppProfileRequest
 */
-func (a *AppProfileApiService) ListApiV1AppProfile(ctx context.Context) ApiListApiV1AppProfileRequest {
-	return ApiListApiV1AppProfileRequest{
+func (a *AppProfileApiService) ListAppProfile(ctx context.Context) ApiListAppProfileRequest {
+	return ApiListAppProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -434,7 +434,7 @@ func (a *AppProfileApiService) ListApiV1AppProfile(ctx context.Context) ApiListA
 
 // Execute executes the request
 //  @return []AppProfileResource
-func (a *AppProfileApiService) ListApiV1AppProfileExecute(r ApiListApiV1AppProfileRequest) ([]*AppProfileResource, *http.Response, error) {
+func (a *AppProfileApiService) ListAppProfileExecute(r ApiListAppProfileRequest) ([]*AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -442,7 +442,7 @@ func (a *AppProfileApiService) ListApiV1AppProfileExecute(r ApiListApiV1AppProfi
 		localVarReturnValue  []*AppProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.ListApiV1AppProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.ListAppProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -534,31 +534,31 @@ func (a *AppProfileApiService) ListApiV1AppProfileExecute(r ApiListApiV1AppProfi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1AppProfileRequest struct {
+type ApiUpdateAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileApiService
 	id string
 	appProfileResource *AppProfileResource
 }
 
-func (r ApiUpdateApiV1AppProfileRequest) AppProfileResource(appProfileResource AppProfileResource) ApiUpdateApiV1AppProfileRequest {
+func (r ApiUpdateAppProfileRequest) AppProfileResource(appProfileResource AppProfileResource) ApiUpdateAppProfileRequest {
 	r.appProfileResource = &appProfileResource
 	return r
 }
 
-func (r ApiUpdateApiV1AppProfileRequest) Execute() (*AppProfileResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1AppProfileExecute(r)
+func (r ApiUpdateAppProfileRequest) Execute() (*AppProfileResource, *http.Response, error) {
+	return r.ApiService.UpdateAppProfileExecute(r)
 }
 
 /*
-UpdateApiV1AppProfile Method for UpdateApiV1AppProfile
+UpdateAppProfile Method for UpdateAppProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1AppProfileRequest
+ @return ApiUpdateAppProfileRequest
 */
-func (a *AppProfileApiService) UpdateApiV1AppProfile(ctx context.Context, id string) ApiUpdateApiV1AppProfileRequest {
-	return ApiUpdateApiV1AppProfileRequest{
+func (a *AppProfileApiService) UpdateAppProfile(ctx context.Context, id string) ApiUpdateAppProfileRequest {
+	return ApiUpdateAppProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -567,7 +567,7 @@ func (a *AppProfileApiService) UpdateApiV1AppProfile(ctx context.Context, id str
 
 // Execute executes the request
 //  @return AppProfileResource
-func (a *AppProfileApiService) UpdateApiV1AppProfileExecute(r ApiUpdateApiV1AppProfileRequest) (*AppProfileResource, *http.Response, error) {
+func (a *AppProfileApiService) UpdateAppProfileExecute(r ApiUpdateAppProfileRequest) (*AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -575,7 +575,7 @@ func (a *AppProfileApiService) UpdateApiV1AppProfileExecute(r ApiUpdateApiV1AppP
 		localVarReturnValue  *AppProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.UpdateApiV1AppProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileApiService.UpdateAppProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

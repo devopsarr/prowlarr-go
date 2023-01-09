@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Search**](SearchApi.md#CreateApiV1Search) | **Post** /api/v1/search | 
-[**CreateApiV1SearchBulk**](SearchApi.md#CreateApiV1SearchBulk) | **Post** /api/v1/search/bulk | 
-[**GetApiV1SearchById**](SearchApi.md#GetApiV1SearchById) | **Get** /api/v1/search/{id} | 
-[**ListApiV1Search**](SearchApi.md#ListApiV1Search) | **Get** /api/v1/search | 
+[**CreateSearch**](SearchApi.md#CreateSearch) | **Post** /api/v1/search | 
+[**CreateSearchBulk**](SearchApi.md#CreateSearchBulk) | **Post** /api/v1/search/bulk | 
+[**GetSearchById**](SearchApi.md#GetSearchById) | **Get** /api/v1/search/{id} | 
+[**ListSearch**](SearchApi.md#ListSearch) | **Get** /api/v1/search | 
 
 
 
-## CreateApiV1Search
+## CreateSearch
 
-> ReleaseResource CreateApiV1Search(ctx).ReleaseResource(releaseResource).Execute()
+> ReleaseResource CreateSearch(ctx).ReleaseResource(releaseResource).Execute()
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchApi.CreateApiV1Search(context.Background()).ReleaseResource(releaseResource).Execute()
+    resp, r, err := apiClient.SearchApi.CreateSearch(context.Background()).ReleaseResource(releaseResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.CreateApiV1Search``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.CreateSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Search`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `SearchApi.CreateApiV1Search`: %v\n", resp)
+    // response from `CreateSearch`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `SearchApi.CreateSearch`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1SearchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateApiV1SearchBulk
+## CreateSearchBulk
 
-> ReleaseResource CreateApiV1SearchBulk(ctx).ReleaseResource(releaseResource).Execute()
+> ReleaseResource CreateSearchBulk(ctx).ReleaseResource(releaseResource).Execute()
 
 
 
@@ -98,13 +98,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchApi.CreateApiV1SearchBulk(context.Background()).ReleaseResource(releaseResource).Execute()
+    resp, r, err := apiClient.SearchApi.CreateSearchBulk(context.Background()).ReleaseResource(releaseResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.CreateApiV1SearchBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.CreateSearchBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1SearchBulk`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `SearchApi.CreateApiV1SearchBulk`: %v\n", resp)
+    // response from `CreateSearchBulk`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `SearchApi.CreateSearchBulk`: %v\n", resp)
 }
 ```
 
@@ -114,7 +114,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1SearchBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSearchBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -139,9 +139,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1SearchById
+## GetSearchById
 
-> ReleaseResource GetApiV1SearchById(ctx, id).Execute()
+> ReleaseResource GetSearchById(ctx, id).Execute()
 
 
 
@@ -162,13 +162,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchApi.GetApiV1SearchById(context.Background(), id).Execute()
+    resp, r, err := apiClient.SearchApi.GetSearchById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.GetApiV1SearchById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.GetSearchById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1SearchById`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `SearchApi.GetApiV1SearchById`: %v\n", resp)
+    // response from `GetSearchById`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `SearchApi.GetSearchById`: %v\n", resp)
 }
 ```
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1SearchByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSearchByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -207,9 +207,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Search
+## ListSearch
 
-> []ReleaseResource ListApiV1Search(ctx).Query(query).Type_(type_).IndexerIds(indexerIds).Categories(categories).Limit(limit).Offset(offset).Execute()
+> []ReleaseResource ListSearch(ctx).Query(query).Type_(type_).IndexerIds(indexerIds).Categories(categories).Limit(limit).Offset(offset).Execute()
 
 
 
@@ -235,13 +235,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchApi.ListApiV1Search(context.Background()).Query(query).Type_(type_).IndexerIds(indexerIds).Categories(categories).Limit(limit).Offset(offset).Execute()
+    resp, r, err := apiClient.SearchApi.ListSearch(context.Background()).Query(query).Type_(type_).IndexerIds(indexerIds).Categories(categories).Limit(limit).Offset(offset).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.ListApiV1Search``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.ListSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Search`: []ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `SearchApi.ListApiV1Search`: %v\n", resp)
+    // response from `ListSearch`: []ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `SearchApi.ListSearch`: %v\n", resp)
 }
 ```
 
@@ -251,7 +251,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1SearchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

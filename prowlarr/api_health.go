@@ -22,25 +22,25 @@ import (
 
 // HealthApiService HealthApi service
 type HealthApiService service
-type ApiGetApiV1HealthByIdRequest struct {
+type ApiGetHealthByIdRequest struct {
 	ctx context.Context
 	ApiService *HealthApiService
 	id int32
 }
 
-func (r ApiGetApiV1HealthByIdRequest) Execute() (*HealthResource, *http.Response, error) {
-	return r.ApiService.GetApiV1HealthByIdExecute(r)
+func (r ApiGetHealthByIdRequest) Execute() (*HealthResource, *http.Response, error) {
+	return r.ApiService.GetHealthByIdExecute(r)
 }
 
 /*
-GetApiV1HealthById Method for GetApiV1HealthById
+GetHealthById Method for GetHealthById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1HealthByIdRequest
+ @return ApiGetHealthByIdRequest
 */
-func (a *HealthApiService) GetApiV1HealthById(ctx context.Context, id int32) ApiGetApiV1HealthByIdRequest {
-	return ApiGetApiV1HealthByIdRequest{
+func (a *HealthApiService) GetHealthById(ctx context.Context, id int32) ApiGetHealthByIdRequest {
+	return ApiGetHealthByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -49,7 +49,7 @@ func (a *HealthApiService) GetApiV1HealthById(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return HealthResource
-func (a *HealthApiService) GetApiV1HealthByIdExecute(r ApiGetApiV1HealthByIdRequest) (*HealthResource, *http.Response, error) {
+func (a *HealthApiService) GetHealthByIdExecute(r ApiGetHealthByIdRequest) (*HealthResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *HealthApiService) GetApiV1HealthByIdExecute(r ApiGetApiV1HealthByIdRequ
 		localVarReturnValue  *HealthResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthApiService.GetApiV1HealthById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthApiService.GetHealthById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -150,23 +150,23 @@ func (a *HealthApiService) GetApiV1HealthByIdExecute(r ApiGetApiV1HealthByIdRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1HealthRequest struct {
+type ApiListHealthRequest struct {
 	ctx context.Context
 	ApiService *HealthApiService
 }
 
-func (r ApiListApiV1HealthRequest) Execute() ([]*HealthResource, *http.Response, error) {
-	return r.ApiService.ListApiV1HealthExecute(r)
+func (r ApiListHealthRequest) Execute() ([]*HealthResource, *http.Response, error) {
+	return r.ApiService.ListHealthExecute(r)
 }
 
 /*
-ListApiV1Health Method for ListApiV1Health
+ListHealth Method for ListHealth
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1HealthRequest
+ @return ApiListHealthRequest
 */
-func (a *HealthApiService) ListApiV1Health(ctx context.Context) ApiListApiV1HealthRequest {
-	return ApiListApiV1HealthRequest{
+func (a *HealthApiService) ListHealth(ctx context.Context) ApiListHealthRequest {
+	return ApiListHealthRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -174,7 +174,7 @@ func (a *HealthApiService) ListApiV1Health(ctx context.Context) ApiListApiV1Heal
 
 // Execute executes the request
 //  @return []HealthResource
-func (a *HealthApiService) ListApiV1HealthExecute(r ApiListApiV1HealthRequest) ([]*HealthResource, *http.Response, error) {
+func (a *HealthApiService) ListHealthExecute(r ApiListHealthRequest) ([]*HealthResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -182,7 +182,7 @@ func (a *HealthApiService) ListApiV1HealthExecute(r ApiListApiV1HealthRequest) (
 		localVarReturnValue  []*HealthResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthApiService.ListApiV1Health")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthApiService.ListHealth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

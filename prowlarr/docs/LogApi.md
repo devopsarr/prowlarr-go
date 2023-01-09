@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Log**](LogApi.md#GetApiV1Log) | **Get** /api/v1/log | 
+[**GetLog**](LogApi.md#GetLog) | **Get** /api/v1/log | 
 
 
 
-## GetApiV1Log
+## GetLog
 
-> LogResourcePagingResource GetApiV1Log(ctx).Execute()
+> LogResourcePagingResource GetLog(ctx).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogApi.GetApiV1Log(context.Background()).Execute()
+    resp, r, err := apiClient.LogApi.GetLog(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogApi.GetApiV1Log``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogApi.GetLog``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1Log`: LogResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `LogApi.GetApiV1Log`: %v\n", resp)
+    // response from `GetLog`: LogResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `LogApi.GetLog`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1LogRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLogRequest struct via the builder pattern
 
 
 ### Return type

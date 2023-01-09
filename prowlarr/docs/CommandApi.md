@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Command**](CommandApi.md#CreateApiV1Command) | **Post** /api/v1/command | 
-[**DeleteApiV1Command**](CommandApi.md#DeleteApiV1Command) | **Delete** /api/v1/command/{id} | 
-[**GetApiV1CommandById**](CommandApi.md#GetApiV1CommandById) | **Get** /api/v1/command/{id} | 
-[**ListApiV1Command**](CommandApi.md#ListApiV1Command) | **Get** /api/v1/command | 
+[**CreateCommand**](CommandApi.md#CreateCommand) | **Post** /api/v1/command | 
+[**DeleteCommand**](CommandApi.md#DeleteCommand) | **Delete** /api/v1/command/{id} | 
+[**GetCommandById**](CommandApi.md#GetCommandById) | **Get** /api/v1/command/{id} | 
+[**ListCommand**](CommandApi.md#ListCommand) | **Get** /api/v1/command | 
 
 
 
-## CreateApiV1Command
+## CreateCommand
 
-> CommandResource CreateApiV1Command(ctx).CommandResource(commandResource).Execute()
+> CommandResource CreateCommand(ctx).CommandResource(commandResource).Execute()
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CommandApi.CreateApiV1Command(context.Background()).CommandResource(commandResource).Execute()
+    resp, r, err := apiClient.CommandApi.CreateCommand(context.Background()).CommandResource(commandResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.CreateApiV1Command``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.CreateCommand``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Command`: CommandResource
-    fmt.Fprintf(os.Stdout, "Response from `CommandApi.CreateApiV1Command`: %v\n", resp)
+    // response from `CreateCommand`: CommandResource
+    fmt.Fprintf(os.Stdout, "Response from `CommandApi.CreateCommand`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1CommandRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCommandRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Command
+## DeleteCommand
 
-> DeleteApiV1Command(ctx, id).Execute()
+> DeleteCommand(ctx, id).Execute()
 
 
 
@@ -98,9 +98,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CommandApi.DeleteApiV1Command(context.Background(), id).Execute()
+    resp, r, err := apiClient.CommandApi.DeleteCommand(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.DeleteApiV1Command``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.DeleteCommand``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1CommandRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCommandRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -141,9 +141,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1CommandById
+## GetCommandById
 
-> CommandResource GetApiV1CommandById(ctx, id).Execute()
+> CommandResource GetCommandById(ctx, id).Execute()
 
 
 
@@ -164,13 +164,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CommandApi.GetApiV1CommandById(context.Background(), id).Execute()
+    resp, r, err := apiClient.CommandApi.GetCommandById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.GetApiV1CommandById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.GetCommandById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1CommandById`: CommandResource
-    fmt.Fprintf(os.Stdout, "Response from `CommandApi.GetApiV1CommandById`: %v\n", resp)
+    // response from `GetCommandById`: CommandResource
+    fmt.Fprintf(os.Stdout, "Response from `CommandApi.GetCommandById`: %v\n", resp)
 }
 ```
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1CommandByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCommandByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -209,9 +209,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Command
+## ListCommand
 
-> []CommandResource ListApiV1Command(ctx).Execute()
+> []CommandResource ListCommand(ctx).Execute()
 
 
 
@@ -231,13 +231,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CommandApi.ListApiV1Command(context.Background()).Execute()
+    resp, r, err := apiClient.CommandApi.ListCommand(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.ListApiV1Command``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CommandApi.ListCommand``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Command`: []CommandResource
-    fmt.Fprintf(os.Stdout, "Response from `CommandApi.ListApiV1Command`: %v\n", resp)
+    // response from `ListCommand`: []CommandResource
+    fmt.Fprintf(os.Stdout, "Response from `CommandApi.ListCommand`: %v\n", resp)
 }
 ```
 
@@ -247,7 +247,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1CommandRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListCommandRequest struct via the builder pattern
 
 
 ### Return type

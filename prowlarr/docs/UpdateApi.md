@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Update**](UpdateApi.md#ListApiV1Update) | **Get** /api/v1/update | 
+[**ListUpdate**](UpdateApi.md#ListUpdate) | **Get** /api/v1/update | 
 
 
 
-## ListApiV1Update
+## ListUpdate
 
-> []UpdateResource ListApiV1Update(ctx).Execute()
+> []UpdateResource ListUpdate(ctx).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UpdateApi.ListApiV1Update(context.Background()).Execute()
+    resp, r, err := apiClient.UpdateApi.ListUpdate(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UpdateApi.ListApiV1Update``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UpdateApi.ListUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Update`: []UpdateResource
-    fmt.Fprintf(os.Stdout, "Response from `UpdateApi.ListApiV1Update`: %v\n", resp)
+    // response from `ListUpdate`: []UpdateResource
+    fmt.Fprintf(os.Stdout, "Response from `UpdateApi.ListUpdate`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1UpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListUpdateRequest struct via the builder pattern
 
 
 ### Return type

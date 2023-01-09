@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Notification**](NotificationApi.md#CreateApiV1Notification) | **Post** /api/v1/notification | 
-[**CreateApiV1NotificationActionByName**](NotificationApi.md#CreateApiV1NotificationActionByName) | **Post** /api/v1/notification/action/{name} | 
-[**DeleteApiV1Notification**](NotificationApi.md#DeleteApiV1Notification) | **Delete** /api/v1/notification/{id} | 
-[**GetApiV1NotificationById**](NotificationApi.md#GetApiV1NotificationById) | **Get** /api/v1/notification/{id} | 
-[**ListApiV1Notification**](NotificationApi.md#ListApiV1Notification) | **Get** /api/v1/notification | 
-[**ListApiV1NotificationSchema**](NotificationApi.md#ListApiV1NotificationSchema) | **Get** /api/v1/notification/schema | 
-[**TestApiV1Notification**](NotificationApi.md#TestApiV1Notification) | **Post** /api/v1/notification/test | 
-[**TestallApiV1Notification**](NotificationApi.md#TestallApiV1Notification) | **Post** /api/v1/notification/testall | 
-[**UpdateApiV1Notification**](NotificationApi.md#UpdateApiV1Notification) | **Put** /api/v1/notification/{id} | 
+[**CreateNotification**](NotificationApi.md#CreateNotification) | **Post** /api/v1/notification | 
+[**CreateNotificationActionByName**](NotificationApi.md#CreateNotificationActionByName) | **Post** /api/v1/notification/action/{name} | 
+[**DeleteNotification**](NotificationApi.md#DeleteNotification) | **Delete** /api/v1/notification/{id} | 
+[**GetNotificationById**](NotificationApi.md#GetNotificationById) | **Get** /api/v1/notification/{id} | 
+[**ListNotification**](NotificationApi.md#ListNotification) | **Get** /api/v1/notification | 
+[**ListNotificationSchema**](NotificationApi.md#ListNotificationSchema) | **Get** /api/v1/notification/schema | 
+[**TestNotification**](NotificationApi.md#TestNotification) | **Post** /api/v1/notification/test | 
+[**TestallNotification**](NotificationApi.md#TestallNotification) | **Post** /api/v1/notification/testall | 
+[**UpdateNotification**](NotificationApi.md#UpdateNotification) | **Put** /api/v1/notification/{id} | 
 
 
 
-## CreateApiV1Notification
+## CreateNotification
 
-> NotificationResource CreateApiV1Notification(ctx).NotificationResource(notificationResource).Execute()
+> NotificationResource CreateNotification(ctx).NotificationResource(notificationResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.CreateApiV1Notification(context.Background()).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).NotificationResource(notificationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateApiV1Notification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Notification`: NotificationResource
-    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.CreateApiV1Notification`: %v\n", resp)
+    // response from `CreateNotification`: NotificationResource
+    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.CreateNotification`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1NotificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateNotificationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateApiV1NotificationActionByName
+## CreateNotificationActionByName
 
-> CreateApiV1NotificationActionByName(ctx, name).NotificationResource(notificationResource).Execute()
+> CreateNotificationActionByName(ctx, name).NotificationResource(notificationResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.CreateApiV1NotificationActionByName(context.Background(), name).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.CreateNotificationActionByName(context.Background(), name).NotificationResource(notificationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateApiV1NotificationActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateNotificationActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1NotificationActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateNotificationActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Notification
+## DeleteNotification
 
-> DeleteApiV1Notification(ctx, id).Execute()
+> DeleteNotification(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.DeleteApiV1Notification(context.Background(), id).Execute()
+    resp, r, err := apiClient.NotificationApi.DeleteNotification(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.DeleteApiV1Notification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.DeleteNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1NotificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteNotificationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1NotificationById
+## GetNotificationById
 
-> NotificationResource GetApiV1NotificationById(ctx, id).Execute()
+> NotificationResource GetNotificationById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.GetApiV1NotificationById(context.Background(), id).Execute()
+    resp, r, err := apiClient.NotificationApi.GetNotificationById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.GetApiV1NotificationById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.GetNotificationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1NotificationById`: NotificationResource
-    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.GetApiV1NotificationById`: %v\n", resp)
+    // response from `GetNotificationById`: NotificationResource
+    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.GetNotificationById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1NotificationByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNotificationByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Notification
+## ListNotification
 
-> []NotificationResource ListApiV1Notification(ctx).Execute()
+> []NotificationResource ListNotification(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.ListApiV1Notification(context.Background()).Execute()
+    resp, r, err := apiClient.NotificationApi.ListNotification(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.ListApiV1Notification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.ListNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Notification`: []NotificationResource
-    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.ListApiV1Notification`: %v\n", resp)
+    // response from `ListNotification`: []NotificationResource
+    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.ListNotification`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1NotificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListNotificationRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ Other parameters are passed through a pointer to a apiListApiV1NotificationReque
 [[Back to README]](../README.md)
 
 
-## ListApiV1NotificationSchema
+## ListNotificationSchema
 
-> []NotificationResource ListApiV1NotificationSchema(ctx).Execute()
+> []NotificationResource ListNotificationSchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.ListApiV1NotificationSchema(context.Background()).Execute()
+    resp, r, err := apiClient.NotificationApi.ListNotificationSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.ListApiV1NotificationSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.ListNotificationSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1NotificationSchema`: []NotificationResource
-    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.ListApiV1NotificationSchema`: %v\n", resp)
+    // response from `ListNotificationSchema`: []NotificationResource
+    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.ListNotificationSchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1NotificationSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListNotificationSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ Other parameters are passed through a pointer to a apiListApiV1NotificationSchem
 [[Back to README]](../README.md)
 
 
-## TestApiV1Notification
+## TestNotification
 
-> TestApiV1Notification(ctx).NotificationResource(notificationResource).Execute()
+> TestNotification(ctx).NotificationResource(notificationResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.TestApiV1Notification(context.Background()).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.TestNotification(context.Background()).NotificationResource(notificationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.TestApiV1Notification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.TestNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestApiV1NotificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestNotificationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TestallApiV1Notification
+## TestallNotification
 
-> TestallApiV1Notification(ctx).Execute()
+> TestallNotification(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.TestallApiV1Notification(context.Background()).Execute()
+    resp, r, err := apiClient.NotificationApi.TestallNotification(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.TestallApiV1Notification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.TestallNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallApiV1NotificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallNotificationRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ Other parameters are passed through a pointer to a apiTestallApiV1NotificationRe
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Notification
+## UpdateNotification
 
-> NotificationResource UpdateApiV1Notification(ctx, id).NotificationResource(notificationResource).Execute()
+> NotificationResource UpdateNotification(ctx, id).NotificationResource(notificationResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.UpdateApiV1Notification(context.Background(), id).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.UpdateNotification(context.Background(), id).NotificationResource(notificationResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.UpdateApiV1Notification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.UpdateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Notification`: NotificationResource
-    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.UpdateApiV1Notification`: %v\n", resp)
+    // response from `UpdateNotification`: NotificationResource
+    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.UpdateNotification`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1NotificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateNotificationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

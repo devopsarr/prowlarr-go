@@ -21,37 +21,37 @@ import (
 
 // LocalizationApiService LocalizationApi service
 type LocalizationApiService service
-type ApiGetApiV1LocalizationRequest struct {
+type ApiGetLocalizationRequest struct {
 	ctx context.Context
 	ApiService *LocalizationApiService
 }
 
-func (r ApiGetApiV1LocalizationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1LocalizationExecute(r)
+func (r ApiGetLocalizationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetLocalizationExecute(r)
 }
 
 /*
-GetApiV1Localization Method for GetApiV1Localization
+GetLocalization Method for GetLocalization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1LocalizationRequest
+ @return ApiGetLocalizationRequest
 */
-func (a *LocalizationApiService) GetApiV1Localization(ctx context.Context) ApiGetApiV1LocalizationRequest {
-	return ApiGetApiV1LocalizationRequest{
+func (a *LocalizationApiService) GetLocalization(ctx context.Context) ApiGetLocalizationRequest {
+	return ApiGetLocalizationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LocalizationApiService) GetApiV1LocalizationExecute(r ApiGetApiV1LocalizationRequest) (*http.Response, error) {
+func (a *LocalizationApiService) GetLocalizationExecute(r ApiGetLocalizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.GetApiV1Localization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.GetLocalization")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,23 +134,23 @@ func (a *LocalizationApiService) GetApiV1LocalizationExecute(r ApiGetApiV1Locali
 
 	return localVarHTTPResponse, nil
 }
-type ApiListApiV1LocalizationOptionsRequest struct {
+type ApiListLocalizationOptionsRequest struct {
 	ctx context.Context
 	ApiService *LocalizationApiService
 }
 
-func (r ApiListApiV1LocalizationOptionsRequest) Execute() ([]*LocalizationOption, *http.Response, error) {
-	return r.ApiService.ListApiV1LocalizationOptionsExecute(r)
+func (r ApiListLocalizationOptionsRequest) Execute() ([]*LocalizationOption, *http.Response, error) {
+	return r.ApiService.ListLocalizationOptionsExecute(r)
 }
 
 /*
-ListApiV1LocalizationOptions Method for ListApiV1LocalizationOptions
+ListLocalizationOptions Method for ListLocalizationOptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1LocalizationOptionsRequest
+ @return ApiListLocalizationOptionsRequest
 */
-func (a *LocalizationApiService) ListApiV1LocalizationOptions(ctx context.Context) ApiListApiV1LocalizationOptionsRequest {
-	return ApiListApiV1LocalizationOptionsRequest{
+func (a *LocalizationApiService) ListLocalizationOptions(ctx context.Context) ApiListLocalizationOptionsRequest {
+	return ApiListLocalizationOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -158,7 +158,7 @@ func (a *LocalizationApiService) ListApiV1LocalizationOptions(ctx context.Contex
 
 // Execute executes the request
 //  @return []LocalizationOption
-func (a *LocalizationApiService) ListApiV1LocalizationOptionsExecute(r ApiListApiV1LocalizationOptionsRequest) ([]*LocalizationOption, *http.Response, error) {
+func (a *LocalizationApiService) ListLocalizationOptionsExecute(r ApiListLocalizationOptionsRequest) ([]*LocalizationOption, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -166,7 +166,7 @@ func (a *LocalizationApiService) ListApiV1LocalizationOptionsExecute(r ApiListAp
 		localVarReturnValue  []*LocalizationOption
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.ListApiV1LocalizationOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.ListLocalizationOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

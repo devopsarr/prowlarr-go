@@ -22,23 +22,23 @@ import (
 
 // DevelopmentConfigApiService DevelopmentConfigApi service
 type DevelopmentConfigApiService service
-type ApiGetApiV1ConfigDevelopmentRequest struct {
+type ApiGetDevelopmentConfigRequest struct {
 	ctx context.Context
 	ApiService *DevelopmentConfigApiService
 }
 
-func (r ApiGetApiV1ConfigDevelopmentRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigDevelopmentExecute(r)
+func (r ApiGetDevelopmentConfigRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
+	return r.ApiService.GetDevelopmentConfigExecute(r)
 }
 
 /*
-GetApiV1ConfigDevelopment Method for GetApiV1ConfigDevelopment
+GetDevelopmentConfig Method for GetDevelopmentConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigDevelopmentRequest
+ @return ApiGetDevelopmentConfigRequest
 */
-func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopment(ctx context.Context) ApiGetApiV1ConfigDevelopmentRequest {
-	return ApiGetApiV1ConfigDevelopmentRequest{
+func (a *DevelopmentConfigApiService) GetDevelopmentConfig(ctx context.Context) ApiGetDevelopmentConfigRequest {
+	return ApiGetDevelopmentConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopment(ctx context.Cont
 
 // Execute executes the request
 //  @return DevelopmentConfigResource
-func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentExecute(r ApiGetApiV1ConfigDevelopmentRequest) (*DevelopmentConfigResource, *http.Response, error) {
+func (a *DevelopmentConfigApiService) GetDevelopmentConfigExecute(r ApiGetDevelopmentConfigRequest) (*DevelopmentConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentExecute(r ApiGetA
 		localVarReturnValue  *DevelopmentConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.GetApiV1ConfigDevelopment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.GetDevelopmentConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,25 +146,25 @@ func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentExecute(r ApiGetA
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigDevelopmentByIdRequest struct {
+type ApiGetDevelopmentConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *DevelopmentConfigApiService
 	id int32
 }
 
-func (r ApiGetApiV1ConfigDevelopmentByIdRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigDevelopmentByIdExecute(r)
+func (r ApiGetDevelopmentConfigByIdRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
+	return r.ApiService.GetDevelopmentConfigByIdExecute(r)
 }
 
 /*
-GetApiV1ConfigDevelopmentById Method for GetApiV1ConfigDevelopmentById
+GetDevelopmentConfigById Method for GetDevelopmentConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ConfigDevelopmentByIdRequest
+ @return ApiGetDevelopmentConfigByIdRequest
 */
-func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentById(ctx context.Context, id int32) ApiGetApiV1ConfigDevelopmentByIdRequest {
-	return ApiGetApiV1ConfigDevelopmentByIdRequest{
+func (a *DevelopmentConfigApiService) GetDevelopmentConfigById(ctx context.Context, id int32) ApiGetDevelopmentConfigByIdRequest {
+	return ApiGetDevelopmentConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -173,7 +173,7 @@ func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentById(ctx context.
 
 // Execute executes the request
 //  @return DevelopmentConfigResource
-func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentByIdExecute(r ApiGetApiV1ConfigDevelopmentByIdRequest) (*DevelopmentConfigResource, *http.Response, error) {
+func (a *DevelopmentConfigApiService) GetDevelopmentConfigByIdExecute(r ApiGetDevelopmentConfigByIdRequest) (*DevelopmentConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentByIdExecute(r Api
 		localVarReturnValue  *DevelopmentConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.GetApiV1ConfigDevelopmentById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.GetDevelopmentConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,31 +274,31 @@ func (a *DevelopmentConfigApiService) GetApiV1ConfigDevelopmentByIdExecute(r Api
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ConfigDevelopmentRequest struct {
+type ApiUpdateDevelopmentConfigRequest struct {
 	ctx context.Context
 	ApiService *DevelopmentConfigApiService
 	id string
 	developmentConfigResource *DevelopmentConfigResource
 }
 
-func (r ApiUpdateApiV1ConfigDevelopmentRequest) DevelopmentConfigResource(developmentConfigResource DevelopmentConfigResource) ApiUpdateApiV1ConfigDevelopmentRequest {
+func (r ApiUpdateDevelopmentConfigRequest) DevelopmentConfigResource(developmentConfigResource DevelopmentConfigResource) ApiUpdateDevelopmentConfigRequest {
 	r.developmentConfigResource = &developmentConfigResource
 	return r
 }
 
-func (r ApiUpdateApiV1ConfigDevelopmentRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ConfigDevelopmentExecute(r)
+func (r ApiUpdateDevelopmentConfigRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateDevelopmentConfigExecute(r)
 }
 
 /*
-UpdateApiV1ConfigDevelopment Method for UpdateApiV1ConfigDevelopment
+UpdateDevelopmentConfig Method for UpdateDevelopmentConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ConfigDevelopmentRequest
+ @return ApiUpdateDevelopmentConfigRequest
 */
-func (a *DevelopmentConfigApiService) UpdateApiV1ConfigDevelopment(ctx context.Context, id string) ApiUpdateApiV1ConfigDevelopmentRequest {
-	return ApiUpdateApiV1ConfigDevelopmentRequest{
+func (a *DevelopmentConfigApiService) UpdateDevelopmentConfig(ctx context.Context, id string) ApiUpdateDevelopmentConfigRequest {
+	return ApiUpdateDevelopmentConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -307,7 +307,7 @@ func (a *DevelopmentConfigApiService) UpdateApiV1ConfigDevelopment(ctx context.C
 
 // Execute executes the request
 //  @return DevelopmentConfigResource
-func (a *DevelopmentConfigApiService) UpdateApiV1ConfigDevelopmentExecute(r ApiUpdateApiV1ConfigDevelopmentRequest) (*DevelopmentConfigResource, *http.Response, error) {
+func (a *DevelopmentConfigApiService) UpdateDevelopmentConfigExecute(r ApiUpdateDevelopmentConfigRequest) (*DevelopmentConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *DevelopmentConfigApiService) UpdateApiV1ConfigDevelopmentExecute(r ApiU
 		localVarReturnValue  *DevelopmentConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.UpdateApiV1ConfigDevelopment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.UpdateDevelopmentConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,23 +21,23 @@ import (
 
 // IndexerDefaultCategoriesApiService IndexerDefaultCategoriesApi service
 type IndexerDefaultCategoriesApiService service
-type ApiListApiV1IndexerCategoriesRequest struct {
+type ApiListIndexerCategoriesRequest struct {
 	ctx context.Context
 	ApiService *IndexerDefaultCategoriesApiService
 }
 
-func (r ApiListApiV1IndexerCategoriesRequest) Execute() ([]*IndexerCategory, *http.Response, error) {
-	return r.ApiService.ListApiV1IndexerCategoriesExecute(r)
+func (r ApiListIndexerCategoriesRequest) Execute() ([]*IndexerCategory, *http.Response, error) {
+	return r.ApiService.ListIndexerCategoriesExecute(r)
 }
 
 /*
-ListApiV1IndexerCategories Method for ListApiV1IndexerCategories
+ListIndexerCategories Method for ListIndexerCategories
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1IndexerCategoriesRequest
+ @return ApiListIndexerCategoriesRequest
 */
-func (a *IndexerDefaultCategoriesApiService) ListApiV1IndexerCategories(ctx context.Context) ApiListApiV1IndexerCategoriesRequest {
-	return ApiListApiV1IndexerCategoriesRequest{
+func (a *IndexerDefaultCategoriesApiService) ListIndexerCategories(ctx context.Context) ApiListIndexerCategoriesRequest {
+	return ApiListIndexerCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *IndexerDefaultCategoriesApiService) ListApiV1IndexerCategories(ctx cont
 
 // Execute executes the request
 //  @return []IndexerCategory
-func (a *IndexerDefaultCategoriesApiService) ListApiV1IndexerCategoriesExecute(r ApiListApiV1IndexerCategoriesRequest) ([]*IndexerCategory, *http.Response, error) {
+func (a *IndexerDefaultCategoriesApiService) ListIndexerCategoriesExecute(r ApiListIndexerCategoriesRequest) ([]*IndexerCategory, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *IndexerDefaultCategoriesApiService) ListApiV1IndexerCategoriesExecute(r
 		localVarReturnValue  []*IndexerCategory
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerDefaultCategoriesApiService.ListApiV1IndexerCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerDefaultCategoriesApiService.ListIndexerCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

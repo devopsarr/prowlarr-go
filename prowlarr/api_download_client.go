@@ -22,29 +22,29 @@ import (
 
 // DownloadClientApiService DownloadClientApi service
 type DownloadClientApiService service
-type ApiCreateApiV1DownloadClientRequest struct {
+type ApiCreateDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 	downloadClientResource *DownloadClientResource
 }
 
-func (r ApiCreateApiV1DownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiCreateApiV1DownloadClientRequest {
+func (r ApiCreateDownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiCreateDownloadClientRequest {
 	r.downloadClientResource = &downloadClientResource
 	return r
 }
 
-func (r ApiCreateApiV1DownloadClientRequest) Execute() (*DownloadClientResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1DownloadClientExecute(r)
+func (r ApiCreateDownloadClientRequest) Execute() (*DownloadClientResource, *http.Response, error) {
+	return r.ApiService.CreateDownloadClientExecute(r)
 }
 
 /*
-CreateApiV1DownloadClient Method for CreateApiV1DownloadClient
+CreateDownloadClient Method for CreateDownloadClient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1DownloadClientRequest
+ @return ApiCreateDownloadClientRequest
 */
-func (a *DownloadClientApiService) CreateApiV1DownloadClient(ctx context.Context) ApiCreateApiV1DownloadClientRequest {
-	return ApiCreateApiV1DownloadClientRequest{
+func (a *DownloadClientApiService) CreateDownloadClient(ctx context.Context) ApiCreateDownloadClientRequest {
+	return ApiCreateDownloadClientRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *DownloadClientApiService) CreateApiV1DownloadClient(ctx context.Context
 
 // Execute executes the request
 //  @return DownloadClientResource
-func (a *DownloadClientApiService) CreateApiV1DownloadClientExecute(r ApiCreateApiV1DownloadClientRequest) (*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) CreateDownloadClientExecute(r ApiCreateDownloadClientRequest) (*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *DownloadClientApiService) CreateApiV1DownloadClientExecute(r ApiCreateA
 		localVarReturnValue  *DownloadClientResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.CreateApiV1DownloadClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.CreateDownloadClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,31 +154,31 @@ func (a *DownloadClientApiService) CreateApiV1DownloadClientExecute(r ApiCreateA
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiCreateApiV1DownloadClientActionByNameRequest struct {
+type ApiCreateDownloadClientActionByNameRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 	name string
 	downloadClientResource *DownloadClientResource
 }
 
-func (r ApiCreateApiV1DownloadClientActionByNameRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiCreateApiV1DownloadClientActionByNameRequest {
+func (r ApiCreateDownloadClientActionByNameRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiCreateDownloadClientActionByNameRequest {
 	r.downloadClientResource = &downloadClientResource
 	return r
 }
 
-func (r ApiCreateApiV1DownloadClientActionByNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1DownloadClientActionByNameExecute(r)
+func (r ApiCreateDownloadClientActionByNameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateDownloadClientActionByNameExecute(r)
 }
 
 /*
-CreateApiV1DownloadClientActionByName Method for CreateApiV1DownloadClientActionByName
+CreateDownloadClientActionByName Method for CreateDownloadClientActionByName
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiCreateApiV1DownloadClientActionByNameRequest
+ @return ApiCreateDownloadClientActionByNameRequest
 */
-func (a *DownloadClientApiService) CreateApiV1DownloadClientActionByName(ctx context.Context, name string) ApiCreateApiV1DownloadClientActionByNameRequest {
-	return ApiCreateApiV1DownloadClientActionByNameRequest{
+func (a *DownloadClientApiService) CreateDownloadClientActionByName(ctx context.Context, name string) ApiCreateDownloadClientActionByNameRequest {
+	return ApiCreateDownloadClientActionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -186,14 +186,14 @@ func (a *DownloadClientApiService) CreateApiV1DownloadClientActionByName(ctx con
 }
 
 // Execute executes the request
-func (a *DownloadClientApiService) CreateApiV1DownloadClientActionByNameExecute(r ApiCreateApiV1DownloadClientActionByNameRequest) (*http.Response, error) {
+func (a *DownloadClientApiService) CreateDownloadClientActionByNameExecute(r ApiCreateDownloadClientActionByNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.CreateApiV1DownloadClientActionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.CreateDownloadClientActionByName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,25 +279,25 @@ func (a *DownloadClientApiService) CreateApiV1DownloadClientActionByNameExecute(
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1DownloadClientRequest struct {
+type ApiDeleteDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1DownloadClientRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1DownloadClientExecute(r)
+func (r ApiDeleteDownloadClientRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteDownloadClientExecute(r)
 }
 
 /*
-DeleteApiV1DownloadClient Method for DeleteApiV1DownloadClient
+DeleteDownloadClient Method for DeleteDownloadClient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1DownloadClientRequest
+ @return ApiDeleteDownloadClientRequest
 */
-func (a *DownloadClientApiService) DeleteApiV1DownloadClient(ctx context.Context, id int32) ApiDeleteApiV1DownloadClientRequest {
-	return ApiDeleteApiV1DownloadClientRequest{
+func (a *DownloadClientApiService) DeleteDownloadClient(ctx context.Context, id int32) ApiDeleteDownloadClientRequest {
+	return ApiDeleteDownloadClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -305,14 +305,14 @@ func (a *DownloadClientApiService) DeleteApiV1DownloadClient(ctx context.Context
 }
 
 // Execute executes the request
-func (a *DownloadClientApiService) DeleteApiV1DownloadClientExecute(r ApiDeleteApiV1DownloadClientRequest) (*http.Response, error) {
+func (a *DownloadClientApiService) DeleteDownloadClientExecute(r ApiDeleteDownloadClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.DeleteApiV1DownloadClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.DeleteDownloadClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -396,25 +396,25 @@ func (a *DownloadClientApiService) DeleteApiV1DownloadClientExecute(r ApiDeleteA
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1DownloadClientByIdRequest struct {
+type ApiGetDownloadClientByIdRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 	id int32
 }
 
-func (r ApiGetApiV1DownloadClientByIdRequest) Execute() (*DownloadClientResource, *http.Response, error) {
-	return r.ApiService.GetApiV1DownloadClientByIdExecute(r)
+func (r ApiGetDownloadClientByIdRequest) Execute() (*DownloadClientResource, *http.Response, error) {
+	return r.ApiService.GetDownloadClientByIdExecute(r)
 }
 
 /*
-GetApiV1DownloadClientById Method for GetApiV1DownloadClientById
+GetDownloadClientById Method for GetDownloadClientById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1DownloadClientByIdRequest
+ @return ApiGetDownloadClientByIdRequest
 */
-func (a *DownloadClientApiService) GetApiV1DownloadClientById(ctx context.Context, id int32) ApiGetApiV1DownloadClientByIdRequest {
-	return ApiGetApiV1DownloadClientByIdRequest{
+func (a *DownloadClientApiService) GetDownloadClientById(ctx context.Context, id int32) ApiGetDownloadClientByIdRequest {
+	return ApiGetDownloadClientByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -423,7 +423,7 @@ func (a *DownloadClientApiService) GetApiV1DownloadClientById(ctx context.Contex
 
 // Execute executes the request
 //  @return DownloadClientResource
-func (a *DownloadClientApiService) GetApiV1DownloadClientByIdExecute(r ApiGetApiV1DownloadClientByIdRequest) (*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) GetDownloadClientByIdExecute(r ApiGetDownloadClientByIdRequest) (*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *DownloadClientApiService) GetApiV1DownloadClientByIdExecute(r ApiGetApi
 		localVarReturnValue  *DownloadClientResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.GetApiV1DownloadClientById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.GetDownloadClientById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -524,23 +524,23 @@ func (a *DownloadClientApiService) GetApiV1DownloadClientByIdExecute(r ApiGetApi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1DownloadClientRequest struct {
+type ApiListDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 }
 
-func (r ApiListApiV1DownloadClientRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
-	return r.ApiService.ListApiV1DownloadClientExecute(r)
+func (r ApiListDownloadClientRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
+	return r.ApiService.ListDownloadClientExecute(r)
 }
 
 /*
-ListApiV1DownloadClient Method for ListApiV1DownloadClient
+ListDownloadClient Method for ListDownloadClient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1DownloadClientRequest
+ @return ApiListDownloadClientRequest
 */
-func (a *DownloadClientApiService) ListApiV1DownloadClient(ctx context.Context) ApiListApiV1DownloadClientRequest {
-	return ApiListApiV1DownloadClientRequest{
+func (a *DownloadClientApiService) ListDownloadClient(ctx context.Context) ApiListDownloadClientRequest {
+	return ApiListDownloadClientRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -548,7 +548,7 @@ func (a *DownloadClientApiService) ListApiV1DownloadClient(ctx context.Context) 
 
 // Execute executes the request
 //  @return []DownloadClientResource
-func (a *DownloadClientApiService) ListApiV1DownloadClientExecute(r ApiListApiV1DownloadClientRequest) ([]*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) ListDownloadClientExecute(r ApiListDownloadClientRequest) ([]*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -556,7 +556,7 @@ func (a *DownloadClientApiService) ListApiV1DownloadClientExecute(r ApiListApiV1
 		localVarReturnValue  []*DownloadClientResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.ListApiV1DownloadClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.ListDownloadClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -648,23 +648,23 @@ func (a *DownloadClientApiService) ListApiV1DownloadClientExecute(r ApiListApiV1
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1DownloadClientSchemaRequest struct {
+type ApiListDownloadClientSchemaRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 }
 
-func (r ApiListApiV1DownloadClientSchemaRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
-	return r.ApiService.ListApiV1DownloadClientSchemaExecute(r)
+func (r ApiListDownloadClientSchemaRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
+	return r.ApiService.ListDownloadClientSchemaExecute(r)
 }
 
 /*
-ListApiV1DownloadClientSchema Method for ListApiV1DownloadClientSchema
+ListDownloadClientSchema Method for ListDownloadClientSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1DownloadClientSchemaRequest
+ @return ApiListDownloadClientSchemaRequest
 */
-func (a *DownloadClientApiService) ListApiV1DownloadClientSchema(ctx context.Context) ApiListApiV1DownloadClientSchemaRequest {
-	return ApiListApiV1DownloadClientSchemaRequest{
+func (a *DownloadClientApiService) ListDownloadClientSchema(ctx context.Context) ApiListDownloadClientSchemaRequest {
+	return ApiListDownloadClientSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -672,7 +672,7 @@ func (a *DownloadClientApiService) ListApiV1DownloadClientSchema(ctx context.Con
 
 // Execute executes the request
 //  @return []DownloadClientResource
-func (a *DownloadClientApiService) ListApiV1DownloadClientSchemaExecute(r ApiListApiV1DownloadClientSchemaRequest) ([]*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) ListDownloadClientSchemaExecute(r ApiListDownloadClientSchemaRequest) ([]*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -680,7 +680,7 @@ func (a *DownloadClientApiService) ListApiV1DownloadClientSchemaExecute(r ApiLis
 		localVarReturnValue  []*DownloadClientResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.ListApiV1DownloadClientSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.ListDownloadClientSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -772,43 +772,43 @@ func (a *DownloadClientApiService) ListApiV1DownloadClientSchemaExecute(r ApiLis
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiTestApiV1DownloadClientRequest struct {
+type ApiTestDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 	downloadClientResource *DownloadClientResource
 }
 
-func (r ApiTestApiV1DownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiTestApiV1DownloadClientRequest {
+func (r ApiTestDownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiTestDownloadClientRequest {
 	r.downloadClientResource = &downloadClientResource
 	return r
 }
 
-func (r ApiTestApiV1DownloadClientRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestApiV1DownloadClientExecute(r)
+func (r ApiTestDownloadClientRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestDownloadClientExecute(r)
 }
 
 /*
-TestApiV1DownloadClient Method for TestApiV1DownloadClient
+TestDownloadClient Method for TestDownloadClient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestApiV1DownloadClientRequest
+ @return ApiTestDownloadClientRequest
 */
-func (a *DownloadClientApiService) TestApiV1DownloadClient(ctx context.Context) ApiTestApiV1DownloadClientRequest {
-	return ApiTestApiV1DownloadClientRequest{
+func (a *DownloadClientApiService) TestDownloadClient(ctx context.Context) ApiTestDownloadClientRequest {
+	return ApiTestDownloadClientRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *DownloadClientApiService) TestApiV1DownloadClientExecute(r ApiTestApiV1DownloadClientRequest) (*http.Response, error) {
+func (a *DownloadClientApiService) TestDownloadClientExecute(r ApiTestDownloadClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.TestApiV1DownloadClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.TestDownloadClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -893,37 +893,37 @@ func (a *DownloadClientApiService) TestApiV1DownloadClientExecute(r ApiTestApiV1
 
 	return localVarHTTPResponse, nil
 }
-type ApiTestallApiV1DownloadClientRequest struct {
+type ApiTestallDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 }
 
-func (r ApiTestallApiV1DownloadClientRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestallApiV1DownloadClientExecute(r)
+func (r ApiTestallDownloadClientRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestallDownloadClientExecute(r)
 }
 
 /*
-TestallApiV1DownloadClient Method for TestallApiV1DownloadClient
+TestallDownloadClient Method for TestallDownloadClient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestallApiV1DownloadClientRequest
+ @return ApiTestallDownloadClientRequest
 */
-func (a *DownloadClientApiService) TestallApiV1DownloadClient(ctx context.Context) ApiTestallApiV1DownloadClientRequest {
-	return ApiTestallApiV1DownloadClientRequest{
+func (a *DownloadClientApiService) TestallDownloadClient(ctx context.Context) ApiTestallDownloadClientRequest {
+	return ApiTestallDownloadClientRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *DownloadClientApiService) TestallApiV1DownloadClientExecute(r ApiTestallApiV1DownloadClientRequest) (*http.Response, error) {
+func (a *DownloadClientApiService) TestallDownloadClientExecute(r ApiTestallDownloadClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.TestallApiV1DownloadClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.TestallDownloadClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,31 +1006,31 @@ func (a *DownloadClientApiService) TestallApiV1DownloadClientExecute(r ApiTestal
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1DownloadClientRequest struct {
+type ApiUpdateDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
 	id string
 	downloadClientResource *DownloadClientResource
 }
 
-func (r ApiUpdateApiV1DownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiUpdateApiV1DownloadClientRequest {
+func (r ApiUpdateDownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiUpdateDownloadClientRequest {
 	r.downloadClientResource = &downloadClientResource
 	return r
 }
 
-func (r ApiUpdateApiV1DownloadClientRequest) Execute() (*DownloadClientResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1DownloadClientExecute(r)
+func (r ApiUpdateDownloadClientRequest) Execute() (*DownloadClientResource, *http.Response, error) {
+	return r.ApiService.UpdateDownloadClientExecute(r)
 }
 
 /*
-UpdateApiV1DownloadClient Method for UpdateApiV1DownloadClient
+UpdateDownloadClient Method for UpdateDownloadClient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1DownloadClientRequest
+ @return ApiUpdateDownloadClientRequest
 */
-func (a *DownloadClientApiService) UpdateApiV1DownloadClient(ctx context.Context, id string) ApiUpdateApiV1DownloadClientRequest {
-	return ApiUpdateApiV1DownloadClientRequest{
+func (a *DownloadClientApiService) UpdateDownloadClient(ctx context.Context, id string) ApiUpdateDownloadClientRequest {
+	return ApiUpdateDownloadClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -1039,7 +1039,7 @@ func (a *DownloadClientApiService) UpdateApiV1DownloadClient(ctx context.Context
 
 // Execute executes the request
 //  @return DownloadClientResource
-func (a *DownloadClientApiService) UpdateApiV1DownloadClientExecute(r ApiUpdateApiV1DownloadClientRequest) (*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) UpdateDownloadClientExecute(r ApiUpdateDownloadClientRequest) (*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1047,7 +1047,7 @@ func (a *DownloadClientApiService) UpdateApiV1DownloadClientExecute(r ApiUpdateA
 		localVarReturnValue  *DownloadClientResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.UpdateApiV1DownloadClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.UpdateDownloadClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

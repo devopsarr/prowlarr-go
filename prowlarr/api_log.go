@@ -21,23 +21,23 @@ import (
 
 // LogApiService LogApi service
 type LogApiService service
-type ApiGetApiV1LogRequest struct {
+type ApiGetLogRequest struct {
 	ctx context.Context
 	ApiService *LogApiService
 }
 
-func (r ApiGetApiV1LogRequest) Execute() (*LogResourcePagingResource, *http.Response, error) {
-	return r.ApiService.GetApiV1LogExecute(r)
+func (r ApiGetLogRequest) Execute() (*LogResourcePagingResource, *http.Response, error) {
+	return r.ApiService.GetLogExecute(r)
 }
 
 /*
-GetApiV1Log Method for GetApiV1Log
+GetLog Method for GetLog
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1LogRequest
+ @return ApiGetLogRequest
 */
-func (a *LogApiService) GetApiV1Log(ctx context.Context) ApiGetApiV1LogRequest {
-	return ApiGetApiV1LogRequest{
+func (a *LogApiService) GetLog(ctx context.Context) ApiGetLogRequest {
+	return ApiGetLogRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *LogApiService) GetApiV1Log(ctx context.Context) ApiGetApiV1LogRequest {
 
 // Execute executes the request
 //  @return LogResourcePagingResource
-func (a *LogApiService) GetApiV1LogExecute(r ApiGetApiV1LogRequest) (*LogResourcePagingResource, *http.Response, error) {
+func (a *LogApiService) GetLogExecute(r ApiGetLogRequest) (*LogResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *LogApiService) GetApiV1LogExecute(r ApiGetApiV1LogRequest) (*LogResourc
 		localVarReturnValue  *LogResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogApiService.GetApiV1Log")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogApiService.GetLog")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

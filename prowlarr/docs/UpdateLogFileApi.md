@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1LogFileUpdateByFilename**](UpdateLogFileApi.md#GetApiV1LogFileUpdateByFilename) | **Get** /api/v1/log/file/update/{filename} | 
-[**ListApiV1LogFileUpdate**](UpdateLogFileApi.md#ListApiV1LogFileUpdate) | **Get** /api/v1/log/file/update | 
+[**GetLogFileUpdateByFilename**](UpdateLogFileApi.md#GetLogFileUpdateByFilename) | **Get** /api/v1/log/file/update/{filename} | 
+[**ListLogFileUpdate**](UpdateLogFileApi.md#ListLogFileUpdate) | **Get** /api/v1/log/file/update | 
 
 
 
-## GetApiV1LogFileUpdateByFilename
+## GetLogFileUpdateByFilename
 
-> GetApiV1LogFileUpdateByFilename(ctx, filename).Execute()
+> GetLogFileUpdateByFilename(ctx, filename).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UpdateLogFileApi.GetApiV1LogFileUpdateByFilename(context.Background(), filename).Execute()
+    resp, r, err := apiClient.UpdateLogFileApi.GetLogFileUpdateByFilename(context.Background(), filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UpdateLogFileApi.GetApiV1LogFileUpdateByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UpdateLogFileApi.GetLogFileUpdateByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1LogFileUpdateByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLogFileUpdateByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1LogFileUpdate
+## ListLogFileUpdate
 
-> []LogFileResource ListApiV1LogFileUpdate(ctx).Execute()
+> []LogFileResource ListLogFileUpdate(ctx).Execute()
 
 
 
@@ -97,13 +97,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UpdateLogFileApi.ListApiV1LogFileUpdate(context.Background()).Execute()
+    resp, r, err := apiClient.UpdateLogFileApi.ListLogFileUpdate(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UpdateLogFileApi.ListApiV1LogFileUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UpdateLogFileApi.ListLogFileUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1LogFileUpdate`: []LogFileResource
-    fmt.Fprintf(os.Stdout, "Response from `UpdateLogFileApi.ListApiV1LogFileUpdate`: %v\n", resp)
+    // response from `ListLogFileUpdate`: []LogFileResource
+    fmt.Fprintf(os.Stdout, "Response from `UpdateLogFileApi.ListLogFileUpdate`: %v\n", resp)
 }
 ```
 
@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1LogFileUpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListLogFileUpdateRequest struct via the builder pattern
 
 
 ### Return type

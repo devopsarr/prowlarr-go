@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Localization**](LocalizationApi.md#GetApiV1Localization) | **Get** /api/v1/localization | 
-[**ListApiV1LocalizationOptions**](LocalizationApi.md#ListApiV1LocalizationOptions) | **Get** /api/v1/localization/options | 
+[**GetLocalization**](LocalizationApi.md#GetLocalization) | **Get** /api/v1/localization | 
+[**ListLocalizationOptions**](LocalizationApi.md#ListLocalizationOptions) | **Get** /api/v1/localization/options | 
 
 
 
-## GetApiV1Localization
+## GetLocalization
 
-> GetApiV1Localization(ctx).Execute()
+> GetLocalization(ctx).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalizationApi.GetApiV1Localization(context.Background()).Execute()
+    resp, r, err := apiClient.LocalizationApi.GetLocalization(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.GetApiV1Localization``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.GetLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1LocalizationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLocalizationRequest struct via the builder pattern
 
 
 ### Return type
@@ -66,9 +66,9 @@ Other parameters are passed through a pointer to a apiGetApiV1LocalizationReques
 [[Back to README]](../README.md)
 
 
-## ListApiV1LocalizationOptions
+## ListLocalizationOptions
 
-> []LocalizationOption ListApiV1LocalizationOptions(ctx).Execute()
+> []LocalizationOption ListLocalizationOptions(ctx).Execute()
 
 
 
@@ -88,13 +88,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalizationApi.ListApiV1LocalizationOptions(context.Background()).Execute()
+    resp, r, err := apiClient.LocalizationApi.ListLocalizationOptions(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.ListApiV1LocalizationOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.ListLocalizationOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1LocalizationOptions`: []LocalizationOption
-    fmt.Fprintf(os.Stdout, "Response from `LocalizationApi.ListApiV1LocalizationOptions`: %v\n", resp)
+    // response from `ListLocalizationOptions`: []LocalizationOption
+    fmt.Fprintf(os.Stdout, "Response from `LocalizationApi.ListLocalizationOptions`: %v\n", resp)
 }
 ```
 
@@ -104,7 +104,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1LocalizationOptionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListLocalizationOptionsRequest struct via the builder pattern
 
 
 ### Return type

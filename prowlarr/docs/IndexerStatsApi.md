@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1IndexerStats**](IndexerStatsApi.md#GetApiV1IndexerStats) | **Get** /api/v1/indexerstats | 
+[**GetIndexerStats**](IndexerStatsApi.md#GetIndexerStats) | **Get** /api/v1/indexerstats | 
 
 
 
-## GetApiV1IndexerStats
+## GetIndexerStats
 
-> IndexerStatsResource GetApiV1IndexerStats(ctx).StartDate(startDate).EndDate(endDate).Execute()
+> IndexerStatsResource GetIndexerStats(ctx).StartDate(startDate).EndDate(endDate).Execute()
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerStatsApi.GetApiV1IndexerStats(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
+    resp, r, err := apiClient.IndexerStatsApi.GetIndexerStats(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatsApi.GetApiV1IndexerStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatsApi.GetIndexerStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1IndexerStats`: IndexerStatsResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerStatsApi.GetApiV1IndexerStats`: %v\n", resp)
+    // response from `GetIndexerStats`: IndexerStatsResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerStatsApi.GetIndexerStats`: %v\n", resp)
 }
 ```
 
@@ -49,7 +49,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1IndexerStatsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerStatsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

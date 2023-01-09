@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1LogFileByFilename**](LogFileApi.md#GetApiV1LogFileByFilename) | **Get** /api/v1/log/file/{filename} | 
-[**ListApiV1LogFile**](LogFileApi.md#ListApiV1LogFile) | **Get** /api/v1/log/file | 
+[**GetLogFileByFilename**](LogFileApi.md#GetLogFileByFilename) | **Get** /api/v1/log/file/{filename} | 
+[**ListLogFile**](LogFileApi.md#ListLogFile) | **Get** /api/v1/log/file | 
 
 
 
-## GetApiV1LogFileByFilename
+## GetLogFileByFilename
 
-> GetApiV1LogFileByFilename(ctx, filename).Execute()
+> GetLogFileByFilename(ctx, filename).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFileApi.GetApiV1LogFileByFilename(context.Background(), filename).Execute()
+    resp, r, err := apiClient.LogFileApi.GetLogFileByFilename(context.Background(), filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileApi.GetApiV1LogFileByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileApi.GetLogFileByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1LogFileByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLogFileByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1LogFile
+## ListLogFile
 
-> []LogFileResource ListApiV1LogFile(ctx).Execute()
+> []LogFileResource ListLogFile(ctx).Execute()
 
 
 
@@ -97,13 +97,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFileApi.ListApiV1LogFile(context.Background()).Execute()
+    resp, r, err := apiClient.LogFileApi.ListLogFile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileApi.ListApiV1LogFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileApi.ListLogFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1LogFile`: []LogFileResource
-    fmt.Fprintf(os.Stdout, "Response from `LogFileApi.ListApiV1LogFile`: %v\n", resp)
+    // response from `ListLogFile`: []LogFileResource
+    fmt.Fprintf(os.Stdout, "Response from `LogFileApi.ListLogFile`: %v\n", resp)
 }
 ```
 
@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1LogFileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListLogFileRequest struct via the builder pattern
 
 
 ### Return type

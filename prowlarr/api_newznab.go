@@ -22,7 +22,7 @@ import (
 
 // NewznabApiService NewznabApi service
 type NewznabApiService service
-type ApiGetApiV1IndexeridDownloadRequest struct {
+type ApiGetIndexeridDownloadRequest struct {
 	ctx context.Context
 	ApiService *NewznabApiService
 	id int32
@@ -30,29 +30,29 @@ type ApiGetApiV1IndexeridDownloadRequest struct {
 	file *string
 }
 
-func (r ApiGetApiV1IndexeridDownloadRequest) Link(link string) ApiGetApiV1IndexeridDownloadRequest {
+func (r ApiGetIndexeridDownloadRequest) Link(link string) ApiGetIndexeridDownloadRequest {
 	r.link = &link
 	return r
 }
 
-func (r ApiGetApiV1IndexeridDownloadRequest) File(file string) ApiGetApiV1IndexeridDownloadRequest {
+func (r ApiGetIndexeridDownloadRequest) File(file string) ApiGetIndexeridDownloadRequest {
 	r.file = &file
 	return r
 }
 
-func (r ApiGetApiV1IndexeridDownloadRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1IndexeridDownloadExecute(r)
+func (r ApiGetIndexeridDownloadRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetIndexeridDownloadExecute(r)
 }
 
 /*
-GetApiV1IndexeridDownload Method for GetApiV1IndexeridDownload
+GetIndexeridDownload Method for GetIndexeridDownload
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1IndexeridDownloadRequest
+ @return ApiGetIndexeridDownloadRequest
 */
-func (a *NewznabApiService) GetApiV1IndexeridDownload(ctx context.Context, id int32) ApiGetApiV1IndexeridDownloadRequest {
-	return ApiGetApiV1IndexeridDownloadRequest{
+func (a *NewznabApiService) GetIndexeridDownload(ctx context.Context, id int32) ApiGetIndexeridDownloadRequest {
+	return ApiGetIndexeridDownloadRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -60,14 +60,14 @@ func (a *NewznabApiService) GetApiV1IndexeridDownload(ctx context.Context, id in
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetApiV1IndexeridDownloadExecute(r ApiGetApiV1IndexeridDownloadRequest) (*http.Response, error) {
+func (a *NewznabApiService) GetIndexeridDownloadExecute(r ApiGetIndexeridDownloadRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetApiV1IndexeridDownload")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexeridDownload")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -157,7 +157,7 @@ func (a *NewznabApiService) GetApiV1IndexeridDownloadExecute(r ApiGetApiV1Indexe
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1IndexeridNewznabRequest struct {
+type ApiGetIndexeridNewznabRequest struct {
 	ctx context.Context
 	ApiService *NewznabApiService
 	id int32
@@ -191,159 +191,159 @@ type ApiGetApiV1IndexeridNewznabRequest struct {
 	server *string
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) T(t string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) T(t string) ApiGetIndexeridNewznabRequest {
 	r.t = &t
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Q(q string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Q(q string) ApiGetIndexeridNewznabRequest {
 	r.q = &q
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Cat(cat string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Cat(cat string) ApiGetIndexeridNewznabRequest {
 	r.cat = &cat
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Imdbid(imdbid string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Imdbid(imdbid string) ApiGetIndexeridNewznabRequest {
 	r.imdbid = &imdbid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Tmdbid(tmdbid int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Tmdbid(tmdbid int32) ApiGetIndexeridNewznabRequest {
 	r.tmdbid = &tmdbid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Extended(extended string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Extended(extended string) ApiGetIndexeridNewznabRequest {
 	r.extended = &extended
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Limit(limit int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Limit(limit int32) ApiGetIndexeridNewznabRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Offset(offset int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Offset(offset int32) ApiGetIndexeridNewznabRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Rid(rid int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Rid(rid int32) ApiGetIndexeridNewznabRequest {
 	r.rid = &rid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Tvmazeid(tvmazeid int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Tvmazeid(tvmazeid int32) ApiGetIndexeridNewznabRequest {
 	r.tvmazeid = &tvmazeid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Traktid(traktid int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Traktid(traktid int32) ApiGetIndexeridNewznabRequest {
 	r.traktid = &traktid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Tvdbid(tvdbid int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Tvdbid(tvdbid int32) ApiGetIndexeridNewznabRequest {
 	r.tvdbid = &tvdbid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Doubanid(doubanid int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Doubanid(doubanid int32) ApiGetIndexeridNewznabRequest {
 	r.doubanid = &doubanid
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Season(season int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Season(season int32) ApiGetIndexeridNewznabRequest {
 	r.season = &season
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Ep(ep string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Ep(ep string) ApiGetIndexeridNewznabRequest {
 	r.ep = &ep
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Album(album string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Album(album string) ApiGetIndexeridNewznabRequest {
 	r.album = &album
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Artist(artist string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Artist(artist string) ApiGetIndexeridNewznabRequest {
 	r.artist = &artist
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Label(label string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Label(label string) ApiGetIndexeridNewznabRequest {
 	r.label = &label
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Track(track string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Track(track string) ApiGetIndexeridNewznabRequest {
 	r.track = &track
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Year(year int32) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Year(year int32) ApiGetIndexeridNewznabRequest {
 	r.year = &year
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Genre(genre string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Genre(genre string) ApiGetIndexeridNewznabRequest {
 	r.genre = &genre
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Author(author string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Author(author string) ApiGetIndexeridNewznabRequest {
 	r.author = &author
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Title(title string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Title(title string) ApiGetIndexeridNewznabRequest {
 	r.title = &title
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Publisher(publisher string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Publisher(publisher string) ApiGetIndexeridNewznabRequest {
 	r.publisher = &publisher
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Configured(configured string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Configured(configured string) ApiGetIndexeridNewznabRequest {
 	r.configured = &configured
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Source(source string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Source(source string) ApiGetIndexeridNewznabRequest {
 	r.source = &source
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Host(host string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Host(host string) ApiGetIndexeridNewznabRequest {
 	r.host = &host
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Server(server string) ApiGetApiV1IndexeridNewznabRequest {
+func (r ApiGetIndexeridNewznabRequest) Server(server string) ApiGetIndexeridNewznabRequest {
 	r.server = &server
 	return r
 }
 
-func (r ApiGetApiV1IndexeridNewznabRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1IndexeridNewznabExecute(r)
+func (r ApiGetIndexeridNewznabRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetIndexeridNewznabExecute(r)
 }
 
 /*
-GetApiV1IndexeridNewznab Method for GetApiV1IndexeridNewznab
+GetIndexeridNewznab Method for GetIndexeridNewznab
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1IndexeridNewznabRequest
+ @return ApiGetIndexeridNewznabRequest
 */
-func (a *NewznabApiService) GetApiV1IndexeridNewznab(ctx context.Context, id int32) ApiGetApiV1IndexeridNewznabRequest {
-	return ApiGetApiV1IndexeridNewznabRequest{
+func (a *NewznabApiService) GetIndexeridNewznab(ctx context.Context, id int32) ApiGetIndexeridNewznabRequest {
+	return ApiGetIndexeridNewznabRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -351,14 +351,14 @@ func (a *NewznabApiService) GetApiV1IndexeridNewznab(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetApiV1IndexeridNewznabExecute(r ApiGetApiV1IndexeridNewznabRequest) (*http.Response, error) {
+func (a *NewznabApiService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetApiV1IndexeridNewznab")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexeridNewznab")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

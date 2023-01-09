@@ -21,23 +21,23 @@ import (
 
 // UpdateApiService UpdateApi service
 type UpdateApiService service
-type ApiListApiV1UpdateRequest struct {
+type ApiListUpdateRequest struct {
 	ctx context.Context
 	ApiService *UpdateApiService
 }
 
-func (r ApiListApiV1UpdateRequest) Execute() ([]*UpdateResource, *http.Response, error) {
-	return r.ApiService.ListApiV1UpdateExecute(r)
+func (r ApiListUpdateRequest) Execute() ([]*UpdateResource, *http.Response, error) {
+	return r.ApiService.ListUpdateExecute(r)
 }
 
 /*
-ListApiV1Update Method for ListApiV1Update
+ListUpdate Method for ListUpdate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1UpdateRequest
+ @return ApiListUpdateRequest
 */
-func (a *UpdateApiService) ListApiV1Update(ctx context.Context) ApiListApiV1UpdateRequest {
-	return ApiListApiV1UpdateRequest{
+func (a *UpdateApiService) ListUpdate(ctx context.Context) ApiListUpdateRequest {
+	return ApiListUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *UpdateApiService) ListApiV1Update(ctx context.Context) ApiListApiV1Upda
 
 // Execute executes the request
 //  @return []UpdateResource
-func (a *UpdateApiService) ListApiV1UpdateExecute(r ApiListApiV1UpdateRequest) ([]*UpdateResource, *http.Response, error) {
+func (a *UpdateApiService) ListUpdateExecute(r ApiListUpdateRequest) ([]*UpdateResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *UpdateApiService) ListApiV1UpdateExecute(r ApiListApiV1UpdateRequest) (
 		localVarReturnValue  []*UpdateResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateApiService.ListApiV1Update")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateApiService.ListUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

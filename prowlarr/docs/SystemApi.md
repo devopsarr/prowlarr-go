@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1SystemRestart**](SystemApi.md#CreateApiV1SystemRestart) | **Post** /api/v1/system/restart | 
-[**CreateApiV1SystemShutdown**](SystemApi.md#CreateApiV1SystemShutdown) | **Post** /api/v1/system/shutdown | 
-[**GetApiV1SystemRoutes**](SystemApi.md#GetApiV1SystemRoutes) | **Get** /api/v1/system/routes | 
-[**GetApiV1SystemRoutesDuplicate**](SystemApi.md#GetApiV1SystemRoutesDuplicate) | **Get** /api/v1/system/routes/duplicate | 
-[**GetApiV1SystemStatus**](SystemApi.md#GetApiV1SystemStatus) | **Get** /api/v1/system/status | 
+[**CreateSystemRestart**](SystemApi.md#CreateSystemRestart) | **Post** /api/v1/system/restart | 
+[**CreateSystemShutdown**](SystemApi.md#CreateSystemShutdown) | **Post** /api/v1/system/shutdown | 
+[**GetSystemRoutes**](SystemApi.md#GetSystemRoutes) | **Get** /api/v1/system/routes | 
+[**GetSystemRoutesDuplicate**](SystemApi.md#GetSystemRoutesDuplicate) | **Get** /api/v1/system/routes/duplicate | 
+[**GetSystemStatus**](SystemApi.md#GetSystemStatus) | **Get** /api/v1/system/status | 
 
 
 
-## CreateApiV1SystemRestart
+## CreateSystemRestart
 
-> CreateApiV1SystemRestart(ctx).Execute()
+> CreateSystemRestart(ctx).Execute()
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SystemApi.CreateApiV1SystemRestart(context.Background()).Execute()
+    resp, r, err := apiClient.SystemApi.CreateSystemRestart(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.CreateApiV1SystemRestart``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.CreateSystemRestart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1SystemRestartRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSystemRestartRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiCreateApiV1SystemRestartRe
 [[Back to README]](../README.md)
 
 
-## CreateApiV1SystemShutdown
+## CreateSystemShutdown
 
-> CreateApiV1SystemShutdown(ctx).Execute()
+> CreateSystemShutdown(ctx).Execute()
 
 
 
@@ -91,9 +91,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SystemApi.CreateApiV1SystemShutdown(context.Background()).Execute()
+    resp, r, err := apiClient.SystemApi.CreateSystemShutdown(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.CreateApiV1SystemShutdown``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.CreateSystemShutdown``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1SystemShutdownRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSystemShutdownRequest struct via the builder pattern
 
 
 ### Return type
@@ -126,9 +126,9 @@ Other parameters are passed through a pointer to a apiCreateApiV1SystemShutdownR
 [[Back to README]](../README.md)
 
 
-## GetApiV1SystemRoutes
+## GetSystemRoutes
 
-> GetApiV1SystemRoutes(ctx).Execute()
+> GetSystemRoutes(ctx).Execute()
 
 
 
@@ -148,9 +148,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SystemApi.GetApiV1SystemRoutes(context.Background()).Execute()
+    resp, r, err := apiClient.SystemApi.GetSystemRoutes(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetApiV1SystemRoutes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSystemRoutes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -162,7 +162,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1SystemRoutesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSystemRoutesRequest struct via the builder pattern
 
 
 ### Return type
@@ -183,9 +183,9 @@ Other parameters are passed through a pointer to a apiGetApiV1SystemRoutesReques
 [[Back to README]](../README.md)
 
 
-## GetApiV1SystemRoutesDuplicate
+## GetSystemRoutesDuplicate
 
-> GetApiV1SystemRoutesDuplicate(ctx).Execute()
+> GetSystemRoutesDuplicate(ctx).Execute()
 
 
 
@@ -205,9 +205,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SystemApi.GetApiV1SystemRoutesDuplicate(context.Background()).Execute()
+    resp, r, err := apiClient.SystemApi.GetSystemRoutesDuplicate(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetApiV1SystemRoutesDuplicate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSystemRoutesDuplicate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -219,7 +219,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1SystemRoutesDuplicateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSystemRoutesDuplicateRequest struct via the builder pattern
 
 
 ### Return type
@@ -240,9 +240,9 @@ Other parameters are passed through a pointer to a apiGetApiV1SystemRoutesDuplic
 [[Back to README]](../README.md)
 
 
-## GetApiV1SystemStatus
+## GetSystemStatus
 
-> GetApiV1SystemStatus(ctx).Execute()
+> GetSystemStatus(ctx).Execute()
 
 
 
@@ -262,9 +262,9 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SystemApi.GetApiV1SystemStatus(context.Background()).Execute()
+    resp, r, err := apiClient.SystemApi.GetSystemStatus(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetApiV1SystemStatus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSystemStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -276,7 +276,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1SystemStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSystemStatusRequest struct via the builder pattern
 
 
 ### Return type

@@ -22,29 +22,29 @@ import (
 
 // CommandApiService CommandApi service
 type CommandApiService service
-type ApiCreateApiV1CommandRequest struct {
+type ApiCreateCommandRequest struct {
 	ctx context.Context
 	ApiService *CommandApiService
 	commandResource *CommandResource
 }
 
-func (r ApiCreateApiV1CommandRequest) CommandResource(commandResource CommandResource) ApiCreateApiV1CommandRequest {
+func (r ApiCreateCommandRequest) CommandResource(commandResource CommandResource) ApiCreateCommandRequest {
 	r.commandResource = &commandResource
 	return r
 }
 
-func (r ApiCreateApiV1CommandRequest) Execute() (*CommandResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1CommandExecute(r)
+func (r ApiCreateCommandRequest) Execute() (*CommandResource, *http.Response, error) {
+	return r.ApiService.CreateCommandExecute(r)
 }
 
 /*
-CreateApiV1Command Method for CreateApiV1Command
+CreateCommand Method for CreateCommand
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1CommandRequest
+ @return ApiCreateCommandRequest
 */
-func (a *CommandApiService) CreateApiV1Command(ctx context.Context) ApiCreateApiV1CommandRequest {
-	return ApiCreateApiV1CommandRequest{
+func (a *CommandApiService) CreateCommand(ctx context.Context) ApiCreateCommandRequest {
+	return ApiCreateCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *CommandApiService) CreateApiV1Command(ctx context.Context) ApiCreateApi
 
 // Execute executes the request
 //  @return CommandResource
-func (a *CommandApiService) CreateApiV1CommandExecute(r ApiCreateApiV1CommandRequest) (*CommandResource, *http.Response, error) {
+func (a *CommandApiService) CreateCommandExecute(r ApiCreateCommandRequest) (*CommandResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CommandApiService) CreateApiV1CommandExecute(r ApiCreateApiV1CommandReq
 		localVarReturnValue  *CommandResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.CreateApiV1Command")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.CreateCommand")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,25 +154,25 @@ func (a *CommandApiService) CreateApiV1CommandExecute(r ApiCreateApiV1CommandReq
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1CommandRequest struct {
+type ApiDeleteCommandRequest struct {
 	ctx context.Context
 	ApiService *CommandApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1CommandRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1CommandExecute(r)
+func (r ApiDeleteCommandRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCommandExecute(r)
 }
 
 /*
-DeleteApiV1Command Method for DeleteApiV1Command
+DeleteCommand Method for DeleteCommand
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1CommandRequest
+ @return ApiDeleteCommandRequest
 */
-func (a *CommandApiService) DeleteApiV1Command(ctx context.Context, id int32) ApiDeleteApiV1CommandRequest {
-	return ApiDeleteApiV1CommandRequest{
+func (a *CommandApiService) DeleteCommand(ctx context.Context, id int32) ApiDeleteCommandRequest {
+	return ApiDeleteCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -180,14 +180,14 @@ func (a *CommandApiService) DeleteApiV1Command(ctx context.Context, id int32) Ap
 }
 
 // Execute executes the request
-func (a *CommandApiService) DeleteApiV1CommandExecute(r ApiDeleteApiV1CommandRequest) (*http.Response, error) {
+func (a *CommandApiService) DeleteCommandExecute(r ApiDeleteCommandRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.DeleteApiV1Command")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.DeleteCommand")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -271,25 +271,25 @@ func (a *CommandApiService) DeleteApiV1CommandExecute(r ApiDeleteApiV1CommandReq
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1CommandByIdRequest struct {
+type ApiGetCommandByIdRequest struct {
 	ctx context.Context
 	ApiService *CommandApiService
 	id int32
 }
 
-func (r ApiGetApiV1CommandByIdRequest) Execute() (*CommandResource, *http.Response, error) {
-	return r.ApiService.GetApiV1CommandByIdExecute(r)
+func (r ApiGetCommandByIdRequest) Execute() (*CommandResource, *http.Response, error) {
+	return r.ApiService.GetCommandByIdExecute(r)
 }
 
 /*
-GetApiV1CommandById Method for GetApiV1CommandById
+GetCommandById Method for GetCommandById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1CommandByIdRequest
+ @return ApiGetCommandByIdRequest
 */
-func (a *CommandApiService) GetApiV1CommandById(ctx context.Context, id int32) ApiGetApiV1CommandByIdRequest {
-	return ApiGetApiV1CommandByIdRequest{
+func (a *CommandApiService) GetCommandById(ctx context.Context, id int32) ApiGetCommandByIdRequest {
+	return ApiGetCommandByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -298,7 +298,7 @@ func (a *CommandApiService) GetApiV1CommandById(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return CommandResource
-func (a *CommandApiService) GetApiV1CommandByIdExecute(r ApiGetApiV1CommandByIdRequest) (*CommandResource, *http.Response, error) {
+func (a *CommandApiService) GetCommandByIdExecute(r ApiGetCommandByIdRequest) (*CommandResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *CommandApiService) GetApiV1CommandByIdExecute(r ApiGetApiV1CommandByIdR
 		localVarReturnValue  *CommandResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.GetApiV1CommandById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.GetCommandById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -399,23 +399,23 @@ func (a *CommandApiService) GetApiV1CommandByIdExecute(r ApiGetApiV1CommandByIdR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1CommandRequest struct {
+type ApiListCommandRequest struct {
 	ctx context.Context
 	ApiService *CommandApiService
 }
 
-func (r ApiListApiV1CommandRequest) Execute() ([]*CommandResource, *http.Response, error) {
-	return r.ApiService.ListApiV1CommandExecute(r)
+func (r ApiListCommandRequest) Execute() ([]*CommandResource, *http.Response, error) {
+	return r.ApiService.ListCommandExecute(r)
 }
 
 /*
-ListApiV1Command Method for ListApiV1Command
+ListCommand Method for ListCommand
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1CommandRequest
+ @return ApiListCommandRequest
 */
-func (a *CommandApiService) ListApiV1Command(ctx context.Context) ApiListApiV1CommandRequest {
-	return ApiListApiV1CommandRequest{
+func (a *CommandApiService) ListCommand(ctx context.Context) ApiListCommandRequest {
+	return ApiListCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -423,7 +423,7 @@ func (a *CommandApiService) ListApiV1Command(ctx context.Context) ApiListApiV1Co
 
 // Execute executes the request
 //  @return []CommandResource
-func (a *CommandApiService) ListApiV1CommandExecute(r ApiListApiV1CommandRequest) ([]*CommandResource, *http.Response, error) {
+func (a *CommandApiService) ListCommandExecute(r ApiListCommandRequest) ([]*CommandResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *CommandApiService) ListApiV1CommandExecute(r ApiListApiV1CommandRequest
 		localVarReturnValue  []*CommandResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.ListApiV1Command")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.ListCommand")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

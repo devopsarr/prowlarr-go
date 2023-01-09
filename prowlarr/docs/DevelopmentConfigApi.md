@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:9696*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigDevelopment**](DevelopmentConfigApi.md#GetApiV1ConfigDevelopment) | **Get** /api/v1/config/development | 
-[**GetApiV1ConfigDevelopmentById**](DevelopmentConfigApi.md#GetApiV1ConfigDevelopmentById) | **Get** /api/v1/config/development/{id} | 
-[**UpdateApiV1ConfigDevelopment**](DevelopmentConfigApi.md#UpdateApiV1ConfigDevelopment) | **Put** /api/v1/config/development/{id} | 
+[**GetDevelopmentConfig**](DevelopmentConfigApi.md#GetDevelopmentConfig) | **Get** /api/v1/config/development | 
+[**GetDevelopmentConfigById**](DevelopmentConfigApi.md#GetDevelopmentConfigById) | **Get** /api/v1/config/development/{id} | 
+[**UpdateDevelopmentConfig**](DevelopmentConfigApi.md#UpdateDevelopmentConfig) | **Put** /api/v1/config/development/{id} | 
 
 
 
-## GetApiV1ConfigDevelopment
+## GetDevelopmentConfig
 
-> DevelopmentConfigResource GetApiV1ConfigDevelopment(ctx).Execute()
+> DevelopmentConfigResource GetDevelopmentConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DevelopmentConfigApi.GetApiV1ConfigDevelopment(context.Background()).Execute()
+    resp, r, err := apiClient.DevelopmentConfigApi.GetDevelopmentConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DevelopmentConfigApi.GetApiV1ConfigDevelopment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DevelopmentConfigApi.GetDevelopmentConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigDevelopment`: DevelopmentConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `DevelopmentConfigApi.GetApiV1ConfigDevelopment`: %v\n", resp)
+    // response from `GetDevelopmentConfig`: DevelopmentConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `DevelopmentConfigApi.GetDevelopmentConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigDevelopmentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDevelopmentConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetApiV1ConfigDevelopmentR
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigDevelopmentById
+## GetDevelopmentConfigById
 
-> DevelopmentConfigResource GetApiV1ConfigDevelopmentById(ctx, id).Execute()
+> DevelopmentConfigResource GetDevelopmentConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DevelopmentConfigApi.GetApiV1ConfigDevelopmentById(context.Background(), id).Execute()
+    resp, r, err := apiClient.DevelopmentConfigApi.GetDevelopmentConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DevelopmentConfigApi.GetApiV1ConfigDevelopmentById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DevelopmentConfigApi.GetDevelopmentConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigDevelopmentById`: DevelopmentConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `DevelopmentConfigApi.GetApiV1ConfigDevelopmentById`: %v\n", resp)
+    // response from `GetDevelopmentConfigById`: DevelopmentConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `DevelopmentConfigApi.GetDevelopmentConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigDevelopmentByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDevelopmentConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigDevelopment
+## UpdateDevelopmentConfig
 
-> DevelopmentConfigResource UpdateApiV1ConfigDevelopment(ctx, id).DevelopmentConfigResource(developmentConfigResource).Execute()
+> DevelopmentConfigResource UpdateDevelopmentConfig(ctx, id).DevelopmentConfigResource(developmentConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DevelopmentConfigApi.UpdateApiV1ConfigDevelopment(context.Background(), id).DevelopmentConfigResource(developmentConfigResource).Execute()
+    resp, r, err := apiClient.DevelopmentConfigApi.UpdateDevelopmentConfig(context.Background(), id).DevelopmentConfigResource(developmentConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DevelopmentConfigApi.UpdateApiV1ConfigDevelopment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DevelopmentConfigApi.UpdateDevelopmentConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigDevelopment`: DevelopmentConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `DevelopmentConfigApi.UpdateApiV1ConfigDevelopment`: %v\n", resp)
+    // response from `UpdateDevelopmentConfig`: DevelopmentConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `DevelopmentConfigApi.UpdateDevelopmentConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigDevelopmentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDevelopmentConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
