@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/devopsarr/prowlarr-go/compare/v0.1.0...v0.2.0) (2023-02-21)
+
+
+### Features
+
+* add ping api and system resource ([02a41ec](https://github.com/devopsarr/prowlarr-go/commit/02a41ec6798a88dfe6eed0ad59e4939ebe04fb49))
+
 ## 0.1.0 (2023-01-24)
 
 
