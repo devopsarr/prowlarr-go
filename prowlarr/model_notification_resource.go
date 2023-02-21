@@ -27,8 +27,11 @@ type NotificationResource struct {
 	Tags []*int32 `json:"tags,omitempty"`
 	Presets []*NotificationResource `json:"presets,omitempty"`
 	Link NullableString `json:"link,omitempty"`
+	OnGrab *bool `json:"onGrab,omitempty"`
 	OnHealthIssue *bool `json:"onHealthIssue,omitempty"`
 	OnApplicationUpdate *bool `json:"onApplicationUpdate,omitempty"`
+	SupportsOnGrab *bool `json:"supportsOnGrab,omitempty"`
+	IncludeManualGrabs *bool `json:"includeManualGrabs,omitempty"`
 	SupportsOnHealthIssue *bool `json:"supportsOnHealthIssue,omitempty"`
 	IncludeHealthWarnings *bool `json:"includeHealthWarnings,omitempty"`
 	SupportsOnApplicationUpdate *bool `json:"supportsOnApplicationUpdate,omitempty"`
@@ -467,6 +470,38 @@ func (o *NotificationResource) UnsetLink() {
 	o.Link.Unset()
 }
 
+// GetOnGrab returns the OnGrab field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnGrab() bool {
+	if o == nil || isNil(o.OnGrab) {
+		var ret bool
+		return ret
+	}
+	return *o.OnGrab
+}
+
+// GetOnGrabOk returns a tuple with the OnGrab field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnGrabOk() (*bool, bool) {
+	if o == nil || isNil(o.OnGrab) {
+    return nil, false
+	}
+	return o.OnGrab, true
+}
+
+// HasOnGrab returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnGrab() bool {
+	if o != nil && !isNil(o.OnGrab) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnGrab gets a reference to the given bool and assigns it to the OnGrab field.
+func (o *NotificationResource) SetOnGrab(v bool) {
+	o.OnGrab = &v
+}
+
 // GetOnHealthIssue returns the OnHealthIssue field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnHealthIssue() bool {
 	if o == nil || isNil(o.OnHealthIssue) {
@@ -529,6 +564,70 @@ func (o *NotificationResource) HasOnApplicationUpdate() bool {
 // SetOnApplicationUpdate gets a reference to the given bool and assigns it to the OnApplicationUpdate field.
 func (o *NotificationResource) SetOnApplicationUpdate(v bool) {
 	o.OnApplicationUpdate = &v
+}
+
+// GetSupportsOnGrab returns the SupportsOnGrab field value if set, zero value otherwise.
+func (o *NotificationResource) GetSupportsOnGrab() bool {
+	if o == nil || isNil(o.SupportsOnGrab) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsOnGrab
+}
+
+// GetSupportsOnGrabOk returns a tuple with the SupportsOnGrab field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetSupportsOnGrabOk() (*bool, bool) {
+	if o == nil || isNil(o.SupportsOnGrab) {
+    return nil, false
+	}
+	return o.SupportsOnGrab, true
+}
+
+// HasSupportsOnGrab returns a boolean if a field has been set.
+func (o *NotificationResource) HasSupportsOnGrab() bool {
+	if o != nil && !isNil(o.SupportsOnGrab) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsOnGrab gets a reference to the given bool and assigns it to the SupportsOnGrab field.
+func (o *NotificationResource) SetSupportsOnGrab(v bool) {
+	o.SupportsOnGrab = &v
+}
+
+// GetIncludeManualGrabs returns the IncludeManualGrabs field value if set, zero value otherwise.
+func (o *NotificationResource) GetIncludeManualGrabs() bool {
+	if o == nil || isNil(o.IncludeManualGrabs) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeManualGrabs
+}
+
+// GetIncludeManualGrabsOk returns a tuple with the IncludeManualGrabs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetIncludeManualGrabsOk() (*bool, bool) {
+	if o == nil || isNil(o.IncludeManualGrabs) {
+    return nil, false
+	}
+	return o.IncludeManualGrabs, true
+}
+
+// HasIncludeManualGrabs returns a boolean if a field has been set.
+func (o *NotificationResource) HasIncludeManualGrabs() bool {
+	if o != nil && !isNil(o.IncludeManualGrabs) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeManualGrabs gets a reference to the given bool and assigns it to the IncludeManualGrabs field.
+func (o *NotificationResource) SetIncludeManualGrabs(v bool) {
+	o.IncludeManualGrabs = &v
 }
 
 // GetSupportsOnHealthIssue returns the SupportsOnHealthIssue field value if set, zero value otherwise.
@@ -704,11 +803,20 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if o.Link.IsSet() {
 		toSerialize["link"] = o.Link.Get()
 	}
+	if !isNil(o.OnGrab) {
+		toSerialize["onGrab"] = o.OnGrab
+	}
 	if !isNil(o.OnHealthIssue) {
 		toSerialize["onHealthIssue"] = o.OnHealthIssue
 	}
 	if !isNil(o.OnApplicationUpdate) {
 		toSerialize["onApplicationUpdate"] = o.OnApplicationUpdate
+	}
+	if !isNil(o.SupportsOnGrab) {
+		toSerialize["supportsOnGrab"] = o.SupportsOnGrab
+	}
+	if !isNil(o.IncludeManualGrabs) {
+		toSerialize["includeManualGrabs"] = o.IncludeManualGrabs
 	}
 	if !isNil(o.SupportsOnHealthIssue) {
 		toSerialize["supportsOnHealthIssue"] = o.SupportsOnHealthIssue

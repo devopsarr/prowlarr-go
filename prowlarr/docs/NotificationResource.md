@@ -15,8 +15,11 @@ Name | Type | Description | Notes
 **Tags** | Pointer to **[]int32** |  | [optional] 
 **Presets** | Pointer to [**[]NotificationResource**](NotificationResource.md) |  | [optional] 
 **Link** | Pointer to **NullableString** |  | [optional] 
+**OnGrab** | Pointer to **bool** |  | [optional] 
 **OnHealthIssue** | Pointer to **bool** |  | [optional] 
 **OnApplicationUpdate** | Pointer to **bool** |  | [optional] 
+**SupportsOnGrab** | Pointer to **bool** |  | [optional] 
+**IncludeManualGrabs** | Pointer to **bool** |  | [optional] 
 **SupportsOnHealthIssue** | Pointer to **bool** |  | [optional] 
 **IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
 **SupportsOnApplicationUpdate** | Pointer to **bool** |  | [optional] 
@@ -406,6 +409,31 @@ HasLink returns a boolean if a field has been set.
 `func (o *NotificationResource) UnsetLink()`
 
 UnsetLink ensures that no value is present for Link, not even an explicit nil
+### GetOnGrab
+
+`func (o *NotificationResource) GetOnGrab() bool`
+
+GetOnGrab returns the OnGrab field if non-nil, zero value otherwise.
+
+### GetOnGrabOk
+
+`func (o *NotificationResource) GetOnGrabOk() (*bool, bool)`
+
+GetOnGrabOk returns a tuple with the OnGrab field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnGrab
+
+`func (o *NotificationResource) SetOnGrab(v bool)`
+
+SetOnGrab sets OnGrab field to given value.
+
+### HasOnGrab
+
+`func (o *NotificationResource) HasOnGrab() bool`
+
+HasOnGrab returns a boolean if a field has been set.
+
 ### GetOnHealthIssue
 
 `func (o *NotificationResource) GetOnHealthIssue() bool`
@@ -455,6 +483,56 @@ SetOnApplicationUpdate sets OnApplicationUpdate field to given value.
 `func (o *NotificationResource) HasOnApplicationUpdate() bool`
 
 HasOnApplicationUpdate returns a boolean if a field has been set.
+
+### GetSupportsOnGrab
+
+`func (o *NotificationResource) GetSupportsOnGrab() bool`
+
+GetSupportsOnGrab returns the SupportsOnGrab field if non-nil, zero value otherwise.
+
+### GetSupportsOnGrabOk
+
+`func (o *NotificationResource) GetSupportsOnGrabOk() (*bool, bool)`
+
+GetSupportsOnGrabOk returns a tuple with the SupportsOnGrab field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsOnGrab
+
+`func (o *NotificationResource) SetSupportsOnGrab(v bool)`
+
+SetSupportsOnGrab sets SupportsOnGrab field to given value.
+
+### HasSupportsOnGrab
+
+`func (o *NotificationResource) HasSupportsOnGrab() bool`
+
+HasSupportsOnGrab returns a boolean if a field has been set.
+
+### GetIncludeManualGrabs
+
+`func (o *NotificationResource) GetIncludeManualGrabs() bool`
+
+GetIncludeManualGrabs returns the IncludeManualGrabs field if non-nil, zero value otherwise.
+
+### GetIncludeManualGrabsOk
+
+`func (o *NotificationResource) GetIncludeManualGrabsOk() (*bool, bool)`
+
+GetIncludeManualGrabsOk returns a tuple with the IncludeManualGrabs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeManualGrabs
+
+`func (o *NotificationResource) SetIncludeManualGrabs(v bool)`
+
+SetIncludeManualGrabs sets IncludeManualGrabs field to given value.
+
+### HasIncludeManualGrabs
+
+`func (o *NotificationResource) HasIncludeManualGrabs() bool`
+
+HasIncludeManualGrabs returns a boolean if a field has been set.
 
 ### GetSupportsOnHealthIssue
 

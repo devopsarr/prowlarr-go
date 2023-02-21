@@ -44,6 +44,7 @@ type ReleaseResource struct {
 	Seeders NullableInt32 `json:"seeders,omitempty"`
 	Leechers NullableInt32 `json:"leechers,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
+	FileName NullableString `json:"fileName,omitempty"`
 }
 
 // NewReleaseResource instantiates a new ReleaseResource object
@@ -1079,6 +1080,48 @@ func (o *ReleaseResource) SetProtocol(v DownloadProtocol) {
 	o.Protocol = &v
 }
 
+// GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetFileName() string {
+	if o == nil || isNil(o.FileName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FileName.Get()
+}
+
+// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetFileNameOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.FileName.Get(), o.FileName.IsSet()
+}
+
+// HasFileName returns a boolean if a field has been set.
+func (o *ReleaseResource) HasFileName() bool {
+	if o != nil && o.FileName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFileName gets a reference to the given NullableString and assigns it to the FileName field.
+func (o *ReleaseResource) SetFileName(v string) {
+	o.FileName.Set(&v)
+}
+// SetFileNameNil sets the value for FileName to be an explicit nil
+func (o *ReleaseResource) SetFileNameNil() {
+	o.FileName.Set(nil)
+}
+
+// UnsetFileName ensures that no value is present for FileName, not even an explicit nil
+func (o *ReleaseResource) UnsetFileName() {
+	o.FileName.Unset()
+}
+
 func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -1161,6 +1204,9 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
+	}
+	if o.FileName.IsSet() {
+		toSerialize["fileName"] = o.FileName.Get()
 	}
 	return json.Marshal(toSerialize)
 }

@@ -2451,6 +2451,18 @@ paths:
           description: Success
       tags:
       - Notification
+  /ping:
+    get:
+      operationId: GetPing
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResource'
+          description: Success
+      tags:
+      - Ping
   /api/v1/appprofile/schema:
     get:
       operationId: GetAppprofileSchema
@@ -2689,6 +2701,16 @@ paths:
       operationId: GetSystemStatus
       responses:
         "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SystemResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SystemResource'
           description: Success
       tags:
       - System
@@ -3521,6 +3543,11 @@ components:
           nullable: true
           type: array
       type: object
+    DatabaseType:
+      enum:
+      - sqLite
+      - postgreSQL
+      type: string
     DevelopmentConfigResource:
       additionalProperties: false
       example:
@@ -4883,6 +4910,7 @@ components:
     NotificationResource:
       additionalProperties: false
       example:
+        supportsOnGrab: true
         implementationName: implementationName
         testCommand: testCommand
         implementation: implementation
@@ -4895,11 +4923,13 @@ components:
         tags:
         - 6
         - 6
+        onGrab: true
         presets:
         - null
         - null
         configContract: configContract
         name: name
+        includeManualGrabs: true
         id: 0
         includeHealthWarnings: true
         fields:
@@ -4995,9 +5025,15 @@ components:
         link:
           nullable: true
           type: string
+        onGrab:
+          type: boolean
         onHealthIssue:
           type: boolean
         onApplicationUpdate:
+          type: boolean
+        supportsOnGrab:
+          type: boolean
+        includeManualGrabs:
           type: boolean
         supportsOnHealthIssue:
           type: boolean
@@ -5019,6 +5055,15 @@ components:
           nullable: true
           type: string
         value:
+          nullable: true
+          type: string
+      type: object
+    PingResource:
+      additionalProperties: false
+      example:
+        status: status
+      properties:
+        status:
           nullable: true
           type: string
       type: object
@@ -5052,6 +5097,7 @@ components:
         indexerFlags:
         - indexerFlags
         - indexerFlags
+        fileName: fileName
         ageMinutes: 5.962133916683182
         leechers: 4
         imdbId: 3
@@ -5178,7 +5224,17 @@ components:
           type: integer
         protocol:
           $ref: '#/components/schemas/DownloadProtocol'
+        fileName:
+          nullable: true
+          readOnly: true
+          type: string
       type: object
+    RuntimeMode:
+      enum:
+      - console
+      - service
+      - tray
+      type: string
     SearchParam:
       enum:
       - q
@@ -5215,6 +5271,120 @@ components:
       - ascending
       - descending
       type: string
+    SystemResource:
+      additionalProperties: false
+      example:
+        runtimeVersion: runtimeVersion
+        startupPath: startupPath
+        instanceName: instanceName
+        packageAuthor: packageAuthor
+        packageUpdateMechanismMessage: packageUpdateMechanismMessage
+        packageUpdateMechanism: null
+        branch: branch
+        databaseVersion: databaseVersion
+        appData: appData
+        isDebug: true
+        mode: null
+        osVersion: osVersion
+        isWindows: true
+        startTime: 2000-01-23T04:56:07.000+00:00
+        isUserInteractive: true
+        authentication: null
+        isLinux: true
+        isProduction: true
+        buildTime: 2000-01-23T04:56:07.000+00:00
+        appName: appName
+        isNetCore: true
+        packageVersion: packageVersion
+        isAdmin: true
+        osName: osName
+        version: version
+        databaseType: null
+        migrationVersion: 0
+        urlBase: urlBase
+        isDocker: true
+        isOsx: true
+        runtimeName: runtimeName
+      properties:
+        appName:
+          nullable: true
+          type: string
+        instanceName:
+          nullable: true
+          type: string
+        version:
+          nullable: true
+          type: string
+        buildTime:
+          format: date-time
+          type: string
+        isDebug:
+          type: boolean
+        isProduction:
+          type: boolean
+        isAdmin:
+          type: boolean
+        isUserInteractive:
+          type: boolean
+        startupPath:
+          nullable: true
+          type: string
+        appData:
+          nullable: true
+          type: string
+        osName:
+          nullable: true
+          type: string
+        osVersion:
+          nullable: true
+          type: string
+        isNetCore:
+          type: boolean
+        isLinux:
+          type: boolean
+        isOsx:
+          type: boolean
+        isWindows:
+          type: boolean
+        isDocker:
+          type: boolean
+        mode:
+          $ref: '#/components/schemas/RuntimeMode'
+        branch:
+          nullable: true
+          type: string
+        databaseType:
+          $ref: '#/components/schemas/DatabaseType'
+        databaseVersion:
+          type: string
+        authentication:
+          $ref: '#/components/schemas/AuthenticationType'
+        migrationVersion:
+          format: int32
+          type: integer
+        urlBase:
+          nullable: true
+          type: string
+        runtimeVersion:
+          type: string
+        runtimeName:
+          nullable: true
+          type: string
+        startTime:
+          format: date-time
+          type: string
+        packageVersion:
+          nullable: true
+          type: string
+        packageAuthor:
+          nullable: true
+          type: string
+        packageUpdateMechanism:
+          $ref: '#/components/schemas/UpdateMechanism'
+        packageUpdateMechanismMessage:
+          nullable: true
+          type: string
+      type: object
     TagDetailsResource:
       additionalProperties: false
       example:

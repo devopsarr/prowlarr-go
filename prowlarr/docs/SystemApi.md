@@ -242,7 +242,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesDuplicateRe
 
 ## GetSystemStatus
 
-> GetSystemStatus(ctx).Execute()
+> SystemResource GetSystemStatus(ctx).Execute()
 
 
 
@@ -267,6 +267,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSystemStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GetSystemStatus`: SystemResource
+    fmt.Fprintf(os.Stdout, "Response from `SystemApi.GetSystemStatus`: %v\n", resp)
 }
 ```
 
@@ -281,7 +283,7 @@ Other parameters are passed through a pointer to a apiGetSystemStatusRequest str
 
 ### Return type
 
- (empty response body)
+[**SystemResource**](SystemResource.md)
 
 ### Authorization
 
@@ -290,7 +292,7 @@ Other parameters are passed through a pointer to a apiGetSystemStatusRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

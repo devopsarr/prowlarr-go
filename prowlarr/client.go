@@ -73,6 +73,7 @@ type APIClient struct {
 	LogFileApi *LogFileApiService
 	NewznabApi *NewznabApiService
 	NotificationApi *NotificationApiService
+	PingApi *PingApiService
 	QualityProfileSchemaApi *QualityProfileSchemaApiService
 	SearchApi *SearchApiService
 	StaticResourceApi *StaticResourceApiService
@@ -127,6 +128,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LogFileApi = (*LogFileApiService)(&c.common)
 	c.NewznabApi = (*NewznabApiService)(&c.common)
 	c.NotificationApi = (*NotificationApiService)(&c.common)
+	c.PingApi = (*PingApiService)(&c.common)
 	c.QualityProfileSchemaApi = (*QualityProfileSchemaApiService)(&c.common)
 	c.SearchApi = (*SearchApiService)(&c.common)
 	c.StaticResourceApi = (*StaticResourceApiService)(&c.common)

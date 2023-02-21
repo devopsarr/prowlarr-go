@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**TestNotification**](docs/NotificationApi.md#testnotification) | **Post** /api/v1/notification/test | 
 *NotificationApi* | [**TestallNotification**](docs/NotificationApi.md#testallnotification) | **Post** /api/v1/notification/testall | 
 *NotificationApi* | [**UpdateNotification**](docs/NotificationApi.md#updatenotification) | **Put** /api/v1/notification/{id} | 
+*PingApi* | [**GetPing**](docs/PingApi.md#getping) | **Get** /ping | 
 *QualityProfileSchemaApi* | [**GetAppprofileSchema**](docs/QualityProfileSchemaApi.md#getappprofileschema) | **Get** /api/v1/appprofile/schema | 
 *SearchApi* | [**CreateSearch**](docs/SearchApi.md#createsearch) | **Post** /api/v1/search | 
 *SearchApi* | [**CreateSearchBulk**](docs/SearchApi.md#createsearchbulk) | **Post** /api/v1/search/bulk | 
@@ -226,6 +227,7 @@ Class | Method | HTTP request | Description
  - [CommandStatus](docs/CommandStatus.md)
  - [CommandTrigger](docs/CommandTrigger.md)
  - [CustomFilterResource](docs/CustomFilterResource.md)
+ - [DatabaseType](docs/DatabaseType.md)
  - [DevelopmentConfigResource](docs/DevelopmentConfigResource.md)
  - [DownloadClientCategory](docs/DownloadClientCategory.md)
  - [DownloadClientConfigResource](docs/DownloadClientConfigResource.md)
@@ -257,13 +259,16 @@ Class | Method | HTTP request | Description
  - [MusicSearchParam](docs/MusicSearchParam.md)
  - [NotificationResource](docs/NotificationResource.md)
  - [PagingResourceFilter](docs/PagingResourceFilter.md)
+ - [PingResource](docs/PingResource.md)
  - [ProviderMessage](docs/ProviderMessage.md)
  - [ProviderMessageType](docs/ProviderMessageType.md)
  - [ProxyType](docs/ProxyType.md)
  - [ReleaseResource](docs/ReleaseResource.md)
+ - [RuntimeMode](docs/RuntimeMode.md)
  - [SearchParam](docs/SearchParam.md)
  - [SelectOption](docs/SelectOption.md)
  - [SortDirection](docs/SortDirection.md)
+ - [SystemResource](docs/SystemResource.md)
  - [TagDetailsResource](docs/TagDetailsResource.md)
  - [TagResource](docs/TagResource.md)
  - [TaskResource](docs/TaskResource.md)

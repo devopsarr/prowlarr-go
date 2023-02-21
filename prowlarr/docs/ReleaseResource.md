@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **Seeders** | Pointer to **NullableInt32** |  | [optional] 
 **Leechers** | Pointer to **NullableInt32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
+**FileName** | Pointer to **NullableString** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -896,6 +897,41 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
+### GetFileName
+
+`func (o *ReleaseResource) GetFileName() string`
+
+GetFileName returns the FileName field if non-nil, zero value otherwise.
+
+### GetFileNameOk
+
+`func (o *ReleaseResource) GetFileNameOk() (*string, bool)`
+
+GetFileNameOk returns a tuple with the FileName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileName
+
+`func (o *ReleaseResource) SetFileName(v string)`
+
+SetFileName sets FileName field to given value.
+
+### HasFileName
+
+`func (o *ReleaseResource) HasFileName() bool`
+
+HasFileName returns a boolean if a field has been set.
+
+### SetFileNameNil
+
+`func (o *ReleaseResource) SetFileNameNil(b bool)`
+
+ SetFileNameNil sets the value for FileName to be an explicit nil
+
+### UnsetFileName
+`func (o *ReleaseResource) UnsetFileName()`
+
+UnsetFileName ensures that no value is present for FileName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
