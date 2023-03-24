@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/devopsarr/prowlarr-go/compare/v0.2.0...v0.3.0) (2023-03-24)
+
+
+### Features
+
+* sdk generation alignment ([83c22fc](https://github.com/devopsarr/prowlarr-go/commit/83c22fc61125853c232a8c1ac056144949cdb9b5))
+
 ## [0.2.0](https://github.com/devopsarr/prowlarr-go/compare/v0.1.0...v0.2.0) (2023-02-21)
 
 
