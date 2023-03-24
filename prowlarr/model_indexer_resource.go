@@ -38,6 +38,7 @@ type IndexerResource struct {
 	SupportsRss *bool `json:"supportsRss,omitempty"`
 	SupportsSearch *bool `json:"supportsSearch,omitempty"`
 	SupportsRedirect *bool `json:"supportsRedirect,omitempty"`
+	SupportsPagination *bool `json:"supportsPagination,omitempty"`
 	AppProfileId *int32 `json:"appProfileId,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Privacy *IndexerPrivacy `json:"privacy,omitempty"`
@@ -832,6 +833,38 @@ func (o *IndexerResource) SetSupportsRedirect(v bool) {
 	o.SupportsRedirect = &v
 }
 
+// GetSupportsPagination returns the SupportsPagination field value if set, zero value otherwise.
+func (o *IndexerResource) GetSupportsPagination() bool {
+	if o == nil || isNil(o.SupportsPagination) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsPagination
+}
+
+// GetSupportsPaginationOk returns a tuple with the SupportsPagination field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IndexerResource) GetSupportsPaginationOk() (*bool, bool) {
+	if o == nil || isNil(o.SupportsPagination) {
+    return nil, false
+	}
+	return o.SupportsPagination, true
+}
+
+// HasSupportsPagination returns a boolean if a field has been set.
+func (o *IndexerResource) HasSupportsPagination() bool {
+	if o != nil && !isNil(o.SupportsPagination) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsPagination gets a reference to the given bool and assigns it to the SupportsPagination field.
+func (o *IndexerResource) SetSupportsPagination(v bool) {
+	o.SupportsPagination = &v
+}
+
 // GetAppProfileId returns the AppProfileId field value if set, zero value otherwise.
 func (o *IndexerResource) GetAppProfileId() int32 {
 	if o == nil || isNil(o.AppProfileId) {
@@ -1162,6 +1195,9 @@ func (o IndexerResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.SupportsRedirect) {
 		toSerialize["supportsRedirect"] = o.SupportsRedirect
+	}
+	if !isNil(o.SupportsPagination) {
+		toSerialize["supportsPagination"] = o.SupportsPagination
 	}
 	if !isNil(o.AppProfileId) {
 		toSerialize["appProfileId"] = o.AppProfileId

@@ -3428,18 +3428,7 @@ components:
           sendUpdatesToClient: true
           updateScheduledTask: true
         priority: null
-        duration:
-          milliseconds: 5
-          hours: 5
-          seconds: 7
-          totalDays: 9.301444243932576
-          ticks: 6
-          totalHours: 3.616076749251911
-          totalMilliseconds: 2.027123023002322
-          totalMinutes: 4.145608029883936
-          minutes: 2
-          days: 1
-          totalSeconds: 7.386281948385884
+        duration: duration
         commandName: commandName
         name: name
         ended: 2000-01-23T04:56:07.000+00:00
@@ -3479,7 +3468,8 @@ components:
           nullable: true
           type: string
         duration:
-          $ref: '#/components/schemas/TimeSpan'
+          pattern: "\\d{2}:\\d{2}:\\d{2}"
+          type: string
         exception:
           nullable: true
           type: string
@@ -3821,14 +3811,7 @@ components:
     HealthResource:
       additionalProperties: false
       example:
-        wikiUrl:
-          path: path
-          fragment: fragment
-          scheme: scheme
-          port: 6
-          query: query
-          host: host
-          fullUri: fullUri
+        wikiUrl: wikiUrl
         id: 0
         source: source
         type: null
@@ -3846,7 +3829,7 @@ components:
           nullable: true
           type: string
         wikiUrl:
-          $ref: '#/components/schemas/HttpUri'
+          type: string
       type: object
     HistoryEventType:
       enum:
@@ -4100,46 +4083,7 @@ components:
           type: integer
       type: object
     HttpUri:
-      additionalProperties: false
-      example:
-        path: path
-        fragment: fragment
-        scheme: scheme
-        port: 6
-        query: query
-        host: host
-        fullUri: fullUri
-      properties:
-        fullUri:
-          nullable: true
-          readOnly: true
-          type: string
-        scheme:
-          nullable: true
-          readOnly: true
-          type: string
-        host:
-          nullable: true
-          readOnly: true
-          type: string
-        port:
-          format: int32
-          nullable: true
-          readOnly: true
-          type: integer
-        path:
-          nullable: true
-          readOnly: true
-          type: string
-        query:
-          nullable: true
-          readOnly: true
-          type: string
-        fragment:
-          nullable: true
-          readOnly: true
-          type: string
-      type: object
+      type: string
     IndexerCapabilityResource:
       additionalProperties: false
       example:
@@ -4253,7 +4197,7 @@ components:
         indexerIds:
         - 0
         - 0
-        enable: enable
+        enable: true
         appProfileId: 6
         tags:
         - 1
@@ -4267,7 +4211,7 @@ components:
           type: array
         enable:
           nullable: true
-          type: string
+          type: boolean
         appProfileId:
           format: int32
           nullable: true
@@ -4421,6 +4365,7 @@ components:
         language: language
         protocol: null
         enable: true
+        supportsPagination: true
         id: 0
         supportsRss: true
         infoLink: infoLink
@@ -4533,8 +4478,10 @@ components:
           order: 6
         status:
           disabledTill: 2000-01-23T04:56:07.000+00:00
+          initialFailure: 2000-01-23T04:56:07.000+00:00
           id: 3
           indexerId: 2
+          mostRecentFailure: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           format: int32
@@ -4604,6 +4551,8 @@ components:
         supportsSearch:
           type: boolean
         supportsRedirect:
+          type: boolean
+        supportsPagination:
           type: boolean
         appProfileId:
           format: int32
@@ -4740,8 +4689,10 @@ components:
       additionalProperties: false
       example:
         disabledTill: 2000-01-23T04:56:07.000+00:00
+        initialFailure: 2000-01-23T04:56:07.000+00:00
         id: 3
         indexerId: 2
+        mostRecentFailure: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           format: int32
@@ -4750,6 +4701,14 @@ components:
           format: int32
           type: integer
         disabledTill:
+          format: date-time
+          nullable: true
+          type: string
+        mostRecentFailure:
+          format: date-time
+          nullable: true
+          type: string
+        initialFailure:
           format: date-time
           nullable: true
           type: string
@@ -5131,6 +5090,7 @@ components:
         subGroup: subGroup
         ageHours: 1.4658129805029452
         indexer: indexer
+        sortTitle: sortTitle
         size: 5
         magnetUrl: magnetUrl
         guid: guid
@@ -5176,6 +5136,9 @@ components:
           nullable: true
           type: string
         title:
+          nullable: true
+          type: string
+        sortTitle:
           nullable: true
           type: string
         approved:
@@ -5441,18 +5404,7 @@ components:
     TaskResource:
       additionalProperties: false
       example:
-        lastDuration:
-          milliseconds: 5
-          hours: 5
-          seconds: 7
-          totalDays: 9.301444243932576
-          ticks: 6
-          totalHours: 3.616076749251911
-          totalMilliseconds: 2.027123023002322
-          totalMinutes: 4.145608029883936
-          minutes: 2
-          days: 1
-          totalSeconds: 7.386281948385884
+        lastDuration: lastDuration
         lastExecution: 2000-01-23T04:56:07.000+00:00
         name: name
         lastStartTime: 2000-01-23T04:56:07.000+00:00
@@ -5483,67 +5435,12 @@ components:
           format: date-time
           type: string
         lastDuration:
-          $ref: '#/components/schemas/TimeSpan'
+          pattern: "\\d{2}:\\d{2}:\\d{2}"
+          type: string
       type: object
     TimeSpan:
-      additionalProperties: false
-      example:
-        milliseconds: 5
-        hours: 5
-        seconds: 7
-        totalDays: 9.301444243932576
-        ticks: 6
-        totalHours: 3.616076749251911
-        totalMilliseconds: 2.027123023002322
-        totalMinutes: 4.145608029883936
-        minutes: 2
-        days: 1
-        totalSeconds: 7.386281948385884
-      properties:
-        ticks:
-          format: int64
-          type: integer
-        days:
-          format: int32
-          readOnly: true
-          type: integer
-        hours:
-          format: int32
-          readOnly: true
-          type: integer
-        milliseconds:
-          format: int32
-          readOnly: true
-          type: integer
-        minutes:
-          format: int32
-          readOnly: true
-          type: integer
-        seconds:
-          format: int32
-          readOnly: true
-          type: integer
-        totalDays:
-          format: double
-          readOnly: true
-          type: number
-        totalHours:
-          format: double
-          readOnly: true
-          type: number
-        totalMilliseconds:
-          format: double
-          readOnly: true
-          type: number
-        totalMinutes:
-          format: double
-          readOnly: true
-          type: number
-        totalSeconds:
-          format: double
-          readOnly: true
-          type: number
-      type: object
+      pattern: "\\d{2}:\\d{2}:\\d{2}"
+      type: string
     TvSearchParam:
       enum:
       - q
@@ -5704,33 +5601,7 @@ components:
           type: integer
       type: object
     Version:
-      additionalProperties: false
-      properties:
-        major:
-          format: int32
-          readOnly: true
-          type: integer
-        minor:
-          format: int32
-          readOnly: true
-          type: integer
-        build:
-          format: int32
-          readOnly: true
-          type: integer
-        revision:
-          format: int32
-          readOnly: true
-          type: integer
-        majorRevision:
-          format: int32
-          readOnly: true
-          type: integer
-        minorRevision:
-          format: int32
-          readOnly: true
-          type: integer
-      type: object
+      type: string
     CreateLogin_request:
       properties:
         Username:

@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **SupportsRss** | Pointer to **bool** |  | [optional] 
 **SupportsSearch** | Pointer to **bool** |  | [optional] 
 **SupportsRedirect** | Pointer to **bool** |  | [optional] 
+**SupportsPagination** | Pointer to **bool** |  | [optional] 
 **AppProfileId** | Pointer to **int32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **Privacy** | Pointer to [**IndexerPrivacy**](IndexerPrivacy.md) |  | [optional] 
@@ -717,6 +718,31 @@ SetSupportsRedirect sets SupportsRedirect field to given value.
 `func (o *IndexerResource) HasSupportsRedirect() bool`
 
 HasSupportsRedirect returns a boolean if a field has been set.
+
+### GetSupportsPagination
+
+`func (o *IndexerResource) GetSupportsPagination() bool`
+
+GetSupportsPagination returns the SupportsPagination field if non-nil, zero value otherwise.
+
+### GetSupportsPaginationOk
+
+`func (o *IndexerResource) GetSupportsPaginationOk() (*bool, bool)`
+
+GetSupportsPaginationOk returns a tuple with the SupportsPagination field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsPagination
+
+`func (o *IndexerResource) SetSupportsPagination(v bool)`
+
+SetSupportsPagination sets SupportsPagination field to given value.
+
+### HasSupportsPagination
+
+`func (o *IndexerResource) HasSupportsPagination() bool`
+
+HasSupportsPagination returns a boolean if a field has been set.
 
 ### GetAppProfileId
 
