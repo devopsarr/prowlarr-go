@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **SubGroup** | Pointer to **NullableString** |  | [optional] 
 **ReleaseHash** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
+**SortTitle** | Pointer to **NullableString** |  | [optional] 
 **Approved** | Pointer to **bool** |  | [optional] 
 **ImdbId** | Pointer to **int32** |  | [optional] 
 **PublishDate** | Pointer to **time.Time** |  | [optional] 
@@ -447,6 +448,41 @@ HasTitle returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetTitle()`
 
 UnsetTitle ensures that no value is present for Title, not even an explicit nil
+### GetSortTitle
+
+`func (o *ReleaseResource) GetSortTitle() string`
+
+GetSortTitle returns the SortTitle field if non-nil, zero value otherwise.
+
+### GetSortTitleOk
+
+`func (o *ReleaseResource) GetSortTitleOk() (*string, bool)`
+
+GetSortTitleOk returns a tuple with the SortTitle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortTitle
+
+`func (o *ReleaseResource) SetSortTitle(v string)`
+
+SetSortTitle sets SortTitle field to given value.
+
+### HasSortTitle
+
+`func (o *ReleaseResource) HasSortTitle() bool`
+
+HasSortTitle returns a boolean if a field has been set.
+
+### SetSortTitleNil
+
+`func (o *ReleaseResource) SetSortTitleNil(b bool)`
+
+ SetSortTitleNil sets the value for SortTitle to be an explicit nil
+
+### UnsetSortTitle
+`func (o *ReleaseResource) UnsetSortTitle()`
+
+UnsetSortTitle ensures that no value is present for SortTitle, not even an explicit nil
 ### GetApproved
 
 `func (o *ReleaseResource) GetApproved() bool`

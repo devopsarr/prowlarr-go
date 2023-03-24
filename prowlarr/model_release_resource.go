@@ -30,6 +30,7 @@ type ReleaseResource struct {
 	SubGroup NullableString `json:"subGroup,omitempty"`
 	ReleaseHash NullableString `json:"releaseHash,omitempty"`
 	Title NullableString `json:"title,omitempty"`
+	SortTitle NullableString `json:"sortTitle,omitempty"`
 	Approved *bool `json:"approved,omitempty"`
 	ImdbId *int32 `json:"imdbId,omitempty"`
 	PublishDate *time.Time `json:"publishDate,omitempty"`
@@ -548,6 +549,48 @@ func (o *ReleaseResource) SetTitleNil() {
 // UnsetTitle ensures that no value is present for Title, not even an explicit nil
 func (o *ReleaseResource) UnsetTitle() {
 	o.Title.Unset()
+}
+
+// GetSortTitle returns the SortTitle field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetSortTitle() string {
+	if o == nil || isNil(o.SortTitle.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SortTitle.Get()
+}
+
+// GetSortTitleOk returns a tuple with the SortTitle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetSortTitleOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.SortTitle.Get(), o.SortTitle.IsSet()
+}
+
+// HasSortTitle returns a boolean if a field has been set.
+func (o *ReleaseResource) HasSortTitle() bool {
+	if o != nil && o.SortTitle.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSortTitle gets a reference to the given NullableString and assigns it to the SortTitle field.
+func (o *ReleaseResource) SetSortTitle(v string) {
+	o.SortTitle.Set(&v)
+}
+// SetSortTitleNil sets the value for SortTitle to be an explicit nil
+func (o *ReleaseResource) SetSortTitleNil() {
+	o.SortTitle.Set(nil)
+}
+
+// UnsetSortTitle ensures that no value is present for SortTitle, not even an explicit nil
+func (o *ReleaseResource) UnsetSortTitle() {
+	o.SortTitle.Unset()
 }
 
 // GetApproved returns the Approved field value if set, zero value otherwise.
@@ -1162,6 +1205,9 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
+	}
+	if o.SortTitle.IsSet() {
+		toSerialize["sortTitle"] = o.SortTitle.Get()
 	}
 	if !isNil(o.Approved) {
 		toSerialize["approved"] = o.Approved

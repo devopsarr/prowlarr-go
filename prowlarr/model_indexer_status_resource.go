@@ -20,6 +20,8 @@ type IndexerStatusResource struct {
 	Id *int32 `json:"id,omitempty"`
 	IndexerId *int32 `json:"indexerId,omitempty"`
 	DisabledTill NullableTime `json:"disabledTill,omitempty"`
+	MostRecentFailure NullableTime `json:"mostRecentFailure,omitempty"`
+	InitialFailure NullableTime `json:"initialFailure,omitempty"`
 }
 
 // NewIndexerStatusResource instantiates a new IndexerStatusResource object
@@ -145,6 +147,90 @@ func (o *IndexerStatusResource) UnsetDisabledTill() {
 	o.DisabledTill.Unset()
 }
 
+// GetMostRecentFailure returns the MostRecentFailure field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IndexerStatusResource) GetMostRecentFailure() time.Time {
+	if o == nil || isNil(o.MostRecentFailure.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.MostRecentFailure.Get()
+}
+
+// GetMostRecentFailureOk returns a tuple with the MostRecentFailure field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IndexerStatusResource) GetMostRecentFailureOk() (*time.Time, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.MostRecentFailure.Get(), o.MostRecentFailure.IsSet()
+}
+
+// HasMostRecentFailure returns a boolean if a field has been set.
+func (o *IndexerStatusResource) HasMostRecentFailure() bool {
+	if o != nil && o.MostRecentFailure.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMostRecentFailure gets a reference to the given NullableTime and assigns it to the MostRecentFailure field.
+func (o *IndexerStatusResource) SetMostRecentFailure(v time.Time) {
+	o.MostRecentFailure.Set(&v)
+}
+// SetMostRecentFailureNil sets the value for MostRecentFailure to be an explicit nil
+func (o *IndexerStatusResource) SetMostRecentFailureNil() {
+	o.MostRecentFailure.Set(nil)
+}
+
+// UnsetMostRecentFailure ensures that no value is present for MostRecentFailure, not even an explicit nil
+func (o *IndexerStatusResource) UnsetMostRecentFailure() {
+	o.MostRecentFailure.Unset()
+}
+
+// GetInitialFailure returns the InitialFailure field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IndexerStatusResource) GetInitialFailure() time.Time {
+	if o == nil || isNil(o.InitialFailure.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.InitialFailure.Get()
+}
+
+// GetInitialFailureOk returns a tuple with the InitialFailure field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IndexerStatusResource) GetInitialFailureOk() (*time.Time, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.InitialFailure.Get(), o.InitialFailure.IsSet()
+}
+
+// HasInitialFailure returns a boolean if a field has been set.
+func (o *IndexerStatusResource) HasInitialFailure() bool {
+	if o != nil && o.InitialFailure.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetInitialFailure gets a reference to the given NullableTime and assigns it to the InitialFailure field.
+func (o *IndexerStatusResource) SetInitialFailure(v time.Time) {
+	o.InitialFailure.Set(&v)
+}
+// SetInitialFailureNil sets the value for InitialFailure to be an explicit nil
+func (o *IndexerStatusResource) SetInitialFailureNil() {
+	o.InitialFailure.Set(nil)
+}
+
+// UnsetInitialFailure ensures that no value is present for InitialFailure, not even an explicit nil
+func (o *IndexerStatusResource) UnsetInitialFailure() {
+	o.InitialFailure.Unset()
+}
+
 func (o IndexerStatusResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -155,6 +241,12 @@ func (o IndexerStatusResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.DisabledTill.IsSet() {
 		toSerialize["disabledTill"] = o.DisabledTill.Get()
+	}
+	if o.MostRecentFailure.IsSet() {
+		toSerialize["mostRecentFailure"] = o.MostRecentFailure.Get()
+	}
+	if o.InitialFailure.IsSet() {
+		toSerialize["initialFailure"] = o.InitialFailure.Get()
 	}
 	return json.Marshal(toSerialize)
 }

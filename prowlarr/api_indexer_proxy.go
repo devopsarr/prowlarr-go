@@ -93,20 +93,6 @@ func (a *IndexerProxyApiService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -115,6 +101,20 @@ func (a *IndexerProxyApiService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -227,20 +227,6 @@ func (a *IndexerProxyApiService) CreateIndexerProxyActionByNameExecute(r ApiCrea
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -249,6 +235,20 @@ func (a *IndexerProxyApiService) CreateIndexerProxyActionByNameExecute(r ApiCrea
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -344,20 +344,6 @@ func (a *IndexerProxyApiService) DeleteIndexerProxyExecute(r ApiDeleteIndexerPro
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -366,6 +352,20 @@ func (a *IndexerProxyApiService) DeleteIndexerProxyExecute(r ApiDeleteIndexerPro
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -463,20 +463,6 @@ func (a *IndexerProxyApiService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxy
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -485,6 +471,20 @@ func (a *IndexerProxyApiService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxy
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -587,20 +587,6 @@ func (a *IndexerProxyApiService) ListIndexerProxyExecute(r ApiListIndexerProxyRe
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -609,6 +595,20 @@ func (a *IndexerProxyApiService) ListIndexerProxyExecute(r ApiListIndexerProxyRe
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -711,20 +711,6 @@ func (a *IndexerProxyApiService) ListIndexerProxySchemaExecute(r ApiListIndexerP
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -733,6 +719,20 @@ func (a *IndexerProxyApiService) ListIndexerProxySchemaExecute(r ApiListIndexerP
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -841,20 +841,6 @@ func (a *IndexerProxyApiService) TestIndexerProxyExecute(r ApiTestIndexerProxyRe
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -863,6 +849,20 @@ func (a *IndexerProxyApiService) TestIndexerProxyExecute(r ApiTestIndexerProxyRe
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -954,20 +954,6 @@ func (a *IndexerProxyApiService) TestallIndexerProxyExecute(r ApiTestallIndexerP
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -976,6 +962,20 @@ func (a *IndexerProxyApiService) TestallIndexerProxyExecute(r ApiTestallIndexerP
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -1081,20 +1081,6 @@ func (a *IndexerProxyApiService) UpdateIndexerProxyExecute(r ApiUpdateIndexerPro
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -1103,6 +1089,20 @@ func (a *IndexerProxyApiService) UpdateIndexerProxyExecute(r ApiUpdateIndexerPro
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}

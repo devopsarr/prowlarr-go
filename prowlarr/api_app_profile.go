@@ -93,20 +93,6 @@ func (a *AppProfileApiService) CreateAppProfileExecute(r ApiCreateAppProfileRequ
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -115,6 +101,20 @@ func (a *AppProfileApiService) CreateAppProfileExecute(r ApiCreateAppProfileRequ
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -219,20 +219,6 @@ func (a *AppProfileApiService) DeleteAppProfileExecute(r ApiDeleteAppProfileRequ
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -241,6 +227,20 @@ func (a *AppProfileApiService) DeleteAppProfileExecute(r ApiDeleteAppProfileRequ
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -338,20 +338,6 @@ func (a *AppProfileApiService) GetAppProfileByIdExecute(r ApiGetAppProfileByIdRe
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -360,6 +346,20 @@ func (a *AppProfileApiService) GetAppProfileByIdExecute(r ApiGetAppProfileByIdRe
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -473,20 +473,6 @@ func (a *AppProfileApiService) ListAppProfileExecute(r ApiListAppProfileRequest)
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -495,6 +481,20 @@ func (a *AppProfileApiService) ListAppProfileExecute(r ApiListAppProfileRequest)
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}
@@ -609,20 +609,6 @@ func (a *AppProfileApiService) UpdateAppProfileExecute(r ApiUpdateAppProfileRequ
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -631,6 +617,20 @@ func (a *AppProfileApiService) UpdateAppProfileExecute(r ApiUpdateAppProfileRequ
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}

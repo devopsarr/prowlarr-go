@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
-**Enable** | Pointer to **NullableString** |  | [optional] 
+**Enable** | Pointer to **NullableBool** |  | [optional] 
 **AppProfileId** | Pointer to **NullableInt32** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 **ApplyTags** | Pointer to [**ApplyTags**](ApplyTags.md) |  | [optional] 
@@ -66,20 +66,20 @@ HasIndexerIds returns a boolean if a field has been set.
 UnsetIndexerIds ensures that no value is present for IndexerIds, not even an explicit nil
 ### GetEnable
 
-`func (o *IndexerEditorResource) GetEnable() string`
+`func (o *IndexerEditorResource) GetEnable() bool`
 
 GetEnable returns the Enable field if non-nil, zero value otherwise.
 
 ### GetEnableOk
 
-`func (o *IndexerEditorResource) GetEnableOk() (*string, bool)`
+`func (o *IndexerEditorResource) GetEnableOk() (*bool, bool)`
 
 GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnable
 
-`func (o *IndexerEditorResource) SetEnable(v string)`
+`func (o *IndexerEditorResource) SetEnable(v bool)`
 
 SetEnable sets Enable field to given value.
 

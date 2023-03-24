@@ -17,7 +17,7 @@ import (
 // IndexerEditorResource struct for IndexerEditorResource
 type IndexerEditorResource struct {
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
-	Enable NullableString `json:"enable,omitempty"`
+	Enable NullableBool `json:"enable,omitempty"`
 	AppProfileId NullableInt32 `json:"appProfileId,omitempty"`
 	Tags []*int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
@@ -74,9 +74,9 @@ func (o *IndexerEditorResource) SetIndexerIds(v []*int32) {
 }
 
 // GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerEditorResource) GetEnable() string {
+func (o *IndexerEditorResource) GetEnable() bool {
 	if o == nil || isNil(o.Enable.Get()) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.Enable.Get()
@@ -85,7 +85,7 @@ func (o *IndexerEditorResource) GetEnable() string {
 // GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerEditorResource) GetEnableOk() (*string, bool) {
+func (o *IndexerEditorResource) GetEnableOk() (*bool, bool) {
 	if o == nil {
     return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *IndexerEditorResource) HasEnable() bool {
 	return false
 }
 
-// SetEnable gets a reference to the given NullableString and assigns it to the Enable field.
-func (o *IndexerEditorResource) SetEnable(v string) {
+// SetEnable gets a reference to the given NullableBool and assigns it to the Enable field.
+func (o *IndexerEditorResource) SetEnable(v bool) {
 	o.Enable.Set(&v)
 }
 // SetEnableNil sets the value for Enable to be an explicit nil

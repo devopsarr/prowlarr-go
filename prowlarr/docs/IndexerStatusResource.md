@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **IndexerId** | Pointer to **int32** |  | [optional] 
 **DisabledTill** | Pointer to **NullableTime** |  | [optional] 
+**MostRecentFailure** | Pointer to **NullableTime** |  | [optional] 
+**InitialFailure** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -112,6 +114,76 @@ HasDisabledTill returns a boolean if a field has been set.
 `func (o *IndexerStatusResource) UnsetDisabledTill()`
 
 UnsetDisabledTill ensures that no value is present for DisabledTill, not even an explicit nil
+### GetMostRecentFailure
+
+`func (o *IndexerStatusResource) GetMostRecentFailure() time.Time`
+
+GetMostRecentFailure returns the MostRecentFailure field if non-nil, zero value otherwise.
+
+### GetMostRecentFailureOk
+
+`func (o *IndexerStatusResource) GetMostRecentFailureOk() (*time.Time, bool)`
+
+GetMostRecentFailureOk returns a tuple with the MostRecentFailure field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMostRecentFailure
+
+`func (o *IndexerStatusResource) SetMostRecentFailure(v time.Time)`
+
+SetMostRecentFailure sets MostRecentFailure field to given value.
+
+### HasMostRecentFailure
+
+`func (o *IndexerStatusResource) HasMostRecentFailure() bool`
+
+HasMostRecentFailure returns a boolean if a field has been set.
+
+### SetMostRecentFailureNil
+
+`func (o *IndexerStatusResource) SetMostRecentFailureNil(b bool)`
+
+ SetMostRecentFailureNil sets the value for MostRecentFailure to be an explicit nil
+
+### UnsetMostRecentFailure
+`func (o *IndexerStatusResource) UnsetMostRecentFailure()`
+
+UnsetMostRecentFailure ensures that no value is present for MostRecentFailure, not even an explicit nil
+### GetInitialFailure
+
+`func (o *IndexerStatusResource) GetInitialFailure() time.Time`
+
+GetInitialFailure returns the InitialFailure field if non-nil, zero value otherwise.
+
+### GetInitialFailureOk
+
+`func (o *IndexerStatusResource) GetInitialFailureOk() (*time.Time, bool)`
+
+GetInitialFailureOk returns a tuple with the InitialFailure field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInitialFailure
+
+`func (o *IndexerStatusResource) SetInitialFailure(v time.Time)`
+
+SetInitialFailure sets InitialFailure field to given value.
+
+### HasInitialFailure
+
+`func (o *IndexerStatusResource) HasInitialFailure() bool`
+
+HasInitialFailure returns a boolean if a field has been set.
+
+### SetInitialFailureNil
+
+`func (o *IndexerStatusResource) SetInitialFailureNil(b bool)`
+
+ SetInitialFailureNil sets the value for InitialFailure to be an explicit nil
+
+### UnsetInitialFailure
+`func (o *IndexerStatusResource) UnsetInitialFailure()`
+
+UnsetInitialFailure ensures that no value is present for InitialFailure, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
