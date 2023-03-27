@@ -3468,7 +3468,6 @@ components:
           nullable: true
           type: string
         duration:
-          pattern: "\\d{2}:\\d{2}:\\d{2}"
           type: string
         exception:
           nullable: true
@@ -5435,11 +5434,9 @@ components:
           format: date-time
           type: string
         lastDuration:
-          pattern: "\\d{2}:\\d{2}:\\d{2}"
           type: string
       type: object
     TimeSpan:
-      pattern: "\\d{2}:\\d{2}:\\d{2}"
       type: string
     TvSearchParam:
       enum:
