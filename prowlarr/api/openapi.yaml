@@ -3966,6 +3966,7 @@ components:
         port: 6
         authenticationMethod: null
         updateScriptPath: updateScriptPath
+        applicationUrl: applicationUrl
         sslCertPath: sslCertPath
         username: username
       properties:
@@ -4019,6 +4020,9 @@ components:
           nullable: true
           type: string
         instanceName:
+          nullable: true
+          type: string
+        applicationUrl:
           nullable: true
           type: string
         updateAutomatically:
@@ -4885,6 +4889,8 @@ components:
         presets:
         - null
         - null
+        onHealthRestored: true
+        supportsOnHealthRestored: true
         configContract: configContract
         name: name
         includeManualGrabs: true
@@ -4987,6 +4993,8 @@ components:
           type: boolean
         onHealthIssue:
           type: boolean
+        onHealthRestored:
+          type: boolean
         onApplicationUpdate:
           type: boolean
         supportsOnGrab:
@@ -4994,6 +5002,8 @@ components:
         includeManualGrabs:
           type: boolean
         supportsOnHealthIssue:
+          type: boolean
+        supportsOnHealthRestored:
           type: boolean
         includeHealthWarnings:
           type: boolean
@@ -5361,6 +5371,9 @@ components:
         - 6
         id: 0
         label: label
+        applicationIds:
+        - 5
+        - 5
       properties:
         id:
           format: int32
@@ -5381,6 +5394,12 @@ components:
           nullable: true
           type: array
         indexerProxyIds:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applicationIds:
           items:
             format: int32
             type: integer

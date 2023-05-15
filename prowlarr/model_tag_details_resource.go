@@ -21,6 +21,7 @@ type TagDetailsResource struct {
 	NotificationIds []*int32 `json:"notificationIds,omitempty"`
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
 	IndexerProxyIds []*int32 `json:"indexerProxyIds,omitempty"`
+	ApplicationIds []*int32 `json:"applicationIds,omitempty"`
 }
 
 // NewTagDetailsResource instantiates a new TagDetailsResource object
@@ -213,6 +214,39 @@ func (o *TagDetailsResource) SetIndexerProxyIds(v []*int32) {
 	o.IndexerProxyIds = v
 }
 
+// GetApplicationIds returns the ApplicationIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetApplicationIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.ApplicationIds
+}
+
+// GetApplicationIdsOk returns a tuple with the ApplicationIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetApplicationIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.ApplicationIds) {
+    return nil, false
+	}
+	return o.ApplicationIds, true
+}
+
+// HasApplicationIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasApplicationIds() bool {
+	if o != nil && isNil(o.ApplicationIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationIds gets a reference to the given []int32 and assigns it to the ApplicationIds field.
+func (o *TagDetailsResource) SetApplicationIds(v []*int32) {
+	o.ApplicationIds = v
+}
+
 func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -229,6 +263,9 @@ func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.IndexerProxyIds != nil {
 		toSerialize["indexerProxyIds"] = o.IndexerProxyIds
+	}
+	if o.ApplicationIds != nil {
+		toSerialize["applicationIds"] = o.ApplicationIds
 	}
 	return json.Marshal(toSerialize)
 }

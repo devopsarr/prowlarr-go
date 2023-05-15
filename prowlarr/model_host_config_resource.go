@@ -35,6 +35,7 @@ type HostConfigResource struct {
 	SslCertPassword NullableString `json:"sslCertPassword,omitempty"`
 	UrlBase NullableString `json:"urlBase,omitempty"`
 	InstanceName NullableString `json:"instanceName,omitempty"`
+	ApplicationUrl NullableString `json:"applicationUrl,omitempty"`
 	UpdateAutomatically *bool `json:"updateAutomatically,omitempty"`
 	UpdateMechanism *UpdateMechanism `json:"updateMechanism,omitempty"`
 	UpdateScriptPath NullableString `json:"updateScriptPath,omitempty"`
@@ -788,6 +789,48 @@ func (o *HostConfigResource) UnsetInstanceName() {
 	o.InstanceName.Unset()
 }
 
+// GetApplicationUrl returns the ApplicationUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *HostConfigResource) GetApplicationUrl() string {
+	if o == nil || isNil(o.ApplicationUrl.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ApplicationUrl.Get()
+}
+
+// GetApplicationUrlOk returns a tuple with the ApplicationUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *HostConfigResource) GetApplicationUrlOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.ApplicationUrl.Get(), o.ApplicationUrl.IsSet()
+}
+
+// HasApplicationUrl returns a boolean if a field has been set.
+func (o *HostConfigResource) HasApplicationUrl() bool {
+	if o != nil && o.ApplicationUrl.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationUrl gets a reference to the given NullableString and assigns it to the ApplicationUrl field.
+func (o *HostConfigResource) SetApplicationUrl(v string) {
+	o.ApplicationUrl.Set(&v)
+}
+// SetApplicationUrlNil sets the value for ApplicationUrl to be an explicit nil
+func (o *HostConfigResource) SetApplicationUrlNil() {
+	o.ApplicationUrl.Set(nil)
+}
+
+// UnsetApplicationUrl ensures that no value is present for ApplicationUrl, not even an explicit nil
+func (o *HostConfigResource) UnsetApplicationUrl() {
+	o.ApplicationUrl.Unset()
+}
+
 // GetUpdateAutomatically returns the UpdateAutomatically field value if set, zero value otherwise.
 func (o *HostConfigResource) GetUpdateAutomatically() bool {
 	if o == nil || isNil(o.UpdateAutomatically) {
@@ -1418,6 +1461,9 @@ func (o HostConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.InstanceName.IsSet() {
 		toSerialize["instanceName"] = o.InstanceName.Get()
+	}
+	if o.ApplicationUrl.IsSet() {
+		toSerialize["applicationUrl"] = o.ApplicationUrl.Get()
 	}
 	if !isNil(o.UpdateAutomatically) {
 		toSerialize["updateAutomatically"] = o.UpdateAutomatically
