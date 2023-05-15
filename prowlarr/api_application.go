@@ -20,11 +20,11 @@ import (
 )
 
 
-// ApplicationAPIService ApplicationAPI service
-type ApplicationAPIService service
+// ApplicationApiService ApplicationApi service
+type ApplicationApiService service
 type ApiCreateApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 	applicationResource *ApplicationResource
 }
 
@@ -43,7 +43,7 @@ CreateApplications Method for CreateApplications
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateApplicationsRequest
 */
-func (a *ApplicationAPIService) CreateApplications(ctx context.Context) ApiCreateApplicationsRequest {
+func (a *ApplicationApiService) CreateApplications(ctx context.Context) ApiCreateApplicationsRequest {
 	return ApiCreateApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *ApplicationAPIService) CreateApplications(ctx context.Context) ApiCreat
 
 // Execute executes the request
 //  @return ApplicationResource
-func (a *ApplicationAPIService) CreateApplicationsExecute(r ApiCreateApplicationsRequest) (*ApplicationResource, *http.Response, error) {
+func (a *ApplicationApiService) CreateApplicationsExecute(r ApiCreateApplicationsRequest) (*ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ApplicationAPIService) CreateApplicationsExecute(r ApiCreateApplication
 		localVarReturnValue  *ApplicationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.CreateApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.CreateApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *ApplicationAPIService) CreateApplicationsExecute(r ApiCreateApplication
 }
 type ApiCreateApplicationsActionByNameRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 	name string
 	applicationResource *ApplicationResource
 }
@@ -177,7 +177,7 @@ CreateApplicationsActionByName Method for CreateApplicationsActionByName
  @param name
  @return ApiCreateApplicationsActionByNameRequest
 */
-func (a *ApplicationAPIService) CreateApplicationsActionByName(ctx context.Context, name string) ApiCreateApplicationsActionByNameRequest {
+func (a *ApplicationApiService) CreateApplicationsActionByName(ctx context.Context, name string) ApiCreateApplicationsActionByNameRequest {
 	return ApiCreateApplicationsActionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -186,14 +186,14 @@ func (a *ApplicationAPIService) CreateApplicationsActionByName(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *ApplicationAPIService) CreateApplicationsActionByNameExecute(r ApiCreateApplicationsActionByNameRequest) (*http.Response, error) {
+func (a *ApplicationApiService) CreateApplicationsActionByNameExecute(r ApiCreateApplicationsActionByNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.CreateApplicationsActionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.CreateApplicationsActionByName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -281,7 +281,7 @@ func (a *ApplicationAPIService) CreateApplicationsActionByNameExecute(r ApiCreat
 }
 type ApiDeleteApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 	id int32
 }
 
@@ -296,7 +296,7 @@ DeleteApplications Method for DeleteApplications
  @param id
  @return ApiDeleteApplicationsRequest
 */
-func (a *ApplicationAPIService) DeleteApplications(ctx context.Context, id int32) ApiDeleteApplicationsRequest {
+func (a *ApplicationApiService) DeleteApplications(ctx context.Context, id int32) ApiDeleteApplicationsRequest {
 	return ApiDeleteApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -305,14 +305,14 @@ func (a *ApplicationAPIService) DeleteApplications(ctx context.Context, id int32
 }
 
 // Execute executes the request
-func (a *ApplicationAPIService) DeleteApplicationsExecute(r ApiDeleteApplicationsRequest) (*http.Response, error) {
+func (a *ApplicationApiService) DeleteApplicationsExecute(r ApiDeleteApplicationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.DeleteApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.DeleteApplications")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -398,7 +398,7 @@ func (a *ApplicationAPIService) DeleteApplicationsExecute(r ApiDeleteApplication
 }
 type ApiGetApplicationsByIdRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 	id int32
 }
 
@@ -413,7 +413,7 @@ GetApplicationsById Method for GetApplicationsById
  @param id
  @return ApiGetApplicationsByIdRequest
 */
-func (a *ApplicationAPIService) GetApplicationsById(ctx context.Context, id int32) ApiGetApplicationsByIdRequest {
+func (a *ApplicationApiService) GetApplicationsById(ctx context.Context, id int32) ApiGetApplicationsByIdRequest {
 	return ApiGetApplicationsByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -423,7 +423,7 @@ func (a *ApplicationAPIService) GetApplicationsById(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return ApplicationResource
-func (a *ApplicationAPIService) GetApplicationsByIdExecute(r ApiGetApplicationsByIdRequest) (*ApplicationResource, *http.Response, error) {
+func (a *ApplicationApiService) GetApplicationsByIdExecute(r ApiGetApplicationsByIdRequest) (*ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *ApplicationAPIService) GetApplicationsByIdExecute(r ApiGetApplicationsB
 		localVarReturnValue  *ApplicationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.GetApplicationsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.GetApplicationsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -526,7 +526,7 @@ func (a *ApplicationAPIService) GetApplicationsByIdExecute(r ApiGetApplicationsB
 }
 type ApiListApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 }
 
 func (r ApiListApplicationsRequest) Execute() ([]*ApplicationResource, *http.Response, error) {
@@ -539,7 +539,7 @@ ListApplications Method for ListApplications
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListApplicationsRequest
 */
-func (a *ApplicationAPIService) ListApplications(ctx context.Context) ApiListApplicationsRequest {
+func (a *ApplicationApiService) ListApplications(ctx context.Context) ApiListApplicationsRequest {
 	return ApiListApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -548,7 +548,7 @@ func (a *ApplicationAPIService) ListApplications(ctx context.Context) ApiListApp
 
 // Execute executes the request
 //  @return []ApplicationResource
-func (a *ApplicationAPIService) ListApplicationsExecute(r ApiListApplicationsRequest) ([]*ApplicationResource, *http.Response, error) {
+func (a *ApplicationApiService) ListApplicationsExecute(r ApiListApplicationsRequest) ([]*ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -556,7 +556,7 @@ func (a *ApplicationAPIService) ListApplicationsExecute(r ApiListApplicationsReq
 		localVarReturnValue  []*ApplicationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.ListApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.ListApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -650,7 +650,7 @@ func (a *ApplicationAPIService) ListApplicationsExecute(r ApiListApplicationsReq
 }
 type ApiListApplicationsSchemaRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 }
 
 func (r ApiListApplicationsSchemaRequest) Execute() ([]*ApplicationResource, *http.Response, error) {
@@ -663,7 +663,7 @@ ListApplicationsSchema Method for ListApplicationsSchema
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListApplicationsSchemaRequest
 */
-func (a *ApplicationAPIService) ListApplicationsSchema(ctx context.Context) ApiListApplicationsSchemaRequest {
+func (a *ApplicationApiService) ListApplicationsSchema(ctx context.Context) ApiListApplicationsSchemaRequest {
 	return ApiListApplicationsSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -672,7 +672,7 @@ func (a *ApplicationAPIService) ListApplicationsSchema(ctx context.Context) ApiL
 
 // Execute executes the request
 //  @return []ApplicationResource
-func (a *ApplicationAPIService) ListApplicationsSchemaExecute(r ApiListApplicationsSchemaRequest) ([]*ApplicationResource, *http.Response, error) {
+func (a *ApplicationApiService) ListApplicationsSchemaExecute(r ApiListApplicationsSchemaRequest) ([]*ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -680,7 +680,7 @@ func (a *ApplicationAPIService) ListApplicationsSchemaExecute(r ApiListApplicati
 		localVarReturnValue  []*ApplicationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.ListApplicationsSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.ListApplicationsSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -774,7 +774,7 @@ func (a *ApplicationAPIService) ListApplicationsSchemaExecute(r ApiListApplicati
 }
 type ApiTestApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 	applicationResource *ApplicationResource
 }
 
@@ -793,7 +793,7 @@ TestApplications Method for TestApplications
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTestApplicationsRequest
 */
-func (a *ApplicationAPIService) TestApplications(ctx context.Context) ApiTestApplicationsRequest {
+func (a *ApplicationApiService) TestApplications(ctx context.Context) ApiTestApplicationsRequest {
 	return ApiTestApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -801,14 +801,14 @@ func (a *ApplicationAPIService) TestApplications(ctx context.Context) ApiTestApp
 }
 
 // Execute executes the request
-func (a *ApplicationAPIService) TestApplicationsExecute(r ApiTestApplicationsRequest) (*http.Response, error) {
+func (a *ApplicationApiService) TestApplicationsExecute(r ApiTestApplicationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.TestApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.TestApplications")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -895,7 +895,7 @@ func (a *ApplicationAPIService) TestApplicationsExecute(r ApiTestApplicationsReq
 }
 type ApiTestallApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 }
 
 func (r ApiTestallApplicationsRequest) Execute() (*http.Response, error) {
@@ -908,7 +908,7 @@ TestallApplications Method for TestallApplications
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTestallApplicationsRequest
 */
-func (a *ApplicationAPIService) TestallApplications(ctx context.Context) ApiTestallApplicationsRequest {
+func (a *ApplicationApiService) TestallApplications(ctx context.Context) ApiTestallApplicationsRequest {
 	return ApiTestallApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -916,14 +916,14 @@ func (a *ApplicationAPIService) TestallApplications(ctx context.Context) ApiTest
 }
 
 // Execute executes the request
-func (a *ApplicationAPIService) TestallApplicationsExecute(r ApiTestallApplicationsRequest) (*http.Response, error) {
+func (a *ApplicationApiService) TestallApplicationsExecute(r ApiTestallApplicationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.TestallApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.TestallApplications")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1008,7 +1008,7 @@ func (a *ApplicationAPIService) TestallApplicationsExecute(r ApiTestallApplicati
 }
 type ApiUpdateApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationAPIService
+	ApiService *ApplicationApiService
 	id string
 	applicationResource *ApplicationResource
 }
@@ -1029,7 +1029,7 @@ UpdateApplications Method for UpdateApplications
  @param id
  @return ApiUpdateApplicationsRequest
 */
-func (a *ApplicationAPIService) UpdateApplications(ctx context.Context, id string) ApiUpdateApplicationsRequest {
+func (a *ApplicationApiService) UpdateApplications(ctx context.Context, id string) ApiUpdateApplicationsRequest {
 	return ApiUpdateApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1039,7 +1039,7 @@ func (a *ApplicationAPIService) UpdateApplications(ctx context.Context, id strin
 
 // Execute executes the request
 //  @return ApplicationResource
-func (a *ApplicationAPIService) UpdateApplicationsExecute(r ApiUpdateApplicationsRequest) (*ApplicationResource, *http.Response, error) {
+func (a *ApplicationApiService) UpdateApplicationsExecute(r ApiUpdateApplicationsRequest) (*ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1047,7 +1047,7 @@ func (a *ApplicationAPIService) UpdateApplicationsExecute(r ApiUpdateApplication
 		localVarReturnValue  *ApplicationResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.UpdateApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.UpdateApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -47,43 +47,43 @@ type APIClient struct {
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-	ApiInfoAPI *ApiInfoAPIService
-	AppProfileAPI *AppProfileAPIService
-	ApplicationAPI *ApplicationAPIService
-	AuthenticationAPI *AuthenticationAPIService
-	BackupAPI *BackupAPIService
-	CommandAPI *CommandAPIService
-	CustomFilterAPI *CustomFilterAPIService
-	DevelopmentConfigAPI *DevelopmentConfigAPIService
-	DownloadClientAPI *DownloadClientAPIService
-	DownloadClientConfigAPI *DownloadClientConfigAPIService
-	FileSystemAPI *FileSystemAPIService
-	HealthAPI *HealthAPIService
-	HistoryAPI *HistoryAPIService
-	HostConfigAPI *HostConfigAPIService
-	IndexerAPI *IndexerAPIService
-	IndexerDefaultCategoriesAPI *IndexerDefaultCategoriesAPIService
-	IndexerEditorAPI *IndexerEditorAPIService
-	IndexerProxyAPI *IndexerProxyAPIService
-	IndexerStatsAPI *IndexerStatsAPIService
-	IndexerStatusAPI *IndexerStatusAPIService
-	InitializeJsAPI *InitializeJsAPIService
-	LocalizationAPI *LocalizationAPIService
-	LogAPI *LogAPIService
-	LogFileAPI *LogFileAPIService
-	NewznabAPI *NewznabAPIService
-	NotificationAPI *NotificationAPIService
-	PingAPI *PingAPIService
-	QualityProfileSchemaAPI *QualityProfileSchemaAPIService
-	SearchAPI *SearchAPIService
-	StaticResourceAPI *StaticResourceAPIService
-	SystemAPI *SystemAPIService
-	TagAPI *TagAPIService
-	TagDetailsAPI *TagDetailsAPIService
-	TaskAPI *TaskAPIService
-	UiConfigAPI *UiConfigAPIService
-	UpdateAPI *UpdateAPIService
-	UpdateLogFileAPI *UpdateLogFileAPIService
+	ApiInfoApi *ApiInfoApiService
+	AppProfileApi *AppProfileApiService
+	ApplicationApi *ApplicationApiService
+	AuthenticationApi *AuthenticationApiService
+	BackupApi *BackupApiService
+	CommandApi *CommandApiService
+	CustomFilterApi *CustomFilterApiService
+	DevelopmentConfigApi *DevelopmentConfigApiService
+	DownloadClientApi *DownloadClientApiService
+	DownloadClientConfigApi *DownloadClientConfigApiService
+	FileSystemApi *FileSystemApiService
+	HealthApi *HealthApiService
+	HistoryApi *HistoryApiService
+	HostConfigApi *HostConfigApiService
+	IndexerApi *IndexerApiService
+	IndexerDefaultCategoriesApi *IndexerDefaultCategoriesApiService
+	IndexerEditorApi *IndexerEditorApiService
+	IndexerProxyApi *IndexerProxyApiService
+	IndexerStatsApi *IndexerStatsApiService
+	IndexerStatusApi *IndexerStatusApiService
+	InitializeJsApi *InitializeJsApiService
+	LocalizationApi *LocalizationApiService
+	LogApi *LogApiService
+	LogFileApi *LogFileApiService
+	NewznabApi *NewznabApiService
+	NotificationApi *NotificationApiService
+	PingApi *PingApiService
+	QualityProfileSchemaApi *QualityProfileSchemaApiService
+	SearchApi *SearchApiService
+	StaticResourceApi *StaticResourceApiService
+	SystemApi *SystemApiService
+	TagApi *TagApiService
+	TagDetailsApi *TagDetailsApiService
+	TaskApi *TaskApiService
+	UiConfigApi *UiConfigApiService
+	UpdateApi *UpdateApiService
+	UpdateLogFileApi *UpdateLogFileApiService
 }
 
 type service struct {
@@ -102,43 +102,43 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.ApiInfoAPI = (*ApiInfoAPIService)(&c.common)
-	c.AppProfileAPI = (*AppProfileAPIService)(&c.common)
-	c.ApplicationAPI = (*ApplicationAPIService)(&c.common)
-	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
-	c.BackupAPI = (*BackupAPIService)(&c.common)
-	c.CommandAPI = (*CommandAPIService)(&c.common)
-	c.CustomFilterAPI = (*CustomFilterAPIService)(&c.common)
-	c.DevelopmentConfigAPI = (*DevelopmentConfigAPIService)(&c.common)
-	c.DownloadClientAPI = (*DownloadClientAPIService)(&c.common)
-	c.DownloadClientConfigAPI = (*DownloadClientConfigAPIService)(&c.common)
-	c.FileSystemAPI = (*FileSystemAPIService)(&c.common)
-	c.HealthAPI = (*HealthAPIService)(&c.common)
-	c.HistoryAPI = (*HistoryAPIService)(&c.common)
-	c.HostConfigAPI = (*HostConfigAPIService)(&c.common)
-	c.IndexerAPI = (*IndexerAPIService)(&c.common)
-	c.IndexerDefaultCategoriesAPI = (*IndexerDefaultCategoriesAPIService)(&c.common)
-	c.IndexerEditorAPI = (*IndexerEditorAPIService)(&c.common)
-	c.IndexerProxyAPI = (*IndexerProxyAPIService)(&c.common)
-	c.IndexerStatsAPI = (*IndexerStatsAPIService)(&c.common)
-	c.IndexerStatusAPI = (*IndexerStatusAPIService)(&c.common)
-	c.InitializeJsAPI = (*InitializeJsAPIService)(&c.common)
-	c.LocalizationAPI = (*LocalizationAPIService)(&c.common)
-	c.LogAPI = (*LogAPIService)(&c.common)
-	c.LogFileAPI = (*LogFileAPIService)(&c.common)
-	c.NewznabAPI = (*NewznabAPIService)(&c.common)
-	c.NotificationAPI = (*NotificationAPIService)(&c.common)
-	c.PingAPI = (*PingAPIService)(&c.common)
-	c.QualityProfileSchemaAPI = (*QualityProfileSchemaAPIService)(&c.common)
-	c.SearchAPI = (*SearchAPIService)(&c.common)
-	c.StaticResourceAPI = (*StaticResourceAPIService)(&c.common)
-	c.SystemAPI = (*SystemAPIService)(&c.common)
-	c.TagAPI = (*TagAPIService)(&c.common)
-	c.TagDetailsAPI = (*TagDetailsAPIService)(&c.common)
-	c.TaskAPI = (*TaskAPIService)(&c.common)
-	c.UiConfigAPI = (*UiConfigAPIService)(&c.common)
-	c.UpdateAPI = (*UpdateAPIService)(&c.common)
-	c.UpdateLogFileAPI = (*UpdateLogFileAPIService)(&c.common)
+	c.ApiInfoApi = (*ApiInfoApiService)(&c.common)
+	c.AppProfileApi = (*AppProfileApiService)(&c.common)
+	c.ApplicationApi = (*ApplicationApiService)(&c.common)
+	c.AuthenticationApi = (*AuthenticationApiService)(&c.common)
+	c.BackupApi = (*BackupApiService)(&c.common)
+	c.CommandApi = (*CommandApiService)(&c.common)
+	c.CustomFilterApi = (*CustomFilterApiService)(&c.common)
+	c.DevelopmentConfigApi = (*DevelopmentConfigApiService)(&c.common)
+	c.DownloadClientApi = (*DownloadClientApiService)(&c.common)
+	c.DownloadClientConfigApi = (*DownloadClientConfigApiService)(&c.common)
+	c.FileSystemApi = (*FileSystemApiService)(&c.common)
+	c.HealthApi = (*HealthApiService)(&c.common)
+	c.HistoryApi = (*HistoryApiService)(&c.common)
+	c.HostConfigApi = (*HostConfigApiService)(&c.common)
+	c.IndexerApi = (*IndexerApiService)(&c.common)
+	c.IndexerDefaultCategoriesApi = (*IndexerDefaultCategoriesApiService)(&c.common)
+	c.IndexerEditorApi = (*IndexerEditorApiService)(&c.common)
+	c.IndexerProxyApi = (*IndexerProxyApiService)(&c.common)
+	c.IndexerStatsApi = (*IndexerStatsApiService)(&c.common)
+	c.IndexerStatusApi = (*IndexerStatusApiService)(&c.common)
+	c.InitializeJsApi = (*InitializeJsApiService)(&c.common)
+	c.LocalizationApi = (*LocalizationApiService)(&c.common)
+	c.LogApi = (*LogApiService)(&c.common)
+	c.LogFileApi = (*LogFileApiService)(&c.common)
+	c.NewznabApi = (*NewznabApiService)(&c.common)
+	c.NotificationApi = (*NotificationApiService)(&c.common)
+	c.PingApi = (*PingApiService)(&c.common)
+	c.QualityProfileSchemaApi = (*QualityProfileSchemaApiService)(&c.common)
+	c.SearchApi = (*SearchApiService)(&c.common)
+	c.StaticResourceApi = (*StaticResourceApiService)(&c.common)
+	c.SystemApi = (*SystemApiService)(&c.common)
+	c.TagApi = (*TagApiService)(&c.common)
+	c.TagDetailsApi = (*TagDetailsApiService)(&c.common)
+	c.TaskApi = (*TaskApiService)(&c.common)
+	c.UiConfigApi = (*UiConfigApiService)(&c.common)
+	c.UpdateApi = (*UpdateApiService)(&c.common)
+	c.UpdateLogFileApi = (*UpdateLogFileApiService)(&c.common)
 
 	return c
 }

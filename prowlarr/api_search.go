@@ -21,11 +21,11 @@ import (
 )
 
 
-// SearchAPIService SearchAPI service
-type SearchAPIService service
+// SearchApiService SearchApi service
+type SearchApiService service
 type ApiCreateSearchRequest struct {
 	ctx context.Context
-	ApiService *SearchAPIService
+	ApiService *SearchApiService
 	releaseResource *ReleaseResource
 }
 
@@ -44,7 +44,7 @@ CreateSearch Method for CreateSearch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSearchRequest
 */
-func (a *SearchAPIService) CreateSearch(ctx context.Context) ApiCreateSearchRequest {
+func (a *SearchApiService) CreateSearch(ctx context.Context) ApiCreateSearchRequest {
 	return ApiCreateSearchRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -53,7 +53,7 @@ func (a *SearchAPIService) CreateSearch(ctx context.Context) ApiCreateSearchRequ
 
 // Execute executes the request
 //  @return ReleaseResource
-func (a *SearchAPIService) CreateSearchExecute(r ApiCreateSearchRequest) (*ReleaseResource, *http.Response, error) {
+func (a *SearchApiService) CreateSearchExecute(r ApiCreateSearchRequest) (*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *SearchAPIService) CreateSearchExecute(r ApiCreateSearchRequest) (*Relea
 		localVarReturnValue  *ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.CreateSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.CreateSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -157,7 +157,7 @@ func (a *SearchAPIService) CreateSearchExecute(r ApiCreateSearchRequest) (*Relea
 }
 type ApiCreateSearchBulkRequest struct {
 	ctx context.Context
-	ApiService *SearchAPIService
+	ApiService *SearchApiService
 	releaseResource *[]ReleaseResource
 }
 
@@ -176,7 +176,7 @@ CreateSearchBulk Method for CreateSearchBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSearchBulkRequest
 */
-func (a *SearchAPIService) CreateSearchBulk(ctx context.Context) ApiCreateSearchBulkRequest {
+func (a *SearchApiService) CreateSearchBulk(ctx context.Context) ApiCreateSearchBulkRequest {
 	return ApiCreateSearchBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -185,7 +185,7 @@ func (a *SearchAPIService) CreateSearchBulk(ctx context.Context) ApiCreateSearch
 
 // Execute executes the request
 //  @return ReleaseResource
-func (a *SearchAPIService) CreateSearchBulkExecute(r ApiCreateSearchBulkRequest) (*ReleaseResource, *http.Response, error) {
+func (a *SearchApiService) CreateSearchBulkExecute(r ApiCreateSearchBulkRequest) (*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -193,7 +193,7 @@ func (a *SearchAPIService) CreateSearchBulkExecute(r ApiCreateSearchBulkRequest)
 		localVarReturnValue  *ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.CreateSearchBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.CreateSearchBulk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -289,7 +289,7 @@ func (a *SearchAPIService) CreateSearchBulkExecute(r ApiCreateSearchBulkRequest)
 }
 type ApiGetSearchByIdRequest struct {
 	ctx context.Context
-	ApiService *SearchAPIService
+	ApiService *SearchApiService
 	id int32
 }
 
@@ -304,7 +304,7 @@ GetSearchById Method for GetSearchById
  @param id
  @return ApiGetSearchByIdRequest
 */
-func (a *SearchAPIService) GetSearchById(ctx context.Context, id int32) ApiGetSearchByIdRequest {
+func (a *SearchApiService) GetSearchById(ctx context.Context, id int32) ApiGetSearchByIdRequest {
 	return ApiGetSearchByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -314,7 +314,7 @@ func (a *SearchAPIService) GetSearchById(ctx context.Context, id int32) ApiGetSe
 
 // Execute executes the request
 //  @return ReleaseResource
-func (a *SearchAPIService) GetSearchByIdExecute(r ApiGetSearchByIdRequest) (*ReleaseResource, *http.Response, error) {
+func (a *SearchApiService) GetSearchByIdExecute(r ApiGetSearchByIdRequest) (*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -322,7 +322,7 @@ func (a *SearchAPIService) GetSearchByIdExecute(r ApiGetSearchByIdRequest) (*Rel
 		localVarReturnValue  *ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.GetSearchById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.GetSearchById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -417,7 +417,7 @@ func (a *SearchAPIService) GetSearchByIdExecute(r ApiGetSearchByIdRequest) (*Rel
 }
 type ApiListSearchRequest struct {
 	ctx context.Context
-	ApiService *SearchAPIService
+	ApiService *SearchApiService
 	query *string
 	type_ *string
 	indexerIds *[]int32
@@ -466,7 +466,7 @@ ListSearch Method for ListSearch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSearchRequest
 */
-func (a *SearchAPIService) ListSearch(ctx context.Context) ApiListSearchRequest {
+func (a *SearchApiService) ListSearch(ctx context.Context) ApiListSearchRequest {
 	return ApiListSearchRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -475,7 +475,7 @@ func (a *SearchAPIService) ListSearch(ctx context.Context) ApiListSearchRequest 
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *SearchAPIService) ListSearchExecute(r ApiListSearchRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *SearchApiService) ListSearchExecute(r ApiListSearchRequest) ([]*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -483,7 +483,7 @@ func (a *SearchAPIService) ListSearchExecute(r ApiListSearchRequest) ([]*Release
 		localVarReturnValue  []*ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.ListSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.ListSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

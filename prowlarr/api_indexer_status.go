@@ -20,11 +20,11 @@ import (
 )
 
 
-// IndexerStatusAPIService IndexerStatusAPI service
-type IndexerStatusAPIService service
+// IndexerStatusApiService IndexerStatusApi service
+type IndexerStatusApiService service
 type ApiGetIndexerStatusByIdRequest struct {
 	ctx context.Context
-	ApiService *IndexerStatusAPIService
+	ApiService *IndexerStatusApiService
 	id int32
 }
 
@@ -39,7 +39,7 @@ GetIndexerStatusById Method for GetIndexerStatusById
  @param id
  @return ApiGetIndexerStatusByIdRequest
 */
-func (a *IndexerStatusAPIService) GetIndexerStatusById(ctx context.Context, id int32) ApiGetIndexerStatusByIdRequest {
+func (a *IndexerStatusApiService) GetIndexerStatusById(ctx context.Context, id int32) ApiGetIndexerStatusByIdRequest {
 	return ApiGetIndexerStatusByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,7 +49,7 @@ func (a *IndexerStatusAPIService) GetIndexerStatusById(ctx context.Context, id i
 
 // Execute executes the request
 //  @return IndexerStatusResource
-func (a *IndexerStatusAPIService) GetIndexerStatusByIdExecute(r ApiGetIndexerStatusByIdRequest) (*IndexerStatusResource, *http.Response, error) {
+func (a *IndexerStatusApiService) GetIndexerStatusByIdExecute(r ApiGetIndexerStatusByIdRequest) (*IndexerStatusResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *IndexerStatusAPIService) GetIndexerStatusByIdExecute(r ApiGetIndexerSta
 		localVarReturnValue  *IndexerStatusResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatusAPIService.GetIndexerStatusById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatusApiService.GetIndexerStatusById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,7 +152,7 @@ func (a *IndexerStatusAPIService) GetIndexerStatusByIdExecute(r ApiGetIndexerSta
 }
 type ApiListIndexerStatusRequest struct {
 	ctx context.Context
-	ApiService *IndexerStatusAPIService
+	ApiService *IndexerStatusApiService
 }
 
 func (r ApiListIndexerStatusRequest) Execute() ([]*IndexerStatusResource, *http.Response, error) {
@@ -165,7 +165,7 @@ ListIndexerStatus Method for ListIndexerStatus
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListIndexerStatusRequest
 */
-func (a *IndexerStatusAPIService) ListIndexerStatus(ctx context.Context) ApiListIndexerStatusRequest {
+func (a *IndexerStatusApiService) ListIndexerStatus(ctx context.Context) ApiListIndexerStatusRequest {
 	return ApiListIndexerStatusRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -174,7 +174,7 @@ func (a *IndexerStatusAPIService) ListIndexerStatus(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []IndexerStatusResource
-func (a *IndexerStatusAPIService) ListIndexerStatusExecute(r ApiListIndexerStatusRequest) ([]*IndexerStatusResource, *http.Response, error) {
+func (a *IndexerStatusApiService) ListIndexerStatusExecute(r ApiListIndexerStatusRequest) ([]*IndexerStatusResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -182,7 +182,7 @@ func (a *IndexerStatusAPIService) ListIndexerStatusExecute(r ApiListIndexerStatu
 		localVarReturnValue  []*IndexerStatusResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatusAPIService.ListIndexerStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatusApiService.ListIndexerStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

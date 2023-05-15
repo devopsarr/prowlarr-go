@@ -19,11 +19,11 @@ import (
 )
 
 
-// QualityProfileSchemaAPIService QualityProfileSchemaAPI service
-type QualityProfileSchemaAPIService service
+// QualityProfileSchemaApiService QualityProfileSchemaApi service
+type QualityProfileSchemaApiService service
 type ApiGetAppprofileSchemaRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileSchemaAPIService
+	ApiService *QualityProfileSchemaApiService
 }
 
 func (r ApiGetAppprofileSchemaRequest) Execute() (*AppProfileResource, *http.Response, error) {
@@ -36,7 +36,7 @@ GetAppprofileSchema Method for GetAppprofileSchema
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetAppprofileSchemaRequest
 */
-func (a *QualityProfileSchemaAPIService) GetAppprofileSchema(ctx context.Context) ApiGetAppprofileSchemaRequest {
+func (a *QualityProfileSchemaApiService) GetAppprofileSchema(ctx context.Context) ApiGetAppprofileSchemaRequest {
 	return ApiGetAppprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *QualityProfileSchemaAPIService) GetAppprofileSchema(ctx context.Context
 
 // Execute executes the request
 //  @return AppProfileResource
-func (a *QualityProfileSchemaAPIService) GetAppprofileSchemaExecute(r ApiGetAppprofileSchemaRequest) (*AppProfileResource, *http.Response, error) {
+func (a *QualityProfileSchemaApiService) GetAppprofileSchemaExecute(r ApiGetAppprofileSchemaRequest) (*AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *QualityProfileSchemaAPIService) GetAppprofileSchemaExecute(r ApiGetAppp
 		localVarReturnValue  *AppProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaAPIService.GetAppprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaApiService.GetAppprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

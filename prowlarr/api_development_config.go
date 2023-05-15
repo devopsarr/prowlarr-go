@@ -20,11 +20,11 @@ import (
 )
 
 
-// DevelopmentConfigAPIService DevelopmentConfigAPI service
-type DevelopmentConfigAPIService service
+// DevelopmentConfigApiService DevelopmentConfigApi service
+type DevelopmentConfigApiService service
 type ApiGetDevelopmentConfigRequest struct {
 	ctx context.Context
-	ApiService *DevelopmentConfigAPIService
+	ApiService *DevelopmentConfigApiService
 }
 
 func (r ApiGetDevelopmentConfigRequest) Execute() (*DevelopmentConfigResource, *http.Response, error) {
@@ -37,7 +37,7 @@ GetDevelopmentConfig Method for GetDevelopmentConfig
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetDevelopmentConfigRequest
 */
-func (a *DevelopmentConfigAPIService) GetDevelopmentConfig(ctx context.Context) ApiGetDevelopmentConfigRequest {
+func (a *DevelopmentConfigApiService) GetDevelopmentConfig(ctx context.Context) ApiGetDevelopmentConfigRequest {
 	return ApiGetDevelopmentConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -46,7 +46,7 @@ func (a *DevelopmentConfigAPIService) GetDevelopmentConfig(ctx context.Context) 
 
 // Execute executes the request
 //  @return DevelopmentConfigResource
-func (a *DevelopmentConfigAPIService) GetDevelopmentConfigExecute(r ApiGetDevelopmentConfigRequest) (*DevelopmentConfigResource, *http.Response, error) {
+func (a *DevelopmentConfigApiService) GetDevelopmentConfigExecute(r ApiGetDevelopmentConfigRequest) (*DevelopmentConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *DevelopmentConfigAPIService) GetDevelopmentConfigExecute(r ApiGetDevelo
 		localVarReturnValue  *DevelopmentConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigAPIService.GetDevelopmentConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.GetDevelopmentConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,7 +148,7 @@ func (a *DevelopmentConfigAPIService) GetDevelopmentConfigExecute(r ApiGetDevelo
 }
 type ApiGetDevelopmentConfigByIdRequest struct {
 	ctx context.Context
-	ApiService *DevelopmentConfigAPIService
+	ApiService *DevelopmentConfigApiService
 	id int32
 }
 
@@ -163,7 +163,7 @@ GetDevelopmentConfigById Method for GetDevelopmentConfigById
  @param id
  @return ApiGetDevelopmentConfigByIdRequest
 */
-func (a *DevelopmentConfigAPIService) GetDevelopmentConfigById(ctx context.Context, id int32) ApiGetDevelopmentConfigByIdRequest {
+func (a *DevelopmentConfigApiService) GetDevelopmentConfigById(ctx context.Context, id int32) ApiGetDevelopmentConfigByIdRequest {
 	return ApiGetDevelopmentConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -173,7 +173,7 @@ func (a *DevelopmentConfigAPIService) GetDevelopmentConfigById(ctx context.Conte
 
 // Execute executes the request
 //  @return DevelopmentConfigResource
-func (a *DevelopmentConfigAPIService) GetDevelopmentConfigByIdExecute(r ApiGetDevelopmentConfigByIdRequest) (*DevelopmentConfigResource, *http.Response, error) {
+func (a *DevelopmentConfigApiService) GetDevelopmentConfigByIdExecute(r ApiGetDevelopmentConfigByIdRequest) (*DevelopmentConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *DevelopmentConfigAPIService) GetDevelopmentConfigByIdExecute(r ApiGetDe
 		localVarReturnValue  *DevelopmentConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigAPIService.GetDevelopmentConfigById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.GetDevelopmentConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -276,7 +276,7 @@ func (a *DevelopmentConfigAPIService) GetDevelopmentConfigByIdExecute(r ApiGetDe
 }
 type ApiUpdateDevelopmentConfigRequest struct {
 	ctx context.Context
-	ApiService *DevelopmentConfigAPIService
+	ApiService *DevelopmentConfigApiService
 	id string
 	developmentConfigResource *DevelopmentConfigResource
 }
@@ -297,7 +297,7 @@ UpdateDevelopmentConfig Method for UpdateDevelopmentConfig
  @param id
  @return ApiUpdateDevelopmentConfigRequest
 */
-func (a *DevelopmentConfigAPIService) UpdateDevelopmentConfig(ctx context.Context, id string) ApiUpdateDevelopmentConfigRequest {
+func (a *DevelopmentConfigApiService) UpdateDevelopmentConfig(ctx context.Context, id string) ApiUpdateDevelopmentConfigRequest {
 	return ApiUpdateDevelopmentConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -307,7 +307,7 @@ func (a *DevelopmentConfigAPIService) UpdateDevelopmentConfig(ctx context.Contex
 
 // Execute executes the request
 //  @return DevelopmentConfigResource
-func (a *DevelopmentConfigAPIService) UpdateDevelopmentConfigExecute(r ApiUpdateDevelopmentConfigRequest) (*DevelopmentConfigResource, *http.Response, error) {
+func (a *DevelopmentConfigApiService) UpdateDevelopmentConfigExecute(r ApiUpdateDevelopmentConfigRequest) (*DevelopmentConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *DevelopmentConfigAPIService) UpdateDevelopmentConfigExecute(r ApiUpdate
 		localVarReturnValue  *DevelopmentConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigAPIService.UpdateDevelopmentConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevelopmentConfigApiService.UpdateDevelopmentConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
