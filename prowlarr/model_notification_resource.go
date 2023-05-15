@@ -29,10 +29,12 @@ type NotificationResource struct {
 	Link NullableString `json:"link,omitempty"`
 	OnGrab *bool `json:"onGrab,omitempty"`
 	OnHealthIssue *bool `json:"onHealthIssue,omitempty"`
+	OnHealthRestored *bool `json:"onHealthRestored,omitempty"`
 	OnApplicationUpdate *bool `json:"onApplicationUpdate,omitempty"`
 	SupportsOnGrab *bool `json:"supportsOnGrab,omitempty"`
 	IncludeManualGrabs *bool `json:"includeManualGrabs,omitempty"`
 	SupportsOnHealthIssue *bool `json:"supportsOnHealthIssue,omitempty"`
+	SupportsOnHealthRestored *bool `json:"supportsOnHealthRestored,omitempty"`
 	IncludeHealthWarnings *bool `json:"includeHealthWarnings,omitempty"`
 	SupportsOnApplicationUpdate *bool `json:"supportsOnApplicationUpdate,omitempty"`
 	TestCommand NullableString `json:"testCommand,omitempty"`
@@ -534,6 +536,38 @@ func (o *NotificationResource) SetOnHealthIssue(v bool) {
 	o.OnHealthIssue = &v
 }
 
+// GetOnHealthRestored returns the OnHealthRestored field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnHealthRestored() bool {
+	if o == nil || isNil(o.OnHealthRestored) {
+		var ret bool
+		return ret
+	}
+	return *o.OnHealthRestored
+}
+
+// GetOnHealthRestoredOk returns a tuple with the OnHealthRestored field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnHealthRestoredOk() (*bool, bool) {
+	if o == nil || isNil(o.OnHealthRestored) {
+    return nil, false
+	}
+	return o.OnHealthRestored, true
+}
+
+// HasOnHealthRestored returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnHealthRestored() bool {
+	if o != nil && !isNil(o.OnHealthRestored) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnHealthRestored gets a reference to the given bool and assigns it to the OnHealthRestored field.
+func (o *NotificationResource) SetOnHealthRestored(v bool) {
+	o.OnHealthRestored = &v
+}
+
 // GetOnApplicationUpdate returns the OnApplicationUpdate field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnApplicationUpdate() bool {
 	if o == nil || isNil(o.OnApplicationUpdate) {
@@ -660,6 +694,38 @@ func (o *NotificationResource) HasSupportsOnHealthIssue() bool {
 // SetSupportsOnHealthIssue gets a reference to the given bool and assigns it to the SupportsOnHealthIssue field.
 func (o *NotificationResource) SetSupportsOnHealthIssue(v bool) {
 	o.SupportsOnHealthIssue = &v
+}
+
+// GetSupportsOnHealthRestored returns the SupportsOnHealthRestored field value if set, zero value otherwise.
+func (o *NotificationResource) GetSupportsOnHealthRestored() bool {
+	if o == nil || isNil(o.SupportsOnHealthRestored) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsOnHealthRestored
+}
+
+// GetSupportsOnHealthRestoredOk returns a tuple with the SupportsOnHealthRestored field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetSupportsOnHealthRestoredOk() (*bool, bool) {
+	if o == nil || isNil(o.SupportsOnHealthRestored) {
+    return nil, false
+	}
+	return o.SupportsOnHealthRestored, true
+}
+
+// HasSupportsOnHealthRestored returns a boolean if a field has been set.
+func (o *NotificationResource) HasSupportsOnHealthRestored() bool {
+	if o != nil && !isNil(o.SupportsOnHealthRestored) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsOnHealthRestored gets a reference to the given bool and assigns it to the SupportsOnHealthRestored field.
+func (o *NotificationResource) SetSupportsOnHealthRestored(v bool) {
+	o.SupportsOnHealthRestored = &v
 }
 
 // GetIncludeHealthWarnings returns the IncludeHealthWarnings field value if set, zero value otherwise.
@@ -809,6 +875,9 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.OnHealthIssue) {
 		toSerialize["onHealthIssue"] = o.OnHealthIssue
 	}
+	if !isNil(o.OnHealthRestored) {
+		toSerialize["onHealthRestored"] = o.OnHealthRestored
+	}
 	if !isNil(o.OnApplicationUpdate) {
 		toSerialize["onApplicationUpdate"] = o.OnApplicationUpdate
 	}
@@ -820,6 +889,9 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.SupportsOnHealthIssue) {
 		toSerialize["supportsOnHealthIssue"] = o.SupportsOnHealthIssue
+	}
+	if !isNil(o.SupportsOnHealthRestored) {
+		toSerialize["supportsOnHealthRestored"] = o.SupportsOnHealthRestored
 	}
 	if !isNil(o.IncludeHealthWarnings) {
 		toSerialize["includeHealthWarnings"] = o.IncludeHealthWarnings

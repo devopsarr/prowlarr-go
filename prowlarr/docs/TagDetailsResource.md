@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerProxyIds** | Pointer to **[]int32** |  | [optional] 
+**ApplicationIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -194,6 +195,41 @@ HasIndexerProxyIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetIndexerProxyIds()`
 
 UnsetIndexerProxyIds ensures that no value is present for IndexerProxyIds, not even an explicit nil
+### GetApplicationIds
+
+`func (o *TagDetailsResource) GetApplicationIds() []int32`
+
+GetApplicationIds returns the ApplicationIds field if non-nil, zero value otherwise.
+
+### GetApplicationIdsOk
+
+`func (o *TagDetailsResource) GetApplicationIdsOk() (*[]int32, bool)`
+
+GetApplicationIdsOk returns a tuple with the ApplicationIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationIds
+
+`func (o *TagDetailsResource) SetApplicationIds(v []int32)`
+
+SetApplicationIds sets ApplicationIds field to given value.
+
+### HasApplicationIds
+
+`func (o *TagDetailsResource) HasApplicationIds() bool`
+
+HasApplicationIds returns a boolean if a field has been set.
+
+### SetApplicationIdsNil
+
+`func (o *TagDetailsResource) SetApplicationIdsNil(b bool)`
+
+ SetApplicationIdsNil sets the value for ApplicationIds to be an explicit nil
+
+### UnsetApplicationIds
+`func (o *TagDetailsResource) UnsetApplicationIds()`
+
+UnsetApplicationIds ensures that no value is present for ApplicationIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
