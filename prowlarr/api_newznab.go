@@ -20,11 +20,11 @@ import (
 )
 
 
-// NewznabApiService NewznabApi service
-type NewznabApiService service
+// NewznabAPIService NewznabAPI service
+type NewznabAPIService service
 type ApiGetIndexeridDownloadRequest struct {
 	ctx context.Context
-	ApiService *NewznabApiService
+	ApiService *NewznabAPIService
 	id int32
 	link *string
 	file *string
@@ -51,7 +51,7 @@ GetIndexeridDownload Method for GetIndexeridDownload
  @param id
  @return ApiGetIndexeridDownloadRequest
 */
-func (a *NewznabApiService) GetIndexeridDownload(ctx context.Context, id int32) ApiGetIndexeridDownloadRequest {
+func (a *NewznabAPIService) GetIndexeridDownload(ctx context.Context, id int32) ApiGetIndexeridDownloadRequest {
 	return ApiGetIndexeridDownloadRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -60,14 +60,14 @@ func (a *NewznabApiService) GetIndexeridDownload(ctx context.Context, id int32) 
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetIndexeridDownloadExecute(r ApiGetIndexeridDownloadRequest) (*http.Response, error) {
+func (a *NewznabAPIService) GetIndexeridDownloadExecute(r ApiGetIndexeridDownloadRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexeridDownload")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabAPIService.GetIndexeridDownload")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -159,7 +159,7 @@ func (a *NewznabApiService) GetIndexeridDownloadExecute(r ApiGetIndexeridDownloa
 }
 type ApiGetIndexeridNewznabRequest struct {
 	ctx context.Context
-	ApiService *NewznabApiService
+	ApiService *NewznabAPIService
 	id int32
 	t *string
 	q *string
@@ -342,7 +342,7 @@ GetIndexeridNewznab Method for GetIndexeridNewznab
  @param id
  @return ApiGetIndexeridNewznabRequest
 */
-func (a *NewznabApiService) GetIndexeridNewznab(ctx context.Context, id int32) ApiGetIndexeridNewznabRequest {
+func (a *NewznabAPIService) GetIndexeridNewznab(ctx context.Context, id int32) ApiGetIndexeridNewznabRequest {
 	return ApiGetIndexeridNewznabRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -351,14 +351,14 @@ func (a *NewznabApiService) GetIndexeridNewznab(ctx context.Context, id int32) A
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabRequest) (*http.Response, error) {
+func (a *NewznabAPIService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexeridNewznab")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabAPIService.GetIndexeridNewznab")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -528,7 +528,7 @@ func (a *NewznabApiService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabR
 }
 type ApiGetidApiRequest struct {
 	ctx context.Context
-	ApiService *NewznabApiService
+	ApiService *NewznabAPIService
 	id int32
 	t *string
 	q *string
@@ -711,7 +711,7 @@ GetidApi Method for GetidApi
  @param id
  @return ApiGetidApiRequest
 */
-func (a *NewznabApiService) GetidApi(ctx context.Context, id int32) ApiGetidApiRequest {
+func (a *NewznabAPIService) GetidApi(ctx context.Context, id int32) ApiGetidApiRequest {
 	return ApiGetidApiRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -720,14 +720,14 @@ func (a *NewznabApiService) GetidApi(ctx context.Context, id int32) ApiGetidApiR
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetidApiExecute(r ApiGetidApiRequest) (*http.Response, error) {
+func (a *NewznabAPIService) GetidApiExecute(r ApiGetidApiRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetidApi")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabAPIService.GetidApi")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -897,7 +897,7 @@ func (a *NewznabApiService) GetidApiExecute(r ApiGetidApiRequest) (*http.Respons
 }
 type ApiGetidDownloadRequest struct {
 	ctx context.Context
-	ApiService *NewznabApiService
+	ApiService *NewznabAPIService
 	id int32
 	link *string
 	file *string
@@ -924,7 +924,7 @@ GetidDownload Method for GetidDownload
  @param id
  @return ApiGetidDownloadRequest
 */
-func (a *NewznabApiService) GetidDownload(ctx context.Context, id int32) ApiGetidDownloadRequest {
+func (a *NewznabAPIService) GetidDownload(ctx context.Context, id int32) ApiGetidDownloadRequest {
 	return ApiGetidDownloadRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -933,14 +933,14 @@ func (a *NewznabApiService) GetidDownload(ctx context.Context, id int32) ApiGeti
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetidDownloadExecute(r ApiGetidDownloadRequest) (*http.Response, error) {
+func (a *NewznabAPIService) GetidDownloadExecute(r ApiGetidDownloadRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetidDownload")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabAPIService.GetidDownload")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
