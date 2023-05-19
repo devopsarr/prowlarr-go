@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/devopsarr/prowlarr-go/compare/v0.3.1...v0.4.0) (2023-05-19)
+
+
+### Features
+
+* pin openapi version and add version management ([4be9b9c](https://github.com/devopsarr/prowlarr-go/commit/4be9b9cf3bc3aeae00302871fbc98419075d545f))
+
 ## [0.3.1](https://github.com/devopsarr/prowlarr-go/compare/v0.3.0...v0.3.1) (2023-03-27)
 
 
