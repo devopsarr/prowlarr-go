@@ -1010,7 +1010,13 @@ type ApiUpdateIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyApiService
 	id string
+	forceSave *bool
 	indexerProxyResource *IndexerProxyResource
+}
+
+func (r ApiUpdateIndexerProxyRequest) ForceSave(forceSave bool) ApiUpdateIndexerProxyRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiUpdateIndexerProxyRequest) IndexerProxyResource(indexerProxyResource IndexerProxyResource) ApiUpdateIndexerProxyRequest {
@@ -1059,6 +1065,9 @@ func (a *IndexerProxyApiService) UpdateIndexerProxyExecute(r ApiUpdateIndexerPro
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 
