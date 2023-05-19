@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallIndexerProxyRequest
 
 ## UpdateIndexerProxy
 
-> IndexerProxyResource UpdateIndexerProxy(ctx, id).IndexerProxyResource(indexerProxyResource).Execute()
+> IndexerProxyResource UpdateIndexerProxy(ctx, id).ForceSave(forceSave).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     indexerProxyResource := *prowlarrClient.NewIndexerProxyResource() // IndexerProxyResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.UpdateIndexerProxy(context.Background(), id).IndexerProxyResource(indexerProxyResource).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.UpdateIndexerProxy(context.Background(), id).ForceSave(forceSave).IndexerProxyResource(indexerProxyResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.UpdateIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateIndexerProxyRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **indexerProxyResource** | [**IndexerProxyResource**](IndexerProxyResource.md) |  | 
 
 ### Return type

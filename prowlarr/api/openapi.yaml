@@ -78,6 +78,14 @@ paths:
     put:
       operationId: UpdateApplications
       parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - explode: false
         in: path
         name: id
@@ -734,6 +742,14 @@ paths:
     put:
       operationId: UpdateDownloadClient
       parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - explode: false
         in: path
         name: id
@@ -1222,6 +1238,14 @@ paths:
     put:
       operationId: UpdateIndexer
       parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - explode: false
         in: path
         name: id
@@ -1460,6 +1484,14 @@ paths:
     put:
       operationId: UpdateIndexerProxy
       parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - explode: false
         in: path
         name: id
@@ -2320,6 +2352,14 @@ paths:
     put:
       operationId: UpdateNotification
       parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - explode: false
         in: path
         name: id

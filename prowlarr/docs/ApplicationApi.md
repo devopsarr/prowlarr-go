@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallApplicationsRequest
 
 ## UpdateApplications
 
-> ApplicationResource UpdateApplications(ctx, id).ApplicationResource(applicationResource).Execute()
+> ApplicationResource UpdateApplications(ctx, id).ForceSave(forceSave).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     applicationResource := *prowlarrClient.NewApplicationResource() // ApplicationResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.UpdateApplications(context.Background(), id).ApplicationResource(applicationResource).Execute()
+    resp, r, err := apiClient.ApplicationApi.UpdateApplications(context.Background(), id).ForceSave(forceSave).ApplicationResource(applicationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.UpdateApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateApplicationsRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **applicationResource** | [**ApplicationResource**](ApplicationResource.md) |  | 
 
 ### Return type

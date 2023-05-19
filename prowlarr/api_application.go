@@ -1010,7 +1010,13 @@ type ApiUpdateApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationApiService
 	id string
+	forceSave *bool
 	applicationResource *ApplicationResource
+}
+
+func (r ApiUpdateApplicationsRequest) ForceSave(forceSave bool) ApiUpdateApplicationsRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiUpdateApplicationsRequest) ApplicationResource(applicationResource ApplicationResource) ApiUpdateApplicationsRequest {
@@ -1059,6 +1065,9 @@ func (a *ApplicationApiService) UpdateApplicationsExecute(r ApiUpdateApplication
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 
