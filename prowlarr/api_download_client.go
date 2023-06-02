@@ -25,7 +25,13 @@ type DownloadClientApiService service
 type ApiCreateDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientApiService
+	forceSave *bool
 	downloadClientResource *DownloadClientResource
+}
+
+func (r ApiCreateDownloadClientRequest) ForceSave(forceSave bool) ApiCreateDownloadClientRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateDownloadClientRequest) DownloadClientResource(downloadClientResource DownloadClientResource) ApiCreateDownloadClientRequest {
@@ -71,6 +77,9 @@ func (a *DownloadClientApiService) CreateDownloadClientExecute(r ApiCreateDownlo
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 

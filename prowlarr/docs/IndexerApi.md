@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateIndexer
 
-> IndexerResource CreateIndexer(ctx).IndexerResource(indexerResource).Execute()
+> IndexerResource CreateIndexer(ctx).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     indexerResource := *prowlarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerApi.CreateIndexer(context.Background()).IndexerResource(indexerResource).Execute()
+    resp, r, err := apiClient.IndexerApi.CreateIndexer(context.Background()).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.CreateIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateIndexerRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type

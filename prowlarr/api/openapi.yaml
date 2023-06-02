@@ -129,6 +129,15 @@ paths:
       - Application
     post:
       operationId: CreateApplications
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -793,6 +802,15 @@ paths:
       - DownloadClient
     post:
       operationId: CreateDownloadClient
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -1289,6 +1307,15 @@ paths:
       - Indexer
     post:
       operationId: CreateIndexer
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -1535,6 +1562,15 @@ paths:
       - IndexerProxy
     post:
       operationId: CreateIndexerProxy
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -2403,6 +2439,15 @@ paths:
       - Notification
     post:
       operationId: CreateNotification
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
