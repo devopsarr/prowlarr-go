@@ -25,7 +25,13 @@ type NotificationApiService service
 type ApiCreateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
+	forceSave *bool
 	notificationResource *NotificationResource
+}
+
+func (r ApiCreateNotificationRequest) ForceSave(forceSave bool) ApiCreateNotificationRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateNotificationRequest) NotificationResource(notificationResource NotificationResource) ApiCreateNotificationRequest {
@@ -71,6 +77,9 @@ func (a *NotificationApiService) CreateNotificationExecute(r ApiCreateNotificati
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 

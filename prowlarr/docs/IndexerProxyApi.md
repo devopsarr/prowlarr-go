@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateIndexerProxy
 
-> IndexerProxyResource CreateIndexerProxy(ctx).IndexerProxyResource(indexerProxyResource).Execute()
+> IndexerProxyResource CreateIndexerProxy(ctx).ForceSave(forceSave).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     indexerProxyResource := *prowlarrClient.NewIndexerProxyResource() // IndexerProxyResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerProxyApi.CreateIndexerProxy(context.Background()).IndexerProxyResource(indexerProxyResource).Execute()
+    resp, r, err := apiClient.IndexerProxyApi.CreateIndexerProxy(context.Background()).ForceSave(forceSave).IndexerProxyResource(indexerProxyResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyApi.CreateIndexerProxy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateIndexerProxyRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **indexerProxyResource** | [**IndexerProxyResource**](IndexerProxyResource.md) |  | 
 
 ### Return type

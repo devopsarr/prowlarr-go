@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateNotification
 
-> NotificationResource CreateNotification(ctx).NotificationResource(notificationResource).Execute()
+> NotificationResource CreateNotification(ctx).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     notificationResource := *prowlarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateNotificationRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type

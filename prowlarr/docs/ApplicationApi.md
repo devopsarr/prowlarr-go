@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateApplications
 
-> ApplicationResource CreateApplications(ctx).ApplicationResource(applicationResource).Execute()
+> ApplicationResource CreateApplications(ctx).ForceSave(forceSave).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     applicationResource := *prowlarrClient.NewApplicationResource() // ApplicationResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ApplicationApi.CreateApplications(context.Background()).ApplicationResource(applicationResource).Execute()
+    resp, r, err := apiClient.ApplicationApi.CreateApplications(context.Background()).ForceSave(forceSave).ApplicationResource(applicationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.CreateApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateApplicationsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **applicationResource** | [**ApplicationResource**](ApplicationResource.md) |  | 
 
 ### Return type

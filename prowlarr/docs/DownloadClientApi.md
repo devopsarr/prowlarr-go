@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateDownloadClient
 
-> DownloadClientResource CreateDownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource CreateDownloadClient(ctx).ForceSave(forceSave).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     downloadClientResource := *prowlarrClient.NewDownloadClientResource() // DownloadClientResource |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.CreateDownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.CreateDownloadClient(context.Background()).ForceSave(forceSave).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateDownloadClientReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **downloadClientResource** | [**DownloadClientResource**](DownloadClientResource.md) |  | 
 
 ### Return type

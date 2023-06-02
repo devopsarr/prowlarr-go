@@ -25,7 +25,13 @@ type ApplicationApiService service
 type ApiCreateApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationApiService
+	forceSave *bool
 	applicationResource *ApplicationResource
+}
+
+func (r ApiCreateApplicationsRequest) ForceSave(forceSave bool) ApiCreateApplicationsRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateApplicationsRequest) ApplicationResource(applicationResource ApplicationResource) ApiCreateApplicationsRequest {
@@ -71,6 +77,9 @@ func (a *ApplicationApiService) CreateApplicationsExecute(r ApiCreateApplication
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 

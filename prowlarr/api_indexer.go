@@ -25,7 +25,13 @@ type IndexerApiService service
 type ApiCreateIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerApiService
+	forceSave *bool
 	indexerResource *IndexerResource
+}
+
+func (r ApiCreateIndexerRequest) ForceSave(forceSave bool) ApiCreateIndexerRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateIndexerRequest) IndexerResource(indexerResource IndexerResource) ApiCreateIndexerRequest {
@@ -71,6 +77,9 @@ func (a *IndexerApiService) CreateIndexerExecute(r ApiCreateIndexerRequest) (*In
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 
