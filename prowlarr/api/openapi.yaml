@@ -3274,6 +3274,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -3298,6 +3299,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -3724,6 +3726,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -3748,6 +3751,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -3835,6 +3839,7 @@ components:
         section: section
         label: label
         type: type
+        helpTextWarning: helpTextWarning
         unit: unit
         helpLink: helpLink
         name: name
@@ -3855,6 +3860,9 @@ components:
           nullable: true
           type: string
         helpText:
+          nullable: true
+          type: string
+        helpTextWarning:
           nullable: true
           type: string
         helpLink:
@@ -4359,6 +4367,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -4383,6 +4392,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -4534,6 +4544,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -4558,6 +4569,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -5000,6 +5012,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
@@ -5024,6 +5037,7 @@ components:
           section: section
           label: label
           type: type
+          helpTextWarning: helpTextWarning
           unit: unit
           helpLink: helpLink
           name: name
