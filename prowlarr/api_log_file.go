@@ -28,7 +28,7 @@ type ApiGetLogFileByFilenameRequest struct {
 	filename string
 }
 
-func (r ApiGetLogFileByFilenameRequest) Execute() (*http.Response, error) {
+func (r ApiGetLogFileByFilenameRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetLogFileByFilenameExecute(r)
 }
 
@@ -48,16 +48,18 @@ func (a *LogFileApiService) GetLogFileByFilename(ctx context.Context, filename s
 }
 
 // Execute executes the request
-func (a *LogFileApiService) GetLogFileByFilenameExecute(r ApiGetLogFileByFilenameRequest) (*http.Response, error) {
+//  @return map[string]interface{}
+func (a *LogFileApiService) GetLogFileByFilenameExecute(r ApiGetLogFileByFilenameRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileApiService.GetLogFileByFilename")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v1/log/file/{filename}"
@@ -77,7 +79,7 @@ func (a *LogFileApiService) GetLogFileByFilenameExecute(r ApiGetLogFileByFilenam
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"text/plain"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -114,19 +116,19 @@ func (a *LogFileApiService) GetLogFileByFilenameExecute(r ApiGetLogFileByFilenam
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -134,10 +136,19 @@ func (a *LogFileApiService) GetLogFileByFilenameExecute(r ApiGetLogFileByFilenam
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 type ApiListLogFileRequest struct {
 	ctx context.Context
@@ -192,7 +203,7 @@ func (a *LogFileApiService) ListLogFileExecute(r ApiListLogFileRequest) ([]*LogF
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)

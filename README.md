@@ -129,7 +129,6 @@ Class | Method | HTTP request | Description
 *DownloadClientConfigApi* | [**UpdateDownloadClientConfig**](prowlarr/docs/DownloadClientConfigApi.md#updatedownloadclientconfig) | **Put** /api/v1/config/downloadclient/{id} | 
 *FileSystemApi* | [**GetFileSystem**](prowlarr/docs/FileSystemApi.md#getfilesystem) | **Get** /api/v1/filesystem | 
 *FileSystemApi* | [**GetFileSystemType**](prowlarr/docs/FileSystemApi.md#getfilesystemtype) | **Get** /api/v1/filesystem/type | 
-*HealthApi* | [**GetHealthById**](prowlarr/docs/HealthApi.md#gethealthbyid) | **Get** /api/v1/health/{id} | 
 *HealthApi* | [**ListHealth**](prowlarr/docs/HealthApi.md#listhealth) | **Get** /api/v1/health | 
 *HistoryApi* | [**GetHistory**](prowlarr/docs/HistoryApi.md#gethistory) | **Get** /api/v1/history | 
 *HistoryApi* | [**ListHistoryIndexer**](prowlarr/docs/HistoryApi.md#listhistoryindexer) | **Get** /api/v1/history/indexer | 
@@ -159,7 +158,6 @@ Class | Method | HTTP request | Description
 *IndexerProxyApi* | [**TestallIndexerProxy**](prowlarr/docs/IndexerProxyApi.md#testallindexerproxy) | **Post** /api/v1/indexerproxy/testall | 
 *IndexerProxyApi* | [**UpdateIndexerProxy**](prowlarr/docs/IndexerProxyApi.md#updateindexerproxy) | **Put** /api/v1/indexerproxy/{id} | 
 *IndexerStatsApi* | [**GetIndexerStats**](prowlarr/docs/IndexerStatsApi.md#getindexerstats) | **Get** /api/v1/indexerstats | 
-*IndexerStatusApi* | [**GetIndexerStatusById**](prowlarr/docs/IndexerStatusApi.md#getindexerstatusbyid) | **Get** /api/v1/indexerstatus/{id} | 
 *IndexerStatusApi* | [**ListIndexerStatus**](prowlarr/docs/IndexerStatusApi.md#listindexerstatus) | **Get** /api/v1/indexerstatus | 
 *InitializeJsApi* | [**GetInitializeJs**](prowlarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LocalizationApi* | [**GetLocalization**](prowlarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v1/localization | 
@@ -184,7 +182,6 @@ Class | Method | HTTP request | Description
 *QualityProfileSchemaApi* | [**GetAppprofileSchema**](prowlarr/docs/QualityProfileSchemaApi.md#getappprofileschema) | **Get** /api/v1/appprofile/schema | 
 *SearchApi* | [**CreateSearch**](prowlarr/docs/SearchApi.md#createsearch) | **Post** /api/v1/search | 
 *SearchApi* | [**CreateSearchBulk**](prowlarr/docs/SearchApi.md#createsearchbulk) | **Post** /api/v1/search/bulk | 
-*SearchApi* | [**GetSearchById**](prowlarr/docs/SearchApi.md#getsearchbyid) | **Get** /api/v1/search/{id} | 
 *SearchApi* | [**ListSearch**](prowlarr/docs/SearchApi.md#listsearch) | **Get** /api/v1/search | 
 *StaticResourceApi* | [**Get**](prowlarr/docs/StaticResourceApi.md#get) | **Get** / | 
 *StaticResourceApi* | [**GetByPath**](prowlarr/docs/StaticResourceApi.md#getbypath) | **Get** /{path} | 
