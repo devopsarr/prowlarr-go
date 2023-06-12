@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetLogFileByFilename
 
-> GetLogFileByFilename(ctx, filename).Execute()
+> map[string]interface{} GetLogFileByFilename(ctx, filename).Execute()
 
 
 
@@ -37,6 +37,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LogFileApi.GetLogFileByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GetLogFileByFilename`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `LogFileApi.GetLogFileByFilename`: %v\n", resp)
 }
 ```
 
@@ -59,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -68,7 +70,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -127,7 +129,7 @@ Other parameters are passed through a pointer to a apiListLogFileRequest struct 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

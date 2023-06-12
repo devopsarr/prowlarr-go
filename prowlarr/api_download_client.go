@@ -81,7 +81,7 @@ func (a *DownloadClientApiService) CreateDownloadClientExecute(r ApiCreateDownlo
 		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -215,7 +215,7 @@ func (a *DownloadClientApiService) CreateDownloadClientActionByNameExecute(r Api
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -462,7 +462,7 @@ func (a *DownloadClientApiService) GetDownloadClientByIdExecute(r ApiGetDownload
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -829,7 +829,7 @@ func (a *DownloadClientApiService) TestDownloadClientExecute(r ApiTestDownloadCl
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1078,7 +1078,7 @@ func (a *DownloadClientApiService) UpdateDownloadClientExecute(r ApiUpdateDownlo
 		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
