@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **Enable** | Pointer to **NullableBool** |  | [optional] 
 **AppProfileId** | Pointer to **NullableInt32** |  | [optional] 
+**Priority** | Pointer to **NullableInt32** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 **ApplyTags** | Pointer to [**ApplyTags**](ApplyTags.md) |  | [optional] 
 
@@ -134,6 +135,41 @@ HasAppProfileId returns a boolean if a field has been set.
 `func (o *IndexerEditorResource) UnsetAppProfileId()`
 
 UnsetAppProfileId ensures that no value is present for AppProfileId, not even an explicit nil
+### GetPriority
+
+`func (o *IndexerEditorResource) GetPriority() int32`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *IndexerEditorResource) GetPriorityOk() (*int32, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *IndexerEditorResource) SetPriority(v int32)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *IndexerEditorResource) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
+### SetPriorityNil
+
+`func (o *IndexerEditorResource) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *IndexerEditorResource) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetTags
 
 `func (o *IndexerEditorResource) GetTags() []int32`

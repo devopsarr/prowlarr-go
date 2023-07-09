@@ -3767,9 +3767,10 @@ components:
         - 0
         enable: true
         appProfileId: 6
+        priority: 1
         tags:
-        - 1
-        - 1
+        - 5
+        - 5
       properties:
         indexerIds:
           items:
@@ -3781,6 +3782,10 @@ components:
           nullable: true
           type: boolean
         appProfileId:
+          format: int32
+          nullable: true
+          type: integer
+        priority:
           format: int32
           nullable: true
           type: integer
@@ -3927,6 +3932,7 @@ components:
     IndexerResource:
       additionalProperties: false
       example:
+        downloadClientId: 3
         sortName: sortName
         added: 2000-01-23T04:56:07.000+00:00
         appProfileId: 1
@@ -4051,8 +4057,8 @@ components:
         status:
           disabledTill: 2000-01-23T04:56:07.000+00:00
           initialFailure: 2000-01-23T04:56:07.000+00:00
-          id: 3
-          indexerId: 2
+          id: 2
+          indexerId: 4
           mostRecentFailure: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
@@ -4136,6 +4142,9 @@ components:
         capabilities:
           $ref: '#/components/schemas/IndexerCapabilityResource'
         priority:
+          format: int32
+          type: integer
+        downloadClientId:
           format: int32
           type: integer
         added:
@@ -4262,8 +4271,8 @@ components:
       example:
         disabledTill: 2000-01-23T04:56:07.000+00:00
         initialFailure: 2000-01-23T04:56:07.000+00:00
-        id: 3
-        indexerId: 2
+        id: 2
+        indexerId: 4
         mostRecentFailure: 2000-01-23T04:56:07.000+00:00
       properties:
         id:

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **Privacy** | Pointer to [**IndexerPrivacy**](IndexerPrivacy.md) |  | [optional] 
 **Capabilities** | Pointer to [**IndexerCapabilityResource**](IndexerCapabilityResource.md) |  | [optional] 
 **Priority** | Pointer to **int32** |  | [optional] 
+**DownloadClientId** | Pointer to **int32** |  | [optional] 
 **Added** | Pointer to **time.Time** |  | [optional] 
 **Status** | Pointer to [**IndexerStatusResource**](IndexerStatusResource.md) |  | [optional] 
 **SortName** | Pointer to **NullableString** |  | [optional] 
@@ -868,6 +869,31 @@ SetPriority sets Priority field to given value.
 `func (o *IndexerResource) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
+
+### GetDownloadClientId
+
+`func (o *IndexerResource) GetDownloadClientId() int32`
+
+GetDownloadClientId returns the DownloadClientId field if non-nil, zero value otherwise.
+
+### GetDownloadClientIdOk
+
+`func (o *IndexerResource) GetDownloadClientIdOk() (*int32, bool)`
+
+GetDownloadClientIdOk returns a tuple with the DownloadClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientId
+
+`func (o *IndexerResource) SetDownloadClientId(v int32)`
+
+SetDownloadClientId sets DownloadClientId field to given value.
+
+### HasDownloadClientId
+
+`func (o *IndexerResource) HasDownloadClientId() bool`
+
+HasDownloadClientId returns a boolean if a field has been set.
 
 ### GetAdded
 

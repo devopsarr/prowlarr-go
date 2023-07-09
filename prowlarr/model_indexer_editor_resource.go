@@ -19,6 +19,7 @@ type IndexerEditorResource struct {
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
 	Enable NullableBool `json:"enable,omitempty"`
 	AppProfileId NullableInt32 `json:"appProfileId,omitempty"`
+	Priority NullableInt32 `json:"priority,omitempty"`
 	Tags []*int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 }
@@ -157,6 +158,48 @@ func (o *IndexerEditorResource) UnsetAppProfileId() {
 	o.AppProfileId.Unset()
 }
 
+// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IndexerEditorResource) GetPriority() int32 {
+	if o == nil || isNil(o.Priority.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Priority.Get()
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IndexerEditorResource) GetPriorityOk() (*int32, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.Priority.Get(), o.Priority.IsSet()
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *IndexerEditorResource) HasPriority() bool {
+	if o != nil && o.Priority.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given NullableInt32 and assigns it to the Priority field.
+func (o *IndexerEditorResource) SetPriority(v int32) {
+	o.Priority.Set(&v)
+}
+// SetPriorityNil sets the value for Priority to be an explicit nil
+func (o *IndexerEditorResource) SetPriorityNil() {
+	o.Priority.Set(nil)
+}
+
+// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
+func (o *IndexerEditorResource) UnsetPriority() {
+	o.Priority.Unset()
+}
+
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerEditorResource) GetTags() []*int32 {
 	if o == nil {
@@ -232,6 +275,9 @@ func (o IndexerEditorResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.AppProfileId.IsSet() {
 		toSerialize["appProfileId"] = o.AppProfileId.Get()
+	}
+	if o.Priority.IsSet() {
+		toSerialize["priority"] = o.Priority.Get()
 	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags

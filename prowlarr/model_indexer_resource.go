@@ -44,6 +44,7 @@ type IndexerResource struct {
 	Privacy *IndexerPrivacy `json:"privacy,omitempty"`
 	Capabilities *IndexerCapabilityResource `json:"capabilities,omitempty"`
 	Priority *int32 `json:"priority,omitempty"`
+	DownloadClientId *int32 `json:"downloadClientId,omitempty"`
 	Added *time.Time `json:"added,omitempty"`
 	Status *IndexerStatusResource `json:"status,omitempty"`
 	SortName NullableString `json:"sortName,omitempty"`
@@ -1025,6 +1026,38 @@ func (o *IndexerResource) SetPriority(v int32) {
 	o.Priority = &v
 }
 
+// GetDownloadClientId returns the DownloadClientId field value if set, zero value otherwise.
+func (o *IndexerResource) GetDownloadClientId() int32 {
+	if o == nil || isNil(o.DownloadClientId) {
+		var ret int32
+		return ret
+	}
+	return *o.DownloadClientId
+}
+
+// GetDownloadClientIdOk returns a tuple with the DownloadClientId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IndexerResource) GetDownloadClientIdOk() (*int32, bool) {
+	if o == nil || isNil(o.DownloadClientId) {
+    return nil, false
+	}
+	return o.DownloadClientId, true
+}
+
+// HasDownloadClientId returns a boolean if a field has been set.
+func (o *IndexerResource) HasDownloadClientId() bool {
+	if o != nil && !isNil(o.DownloadClientId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadClientId gets a reference to the given int32 and assigns it to the DownloadClientId field.
+func (o *IndexerResource) SetDownloadClientId(v int32) {
+	o.DownloadClientId = &v
+}
+
 // GetAdded returns the Added field value if set, zero value otherwise.
 func (o *IndexerResource) GetAdded() time.Time {
 	if o == nil || isNil(o.Added) {
@@ -1213,6 +1246,9 @@ func (o IndexerResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
+	}
+	if !isNil(o.DownloadClientId) {
+		toSerialize["downloadClientId"] = o.DownloadClientId
 	}
 	if !isNil(o.Added) {
 		toSerialize["added"] = o.Added
