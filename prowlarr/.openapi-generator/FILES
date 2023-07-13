@@ -17,7 +17,6 @@ api_history.go
 api_host_config.go
 api_indexer.go
 api_indexer_default_categories.go
-api_indexer_editor.go
 api_indexer_proxy.go
 api_indexer_stats.go
 api_indexer_status.go
@@ -45,6 +44,7 @@ docs/ApiInfoResource.md
 docs/AppProfileApi.md
 docs/AppProfileResource.md
 docs/ApplicationApi.md
+docs/ApplicationBulkResource.md
 docs/ApplicationResource.md
 docs/ApplicationSyncLevel.md
 docs/ApplyTags.md
@@ -68,6 +68,7 @@ docs/DatabaseType.md
 docs/DevelopmentConfigApi.md
 docs/DevelopmentConfigResource.md
 docs/DownloadClientApi.md
+docs/DownloadClientBulkResource.md
 docs/DownloadClientCategory.md
 docs/DownloadClientConfigApi.md
 docs/DownloadClientConfigResource.md
@@ -86,11 +87,10 @@ docs/HostConfigApi.md
 docs/HostConfigResource.md
 docs/HostStatistics.md
 docs/IndexerApi.md
+docs/IndexerBulkResource.md
 docs/IndexerCapabilityResource.md
 docs/IndexerCategory.md
 docs/IndexerDefaultCategoriesApi.md
-docs/IndexerEditorApi.md
-docs/IndexerEditorResource.md
 docs/IndexerPrivacy.md
 docs/IndexerProxyApi.md
 docs/IndexerProxyResource.md
@@ -147,6 +147,7 @@ docs/UserAgentStatistics.md
 go.mod
 model_api_info_resource.go
 model_app_profile_resource.go
+model_application_bulk_resource.go
 model_application_resource.go
 model_application_sync_level.go
 model_apply_tags.go
@@ -164,6 +165,7 @@ model_command_trigger.go
 model_custom_filter_resource.go
 model_database_type.go
 model_development_config_resource.go
+model_download_client_bulk_resource.go
 model_download_client_category.go
 model_download_client_config_resource.go
 model_download_client_resource.go
@@ -176,9 +178,9 @@ model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
 model_host_statistics.go
+model_indexer_bulk_resource.go
 model_indexer_capability_resource.go
 model_indexer_category.go
-model_indexer_editor_resource.go
 model_indexer_privacy.go
 model_indexer_proxy_resource.go
 model_indexer_resource.go
