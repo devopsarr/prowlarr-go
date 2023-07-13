@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**CreateDownloadClient**](DownloadClientApi.md#CreateDownloadClient) | **Post** /api/v1/downloadclient | 
 [**CreateDownloadClientActionByName**](DownloadClientApi.md#CreateDownloadClientActionByName) | **Post** /api/v1/downloadclient/action/{name} | 
 [**DeleteDownloadClient**](DownloadClientApi.md#DeleteDownloadClient) | **Delete** /api/v1/downloadclient/{id} | 
+[**DeleteDownloadClientBulk**](DownloadClientApi.md#DeleteDownloadClientBulk) | **Delete** /api/v1/downloadclient/bulk | 
 [**GetDownloadClientById**](DownloadClientApi.md#GetDownloadClientById) | **Get** /api/v1/downloadclient/{id} | 
 [**ListDownloadClient**](DownloadClientApi.md#ListDownloadClient) | **Get** /api/v1/downloadclient | 
 [**ListDownloadClientSchema**](DownloadClientApi.md#ListDownloadClientSchema) | **Get** /api/v1/downloadclient/schema | 
+[**PutDownloadClientBulk**](DownloadClientApi.md#PutDownloadClientBulk) | **Put** /api/v1/downloadclient/bulk | 
 [**TestDownloadClient**](DownloadClientApi.md#TestDownloadClient) | **Post** /api/v1/downloadclient/test | 
 [**TestallDownloadClient**](DownloadClientApi.md#TestallDownloadClient) | **Post** /api/v1/downloadclient/testall | 
 [**UpdateDownloadClient**](DownloadClientApi.md#UpdateDownloadClient) | **Put** /api/v1/downloadclient/{id} | 
@@ -216,6 +218,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteDownloadClientBulk
+
+> DeleteDownloadClientBulk(ctx).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    prowlarrClient "./openapi"
+)
+
+func main() {
+    downloadClientBulkResource := *prowlarrClient.NewDownloadClientBulkResource() // DownloadClientBulkResource |  (optional)
+
+    configuration := prowlarrClient.NewConfiguration()
+    apiClient := prowlarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DownloadClientApi.DeleteDownloadClientBulk(context.Background()).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.DeleteDownloadClientBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteDownloadClientBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **downloadClientBulkResource** | [**DownloadClientBulkResource**](DownloadClientBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetDownloadClientById
 
 > DownloadClientResource GetDownloadClientById(ctx, id).Execute()
@@ -395,6 +459,70 @@ Other parameters are passed through a pointer to a apiListDownloadClientSchemaRe
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutDownloadClientBulk
+
+> DownloadClientResource PutDownloadClientBulk(ctx).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    prowlarrClient "./openapi"
+)
+
+func main() {
+    downloadClientBulkResource := *prowlarrClient.NewDownloadClientBulkResource() // DownloadClientBulkResource |  (optional)
+
+    configuration := prowlarrClient.NewConfiguration()
+    apiClient := prowlarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DownloadClientApi.PutDownloadClientBulk(context.Background()).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.PutDownloadClientBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutDownloadClientBulk`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.PutDownloadClientBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutDownloadClientBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **downloadClientBulkResource** | [**DownloadClientBulkResource**](DownloadClientBulkResource.md) |  | 
+
+### Return type
+
+[**DownloadClientResource**](DownloadClientResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

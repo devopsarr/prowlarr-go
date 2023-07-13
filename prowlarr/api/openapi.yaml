@@ -140,6 +140,35 @@ paths:
           description: Success
       tags:
       - Application
+  /api/v1/applications/bulk:
+    delete:
+      operationId: DeleteApplicationsBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Application
+    put:
+      operationId: PutApplicationsBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationBulkResource'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationResource'
+          description: Success
+      tags:
+      - Application
   /api/v1/applications/schema:
     get:
       operationId: ListApplicationsSchema
@@ -719,6 +748,35 @@ paths:
           description: Success
       tags:
       - DownloadClient
+  /api/v1/downloadclient/bulk:
+    delete:
+      operationId: DeleteDownloadClientBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DownloadClientBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - DownloadClient
+    put:
+      operationId: PutDownloadClientBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DownloadClientBulkResource'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DownloadClientResource'
+          description: Success
+      tags:
+      - DownloadClient
   /api/v1/downloadclient/schema:
     get:
       operationId: ListDownloadClientSchema
@@ -1131,6 +1189,35 @@ paths:
           description: Success
       tags:
       - Indexer
+  /api/v1/indexer/bulk:
+    delete:
+      operationId: DeleteIndexerBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IndexerBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Indexer
+    put:
+      operationId: PutIndexerBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IndexerBulkResource'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexerResource'
+          description: Success
+      tags:
+      - Indexer
   /api/v1/indexer/schema:
     get:
       operationId: ListIndexerSchema
@@ -1201,31 +1288,6 @@ paths:
           description: Success
       tags:
       - IndexerDefaultCategories
-  /api/v1/indexer/editor:
-    delete:
-      operationId: DeleteIndexerEditor
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/IndexerEditorResource'
-      responses:
-        "200":
-          description: Success
-      tags:
-      - IndexerEditor
-    put:
-      operationId: PutIndexerEditor
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/IndexerEditorResource'
-      responses:
-        "200":
-          description: Success
-      tags:
-      - IndexerEditor
   /api/v1/indexerproxy/{id}:
     delete:
       operationId: DeleteIndexerProxy
@@ -2712,6 +2774,35 @@ components:
           format: int32
           type: integer
       type: object
+    ApplicationBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        ids:
+        - 0
+        - 0
+        syncLevel: null
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
+        syncLevel:
+          $ref: '#/components/schemas/ApplicationSyncLevel'
+      type: object
     ApplicationResource:
       additionalProperties: false
       example:
@@ -3118,6 +3209,41 @@ components:
           type: integer
         filterSentryEvents:
           type: boolean
+      type: object
+    DownloadClientBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        enable: true
+        ids:
+        - 0
+        - 0
+        priority: 1
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
+        enable:
+          nullable: true
+          type: boolean
+        priority:
+          format: int32
+          nullable: true
+          type: integer
       type: object
     DownloadClientCategory:
       additionalProperties: false
@@ -3652,6 +3778,66 @@ components:
     IActionResult:
       additionalProperties: false
       type: object
+    IndexerBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        minimumSeeders: 5
+        seedTime: 7
+        seedRatio: 2.3021358869347655
+        enable: true
+        appProfileId: 1
+        ids:
+        - 0
+        - 0
+        priority: 5
+        packSeedTime: 9
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
+        enable:
+          nullable: true
+          type: boolean
+        appProfileId:
+          format: int32
+          nullable: true
+          type: integer
+        priority:
+          format: int32
+          nullable: true
+          type: integer
+        minimumSeeders:
+          format: int32
+          nullable: true
+          type: integer
+        seedRatio:
+          format: double
+          nullable: true
+          type: number
+        seedTime:
+          format: int32
+          nullable: true
+          type: integer
+        packSeedTime:
+          format: int32
+          nullable: true
+          type: integer
+      type: object
     IndexerCapabilityResource:
       additionalProperties: false
       example:
@@ -3757,46 +3943,6 @@ components:
           nullable: true
           readOnly: true
           type: array
-      type: object
-    IndexerEditorResource:
-      additionalProperties: false
-      example:
-        applyTags: null
-        indexerIds:
-        - 0
-        - 0
-        enable: true
-        appProfileId: 6
-        priority: 1
-        tags:
-        - 5
-        - 5
-      properties:
-        indexerIds:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        enable:
-          nullable: true
-          type: boolean
-        appProfileId:
-          format: int32
-          nullable: true
-          type: integer
-        priority:
-          format: int32
-          nullable: true
-          type: integer
-        tags:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        applyTags:
-          $ref: '#/components/schemas/ApplyTags'
       type: object
     IndexerPrivacy:
       enum:

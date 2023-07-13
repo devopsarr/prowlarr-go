@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**CreateApplications**](ApplicationApi.md#CreateApplications) | **Post** /api/v1/applications | 
 [**CreateApplicationsActionByName**](ApplicationApi.md#CreateApplicationsActionByName) | **Post** /api/v1/applications/action/{name} | 
 [**DeleteApplications**](ApplicationApi.md#DeleteApplications) | **Delete** /api/v1/applications/{id} | 
+[**DeleteApplicationsBulk**](ApplicationApi.md#DeleteApplicationsBulk) | **Delete** /api/v1/applications/bulk | 
 [**GetApplicationsById**](ApplicationApi.md#GetApplicationsById) | **Get** /api/v1/applications/{id} | 
 [**ListApplications**](ApplicationApi.md#ListApplications) | **Get** /api/v1/applications | 
 [**ListApplicationsSchema**](ApplicationApi.md#ListApplicationsSchema) | **Get** /api/v1/applications/schema | 
+[**PutApplicationsBulk**](ApplicationApi.md#PutApplicationsBulk) | **Put** /api/v1/applications/bulk | 
 [**TestApplications**](ApplicationApi.md#TestApplications) | **Post** /api/v1/applications/test | 
 [**TestallApplications**](ApplicationApi.md#TestallApplications) | **Post** /api/v1/applications/testall | 
 [**UpdateApplications**](ApplicationApi.md#UpdateApplications) | **Put** /api/v1/applications/{id} | 
@@ -216,6 +218,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteApplicationsBulk
+
+> DeleteApplicationsBulk(ctx).ApplicationBulkResource(applicationBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    prowlarrClient "./openapi"
+)
+
+func main() {
+    applicationBulkResource := *prowlarrClient.NewApplicationBulkResource() // ApplicationBulkResource |  (optional)
+
+    configuration := prowlarrClient.NewConfiguration()
+    apiClient := prowlarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ApplicationApi.DeleteApplicationsBulk(context.Background()).ApplicationBulkResource(applicationBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.DeleteApplicationsBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteApplicationsBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationBulkResource** | [**ApplicationBulkResource**](ApplicationBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetApplicationsById
 
 > ApplicationResource GetApplicationsById(ctx, id).Execute()
@@ -395,6 +459,70 @@ Other parameters are passed through a pointer to a apiListApplicationsSchemaRequ
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutApplicationsBulk
+
+> ApplicationResource PutApplicationsBulk(ctx).ApplicationBulkResource(applicationBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    prowlarrClient "./openapi"
+)
+
+func main() {
+    applicationBulkResource := *prowlarrClient.NewApplicationBulkResource() // ApplicationBulkResource |  (optional)
+
+    configuration := prowlarrClient.NewConfiguration()
+    apiClient := prowlarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ApplicationApi.PutApplicationsBulk(context.Background()).ApplicationBulkResource(applicationBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.PutApplicationsBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutApplicationsBulk`: ApplicationResource
+    fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.PutApplicationsBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutApplicationsBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applicationBulkResource** | [**ApplicationBulkResource**](ApplicationBulkResource.md) |  | 
+
+### Return type
+
+[**ApplicationResource**](ApplicationResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
