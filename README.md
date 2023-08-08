@@ -163,7 +163,6 @@ Class | Method | HTTP request | Description
 *IndexerProxyApi* | [**UpdateIndexerProxy**](prowlarr/docs/IndexerProxyApi.md#updateindexerproxy) | **Put** /api/v1/indexerproxy/{id} | 
 *IndexerStatsApi* | [**GetIndexerStats**](prowlarr/docs/IndexerStatsApi.md#getindexerstats) | **Get** /api/v1/indexerstats | 
 *IndexerStatusApi* | [**ListIndexerStatus**](prowlarr/docs/IndexerStatusApi.md#listindexerstatus) | **Get** /api/v1/indexerstatus | 
-*InitializeJsApi* | [**GetInitializeJs**](prowlarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LocalizationApi* | [**GetLocalization**](prowlarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v1/localization | 
 *LocalizationApi* | [**ListLocalizationOptions**](prowlarr/docs/LocalizationApi.md#listlocalizationoptions) | **Get** /api/v1/localization/options | 
 *LogApi* | [**GetLog**](prowlarr/docs/LogApi.md#getlog) | **Get** /api/v1/log | 

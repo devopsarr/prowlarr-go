@@ -1495,14 +1495,6 @@ paths:
           description: Success
       tags:
       - IndexerStatus
-  /initialize.js:
-    get:
-      operationId: GetInitialize.js
-      responses:
-        "200":
-          description: Success
-      tags:
-      - InitializeJs
   /api/v1/localization:
     get:
       operationId: GetLocalization

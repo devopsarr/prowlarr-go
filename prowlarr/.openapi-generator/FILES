@@ -20,7 +20,6 @@ api_indexer_default_categories.go
 api_indexer_proxy.go
 api_indexer_stats.go
 api_indexer_status.go
-api_initialize_js_.go
 api_localization.go
 api_log.go
 api_log_file.go
@@ -100,7 +99,6 @@ docs/IndexerStatsApi.md
 docs/IndexerStatsResource.md
 docs/IndexerStatusApi.md
 docs/IndexerStatusResource.md
-docs/InitializeJsApi.md
 docs/LocalizationApi.md
 docs/LocalizationOption.md
 docs/LogApi.md
