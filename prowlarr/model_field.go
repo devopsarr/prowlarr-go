@@ -31,6 +31,7 @@ type Field struct {
 	Section NullableString `json:"section,omitempty"`
 	Hidden NullableString `json:"hidden,omitempty"`
 	Placeholder NullableString `json:"placeholder,omitempty"`
+	IsFloat *bool `json:"isFloat,omitempty"`
 }
 
 // NewField instantiates a new Field object
@@ -642,6 +643,38 @@ func (o *Field) UnsetPlaceholder() {
 	o.Placeholder.Unset()
 }
 
+// GetIsFloat returns the IsFloat field value if set, zero value otherwise.
+func (o *Field) GetIsFloat() bool {
+	if o == nil || isNil(o.IsFloat) {
+		var ret bool
+		return ret
+	}
+	return *o.IsFloat
+}
+
+// GetIsFloatOk returns a tuple with the IsFloat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Field) GetIsFloatOk() (*bool, bool) {
+	if o == nil || isNil(o.IsFloat) {
+    return nil, false
+	}
+	return o.IsFloat, true
+}
+
+// HasIsFloat returns a boolean if a field has been set.
+func (o *Field) HasIsFloat() bool {
+	if o != nil && !isNil(o.IsFloat) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsFloat gets a reference to the given bool and assigns it to the IsFloat field.
+func (o *Field) SetIsFloat(v bool) {
+	o.IsFloat = &v
+}
+
 func (o Field) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Order) {
@@ -688,6 +721,9 @@ func (o Field) MarshalJSON() ([]byte, error) {
 	}
 	if o.Placeholder.IsSet() {
 		toSerialize["placeholder"] = o.Placeholder.Get()
+	}
+	if !isNil(o.IsFloat) {
+		toSerialize["isFloat"] = o.IsFloat
 	}
 	return json.Marshal(toSerialize)
 }
