@@ -1659,6 +1659,38 @@ paths:
         style: form
       - explode: true
         in: query
+        name: minage
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: maxage
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: minsize
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: maxsize
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: true
+        in: query
         name: rid
         required: false
         schema:
@@ -1878,6 +1910,38 @@ paths:
         required: false
         schema:
           format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: minage
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: maxage
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: minsize
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: maxsize
+        required: false
+        schema:
+          format: int64
           type: integer
         style: form
       - explode: true

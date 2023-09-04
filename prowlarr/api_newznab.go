@@ -169,6 +169,10 @@ type ApiGetIndexeridNewznabRequest struct {
 	extended *string
 	limit *int32
 	offset *int32
+	minage *int32
+	maxage *int32
+	minsize *int64
+	maxsize *int64
 	rid *int32
 	tvmazeid *int32
 	traktid *int32
@@ -228,6 +232,26 @@ func (r ApiGetIndexeridNewznabRequest) Limit(limit int32) ApiGetIndexeridNewznab
 
 func (r ApiGetIndexeridNewznabRequest) Offset(offset int32) ApiGetIndexeridNewznabRequest {
 	r.offset = &offset
+	return r
+}
+
+func (r ApiGetIndexeridNewznabRequest) Minage(minage int32) ApiGetIndexeridNewznabRequest {
+	r.minage = &minage
+	return r
+}
+
+func (r ApiGetIndexeridNewznabRequest) Maxage(maxage int32) ApiGetIndexeridNewznabRequest {
+	r.maxage = &maxage
+	return r
+}
+
+func (r ApiGetIndexeridNewznabRequest) Minsize(minsize int64) ApiGetIndexeridNewznabRequest {
+	r.minsize = &minsize
+	return r
+}
+
+func (r ApiGetIndexeridNewznabRequest) Maxsize(maxsize int64) ApiGetIndexeridNewznabRequest {
+	r.maxsize = &maxsize
 	return r
 }
 
@@ -394,6 +418,18 @@ func (a *NewznabApiService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabR
 	if r.offset != nil {
 		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
 	}
+	if r.minage != nil {
+		localVarQueryParams.Add("minage", parameterToString(*r.minage, ""))
+	}
+	if r.maxage != nil {
+		localVarQueryParams.Add("maxage", parameterToString(*r.maxage, ""))
+	}
+	if r.minsize != nil {
+		localVarQueryParams.Add("minsize", parameterToString(*r.minsize, ""))
+	}
+	if r.maxsize != nil {
+		localVarQueryParams.Add("maxsize", parameterToString(*r.maxsize, ""))
+	}
 	if r.rid != nil {
 		localVarQueryParams.Add("rid", parameterToString(*r.rid, ""))
 	}
@@ -538,6 +574,10 @@ type ApiGetidApiRequest struct {
 	extended *string
 	limit *int32
 	offset *int32
+	minage *int32
+	maxage *int32
+	minsize *int64
+	maxsize *int64
 	rid *int32
 	tvmazeid *int32
 	traktid *int32
@@ -597,6 +637,26 @@ func (r ApiGetidApiRequest) Limit(limit int32) ApiGetidApiRequest {
 
 func (r ApiGetidApiRequest) Offset(offset int32) ApiGetidApiRequest {
 	r.offset = &offset
+	return r
+}
+
+func (r ApiGetidApiRequest) Minage(minage int32) ApiGetidApiRequest {
+	r.minage = &minage
+	return r
+}
+
+func (r ApiGetidApiRequest) Maxage(maxage int32) ApiGetidApiRequest {
+	r.maxage = &maxage
+	return r
+}
+
+func (r ApiGetidApiRequest) Minsize(minsize int64) ApiGetidApiRequest {
+	r.minsize = &minsize
+	return r
+}
+
+func (r ApiGetidApiRequest) Maxsize(maxsize int64) ApiGetidApiRequest {
+	r.maxsize = &maxsize
 	return r
 }
 
@@ -762,6 +822,18 @@ func (a *NewznabApiService) GetidApiExecute(r ApiGetidApiRequest) (*http.Respons
 	}
 	if r.offset != nil {
 		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.minage != nil {
+		localVarQueryParams.Add("minage", parameterToString(*r.minage, ""))
+	}
+	if r.maxage != nil {
+		localVarQueryParams.Add("maxage", parameterToString(*r.maxage, ""))
+	}
+	if r.minsize != nil {
+		localVarQueryParams.Add("minsize", parameterToString(*r.minsize, ""))
+	}
+	if r.maxsize != nil {
+		localVarQueryParams.Add("maxsize", parameterToString(*r.maxsize, ""))
 	}
 	if r.rid != nil {
 		localVarQueryParams.Add("rid", parameterToString(*r.rid, ""))
