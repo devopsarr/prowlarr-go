@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GetIndexeridNewznab
 
-> GetIndexeridNewznab(ctx, id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
+> GetIndexeridNewznab(ctx, id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Minage(minage).Maxage(maxage).Minsize(minsize).Maxsize(maxsize).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
 
 
 
@@ -109,6 +109,10 @@ func main() {
     extended := "extended_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional)
     offset := int32(56) // int32 |  (optional)
+    minage := int32(56) // int32 |  (optional)
+    maxage := int32(56) // int32 |  (optional)
+    minsize := int64(789) // int64 |  (optional)
+    maxsize := int64(789) // int64 |  (optional)
     rid := int32(56) // int32 |  (optional)
     tvmazeid := int32(56) // int32 |  (optional)
     traktid := int32(56) // int32 |  (optional)
@@ -132,7 +136,7 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NewznabApi.GetIndexeridNewznab(context.Background(), id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
+    resp, r, err := apiClient.NewznabApi.GetIndexeridNewznab(context.Background(), id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Minage(minage).Maxage(maxage).Minsize(minsize).Maxsize(maxsize).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NewznabApi.GetIndexeridNewznab``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -164,6 +168,10 @@ Name | Type | Description  | Notes
  **extended** | **string** |  | 
  **limit** | **int32** |  | 
  **offset** | **int32** |  | 
+ **minage** | **int32** |  | 
+ **maxage** | **int32** |  | 
+ **minsize** | **int64** |  | 
+ **maxsize** | **int64** |  | 
  **rid** | **int32** |  | 
  **tvmazeid** | **int32** |  | 
  **traktid** | **int32** |  | 
@@ -205,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## GetidApi
 
-> GetidApi(ctx, id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
+> GetidApi(ctx, id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Minage(minage).Maxage(maxage).Minsize(minsize).Maxsize(maxsize).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
 
 
 
@@ -231,6 +239,10 @@ func main() {
     extended := "extended_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional)
     offset := int32(56) // int32 |  (optional)
+    minage := int32(56) // int32 |  (optional)
+    maxage := int32(56) // int32 |  (optional)
+    minsize := int64(789) // int64 |  (optional)
+    maxsize := int64(789) // int64 |  (optional)
     rid := int32(56) // int32 |  (optional)
     tvmazeid := int32(56) // int32 |  (optional)
     traktid := int32(56) // int32 |  (optional)
@@ -254,7 +266,7 @@ func main() {
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NewznabApi.GetidApi(context.Background(), id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
+    resp, r, err := apiClient.NewznabApi.GetidApi(context.Background(), id).T(t).Q(q).Cat(cat).Imdbid(imdbid).Tmdbid(tmdbid).Extended(extended).Limit(limit).Offset(offset).Minage(minage).Maxage(maxage).Minsize(minsize).Maxsize(maxsize).Rid(rid).Tvmazeid(tvmazeid).Traktid(traktid).Tvdbid(tvdbid).Doubanid(doubanid).Season(season).Ep(ep).Album(album).Artist(artist).Label(label).Track(track).Year(year).Genre(genre).Author(author).Title(title).Publisher(publisher).Configured(configured).Source(source).Host(host).Server(server).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NewznabApi.GetidApi``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -286,6 +298,10 @@ Name | Type | Description  | Notes
  **extended** | **string** |  | 
  **limit** | **int32** |  | 
  **offset** | **int32** |  | 
+ **minage** | **int32** |  | 
+ **maxage** | **int32** |  | 
+ **minsize** | **int64** |  | 
+ **maxsize** | **int64** |  | 
  **rid** | **int32** |  | 
  **tvmazeid** | **int32** |  | 
  **traktid** | **int32** |  | 
