@@ -27,6 +27,8 @@ type ApiGetIndexerStatsRequest struct {
 	ApiService *IndexerStatsApiService
 	startDate *time.Time
 	endDate *time.Time
+	indexers *string
+	tags *string
 }
 
 func (r ApiGetIndexerStatsRequest) StartDate(startDate time.Time) ApiGetIndexerStatsRequest {
@@ -36,6 +38,16 @@ func (r ApiGetIndexerStatsRequest) StartDate(startDate time.Time) ApiGetIndexerS
 
 func (r ApiGetIndexerStatsRequest) EndDate(endDate time.Time) ApiGetIndexerStatsRequest {
 	r.endDate = &endDate
+	return r
+}
+
+func (r ApiGetIndexerStatsRequest) Indexers(indexers string) ApiGetIndexerStatsRequest {
+	r.indexers = &indexers
+	return r
+}
+
+func (r ApiGetIndexerStatsRequest) Tags(tags string) ApiGetIndexerStatsRequest {
+	r.tags = &tags
 	return r
 }
 
@@ -82,6 +94,12 @@ func (a *IndexerStatsApiService) GetIndexerStatsExecute(r ApiGetIndexerStatsRequ
 	}
 	if r.endDate != nil {
 		localVarQueryParams.Add("endDate", parameterToString(*r.endDate, ""))
+	}
+	if r.indexers != nil {
+		localVarQueryParams.Add("indexers", parameterToString(*r.indexers, ""))
+	}
+	if r.tags != nil {
+		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

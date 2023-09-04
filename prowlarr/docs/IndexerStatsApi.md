@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetIndexerStats
 
-> IndexerStatsResource GetIndexerStats(ctx).StartDate(startDate).EndDate(endDate).Execute()
+> IndexerStatsResource GetIndexerStats(ctx).StartDate(startDate).EndDate(endDate).Indexers(indexers).Tags(tags).Execute()
 
 
 
@@ -30,10 +30,12 @@ import (
 func main() {
     startDate := time.Now() // time.Time |  (optional)
     endDate := time.Now() // time.Time |  (optional)
+    indexers := "indexers_example" // string |  (optional)
+    tags := "tags_example" // string |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerStatsApi.GetIndexerStats(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
+    resp, r, err := apiClient.IndexerStatsApi.GetIndexerStats(context.Background()).StartDate(startDate).EndDate(endDate).Indexers(indexers).Tags(tags).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerStatsApi.GetIndexerStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,6 +58,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **time.Time** |  | 
  **endDate** | **time.Time** |  | 
+ **indexers** | **string** |  | 
+ **tags** | **string** |  | 
 
 ### Return type
 

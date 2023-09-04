@@ -71,7 +71,7 @@ Other parameters are passed through a pointer to a apiGetHistoryRequest struct v
 
 ## ListHistoryIndexer
 
-> []HistoryResource ListHistoryIndexer(ctx).IndexerId(indexerId).EventType(eventType).Execute()
+> []HistoryResource ListHistoryIndexer(ctx).IndexerId(indexerId).EventType(eventType).Limit(limit).Execute()
 
 
 
@@ -90,10 +90,11 @@ import (
 func main() {
     indexerId := int32(56) // int32 |  (optional)
     eventType := prowlarrClient.HistoryEventType("unknown") // HistoryEventType |  (optional)
+    limit := int32(56) // int32 |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListHistoryIndexer(context.Background()).IndexerId(indexerId).EventType(eventType).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistoryIndexer(context.Background()).IndexerId(indexerId).EventType(eventType).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistoryIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -116,6 +117,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexerId** | **int32** |  | 
  **eventType** | [**HistoryEventType**](HistoryEventType.md) |  | 
+ **limit** | **int32** |  | 
 
 ### Return type
 
