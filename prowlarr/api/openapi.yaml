@@ -1013,6 +1013,14 @@ paths:
         schema:
           $ref: '#/components/schemas/HistoryEventType'
         style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -1470,6 +1478,20 @@ paths:
         required: false
         schema:
           format: date-time
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: indexers
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: tags
+        required: false
+        schema:
           type: string
         style: form
       responses:

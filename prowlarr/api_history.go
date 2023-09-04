@@ -151,6 +151,7 @@ type ApiListHistoryIndexerRequest struct {
 	ApiService *HistoryApiService
 	indexerId *int32
 	eventType *HistoryEventType
+	limit *int32
 }
 
 func (r ApiListHistoryIndexerRequest) IndexerId(indexerId int32) ApiListHistoryIndexerRequest {
@@ -160,6 +161,11 @@ func (r ApiListHistoryIndexerRequest) IndexerId(indexerId int32) ApiListHistoryI
 
 func (r ApiListHistoryIndexerRequest) EventType(eventType HistoryEventType) ApiListHistoryIndexerRequest {
 	r.eventType = &eventType
+	return r
+}
+
+func (r ApiListHistoryIndexerRequest) Limit(limit int32) ApiListHistoryIndexerRequest {
+	r.limit = &limit
 	return r
 }
 
@@ -206,6 +212,9 @@ func (a *HistoryApiService) ListHistoryIndexerExecute(r ApiListHistoryIndexerReq
 	}
 	if r.eventType != nil {
 		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
