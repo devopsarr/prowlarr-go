@@ -28,6 +28,7 @@ type ApiGetIndexerStatsRequest struct {
 	startDate *time.Time
 	endDate *time.Time
 	indexers *string
+	protocols *string
 	tags *string
 }
 
@@ -43,6 +44,11 @@ func (r ApiGetIndexerStatsRequest) EndDate(endDate time.Time) ApiGetIndexerStats
 
 func (r ApiGetIndexerStatsRequest) Indexers(indexers string) ApiGetIndexerStatsRequest {
 	r.indexers = &indexers
+	return r
+}
+
+func (r ApiGetIndexerStatsRequest) Protocols(protocols string) ApiGetIndexerStatsRequest {
+	r.protocols = &protocols
 	return r
 }
 
@@ -97,6 +103,9 @@ func (a *IndexerStatsApiService) GetIndexerStatsExecute(r ApiGetIndexerStatsRequ
 	}
 	if r.indexers != nil {
 		localVarQueryParams.Add("indexers", parameterToString(*r.indexers, ""))
+	}
+	if r.protocols != nil {
+		localVarQueryParams.Add("protocols", parameterToString(*r.protocols, ""))
 	}
 	if r.tags != nil {
 		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
