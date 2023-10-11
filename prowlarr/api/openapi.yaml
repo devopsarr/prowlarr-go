@@ -348,11 +348,11 @@ paths:
         content:
           multipart/form-data:
             encoding:
-              Username:
+              username:
                 style: form
-              Password:
+              password:
                 style: form
-              RememberMe:
+              rememberMe:
                 style: form
             schema:
               $ref: '#/components/schemas/CreateLogin_request'
@@ -955,6 +955,61 @@ paths:
   /api/v1/history:
     get:
       operationId: GetHistory
+      parameters:
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
+      - explode: true
+        in: query
+        name: eventType
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: successful
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: downloadId
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1549,6 +1604,46 @@ paths:
   /api/v1/log:
     get:
       operationId: GetLog
+      parameters:
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
+      - explode: true
+        in: query
+        name: level
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -2359,21 +2454,21 @@ paths:
       parameters:
       - explode: true
         in: query
-        name: Query
+        name: query
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: Type
+        name: type
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: IndexerIds
+        name: indexerIds
         required: false
         schema:
           items:
@@ -2383,7 +2478,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: Categories
+        name: categories
         required: false
         schema:
           items:
@@ -2393,7 +2488,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: Limit
+        name: limit
         required: false
         schema:
           format: int32
@@ -2401,7 +2496,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: Offset
+        name: offset
         required: false
         schema:
           format: int32
@@ -3679,11 +3774,6 @@ components:
           successful: true
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -3696,11 +3786,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -4636,11 +4721,6 @@ components:
           message: message
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -4653,11 +4733,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -4834,19 +4909,6 @@ components:
         supportsOnApplicationUpdate:
           type: boolean
         testCommand:
-          nullable: true
-          type: string
-      type: object
-    PagingResourceFilter:
-      additionalProperties: false
-      example:
-        value: value
-        key: key
-      properties:
-        key:
-          nullable: true
-          type: string
-        value:
           nullable: true
           type: string
       type: object
@@ -5444,11 +5506,11 @@ components:
       type: string
     CreateLogin_request:
       properties:
-        Username:
+        username:
           type: string
-        Password:
+        password:
           type: string
-        RememberMe:
+        rememberMe:
           type: string
       type: object
   securitySchemes:

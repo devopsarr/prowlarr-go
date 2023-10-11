@@ -25,6 +25,48 @@ type HistoryApiService service
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryApiService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
+	eventType *int32
+	successful *bool
+	downloadId *string
+}
+
+func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetHistoryRequest) PageSize(pageSize int32) ApiGetHistoryRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetHistoryRequest) SortKey(sortKey string) ApiGetHistoryRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetHistoryRequest) SortDirection(sortDirection SortDirection) ApiGetHistoryRequest {
+	r.sortDirection = &sortDirection
+	return r
+}
+
+func (r ApiGetHistoryRequest) EventType(eventType int32) ApiGetHistoryRequest {
+	r.eventType = &eventType
+	return r
+}
+
+func (r ApiGetHistoryRequest) Successful(successful bool) ApiGetHistoryRequest {
+	r.successful = &successful
+	return r
+}
+
+func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
+	r.downloadId = &downloadId
+	return r
 }
 
 func (r ApiGetHistoryRequest) Execute() (*HistoryResourcePagingResource, *http.Response, error) {
@@ -65,6 +107,27 @@ func (a *HistoryApiService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
+	if r.eventType != nil {
+		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+	}
+	if r.successful != nil {
+		localVarQueryParams.Add("successful", parameterToString(*r.successful, ""))
+	}
+	if r.downloadId != nil {
+		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
