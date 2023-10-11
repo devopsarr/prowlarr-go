@@ -366,20 +366,20 @@ func (a *SearchApiService) ListSearchExecute(r ApiListSearchRequest) ([]*Release
 	localVarFormParams := url.Values{}
 
 	if r.query != nil {
-		localVarQueryParams.Add("Query", parameterToString(*r.query, ""))
+		localVarQueryParams.Add("query", parameterToString(*r.query, ""))
 	}
 	if r.type_ != nil {
-		localVarQueryParams.Add("Type", parameterToString(*r.type_, ""))
+		localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
 	}
 	if r.indexerIds != nil {
 		t := *r.indexerIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("IndexerIds", parameterToString(s.Index(i), "multi"))
+				localVarQueryParams.Add("indexerIds", parameterToString(s.Index(i), "multi"))
 			}
 		} else {
-			localVarQueryParams.Add("IndexerIds", parameterToString(t, "multi"))
+			localVarQueryParams.Add("indexerIds", parameterToString(t, "multi"))
 		}
 	}
 	if r.categories != nil {
@@ -387,17 +387,17 @@ func (a *SearchApiService) ListSearchExecute(r ApiListSearchRequest) ([]*Release
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("Categories", parameterToString(s.Index(i), "multi"))
+				localVarQueryParams.Add("categories", parameterToString(s.Index(i), "multi"))
 			}
 		} else {
-			localVarQueryParams.Add("Categories", parameterToString(t, "multi"))
+			localVarQueryParams.Add("categories", parameterToString(t, "multi"))
 		}
 	}
 	if r.limit != nil {
-		localVarQueryParams.Add("Limit", parameterToString(*r.limit, ""))
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
 	if r.offset != nil {
-		localVarQueryParams.Add("Offset", parameterToString(*r.offset, ""))
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

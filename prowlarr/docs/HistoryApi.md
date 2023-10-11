@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).EventType(eventType).Successful(successful).DownloadId(downloadId).Execute()
 
 
 
@@ -29,10 +29,17 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := prowlarrClient.SortDirection("default") // SortDirection |  (optional)
+    eventType := int32(56) // int32 |  (optional)
+    successful := true // bool |  (optional)
+    downloadId := "downloadId_example" // string |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).Execute()
+    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).EventType(eventType).Successful(successful).DownloadId(downloadId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -44,12 +51,22 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetHistoryRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
+ **eventType** | **int32** |  | 
+ **successful** | **bool** |  | 
+ **downloadId** | **string** |  | 
 
 ### Return type
 

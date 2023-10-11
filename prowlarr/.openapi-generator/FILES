@@ -111,7 +111,6 @@ docs/MusicSearchParam.md
 docs/NewznabApi.md
 docs/NotificationApi.md
 docs/NotificationResource.md
-docs/PagingResourceFilter.md
 docs/PingApi.md
 docs/PingResource.md
 docs/ProviderMessage.md
@@ -192,7 +191,6 @@ model_log_resource_paging_resource.go
 model_movie_search_param.go
 model_music_search_param.go
 model_notification_resource.go
-model_paging_resource_filter.go
 model_ping_resource.go
 model_provider_message.go
 model_provider_message_type.go
