@@ -168,10 +168,8 @@ Class | Method | HTTP request | Description
 *LogApi* | [**GetLog**](prowlarr/docs/LogApi.md#getlog) | **Get** /api/v1/log | 
 *LogFileApi* | [**GetLogFileByFilename**](prowlarr/docs/LogFileApi.md#getlogfilebyfilename) | **Get** /api/v1/log/file/{filename} | 
 *LogFileApi* | [**ListLogFile**](prowlarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v1/log/file | 
-*NewznabApi* | [**GetIndexeridDownload**](prowlarr/docs/NewznabApi.md#getindexeriddownload) | **Get** /api/v1/indexer/{id}/download | 
-*NewznabApi* | [**GetIndexeridNewznab**](prowlarr/docs/NewznabApi.md#getindexeridnewznab) | **Get** /api/v1/indexer/{id}/newznab | 
-*NewznabApi* | [**GetidApi**](prowlarr/docs/NewznabApi.md#getidapi) | **Get** /{id}/api | 
-*NewznabApi* | [**GetidDownload**](prowlarr/docs/NewznabApi.md#getiddownload) | **Get** /{id}/download | 
+*NewznabApi* | [**GetIndexerDownload**](prowlarr/docs/NewznabApi.md#getindexerdownload) | **Get** /api/v1/indexer/{id}/download | 
+*NewznabApi* | [**GetIndexerNewznab**](prowlarr/docs/NewznabApi.md#getindexernewznab) | **Get** /api/v1/indexer/{id}/newznab | 
 *NotificationApi* | [**CreateNotification**](prowlarr/docs/NotificationApi.md#createnotification) | **Post** /api/v1/notification | 
 *NotificationApi* | [**CreateNotificationActionByName**](prowlarr/docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v1/notification/action/{name} | 
 *NotificationApi* | [**DeleteNotification**](prowlarr/docs/NotificationApi.md#deletenotification) | **Delete** /api/v1/notification/{id} | 

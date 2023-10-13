@@ -22,7 +22,7 @@ import (
 
 // NewznabApiService NewznabApi service
 type NewznabApiService service
-type ApiGetIndexeridDownloadRequest struct {
+type ApiGetIndexerDownloadRequest struct {
 	ctx context.Context
 	ApiService *NewznabApiService
 	id int32
@@ -30,29 +30,29 @@ type ApiGetIndexeridDownloadRequest struct {
 	file *string
 }
 
-func (r ApiGetIndexeridDownloadRequest) Link(link string) ApiGetIndexeridDownloadRequest {
+func (r ApiGetIndexerDownloadRequest) Link(link string) ApiGetIndexerDownloadRequest {
 	r.link = &link
 	return r
 }
 
-func (r ApiGetIndexeridDownloadRequest) File(file string) ApiGetIndexeridDownloadRequest {
+func (r ApiGetIndexerDownloadRequest) File(file string) ApiGetIndexerDownloadRequest {
 	r.file = &file
 	return r
 }
 
-func (r ApiGetIndexeridDownloadRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetIndexeridDownloadExecute(r)
+func (r ApiGetIndexerDownloadRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetIndexerDownloadExecute(r)
 }
 
 /*
-GetIndexeridDownload Method for GetIndexeridDownload
+GetIndexerDownload Method for GetIndexerDownload
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetIndexeridDownloadRequest
+ @return ApiGetIndexerDownloadRequest
 */
-func (a *NewznabApiService) GetIndexeridDownload(ctx context.Context, id int32) ApiGetIndexeridDownloadRequest {
-	return ApiGetIndexeridDownloadRequest{
+func (a *NewznabApiService) GetIndexerDownload(ctx context.Context, id int32) ApiGetIndexerDownloadRequest {
+	return ApiGetIndexerDownloadRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -60,14 +60,14 @@ func (a *NewznabApiService) GetIndexeridDownload(ctx context.Context, id int32) 
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetIndexeridDownloadExecute(r ApiGetIndexeridDownloadRequest) (*http.Response, error) {
+func (a *NewznabApiService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexeridDownload")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexerDownload")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -157,7 +157,7 @@ func (a *NewznabApiService) GetIndexeridDownloadExecute(r ApiGetIndexeridDownloa
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetIndexeridNewznabRequest struct {
+type ApiGetIndexerNewznabRequest struct {
 	ctx context.Context
 	ApiService *NewznabApiService
 	id int32
@@ -195,179 +195,179 @@ type ApiGetIndexeridNewznabRequest struct {
 	server *string
 }
 
-func (r ApiGetIndexeridNewznabRequest) T(t string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) T(t string) ApiGetIndexerNewznabRequest {
 	r.t = &t
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Q(q string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Q(q string) ApiGetIndexerNewznabRequest {
 	r.q = &q
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Cat(cat string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Cat(cat string) ApiGetIndexerNewznabRequest {
 	r.cat = &cat
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Imdbid(imdbid string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Imdbid(imdbid string) ApiGetIndexerNewznabRequest {
 	r.imdbid = &imdbid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Tmdbid(tmdbid int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Tmdbid(tmdbid int32) ApiGetIndexerNewznabRequest {
 	r.tmdbid = &tmdbid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Extended(extended string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Extended(extended string) ApiGetIndexerNewznabRequest {
 	r.extended = &extended
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Limit(limit int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Limit(limit int32) ApiGetIndexerNewznabRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Offset(offset int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Offset(offset int32) ApiGetIndexerNewznabRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Minage(minage int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Minage(minage int32) ApiGetIndexerNewznabRequest {
 	r.minage = &minage
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Maxage(maxage int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Maxage(maxage int32) ApiGetIndexerNewznabRequest {
 	r.maxage = &maxage
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Minsize(minsize int64) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Minsize(minsize int64) ApiGetIndexerNewznabRequest {
 	r.minsize = &minsize
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Maxsize(maxsize int64) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Maxsize(maxsize int64) ApiGetIndexerNewznabRequest {
 	r.maxsize = &maxsize
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Rid(rid int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Rid(rid int32) ApiGetIndexerNewznabRequest {
 	r.rid = &rid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Tvmazeid(tvmazeid int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Tvmazeid(tvmazeid int32) ApiGetIndexerNewznabRequest {
 	r.tvmazeid = &tvmazeid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Traktid(traktid int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Traktid(traktid int32) ApiGetIndexerNewznabRequest {
 	r.traktid = &traktid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Tvdbid(tvdbid int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Tvdbid(tvdbid int32) ApiGetIndexerNewznabRequest {
 	r.tvdbid = &tvdbid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Doubanid(doubanid int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Doubanid(doubanid int32) ApiGetIndexerNewznabRequest {
 	r.doubanid = &doubanid
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Season(season int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Season(season int32) ApiGetIndexerNewznabRequest {
 	r.season = &season
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Ep(ep string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Ep(ep string) ApiGetIndexerNewznabRequest {
 	r.ep = &ep
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Album(album string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Album(album string) ApiGetIndexerNewznabRequest {
 	r.album = &album
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Artist(artist string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Artist(artist string) ApiGetIndexerNewznabRequest {
 	r.artist = &artist
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Label(label string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Label(label string) ApiGetIndexerNewznabRequest {
 	r.label = &label
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Track(track string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Track(track string) ApiGetIndexerNewznabRequest {
 	r.track = &track
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Year(year int32) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Year(year int32) ApiGetIndexerNewznabRequest {
 	r.year = &year
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Genre(genre string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Genre(genre string) ApiGetIndexerNewznabRequest {
 	r.genre = &genre
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Author(author string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Author(author string) ApiGetIndexerNewznabRequest {
 	r.author = &author
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Title(title string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Title(title string) ApiGetIndexerNewznabRequest {
 	r.title = &title
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Publisher(publisher string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Publisher(publisher string) ApiGetIndexerNewznabRequest {
 	r.publisher = &publisher
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Configured(configured string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Configured(configured string) ApiGetIndexerNewznabRequest {
 	r.configured = &configured
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Source(source string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Source(source string) ApiGetIndexerNewznabRequest {
 	r.source = &source
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Host(host string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Host(host string) ApiGetIndexerNewznabRequest {
 	r.host = &host
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Server(server string) ApiGetIndexeridNewznabRequest {
+func (r ApiGetIndexerNewznabRequest) Server(server string) ApiGetIndexerNewznabRequest {
 	r.server = &server
 	return r
 }
 
-func (r ApiGetIndexeridNewznabRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetIndexeridNewznabExecute(r)
+func (r ApiGetIndexerNewznabRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetIndexerNewznabExecute(r)
 }
 
 /*
-GetIndexeridNewznab Method for GetIndexeridNewznab
+GetIndexerNewznab Method for GetIndexerNewznab
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetIndexeridNewznabRequest
+ @return ApiGetIndexerNewznabRequest
 */
-func (a *NewznabApiService) GetIndexeridNewznab(ctx context.Context, id int32) ApiGetIndexeridNewznabRequest {
-	return ApiGetIndexeridNewznabRequest{
+func (a *NewznabApiService) GetIndexerNewznab(ctx context.Context, id int32) ApiGetIndexerNewznabRequest {
+	return ApiGetIndexerNewznabRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -375,14 +375,14 @@ func (a *NewznabApiService) GetIndexeridNewznab(ctx context.Context, id int32) A
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabRequest) (*http.Response, error) {
+func (a *NewznabApiService) GetIndexerNewznabExecute(r ApiGetIndexerNewznabRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexeridNewznab")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexerNewznab")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -489,546 +489,6 @@ func (a *NewznabApiService) GetIndexeridNewznabExecute(r ApiGetIndexeridNewznabR
 	}
 	if r.server != nil {
 		localVarQueryParams.Add("server", parameterToString(*r.server, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikey"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarQueryParams.Add("apikey", key)
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-type ApiGetidApiRequest struct {
-	ctx context.Context
-	ApiService *NewznabApiService
-	id int32
-	t *string
-	q *string
-	cat *string
-	imdbid *string
-	tmdbid *int32
-	extended *string
-	limit *int32
-	offset *int32
-	minage *int32
-	maxage *int32
-	minsize *int64
-	maxsize *int64
-	rid *int32
-	tvmazeid *int32
-	traktid *int32
-	tvdbid *int32
-	doubanid *int32
-	season *int32
-	ep *string
-	album *string
-	artist *string
-	label *string
-	track *string
-	year *int32
-	genre *string
-	author *string
-	title *string
-	publisher *string
-	configured *string
-	source *string
-	host *string
-	server *string
-}
-
-func (r ApiGetidApiRequest) T(t string) ApiGetidApiRequest {
-	r.t = &t
-	return r
-}
-
-func (r ApiGetidApiRequest) Q(q string) ApiGetidApiRequest {
-	r.q = &q
-	return r
-}
-
-func (r ApiGetidApiRequest) Cat(cat string) ApiGetidApiRequest {
-	r.cat = &cat
-	return r
-}
-
-func (r ApiGetidApiRequest) Imdbid(imdbid string) ApiGetidApiRequest {
-	r.imdbid = &imdbid
-	return r
-}
-
-func (r ApiGetidApiRequest) Tmdbid(tmdbid int32) ApiGetidApiRequest {
-	r.tmdbid = &tmdbid
-	return r
-}
-
-func (r ApiGetidApiRequest) Extended(extended string) ApiGetidApiRequest {
-	r.extended = &extended
-	return r
-}
-
-func (r ApiGetidApiRequest) Limit(limit int32) ApiGetidApiRequest {
-	r.limit = &limit
-	return r
-}
-
-func (r ApiGetidApiRequest) Offset(offset int32) ApiGetidApiRequest {
-	r.offset = &offset
-	return r
-}
-
-func (r ApiGetidApiRequest) Minage(minage int32) ApiGetidApiRequest {
-	r.minage = &minage
-	return r
-}
-
-func (r ApiGetidApiRequest) Maxage(maxage int32) ApiGetidApiRequest {
-	r.maxage = &maxage
-	return r
-}
-
-func (r ApiGetidApiRequest) Minsize(minsize int64) ApiGetidApiRequest {
-	r.minsize = &minsize
-	return r
-}
-
-func (r ApiGetidApiRequest) Maxsize(maxsize int64) ApiGetidApiRequest {
-	r.maxsize = &maxsize
-	return r
-}
-
-func (r ApiGetidApiRequest) Rid(rid int32) ApiGetidApiRequest {
-	r.rid = &rid
-	return r
-}
-
-func (r ApiGetidApiRequest) Tvmazeid(tvmazeid int32) ApiGetidApiRequest {
-	r.tvmazeid = &tvmazeid
-	return r
-}
-
-func (r ApiGetidApiRequest) Traktid(traktid int32) ApiGetidApiRequest {
-	r.traktid = &traktid
-	return r
-}
-
-func (r ApiGetidApiRequest) Tvdbid(tvdbid int32) ApiGetidApiRequest {
-	r.tvdbid = &tvdbid
-	return r
-}
-
-func (r ApiGetidApiRequest) Doubanid(doubanid int32) ApiGetidApiRequest {
-	r.doubanid = &doubanid
-	return r
-}
-
-func (r ApiGetidApiRequest) Season(season int32) ApiGetidApiRequest {
-	r.season = &season
-	return r
-}
-
-func (r ApiGetidApiRequest) Ep(ep string) ApiGetidApiRequest {
-	r.ep = &ep
-	return r
-}
-
-func (r ApiGetidApiRequest) Album(album string) ApiGetidApiRequest {
-	r.album = &album
-	return r
-}
-
-func (r ApiGetidApiRequest) Artist(artist string) ApiGetidApiRequest {
-	r.artist = &artist
-	return r
-}
-
-func (r ApiGetidApiRequest) Label(label string) ApiGetidApiRequest {
-	r.label = &label
-	return r
-}
-
-func (r ApiGetidApiRequest) Track(track string) ApiGetidApiRequest {
-	r.track = &track
-	return r
-}
-
-func (r ApiGetidApiRequest) Year(year int32) ApiGetidApiRequest {
-	r.year = &year
-	return r
-}
-
-func (r ApiGetidApiRequest) Genre(genre string) ApiGetidApiRequest {
-	r.genre = &genre
-	return r
-}
-
-func (r ApiGetidApiRequest) Author(author string) ApiGetidApiRequest {
-	r.author = &author
-	return r
-}
-
-func (r ApiGetidApiRequest) Title(title string) ApiGetidApiRequest {
-	r.title = &title
-	return r
-}
-
-func (r ApiGetidApiRequest) Publisher(publisher string) ApiGetidApiRequest {
-	r.publisher = &publisher
-	return r
-}
-
-func (r ApiGetidApiRequest) Configured(configured string) ApiGetidApiRequest {
-	r.configured = &configured
-	return r
-}
-
-func (r ApiGetidApiRequest) Source(source string) ApiGetidApiRequest {
-	r.source = &source
-	return r
-}
-
-func (r ApiGetidApiRequest) Host(host string) ApiGetidApiRequest {
-	r.host = &host
-	return r
-}
-
-func (r ApiGetidApiRequest) Server(server string) ApiGetidApiRequest {
-	r.server = &server
-	return r
-}
-
-func (r ApiGetidApiRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetidApiExecute(r)
-}
-
-/*
-GetidApi Method for GetidApi
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiGetidApiRequest
-*/
-func (a *NewznabApiService) GetidApi(ctx context.Context, id int32) ApiGetidApiRequest {
-	return ApiGetidApiRequest{
-		ApiService: a,
-		ctx: ctx,
-		id: id,
-	}
-}
-
-// Execute executes the request
-func (a *NewznabApiService) GetidApiExecute(r ApiGetidApiRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetidApi")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/{id}/api"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.t != nil {
-		localVarQueryParams.Add("t", parameterToString(*r.t, ""))
-	}
-	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
-	}
-	if r.cat != nil {
-		localVarQueryParams.Add("cat", parameterToString(*r.cat, ""))
-	}
-	if r.imdbid != nil {
-		localVarQueryParams.Add("imdbid", parameterToString(*r.imdbid, ""))
-	}
-	if r.tmdbid != nil {
-		localVarQueryParams.Add("tmdbid", parameterToString(*r.tmdbid, ""))
-	}
-	if r.extended != nil {
-		localVarQueryParams.Add("extended", parameterToString(*r.extended, ""))
-	}
-	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
-	}
-	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	}
-	if r.minage != nil {
-		localVarQueryParams.Add("minage", parameterToString(*r.minage, ""))
-	}
-	if r.maxage != nil {
-		localVarQueryParams.Add("maxage", parameterToString(*r.maxage, ""))
-	}
-	if r.minsize != nil {
-		localVarQueryParams.Add("minsize", parameterToString(*r.minsize, ""))
-	}
-	if r.maxsize != nil {
-		localVarQueryParams.Add("maxsize", parameterToString(*r.maxsize, ""))
-	}
-	if r.rid != nil {
-		localVarQueryParams.Add("rid", parameterToString(*r.rid, ""))
-	}
-	if r.tvmazeid != nil {
-		localVarQueryParams.Add("tvmazeid", parameterToString(*r.tvmazeid, ""))
-	}
-	if r.traktid != nil {
-		localVarQueryParams.Add("traktid", parameterToString(*r.traktid, ""))
-	}
-	if r.tvdbid != nil {
-		localVarQueryParams.Add("tvdbid", parameterToString(*r.tvdbid, ""))
-	}
-	if r.doubanid != nil {
-		localVarQueryParams.Add("doubanid", parameterToString(*r.doubanid, ""))
-	}
-	if r.season != nil {
-		localVarQueryParams.Add("season", parameterToString(*r.season, ""))
-	}
-	if r.ep != nil {
-		localVarQueryParams.Add("ep", parameterToString(*r.ep, ""))
-	}
-	if r.album != nil {
-		localVarQueryParams.Add("album", parameterToString(*r.album, ""))
-	}
-	if r.artist != nil {
-		localVarQueryParams.Add("artist", parameterToString(*r.artist, ""))
-	}
-	if r.label != nil {
-		localVarQueryParams.Add("label", parameterToString(*r.label, ""))
-	}
-	if r.track != nil {
-		localVarQueryParams.Add("track", parameterToString(*r.track, ""))
-	}
-	if r.year != nil {
-		localVarQueryParams.Add("year", parameterToString(*r.year, ""))
-	}
-	if r.genre != nil {
-		localVarQueryParams.Add("genre", parameterToString(*r.genre, ""))
-	}
-	if r.author != nil {
-		localVarQueryParams.Add("author", parameterToString(*r.author, ""))
-	}
-	if r.title != nil {
-		localVarQueryParams.Add("title", parameterToString(*r.title, ""))
-	}
-	if r.publisher != nil {
-		localVarQueryParams.Add("publisher", parameterToString(*r.publisher, ""))
-	}
-	if r.configured != nil {
-		localVarQueryParams.Add("configured", parameterToString(*r.configured, ""))
-	}
-	if r.source != nil {
-		localVarQueryParams.Add("source", parameterToString(*r.source, ""))
-	}
-	if r.host != nil {
-		localVarQueryParams.Add("host", parameterToString(*r.host, ""))
-	}
-	if r.server != nil {
-		localVarQueryParams.Add("server", parameterToString(*r.server, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikey"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarQueryParams.Add("apikey", key)
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-type ApiGetidDownloadRequest struct {
-	ctx context.Context
-	ApiService *NewznabApiService
-	id int32
-	link *string
-	file *string
-}
-
-func (r ApiGetidDownloadRequest) Link(link string) ApiGetidDownloadRequest {
-	r.link = &link
-	return r
-}
-
-func (r ApiGetidDownloadRequest) File(file string) ApiGetidDownloadRequest {
-	r.file = &file
-	return r
-}
-
-func (r ApiGetidDownloadRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetidDownloadExecute(r)
-}
-
-/*
-GetidDownload Method for GetidDownload
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiGetidDownloadRequest
-*/
-func (a *NewznabApiService) GetidDownload(ctx context.Context, id int32) ApiGetidDownloadRequest {
-	return ApiGetidDownloadRequest{
-		ApiService: a,
-		ctx: ctx,
-		id: id,
-	}
-}
-
-// Execute executes the request
-func (a *NewznabApiService) GetidDownloadExecute(r ApiGetidDownloadRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetidDownload")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/{id}/download"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.link != nil {
-		localVarQueryParams.Add("link", parameterToString(*r.link, ""))
-	}
-	if r.file != nil {
-		localVarQueryParams.Add("file", parameterToString(*r.file, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
