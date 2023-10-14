@@ -20,11 +20,11 @@ import (
 )
 
 
-// HistoryApiService HistoryApi service
-type HistoryApiService service
+// HistoryAPIService HistoryAPI service
+type HistoryAPIService service
 type ApiGetHistoryRequest struct {
 	ctx context.Context
-	ApiService *HistoryApiService
+	ApiService *HistoryAPIService
 	page *int32
 	pageSize *int32
 	sortKey *string
@@ -79,7 +79,7 @@ GetHistory Method for GetHistory
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetHistoryRequest
 */
-func (a *HistoryApiService) GetHistory(ctx context.Context) ApiGetHistoryRequest {
+func (a *HistoryAPIService) GetHistory(ctx context.Context) ApiGetHistoryRequest {
 	return ApiGetHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -88,7 +88,7 @@ func (a *HistoryApiService) GetHistory(ctx context.Context) ApiGetHistoryRequest
 
 // Execute executes the request
 //  @return HistoryResourcePagingResource
-func (a *HistoryApiService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryResourcePagingResource, *http.Response, error) {
+func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -96,7 +96,7 @@ func (a *HistoryApiService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		localVarReturnValue  *HistoryResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.GetHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.GetHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -211,7 +211,7 @@ func (a *HistoryApiService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 }
 type ApiListHistoryIndexerRequest struct {
 	ctx context.Context
-	ApiService *HistoryApiService
+	ApiService *HistoryAPIService
 	indexerId *int32
 	eventType *HistoryEventType
 	limit *int32
@@ -242,7 +242,7 @@ ListHistoryIndexer Method for ListHistoryIndexer
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListHistoryIndexerRequest
 */
-func (a *HistoryApiService) ListHistoryIndexer(ctx context.Context) ApiListHistoryIndexerRequest {
+func (a *HistoryAPIService) ListHistoryIndexer(ctx context.Context) ApiListHistoryIndexerRequest {
 	return ApiListHistoryIndexerRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -251,7 +251,7 @@ func (a *HistoryApiService) ListHistoryIndexer(ctx context.Context) ApiListHisto
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryApiService) ListHistoryIndexerExecute(r ApiListHistoryIndexerRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistoryIndexerExecute(r ApiListHistoryIndexerRequest) ([]*HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -259,7 +259,7 @@ func (a *HistoryApiService) ListHistoryIndexerExecute(r ApiListHistoryIndexerReq
 		localVarReturnValue  []*HistoryResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListHistoryIndexer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistoryIndexer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -362,7 +362,7 @@ func (a *HistoryApiService) ListHistoryIndexerExecute(r ApiListHistoryIndexerReq
 }
 type ApiListHistorySinceRequest struct {
 	ctx context.Context
-	ApiService *HistoryApiService
+	ApiService *HistoryAPIService
 	date *time.Time
 	eventType *HistoryEventType
 }
@@ -387,7 +387,7 @@ ListHistorySince Method for ListHistorySince
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListHistorySinceRequest
 */
-func (a *HistoryApiService) ListHistorySince(ctx context.Context) ApiListHistorySinceRequest {
+func (a *HistoryAPIService) ListHistorySince(ctx context.Context) ApiListHistorySinceRequest {
 	return ApiListHistorySinceRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -396,7 +396,7 @@ func (a *HistoryApiService) ListHistorySince(ctx context.Context) ApiListHistory
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryApiService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -404,7 +404,7 @@ func (a *HistoryApiService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 		localVarReturnValue  []*HistoryResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListHistorySince")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistorySince")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
