@@ -20,11 +20,11 @@ import (
 )
 
 
-// IndexerProxyApiService IndexerProxyApi service
-type IndexerProxyApiService service
+// IndexerProxyAPIService IndexerProxyAPI service
+type IndexerProxyAPIService service
 type ApiCreateIndexerProxyRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 	forceSave *bool
 	indexerProxyResource *IndexerProxyResource
 }
@@ -49,7 +49,7 @@ CreateIndexerProxy Method for CreateIndexerProxy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateIndexerProxyRequest
 */
-func (a *IndexerProxyApiService) CreateIndexerProxy(ctx context.Context) ApiCreateIndexerProxyRequest {
+func (a *IndexerProxyAPIService) CreateIndexerProxy(ctx context.Context) ApiCreateIndexerProxyRequest {
 	return ApiCreateIndexerProxyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -58,7 +58,7 @@ func (a *IndexerProxyApiService) CreateIndexerProxy(ctx context.Context) ApiCrea
 
 // Execute executes the request
 //  @return IndexerProxyResource
-func (a *IndexerProxyApiService) CreateIndexerProxyExecute(r ApiCreateIndexerProxyRequest) (*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) CreateIndexerProxyExecute(r ApiCreateIndexerProxyRequest) (*IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *IndexerProxyApiService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 		localVarReturnValue  *IndexerProxyResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.CreateIndexerProxy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.CreateIndexerProxy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -165,7 +165,7 @@ func (a *IndexerProxyApiService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 }
 type ApiCreateIndexerProxyActionByNameRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 	name string
 	indexerProxyResource *IndexerProxyResource
 }
@@ -186,7 +186,7 @@ CreateIndexerProxyActionByName Method for CreateIndexerProxyActionByName
  @param name
  @return ApiCreateIndexerProxyActionByNameRequest
 */
-func (a *IndexerProxyApiService) CreateIndexerProxyActionByName(ctx context.Context, name string) ApiCreateIndexerProxyActionByNameRequest {
+func (a *IndexerProxyAPIService) CreateIndexerProxyActionByName(ctx context.Context, name string) ApiCreateIndexerProxyActionByNameRequest {
 	return ApiCreateIndexerProxyActionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -195,14 +195,14 @@ func (a *IndexerProxyApiService) CreateIndexerProxyActionByName(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *IndexerProxyApiService) CreateIndexerProxyActionByNameExecute(r ApiCreateIndexerProxyActionByNameRequest) (*http.Response, error) {
+func (a *IndexerProxyAPIService) CreateIndexerProxyActionByNameExecute(r ApiCreateIndexerProxyActionByNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.CreateIndexerProxyActionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.CreateIndexerProxyActionByName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -290,7 +290,7 @@ func (a *IndexerProxyApiService) CreateIndexerProxyActionByNameExecute(r ApiCrea
 }
 type ApiDeleteIndexerProxyRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 	id int32
 }
 
@@ -305,7 +305,7 @@ DeleteIndexerProxy Method for DeleteIndexerProxy
  @param id
  @return ApiDeleteIndexerProxyRequest
 */
-func (a *IndexerProxyApiService) DeleteIndexerProxy(ctx context.Context, id int32) ApiDeleteIndexerProxyRequest {
+func (a *IndexerProxyAPIService) DeleteIndexerProxy(ctx context.Context, id int32) ApiDeleteIndexerProxyRequest {
 	return ApiDeleteIndexerProxyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -314,14 +314,14 @@ func (a *IndexerProxyApiService) DeleteIndexerProxy(ctx context.Context, id int3
 }
 
 // Execute executes the request
-func (a *IndexerProxyApiService) DeleteIndexerProxyExecute(r ApiDeleteIndexerProxyRequest) (*http.Response, error) {
+func (a *IndexerProxyAPIService) DeleteIndexerProxyExecute(r ApiDeleteIndexerProxyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.DeleteIndexerProxy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.DeleteIndexerProxy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -407,7 +407,7 @@ func (a *IndexerProxyApiService) DeleteIndexerProxyExecute(r ApiDeleteIndexerPro
 }
 type ApiGetIndexerProxyByIdRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 	id int32
 }
 
@@ -422,7 +422,7 @@ GetIndexerProxyById Method for GetIndexerProxyById
  @param id
  @return ApiGetIndexerProxyByIdRequest
 */
-func (a *IndexerProxyApiService) GetIndexerProxyById(ctx context.Context, id int32) ApiGetIndexerProxyByIdRequest {
+func (a *IndexerProxyAPIService) GetIndexerProxyById(ctx context.Context, id int32) ApiGetIndexerProxyByIdRequest {
 	return ApiGetIndexerProxyByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -432,7 +432,7 @@ func (a *IndexerProxyApiService) GetIndexerProxyById(ctx context.Context, id int
 
 // Execute executes the request
 //  @return IndexerProxyResource
-func (a *IndexerProxyApiService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxyByIdRequest) (*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxyByIdRequest) (*IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -440,7 +440,7 @@ func (a *IndexerProxyApiService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxy
 		localVarReturnValue  *IndexerProxyResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.GetIndexerProxyById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.GetIndexerProxyById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -535,7 +535,7 @@ func (a *IndexerProxyApiService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxy
 }
 type ApiListIndexerProxyRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 }
 
 func (r ApiListIndexerProxyRequest) Execute() ([]*IndexerProxyResource, *http.Response, error) {
@@ -548,7 +548,7 @@ ListIndexerProxy Method for ListIndexerProxy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListIndexerProxyRequest
 */
-func (a *IndexerProxyApiService) ListIndexerProxy(ctx context.Context) ApiListIndexerProxyRequest {
+func (a *IndexerProxyAPIService) ListIndexerProxy(ctx context.Context) ApiListIndexerProxyRequest {
 	return ApiListIndexerProxyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -557,7 +557,7 @@ func (a *IndexerProxyApiService) ListIndexerProxy(ctx context.Context) ApiListIn
 
 // Execute executes the request
 //  @return []IndexerProxyResource
-func (a *IndexerProxyApiService) ListIndexerProxyExecute(r ApiListIndexerProxyRequest) ([]*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) ListIndexerProxyExecute(r ApiListIndexerProxyRequest) ([]*IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -565,7 +565,7 @@ func (a *IndexerProxyApiService) ListIndexerProxyExecute(r ApiListIndexerProxyRe
 		localVarReturnValue  []*IndexerProxyResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.ListIndexerProxy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.ListIndexerProxy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -659,7 +659,7 @@ func (a *IndexerProxyApiService) ListIndexerProxyExecute(r ApiListIndexerProxyRe
 }
 type ApiListIndexerProxySchemaRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 }
 
 func (r ApiListIndexerProxySchemaRequest) Execute() ([]*IndexerProxyResource, *http.Response, error) {
@@ -672,7 +672,7 @@ ListIndexerProxySchema Method for ListIndexerProxySchema
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListIndexerProxySchemaRequest
 */
-func (a *IndexerProxyApiService) ListIndexerProxySchema(ctx context.Context) ApiListIndexerProxySchemaRequest {
+func (a *IndexerProxyAPIService) ListIndexerProxySchema(ctx context.Context) ApiListIndexerProxySchemaRequest {
 	return ApiListIndexerProxySchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -681,7 +681,7 @@ func (a *IndexerProxyApiService) ListIndexerProxySchema(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []IndexerProxyResource
-func (a *IndexerProxyApiService) ListIndexerProxySchemaExecute(r ApiListIndexerProxySchemaRequest) ([]*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) ListIndexerProxySchemaExecute(r ApiListIndexerProxySchemaRequest) ([]*IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -689,7 +689,7 @@ func (a *IndexerProxyApiService) ListIndexerProxySchemaExecute(r ApiListIndexerP
 		localVarReturnValue  []*IndexerProxyResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.ListIndexerProxySchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.ListIndexerProxySchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -783,7 +783,7 @@ func (a *IndexerProxyApiService) ListIndexerProxySchemaExecute(r ApiListIndexerP
 }
 type ApiTestIndexerProxyRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 	indexerProxyResource *IndexerProxyResource
 }
 
@@ -802,7 +802,7 @@ TestIndexerProxy Method for TestIndexerProxy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTestIndexerProxyRequest
 */
-func (a *IndexerProxyApiService) TestIndexerProxy(ctx context.Context) ApiTestIndexerProxyRequest {
+func (a *IndexerProxyAPIService) TestIndexerProxy(ctx context.Context) ApiTestIndexerProxyRequest {
 	return ApiTestIndexerProxyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -810,14 +810,14 @@ func (a *IndexerProxyApiService) TestIndexerProxy(ctx context.Context) ApiTestIn
 }
 
 // Execute executes the request
-func (a *IndexerProxyApiService) TestIndexerProxyExecute(r ApiTestIndexerProxyRequest) (*http.Response, error) {
+func (a *IndexerProxyAPIService) TestIndexerProxyExecute(r ApiTestIndexerProxyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.TestIndexerProxy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.TestIndexerProxy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -904,7 +904,7 @@ func (a *IndexerProxyApiService) TestIndexerProxyExecute(r ApiTestIndexerProxyRe
 }
 type ApiTestallIndexerProxyRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 }
 
 func (r ApiTestallIndexerProxyRequest) Execute() (*http.Response, error) {
@@ -917,7 +917,7 @@ TestallIndexerProxy Method for TestallIndexerProxy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTestallIndexerProxyRequest
 */
-func (a *IndexerProxyApiService) TestallIndexerProxy(ctx context.Context) ApiTestallIndexerProxyRequest {
+func (a *IndexerProxyAPIService) TestallIndexerProxy(ctx context.Context) ApiTestallIndexerProxyRequest {
 	return ApiTestallIndexerProxyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -925,14 +925,14 @@ func (a *IndexerProxyApiService) TestallIndexerProxy(ctx context.Context) ApiTes
 }
 
 // Execute executes the request
-func (a *IndexerProxyApiService) TestallIndexerProxyExecute(r ApiTestallIndexerProxyRequest) (*http.Response, error) {
+func (a *IndexerProxyAPIService) TestallIndexerProxyExecute(r ApiTestallIndexerProxyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.TestallIndexerProxy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.TestallIndexerProxy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1017,7 +1017,7 @@ func (a *IndexerProxyApiService) TestallIndexerProxyExecute(r ApiTestallIndexerP
 }
 type ApiUpdateIndexerProxyRequest struct {
 	ctx context.Context
-	ApiService *IndexerProxyApiService
+	ApiService *IndexerProxyAPIService
 	id string
 	forceSave *bool
 	indexerProxyResource *IndexerProxyResource
@@ -1044,7 +1044,7 @@ UpdateIndexerProxy Method for UpdateIndexerProxy
  @param id
  @return ApiUpdateIndexerProxyRequest
 */
-func (a *IndexerProxyApiService) UpdateIndexerProxy(ctx context.Context, id string) ApiUpdateIndexerProxyRequest {
+func (a *IndexerProxyAPIService) UpdateIndexerProxy(ctx context.Context, id string) ApiUpdateIndexerProxyRequest {
 	return ApiUpdateIndexerProxyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1054,7 +1054,7 @@ func (a *IndexerProxyApiService) UpdateIndexerProxy(ctx context.Context, id stri
 
 // Execute executes the request
 //  @return IndexerProxyResource
-func (a *IndexerProxyApiService) UpdateIndexerProxyExecute(r ApiUpdateIndexerProxyRequest) (*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) UpdateIndexerProxyExecute(r ApiUpdateIndexerProxyRequest) (*IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1062,7 +1062,7 @@ func (a *IndexerProxyApiService) UpdateIndexerProxyExecute(r ApiUpdateIndexerPro
 		localVarReturnValue  *IndexerProxyResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyApiService.UpdateIndexerProxy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.UpdateIndexerProxy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

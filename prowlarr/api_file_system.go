@@ -19,11 +19,11 @@ import (
 )
 
 
-// FileSystemApiService FileSystemApi service
-type FileSystemApiService service
+// FileSystemAPIService FileSystemAPI service
+type FileSystemAPIService service
 type ApiGetFileSystemRequest struct {
 	ctx context.Context
-	ApiService *FileSystemApiService
+	ApiService *FileSystemAPIService
 	path *string
 	includeFiles *bool
 	allowFoldersWithoutTrailingSlashes *bool
@@ -54,7 +54,7 @@ GetFileSystem Method for GetFileSystem
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetFileSystemRequest
 */
-func (a *FileSystemApiService) GetFileSystem(ctx context.Context) ApiGetFileSystemRequest {
+func (a *FileSystemAPIService) GetFileSystem(ctx context.Context) ApiGetFileSystemRequest {
 	return ApiGetFileSystemRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -62,14 +62,14 @@ func (a *FileSystemApiService) GetFileSystem(ctx context.Context) ApiGetFileSyst
 }
 
 // Execute executes the request
-func (a *FileSystemApiService) GetFileSystemExecute(r ApiGetFileSystemRequest) (*http.Response, error) {
+func (a *FileSystemAPIService) GetFileSystemExecute(r ApiGetFileSystemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetFileSystem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemAPIService.GetFileSystem")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -163,7 +163,7 @@ func (a *FileSystemApiService) GetFileSystemExecute(r ApiGetFileSystemRequest) (
 }
 type ApiGetFileSystemTypeRequest struct {
 	ctx context.Context
-	ApiService *FileSystemApiService
+	ApiService *FileSystemAPIService
 	path *string
 }
 
@@ -182,7 +182,7 @@ GetFileSystemType Method for GetFileSystemType
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetFileSystemTypeRequest
 */
-func (a *FileSystemApiService) GetFileSystemType(ctx context.Context) ApiGetFileSystemTypeRequest {
+func (a *FileSystemAPIService) GetFileSystemType(ctx context.Context) ApiGetFileSystemTypeRequest {
 	return ApiGetFileSystemTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -190,14 +190,14 @@ func (a *FileSystemApiService) GetFileSystemType(ctx context.Context) ApiGetFile
 }
 
 // Execute executes the request
-func (a *FileSystemApiService) GetFileSystemTypeExecute(r ApiGetFileSystemTypeRequest) (*http.Response, error) {
+func (a *FileSystemAPIService) GetFileSystemTypeExecute(r ApiGetFileSystemTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetFileSystemType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemAPIService.GetFileSystemType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

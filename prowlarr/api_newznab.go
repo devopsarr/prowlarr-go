@@ -20,11 +20,11 @@ import (
 )
 
 
-// NewznabApiService NewznabApi service
-type NewznabApiService service
+// NewznabAPIService NewznabAPI service
+type NewznabAPIService service
 type ApiGetIndexerDownloadRequest struct {
 	ctx context.Context
-	ApiService *NewznabApiService
+	ApiService *NewznabAPIService
 	id int32
 	link *string
 	file *string
@@ -51,7 +51,7 @@ GetIndexerDownload Method for GetIndexerDownload
  @param id
  @return ApiGetIndexerDownloadRequest
 */
-func (a *NewznabApiService) GetIndexerDownload(ctx context.Context, id int32) ApiGetIndexerDownloadRequest {
+func (a *NewznabAPIService) GetIndexerDownload(ctx context.Context, id int32) ApiGetIndexerDownloadRequest {
 	return ApiGetIndexerDownloadRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -60,14 +60,14 @@ func (a *NewznabApiService) GetIndexerDownload(ctx context.Context, id int32) Ap
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadRequest) (*http.Response, error) {
+func (a *NewznabAPIService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexerDownload")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabAPIService.GetIndexerDownload")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -159,7 +159,7 @@ func (a *NewznabApiService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadReq
 }
 type ApiGetIndexerNewznabRequest struct {
 	ctx context.Context
-	ApiService *NewznabApiService
+	ApiService *NewznabAPIService
 	id int32
 	t *string
 	q *string
@@ -366,7 +366,7 @@ GetIndexerNewznab Method for GetIndexerNewznab
  @param id
  @return ApiGetIndexerNewznabRequest
 */
-func (a *NewznabApiService) GetIndexerNewznab(ctx context.Context, id int32) ApiGetIndexerNewznabRequest {
+func (a *NewznabAPIService) GetIndexerNewznab(ctx context.Context, id int32) ApiGetIndexerNewznabRequest {
 	return ApiGetIndexerNewznabRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -375,14 +375,14 @@ func (a *NewznabApiService) GetIndexerNewznab(ctx context.Context, id int32) Api
 }
 
 // Execute executes the request
-func (a *NewznabApiService) GetIndexerNewznabExecute(r ApiGetIndexerNewznabRequest) (*http.Response, error) {
+func (a *NewznabAPIService) GetIndexerNewznabExecute(r ApiGetIndexerNewznabRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabApiService.GetIndexerNewznab")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewznabAPIService.GetIndexerNewznab")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,11 +19,11 @@ import (
 )
 
 
-// IndexerDefaultCategoriesApiService IndexerDefaultCategoriesApi service
-type IndexerDefaultCategoriesApiService service
+// IndexerDefaultCategoriesAPIService IndexerDefaultCategoriesAPI service
+type IndexerDefaultCategoriesAPIService service
 type ApiListIndexerCategoriesRequest struct {
 	ctx context.Context
-	ApiService *IndexerDefaultCategoriesApiService
+	ApiService *IndexerDefaultCategoriesAPIService
 }
 
 func (r ApiListIndexerCategoriesRequest) Execute() ([]*IndexerCategory, *http.Response, error) {
@@ -36,7 +36,7 @@ ListIndexerCategories Method for ListIndexerCategories
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListIndexerCategoriesRequest
 */
-func (a *IndexerDefaultCategoriesApiService) ListIndexerCategories(ctx context.Context) ApiListIndexerCategoriesRequest {
+func (a *IndexerDefaultCategoriesAPIService) ListIndexerCategories(ctx context.Context) ApiListIndexerCategoriesRequest {
 	return ApiListIndexerCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *IndexerDefaultCategoriesApiService) ListIndexerCategories(ctx context.C
 
 // Execute executes the request
 //  @return []IndexerCategory
-func (a *IndexerDefaultCategoriesApiService) ListIndexerCategoriesExecute(r ApiListIndexerCategoriesRequest) ([]*IndexerCategory, *http.Response, error) {
+func (a *IndexerDefaultCategoriesAPIService) ListIndexerCategoriesExecute(r ApiListIndexerCategoriesRequest) ([]*IndexerCategory, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *IndexerDefaultCategoriesApiService) ListIndexerCategoriesExecute(r ApiL
 		localVarReturnValue  []*IndexerCategory
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerDefaultCategoriesApiService.ListIndexerCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerDefaultCategoriesAPIService.ListIndexerCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
