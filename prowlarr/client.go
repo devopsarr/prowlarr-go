@@ -72,7 +72,6 @@ type APIClient struct {
 	NewznabAPI *NewznabAPIService
 	NotificationAPI *NotificationAPIService
 	PingAPI *PingAPIService
-	QualityProfileSchemaAPI *QualityProfileSchemaAPIService
 	SearchAPI *SearchAPIService
 	StaticResourceAPI *StaticResourceAPIService
 	SystemAPI *SystemAPIService
@@ -125,7 +124,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.NewznabAPI = (*NewznabAPIService)(&c.common)
 	c.NotificationAPI = (*NotificationAPIService)(&c.common)
 	c.PingAPI = (*PingAPIService)(&c.common)
-	c.QualityProfileSchemaAPI = (*QualityProfileSchemaAPIService)(&c.common)
 	c.SearchAPI = (*SearchAPIService)(&c.common)
 	c.StaticResourceAPI = (*StaticResourceAPIService)(&c.common)
 	c.SystemAPI = (*SystemAPIService)(&c.common)

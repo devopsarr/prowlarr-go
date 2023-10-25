@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *AppProfileAPI* | [**CreateAppProfile**](prowlarr/docs/AppProfileAPI.md#createappprofile) | **Post** /api/v1/appprofile | 
 *AppProfileAPI* | [**DeleteAppProfile**](prowlarr/docs/AppProfileAPI.md#deleteappprofile) | **Delete** /api/v1/appprofile/{id} | 
 *AppProfileAPI* | [**GetAppProfileById**](prowlarr/docs/AppProfileAPI.md#getappprofilebyid) | **Get** /api/v1/appprofile/{id} | 
+*AppProfileAPI* | [**GetAppProfileSchema**](prowlarr/docs/AppProfileAPI.md#getappprofileschema) | **Get** /api/v1/appprofile/schema | 
 *AppProfileAPI* | [**ListAppProfile**](prowlarr/docs/AppProfileAPI.md#listappprofile) | **Get** /api/v1/appprofile | 
 *AppProfileAPI* | [**UpdateAppProfile**](prowlarr/docs/AppProfileAPI.md#updateappprofile) | **Put** /api/v1/appprofile/{id} | 
 *ApplicationAPI* | [**CreateApplications**](prowlarr/docs/ApplicationAPI.md#createapplications) | **Post** /api/v1/applications | 
@@ -180,7 +181,6 @@ Class | Method | HTTP request | Description
 *NotificationAPI* | [**TestallNotification**](prowlarr/docs/NotificationAPI.md#testallnotification) | **Post** /api/v1/notification/testall | 
 *NotificationAPI* | [**UpdateNotification**](prowlarr/docs/NotificationAPI.md#updatenotification) | **Put** /api/v1/notification/{id} | 
 *PingAPI* | [**GetPing**](prowlarr/docs/PingAPI.md#getping) | **Get** /ping | 
-*QualityProfileSchemaAPI* | [**GetAppprofileSchema**](prowlarr/docs/QualityProfileSchemaAPI.md#getappprofileschema) | **Get** /api/v1/appprofile/schema | 
 *SearchAPI* | [**CreateSearch**](prowlarr/docs/SearchAPI.md#createsearch) | **Post** /api/v1/search | 
 *SearchAPI* | [**CreateSearchBulk**](prowlarr/docs/SearchAPI.md#createsearchbulk) | **Post** /api/v1/search/bulk | 
 *SearchAPI* | [**ListSearch**](prowlarr/docs/SearchAPI.md#listsearch) | **Get** /api/v1/search | 

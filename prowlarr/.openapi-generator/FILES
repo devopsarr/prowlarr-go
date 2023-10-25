@@ -26,7 +26,6 @@ api_log_file.go
 api_newznab.go
 api_notification.go
 api_ping.go
-api_quality_profile_schema.go
 api_search.go
 api_static_resource.go
 api_system.go
@@ -116,7 +115,6 @@ docs/PingResource.md
 docs/ProviderMessage.md
 docs/ProviderMessageType.md
 docs/ProxyType.md
-docs/QualityProfileSchemaAPI.md
 docs/ReleaseResource.md
 docs/RuntimeMode.md
 docs/SearchAPI.md

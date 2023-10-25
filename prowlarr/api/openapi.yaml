@@ -326,6 +326,18 @@ paths:
           description: Success
       tags:
       - AppProfile
+  /api/v1/appprofile/schema:
+    get:
+      operationId: GetAppProfileSchema
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppProfileResource'
+          description: Success
+      tags:
+      - AppProfile
   /login:
     get:
       operationId: GetLogin
@@ -2150,18 +2162,6 @@ paths:
           description: Success
       tags:
       - Ping
-  /api/v1/appprofile/schema:
-    get:
-      operationId: GetAppprofileSchema
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AppProfileResource'
-          description: Success
-      tags:
-      - QualityProfileSchema
   /api/v1/search:
     get:
       operationId: ListSearch

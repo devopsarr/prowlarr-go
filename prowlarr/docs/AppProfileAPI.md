@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateAppProfile**](AppProfileAPI.md#CreateAppProfile) | **Post** /api/v1/appprofile | 
 [**DeleteAppProfile**](AppProfileAPI.md#DeleteAppProfile) | **Delete** /api/v1/appprofile/{id} | 
 [**GetAppProfileById**](AppProfileAPI.md#GetAppProfileById) | **Get** /api/v1/appprofile/{id} | 
+[**GetAppProfileSchema**](AppProfileAPI.md#GetAppProfileSchema) | **Get** /api/v1/appprofile/schema | 
 [**ListAppProfile**](AppProfileAPI.md#ListAppProfile) | **Get** /api/v1/appprofile | 
 [**UpdateAppProfile**](AppProfileAPI.md#UpdateAppProfile) | **Put** /api/v1/appprofile/{id} | 
 
@@ -190,6 +191,65 @@ Other parameters are passed through a pointer to a apiGetAppProfileByIdRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AppProfileResource**](AppProfileResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAppProfileSchema
+
+> AppProfileResource GetAppProfileSchema(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    prowlarrClient "./openapi"
+)
+
+func main() {
+
+    configuration := prowlarrClient.NewConfiguration()
+    apiClient := prowlarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AppProfileAPI.GetAppProfileSchema(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AppProfileAPI.GetAppProfileSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAppProfileSchema`: AppProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `AppProfileAPI.GetAppProfileSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAppProfileSchemaRequest struct via the builder pattern
 
 
 ### Return type
