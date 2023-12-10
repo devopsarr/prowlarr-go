@@ -18,8 +18,10 @@ Name | Type | Description | Notes
 **ReleaseHash** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **SortTitle** | Pointer to **NullableString** |  | [optional] 
-**Approved** | Pointer to **bool** |  | [optional] 
 **ImdbId** | Pointer to **int32** |  | [optional] 
+**TmdbId** | Pointer to **int32** |  | [optional] 
+**TvdbId** | Pointer to **int32** |  | [optional] 
+**TvMazeId** | Pointer to **int32** |  | [optional] 
 **PublishDate** | Pointer to **time.Time** |  | [optional] 
 **CommentUrl** | Pointer to **NullableString** |  | [optional] 
 **DownloadUrl** | Pointer to **NullableString** |  | [optional] 
@@ -483,31 +485,6 @@ HasSortTitle returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetSortTitle()`
 
 UnsetSortTitle ensures that no value is present for SortTitle, not even an explicit nil
-### GetApproved
-
-`func (o *ReleaseResource) GetApproved() bool`
-
-GetApproved returns the Approved field if non-nil, zero value otherwise.
-
-### GetApprovedOk
-
-`func (o *ReleaseResource) GetApprovedOk() (*bool, bool)`
-
-GetApprovedOk returns a tuple with the Approved field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApproved
-
-`func (o *ReleaseResource) SetApproved(v bool)`
-
-SetApproved sets Approved field to given value.
-
-### HasApproved
-
-`func (o *ReleaseResource) HasApproved() bool`
-
-HasApproved returns a boolean if a field has been set.
-
 ### GetImdbId
 
 `func (o *ReleaseResource) GetImdbId() int32`
@@ -532,6 +509,81 @@ SetImdbId sets ImdbId field to given value.
 `func (o *ReleaseResource) HasImdbId() bool`
 
 HasImdbId returns a boolean if a field has been set.
+
+### GetTmdbId
+
+`func (o *ReleaseResource) GetTmdbId() int32`
+
+GetTmdbId returns the TmdbId field if non-nil, zero value otherwise.
+
+### GetTmdbIdOk
+
+`func (o *ReleaseResource) GetTmdbIdOk() (*int32, bool)`
+
+GetTmdbIdOk returns a tuple with the TmdbId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTmdbId
+
+`func (o *ReleaseResource) SetTmdbId(v int32)`
+
+SetTmdbId sets TmdbId field to given value.
+
+### HasTmdbId
+
+`func (o *ReleaseResource) HasTmdbId() bool`
+
+HasTmdbId returns a boolean if a field has been set.
+
+### GetTvdbId
+
+`func (o *ReleaseResource) GetTvdbId() int32`
+
+GetTvdbId returns the TvdbId field if non-nil, zero value otherwise.
+
+### GetTvdbIdOk
+
+`func (o *ReleaseResource) GetTvdbIdOk() (*int32, bool)`
+
+GetTvdbIdOk returns a tuple with the TvdbId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTvdbId
+
+`func (o *ReleaseResource) SetTvdbId(v int32)`
+
+SetTvdbId sets TvdbId field to given value.
+
+### HasTvdbId
+
+`func (o *ReleaseResource) HasTvdbId() bool`
+
+HasTvdbId returns a boolean if a field has been set.
+
+### GetTvMazeId
+
+`func (o *ReleaseResource) GetTvMazeId() int32`
+
+GetTvMazeId returns the TvMazeId field if non-nil, zero value otherwise.
+
+### GetTvMazeIdOk
+
+`func (o *ReleaseResource) GetTvMazeIdOk() (*int32, bool)`
+
+GetTvMazeIdOk returns a tuple with the TvMazeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTvMazeId
+
+`func (o *ReleaseResource) SetTvMazeId(v int32)`
+
+SetTvMazeId sets TvMazeId field to given value.
+
+### HasTvMazeId
+
+`func (o *ReleaseResource) HasTvMazeId() bool`
+
+HasTvMazeId returns a boolean if a field has been set.
 
 ### GetPublishDate
 

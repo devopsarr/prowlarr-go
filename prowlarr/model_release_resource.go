@@ -31,8 +31,10 @@ type ReleaseResource struct {
 	ReleaseHash NullableString `json:"releaseHash,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	SortTitle NullableString `json:"sortTitle,omitempty"`
-	Approved *bool `json:"approved,omitempty"`
 	ImdbId *int32 `json:"imdbId,omitempty"`
+	TmdbId *int32 `json:"tmdbId,omitempty"`
+	TvdbId *int32 `json:"tvdbId,omitempty"`
+	TvMazeId *int32 `json:"tvMazeId,omitempty"`
 	PublishDate *time.Time `json:"publishDate,omitempty"`
 	CommentUrl NullableString `json:"commentUrl,omitempty"`
 	DownloadUrl NullableString `json:"downloadUrl,omitempty"`
@@ -593,38 +595,6 @@ func (o *ReleaseResource) UnsetSortTitle() {
 	o.SortTitle.Unset()
 }
 
-// GetApproved returns the Approved field value if set, zero value otherwise.
-func (o *ReleaseResource) GetApproved() bool {
-	if o == nil || isNil(o.Approved) {
-		var ret bool
-		return ret
-	}
-	return *o.Approved
-}
-
-// GetApprovedOk returns a tuple with the Approved field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReleaseResource) GetApprovedOk() (*bool, bool) {
-	if o == nil || isNil(o.Approved) {
-    return nil, false
-	}
-	return o.Approved, true
-}
-
-// HasApproved returns a boolean if a field has been set.
-func (o *ReleaseResource) HasApproved() bool {
-	if o != nil && !isNil(o.Approved) {
-		return true
-	}
-
-	return false
-}
-
-// SetApproved gets a reference to the given bool and assigns it to the Approved field.
-func (o *ReleaseResource) SetApproved(v bool) {
-	o.Approved = &v
-}
-
 // GetImdbId returns the ImdbId field value if set, zero value otherwise.
 func (o *ReleaseResource) GetImdbId() int32 {
 	if o == nil || isNil(o.ImdbId) {
@@ -655,6 +625,102 @@ func (o *ReleaseResource) HasImdbId() bool {
 // SetImdbId gets a reference to the given int32 and assigns it to the ImdbId field.
 func (o *ReleaseResource) SetImdbId(v int32) {
 	o.ImdbId = &v
+}
+
+// GetTmdbId returns the TmdbId field value if set, zero value otherwise.
+func (o *ReleaseResource) GetTmdbId() int32 {
+	if o == nil || isNil(o.TmdbId) {
+		var ret int32
+		return ret
+	}
+	return *o.TmdbId
+}
+
+// GetTmdbIdOk returns a tuple with the TmdbId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReleaseResource) GetTmdbIdOk() (*int32, bool) {
+	if o == nil || isNil(o.TmdbId) {
+    return nil, false
+	}
+	return o.TmdbId, true
+}
+
+// HasTmdbId returns a boolean if a field has been set.
+func (o *ReleaseResource) HasTmdbId() bool {
+	if o != nil && !isNil(o.TmdbId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTmdbId gets a reference to the given int32 and assigns it to the TmdbId field.
+func (o *ReleaseResource) SetTmdbId(v int32) {
+	o.TmdbId = &v
+}
+
+// GetTvdbId returns the TvdbId field value if set, zero value otherwise.
+func (o *ReleaseResource) GetTvdbId() int32 {
+	if o == nil || isNil(o.TvdbId) {
+		var ret int32
+		return ret
+	}
+	return *o.TvdbId
+}
+
+// GetTvdbIdOk returns a tuple with the TvdbId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReleaseResource) GetTvdbIdOk() (*int32, bool) {
+	if o == nil || isNil(o.TvdbId) {
+    return nil, false
+	}
+	return o.TvdbId, true
+}
+
+// HasTvdbId returns a boolean if a field has been set.
+func (o *ReleaseResource) HasTvdbId() bool {
+	if o != nil && !isNil(o.TvdbId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTvdbId gets a reference to the given int32 and assigns it to the TvdbId field.
+func (o *ReleaseResource) SetTvdbId(v int32) {
+	o.TvdbId = &v
+}
+
+// GetTvMazeId returns the TvMazeId field value if set, zero value otherwise.
+func (o *ReleaseResource) GetTvMazeId() int32 {
+	if o == nil || isNil(o.TvMazeId) {
+		var ret int32
+		return ret
+	}
+	return *o.TvMazeId
+}
+
+// GetTvMazeIdOk returns a tuple with the TvMazeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReleaseResource) GetTvMazeIdOk() (*int32, bool) {
+	if o == nil || isNil(o.TvMazeId) {
+    return nil, false
+	}
+	return o.TvMazeId, true
+}
+
+// HasTvMazeId returns a boolean if a field has been set.
+func (o *ReleaseResource) HasTvMazeId() bool {
+	if o != nil && !isNil(o.TvMazeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTvMazeId gets a reference to the given int32 and assigns it to the TvMazeId field.
+func (o *ReleaseResource) SetTvMazeId(v int32) {
+	o.TvMazeId = &v
 }
 
 // GetPublishDate returns the PublishDate field value if set, zero value otherwise.
@@ -1209,11 +1275,17 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	if o.SortTitle.IsSet() {
 		toSerialize["sortTitle"] = o.SortTitle.Get()
 	}
-	if !isNil(o.Approved) {
-		toSerialize["approved"] = o.Approved
-	}
 	if !isNil(o.ImdbId) {
 		toSerialize["imdbId"] = o.ImdbId
+	}
+	if !isNil(o.TmdbId) {
+		toSerialize["tmdbId"] = o.TmdbId
+	}
+	if !isNil(o.TvdbId) {
+		toSerialize["tvdbId"] = o.TvdbId
+	}
+	if !isNil(o.TvMazeId) {
+		toSerialize["tvMazeId"] = o.TvMazeId
 	}
 	if !isNil(o.PublishDate) {
 		toSerialize["publishDate"] = o.PublishDate

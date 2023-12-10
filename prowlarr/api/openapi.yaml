@@ -4666,12 +4666,13 @@ components:
     ReleaseResource:
       additionalProperties: false
       example:
+        tvMazeId: 7
         indexerFlags:
         - indexerFlags
         - indexerFlags
         fileName: fileName
         ageMinutes: 5.962133916683182
-        leechers: 4
+        leechers: 1
         imdbId: 3
         grabs: 7
         releaseHash: releaseHash
@@ -4680,9 +4681,9 @@ components:
         downloadUrl: downloadUrl
         infoHash: infoHash
         title: title
-        seeders: 2
-        approved: true
+        seeders: 1
         protocol: null
+        tmdbId: 2
         posterUrl: posterUrl
         infoUrl: infoUrl
         id: 0
@@ -4700,6 +4701,7 @@ components:
           - null
           - null
         indexerId: 9
+        tvdbId: 4
         subGroup: subGroup
         ageHours: 1.4658129805029452
         indexer: indexer
@@ -4754,9 +4756,16 @@ components:
         sortTitle:
           nullable: true
           type: string
-        approved:
-          type: boolean
         imdbId:
+          format: int32
+          type: integer
+        tmdbId:
+          format: int32
+          type: integer
+        tvdbId:
+          format: int32
+          type: integer
+        tvMazeId:
           format: int32
           type: integer
         publishDate:
