@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).EventType(eventType).Successful(successful).DownloadId(downloadId).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).EventType(eventType).Successful(successful).DownloadId(downloadId).IndexerIds(indexerIds).Execute()
 
 
 
@@ -33,13 +33,14 @@ func main() {
     pageSize := int32(56) // int32 |  (optional) (default to 10)
     sortKey := "sortKey_example" // string |  (optional)
     sortDirection := prowlarrClient.SortDirection("default") // SortDirection |  (optional)
-    eventType := int32(56) // int32 |  (optional)
+    eventType := []int32{int32(123)} // []int32 |  (optional)
     successful := true // bool |  (optional)
     downloadId := "downloadId_example" // string |  (optional)
+    indexerIds := []int32{int32(123)} // []int32 |  (optional)
 
     configuration := prowlarrClient.NewConfiguration()
     apiClient := prowlarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).EventType(eventType).Successful(successful).DownloadId(downloadId).Execute()
+    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).EventType(eventType).Successful(successful).DownloadId(downloadId).IndexerIds(indexerIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,9 +65,10 @@ Name | Type | Description  | Notes
  **pageSize** | **int32** |  | [default to 10]
  **sortKey** | **string** |  | 
  **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
- **eventType** | **int32** |  | 
+ **eventType** | **[]int32** |  | 
  **successful** | **bool** |  | 
  **downloadId** | **string** |  | 
+ **indexerIds** | **[]int32** |  | 
 
 ### Return type
 
