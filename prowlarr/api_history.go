@@ -16,6 +16,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"reflect"
 	"time"
 )
 
@@ -29,9 +30,10 @@ type ApiGetHistoryRequest struct {
 	pageSize *int32
 	sortKey *string
 	sortDirection *SortDirection
-	eventType *int32
+	eventType *[]int32
 	successful *bool
 	downloadId *string
+	indexerIds *[]int32
 }
 
 func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
@@ -54,7 +56,7 @@ func (r ApiGetHistoryRequest) SortDirection(sortDirection SortDirection) ApiGetH
 	return r
 }
 
-func (r ApiGetHistoryRequest) EventType(eventType int32) ApiGetHistoryRequest {
+func (r ApiGetHistoryRequest) EventType(eventType []int32) ApiGetHistoryRequest {
 	r.eventType = &eventType
 	return r
 }
@@ -66,6 +68,11 @@ func (r ApiGetHistoryRequest) Successful(successful bool) ApiGetHistoryRequest {
 
 func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
 	r.downloadId = &downloadId
+	return r
+}
+
+func (r ApiGetHistoryRequest) IndexerIds(indexerIds []int32) ApiGetHistoryRequest {
+	r.indexerIds = &indexerIds
 	return r
 }
 
@@ -120,13 +127,32 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		t := *r.eventType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("eventType", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("eventType", parameterToString(t, "multi"))
+		}
 	}
 	if r.successful != nil {
 		localVarQueryParams.Add("successful", parameterToString(*r.successful, ""))
 	}
 	if r.downloadId != nil {
 		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+	}
+	if r.indexerIds != nil {
+		t := *r.indexerIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("indexerIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("indexerIds", parameterToString(t, "multi"))
+		}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

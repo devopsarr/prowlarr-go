@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **EnableRss** | Pointer to **bool** |  | [optional] 
-**EnableInteractiveSearch** | Pointer to **bool** |  | [optional] 
 **EnableAutomaticSearch** | Pointer to **bool** |  | [optional] 
+**EnableInteractiveSearch** | Pointer to **bool** |  | [optional] 
 **MinimumSeeders** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -115,31 +115,6 @@ SetEnableRss sets EnableRss field to given value.
 
 HasEnableRss returns a boolean if a field has been set.
 
-### GetEnableInteractiveSearch
-
-`func (o *AppProfileResource) GetEnableInteractiveSearch() bool`
-
-GetEnableInteractiveSearch returns the EnableInteractiveSearch field if non-nil, zero value otherwise.
-
-### GetEnableInteractiveSearchOk
-
-`func (o *AppProfileResource) GetEnableInteractiveSearchOk() (*bool, bool)`
-
-GetEnableInteractiveSearchOk returns a tuple with the EnableInteractiveSearch field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnableInteractiveSearch
-
-`func (o *AppProfileResource) SetEnableInteractiveSearch(v bool)`
-
-SetEnableInteractiveSearch sets EnableInteractiveSearch field to given value.
-
-### HasEnableInteractiveSearch
-
-`func (o *AppProfileResource) HasEnableInteractiveSearch() bool`
-
-HasEnableInteractiveSearch returns a boolean if a field has been set.
-
 ### GetEnableAutomaticSearch
 
 `func (o *AppProfileResource) GetEnableAutomaticSearch() bool`
@@ -164,6 +139,31 @@ SetEnableAutomaticSearch sets EnableAutomaticSearch field to given value.
 `func (o *AppProfileResource) HasEnableAutomaticSearch() bool`
 
 HasEnableAutomaticSearch returns a boolean if a field has been set.
+
+### GetEnableInteractiveSearch
+
+`func (o *AppProfileResource) GetEnableInteractiveSearch() bool`
+
+GetEnableInteractiveSearch returns the EnableInteractiveSearch field if non-nil, zero value otherwise.
+
+### GetEnableInteractiveSearchOk
+
+`func (o *AppProfileResource) GetEnableInteractiveSearchOk() (*bool, bool)`
+
+GetEnableInteractiveSearchOk returns a tuple with the EnableInteractiveSearch field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableInteractiveSearch
+
+`func (o *AppProfileResource) SetEnableInteractiveSearch(v bool)`
+
+SetEnableInteractiveSearch sets EnableInteractiveSearch field to given value.
+
+### HasEnableInteractiveSearch
+
+`func (o *AppProfileResource) HasEnableInteractiveSearch() bool`
+
+HasEnableInteractiveSearch returns a boolean if a field has been set.
 
 ### GetMinimumSeeders
 
