@@ -19,8 +19,8 @@ type AppProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	EnableRss *bool `json:"enableRss,omitempty"`
-	EnableAutomaticSearch *bool `json:"enableAutomaticSearch,omitempty"`
 	EnableInteractiveSearch *bool `json:"enableInteractiveSearch,omitempty"`
+	EnableAutomaticSearch *bool `json:"enableAutomaticSearch,omitempty"`
 	MinimumSeeders *int32 `json:"minimumSeeders,omitempty"`
 }
 
@@ -147,38 +147,6 @@ func (o *AppProfileResource) SetEnableRss(v bool) {
 	o.EnableRss = &v
 }
 
-// GetEnableAutomaticSearch returns the EnableAutomaticSearch field value if set, zero value otherwise.
-func (o *AppProfileResource) GetEnableAutomaticSearch() bool {
-	if o == nil || isNil(o.EnableAutomaticSearch) {
-		var ret bool
-		return ret
-	}
-	return *o.EnableAutomaticSearch
-}
-
-// GetEnableAutomaticSearchOk returns a tuple with the EnableAutomaticSearch field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AppProfileResource) GetEnableAutomaticSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableAutomaticSearch) {
-    return nil, false
-	}
-	return o.EnableAutomaticSearch, true
-}
-
-// HasEnableAutomaticSearch returns a boolean if a field has been set.
-func (o *AppProfileResource) HasEnableAutomaticSearch() bool {
-	if o != nil && !isNil(o.EnableAutomaticSearch) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnableAutomaticSearch gets a reference to the given bool and assigns it to the EnableAutomaticSearch field.
-func (o *AppProfileResource) SetEnableAutomaticSearch(v bool) {
-	o.EnableAutomaticSearch = &v
-}
-
 // GetEnableInteractiveSearch returns the EnableInteractiveSearch field value if set, zero value otherwise.
 func (o *AppProfileResource) GetEnableInteractiveSearch() bool {
 	if o == nil || isNil(o.EnableInteractiveSearch) {
@@ -209,6 +177,38 @@ func (o *AppProfileResource) HasEnableInteractiveSearch() bool {
 // SetEnableInteractiveSearch gets a reference to the given bool and assigns it to the EnableInteractiveSearch field.
 func (o *AppProfileResource) SetEnableInteractiveSearch(v bool) {
 	o.EnableInteractiveSearch = &v
+}
+
+// GetEnableAutomaticSearch returns the EnableAutomaticSearch field value if set, zero value otherwise.
+func (o *AppProfileResource) GetEnableAutomaticSearch() bool {
+	if o == nil || isNil(o.EnableAutomaticSearch) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableAutomaticSearch
+}
+
+// GetEnableAutomaticSearchOk returns a tuple with the EnableAutomaticSearch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AppProfileResource) GetEnableAutomaticSearchOk() (*bool, bool) {
+	if o == nil || isNil(o.EnableAutomaticSearch) {
+    return nil, false
+	}
+	return o.EnableAutomaticSearch, true
+}
+
+// HasEnableAutomaticSearch returns a boolean if a field has been set.
+func (o *AppProfileResource) HasEnableAutomaticSearch() bool {
+	if o != nil && !isNil(o.EnableAutomaticSearch) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableAutomaticSearch gets a reference to the given bool and assigns it to the EnableAutomaticSearch field.
+func (o *AppProfileResource) SetEnableAutomaticSearch(v bool) {
+	o.EnableAutomaticSearch = &v
 }
 
 // GetMinimumSeeders returns the MinimumSeeders field value if set, zero value otherwise.
@@ -254,11 +254,11 @@ func (o AppProfileResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.EnableRss) {
 		toSerialize["enableRss"] = o.EnableRss
 	}
-	if !isNil(o.EnableAutomaticSearch) {
-		toSerialize["enableAutomaticSearch"] = o.EnableAutomaticSearch
-	}
 	if !isNil(o.EnableInteractiveSearch) {
 		toSerialize["enableInteractiveSearch"] = o.EnableInteractiveSearch
+	}
+	if !isNil(o.EnableAutomaticSearch) {
+		toSerialize["enableAutomaticSearch"] = o.EnableAutomaticSearch
 	}
 	if !isNil(o.MinimumSeeders) {
 		toSerialize["minimumSeeders"] = o.MinimumSeeders
