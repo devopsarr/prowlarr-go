@@ -24,7 +24,7 @@ paths:
     get:
       operationId: GetApi
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -45,7 +45,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Application
@@ -61,7 +61,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -93,7 +93,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ApplicationResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -105,7 +105,7 @@ paths:
     get:
       operationId: ListApplications
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -132,7 +132,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ApplicationResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -149,7 +149,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ApplicationBulkResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Application
@@ -161,7 +161,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ApplicationBulkResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -173,7 +173,7 @@ paths:
     get:
       operationId: ListApplicationsSchema
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -192,7 +192,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ApplicationResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Application
@@ -200,7 +200,7 @@ paths:
     post:
       operationId: TestallApplications
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Application
@@ -221,7 +221,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ApplicationResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Application
@@ -229,7 +229,7 @@ paths:
     get:
       operationId: ListAppProfile
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -247,7 +247,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AppProfileResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -268,7 +268,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - AppProfile
@@ -284,7 +284,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -318,7 +318,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AppProfileResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -330,7 +330,7 @@ paths:
     get:
       operationId: GetAppProfileSchema
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -342,7 +342,7 @@ paths:
     get:
       operationId: GetLogin
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - StaticResource
@@ -369,7 +369,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CreateLogin_request'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Authentication
@@ -377,7 +377,7 @@ paths:
     get:
       operationId: GetLogout
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Authentication
@@ -385,7 +385,7 @@ paths:
     get:
       operationId: ListSystemBackup
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -408,7 +408,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Backup
@@ -425,7 +425,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Backup
@@ -433,7 +433,7 @@ paths:
     post:
       operationId: CreateSystemBackupRestoreUpload
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Backup
@@ -450,7 +450,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Command
@@ -466,7 +466,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -478,7 +478,7 @@ paths:
     get:
       operationId: ListCommand
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -496,7 +496,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CommandResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -517,7 +517,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - CustomFilter
@@ -533,7 +533,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -557,7 +557,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CustomFilterResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -569,7 +569,7 @@ paths:
     get:
       operationId: ListCustomFilter
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -587,7 +587,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CustomFilterResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -608,7 +608,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -632,7 +632,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DevelopmentConfigResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -644,7 +644,7 @@ paths:
     get:
       operationId: GetDevelopmentConfig
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -665,7 +665,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - DownloadClient
@@ -681,7 +681,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -713,7 +713,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -725,7 +725,7 @@ paths:
     get:
       operationId: ListDownloadClient
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -752,7 +752,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -769,7 +769,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientBulkResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - DownloadClient
@@ -781,7 +781,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientBulkResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -793,7 +793,7 @@ paths:
     get:
       operationId: ListDownloadClientSchema
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -812,7 +812,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - DownloadClient
@@ -820,7 +820,7 @@ paths:
     post:
       operationId: TestallDownloadClient
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - DownloadClient
@@ -841,7 +841,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - DownloadClient
@@ -858,7 +858,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -882,7 +882,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DownloadClientConfigResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -894,7 +894,7 @@ paths:
     get:
       operationId: GetDownloadClientConfig
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -930,7 +930,7 @@ paths:
           type: boolean
         style: form
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - FileSystem
@@ -946,7 +946,7 @@ paths:
           type: string
         style: form
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - FileSystem
@@ -954,7 +954,7 @@ paths:
     get:
       operationId: ListHealth
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1035,7 +1035,7 @@ paths:
           type: array
         style: form
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1063,7 +1063,7 @@ paths:
           $ref: '#/components/schemas/HistoryEventType'
         style: form
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1101,7 +1101,7 @@ paths:
           type: integer
         style: form
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1124,7 +1124,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1148,7 +1148,7 @@ paths:
             schema:
               $ref: '#/components/schemas/HostConfigResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1160,7 +1160,7 @@ paths:
     get:
       operationId: GetHostConfig
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1181,7 +1181,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Indexer
@@ -1197,7 +1197,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1229,7 +1229,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1241,7 +1241,7 @@ paths:
     get:
       operationId: ListIndexer
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1268,7 +1268,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1285,7 +1285,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerBulkResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Indexer
@@ -1297,7 +1297,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerBulkResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1309,7 +1309,7 @@ paths:
     get:
       operationId: ListIndexerSchema
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1328,7 +1328,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Indexer
@@ -1336,7 +1336,7 @@ paths:
     post:
       operationId: TestallIndexer
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Indexer
@@ -1357,7 +1357,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Indexer
@@ -1365,7 +1365,7 @@ paths:
     get:
       operationId: ListIndexerCategories
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1388,7 +1388,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - IndexerProxy
@@ -1404,7 +1404,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1436,7 +1436,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerProxyResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1448,7 +1448,7 @@ paths:
     get:
       operationId: ListIndexerProxy
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1475,7 +1475,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerProxyResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1487,7 +1487,7 @@ paths:
     get:
       operationId: ListIndexerProxySchema
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1506,7 +1506,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerProxyResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - IndexerProxy
@@ -1514,7 +1514,7 @@ paths:
     post:
       operationId: TestallIndexerProxy
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - IndexerProxy
@@ -1535,7 +1535,7 @@ paths:
             schema:
               $ref: '#/components/schemas/IndexerProxyResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - IndexerProxy
@@ -1581,7 +1581,7 @@ paths:
           type: string
         style: form
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1593,7 +1593,7 @@ paths:
     get:
       operationId: ListIndexerStatus
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1607,7 +1607,7 @@ paths:
     get:
       operationId: GetLocalization
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Localization
@@ -1615,7 +1615,7 @@ paths:
     get:
       operationId: ListLocalizationOptions
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1669,7 +1669,7 @@ paths:
           type: string
         style: form
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1681,7 +1681,7 @@ paths:
     get:
       operationId: ListLogFile
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -1704,7 +1704,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             text/plain:
               schema:
@@ -1963,7 +1963,7 @@ paths:
           type: string
         style: form
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Newznab
@@ -1994,7 +1994,7 @@ paths:
           type: string
         style: form
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Newznab
@@ -2011,7 +2011,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Notification
@@ -2027,7 +2027,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2059,7 +2059,7 @@ paths:
             schema:
               $ref: '#/components/schemas/NotificationResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2071,7 +2071,7 @@ paths:
     get:
       operationId: ListNotification
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2098,7 +2098,7 @@ paths:
             schema:
               $ref: '#/components/schemas/NotificationResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2110,7 +2110,7 @@ paths:
     get:
       operationId: ListNotificationSchema
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2129,7 +2129,7 @@ paths:
             schema:
               $ref: '#/components/schemas/NotificationResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Notification
@@ -2137,7 +2137,7 @@ paths:
     post:
       operationId: TestallNotification
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Notification
@@ -2158,7 +2158,7 @@ paths:
             schema:
               $ref: '#/components/schemas/NotificationResource'
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Notification
@@ -2166,7 +2166,7 @@ paths:
     get:
       operationId: GetPing
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2229,7 +2229,7 @@ paths:
           type: integer
         style: form
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2247,7 +2247,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ReleaseResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2266,7 +2266,7 @@ paths:
                 $ref: '#/components/schemas/ReleaseResource'
               type: array
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2287,7 +2287,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - StaticResource
@@ -2303,7 +2303,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - StaticResource
@@ -2320,7 +2320,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - StaticResource
@@ -2328,7 +2328,7 @@ paths:
     get:
       operationId: GetSystemStatus
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2340,7 +2340,7 @@ paths:
     get:
       operationId: GetSystemRoutes
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - System
@@ -2348,7 +2348,7 @@ paths:
     get:
       operationId: GetSystemRoutesDuplicate
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - System
@@ -2356,7 +2356,7 @@ paths:
     post:
       operationId: CreateSystemShutdown
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - System
@@ -2364,7 +2364,7 @@ paths:
     post:
       operationId: CreateSystemRestart
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - System
@@ -2381,7 +2381,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           description: Success
       tags:
       - Tag
@@ -2397,7 +2397,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2421,7 +2421,7 @@ paths:
             schema:
               $ref: '#/components/schemas/TagResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2433,7 +2433,7 @@ paths:
     get:
       operationId: ListTag
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2451,7 +2451,7 @@ paths:
             schema:
               $ref: '#/components/schemas/TagResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2472,7 +2472,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2484,7 +2484,7 @@ paths:
     get:
       operationId: ListTagDetail
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2498,7 +2498,7 @@ paths:
     get:
       operationId: ListSystemTask
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2521,7 +2521,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2542,7 +2542,7 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2566,7 +2566,7 @@ paths:
             schema:
               $ref: '#/components/schemas/UiConfigResource'
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2578,7 +2578,7 @@ paths:
     get:
       operationId: GetUiConfig
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2590,7 +2590,7 @@ paths:
     get:
       operationId: ListUpdate
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2604,7 +2604,7 @@ paths:
     get:
       operationId: ListLogFileUpdate
       responses:
-        "200":
+        "2XX":
           content:
             application/json:
               schema:
@@ -2627,7 +2627,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
+        "2XX":
           content:
             text/plain:
               schema:
