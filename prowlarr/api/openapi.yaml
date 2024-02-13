@@ -2672,9 +2672,9 @@ components:
           type: string
         enableRss:
           type: boolean
-        enableInteractiveSearch:
-          type: boolean
         enableAutomaticSearch:
+          type: boolean
+        enableInteractiveSearch:
           type: boolean
         minimumSeeders:
           format: int32
@@ -2736,6 +2736,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -2762,6 +2763,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -3225,6 +3227,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -3251,6 +3254,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -3340,6 +3344,7 @@ components:
           parentValue: 5
           value: 1
           order: 5
+        privacy: null
         selectOptionsProviderAction: selectOptionsProviderAction
         section: section
         isFloat: true
@@ -3395,6 +3400,8 @@ components:
         hidden:
           nullable: true
           type: string
+        privacy:
+          $ref: '#/components/schemas/PrivacyLevel'
         placeholder:
           nullable: true
           type: string
@@ -3893,6 +3900,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -3919,6 +3927,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -4073,6 +4082,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -4099,6 +4109,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -4536,6 +4547,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -4562,6 +4574,7 @@ components:
             parentValue: 5
             value: 1
             order: 5
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           isFloat: true
@@ -4651,6 +4664,13 @@ components:
           nullable: true
           type: string
       type: object
+    PrivacyLevel:
+      enum:
+      - normal
+      - password
+      - apiKey
+      - userName
+      type: string
     ProviderMessage:
       additionalProperties: false
       example:
