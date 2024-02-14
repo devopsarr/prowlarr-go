@@ -5,7 +5,7 @@ info:
     name: GPL-3.0
     url: https://github.com/Prowlarr/Prowlarr/blob/develop/LICENSE
   title: Prowlarr
-  version: 1.0.0
+  version: v1.13.3.4273
 servers:
 - url: "{protocol}://{hostpath}"
   variables:
