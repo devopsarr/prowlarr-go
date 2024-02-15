@@ -22,6 +22,7 @@ import (
 
 // ApplicationAPIService ApplicationAPI service
 type ApplicationAPIService service
+
 type ApiCreateApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -78,7 +79,10 @@ func (a *ApplicationAPIService) CreateApplicationsExecute(r ApiCreateApplication
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *ApplicationAPIService) CreateApplicationsExecute(r ApiCreateApplication
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateApplicationsActionByNameRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -208,7 +213,7 @@ func (a *ApplicationAPIService) CreateApplicationsActionByNameExecute(r ApiCreat
 	}
 
 	localVarPath := localBasePath + "/api/v1/applications/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *ApplicationAPIService) CreateApplicationsActionByNameExecute(r ApiCreat
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -327,7 +333,7 @@ func (a *ApplicationAPIService) DeleteApplicationsExecute(r ApiDeleteApplication
 	}
 
 	localVarPath := localBasePath + "/api/v1/applications/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *ApplicationAPIService) DeleteApplicationsExecute(r ApiDeleteApplication
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteApplicationsBulkRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -526,6 +533,7 @@ func (a *ApplicationAPIService) DeleteApplicationsBulkExecute(r ApiDeleteApplica
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetApplicationsByIdRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -567,7 +575,7 @@ func (a *ApplicationAPIService) GetApplicationsByIdExecute(r ApiGetApplicationsB
 	}
 
 	localVarPath := localBasePath + "/api/v1/applications/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -654,12 +662,13 @@ func (a *ApplicationAPIService) GetApplicationsByIdExecute(r ApiGetApplicationsB
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
 }
 
-func (r ApiListApplicationsRequest) Execute() ([]*ApplicationResource, *http.Response, error) {
+func (r ApiListApplicationsRequest) Execute() ([]ApplicationResource, *http.Response, error) {
 	return r.ApiService.ListApplicationsExecute(r)
 }
 
@@ -678,12 +687,12 @@ func (a *ApplicationAPIService) ListApplications(ctx context.Context) ApiListApp
 
 // Execute executes the request
 //  @return []ApplicationResource
-func (a *ApplicationAPIService) ListApplicationsExecute(r ApiListApplicationsRequest) ([]*ApplicationResource, *http.Response, error) {
+func (a *ApplicationAPIService) ListApplicationsExecute(r ApiListApplicationsRequest) ([]ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ApplicationResource
+		localVarReturnValue  []ApplicationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.ListApplications")
@@ -778,12 +787,13 @@ func (a *ApplicationAPIService) ListApplicationsExecute(r ApiListApplicationsReq
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListApplicationsSchemaRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
 }
 
-func (r ApiListApplicationsSchemaRequest) Execute() ([]*ApplicationResource, *http.Response, error) {
+func (r ApiListApplicationsSchemaRequest) Execute() ([]ApplicationResource, *http.Response, error) {
 	return r.ApiService.ListApplicationsSchemaExecute(r)
 }
 
@@ -802,12 +812,12 @@ func (a *ApplicationAPIService) ListApplicationsSchema(ctx context.Context) ApiL
 
 // Execute executes the request
 //  @return []ApplicationResource
-func (a *ApplicationAPIService) ListApplicationsSchemaExecute(r ApiListApplicationsSchemaRequest) ([]*ApplicationResource, *http.Response, error) {
+func (a *ApplicationAPIService) ListApplicationsSchemaExecute(r ApiListApplicationsSchemaRequest) ([]ApplicationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ApplicationResource
+		localVarReturnValue  []ApplicationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationAPIService.ListApplicationsSchema")
@@ -902,6 +912,7 @@ func (a *ApplicationAPIService) ListApplicationsSchemaExecute(r ApiListApplicati
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutApplicationsBulkRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -1034,6 +1045,7 @@ func (a *ApplicationAPIService) PutApplicationsBulkExecute(r ApiPutApplicationsB
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -1155,6 +1167,7 @@ func (a *ApplicationAPIService) TestApplicationsExecute(r ApiTestApplicationsReq
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -1268,6 +1281,7 @@ func (a *ApplicationAPIService) TestallApplicationsExecute(r ApiTestallApplicati
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateApplicationsRequest struct {
 	ctx context.Context
 	ApiService *ApplicationAPIService
@@ -1321,14 +1335,17 @@ func (a *ApplicationAPIService) UpdateApplicationsExecute(r ApiUpdateApplication
 	}
 
 	localVarPath := localBasePath + "/api/v1/applications/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

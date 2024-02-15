@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LocalizationOption type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LocalizationOption{}
+
 // LocalizationOption struct for LocalizationOption
 type LocalizationOption struct {
 	Name NullableString `json:"name,omitempty"`
@@ -39,7 +42,7 @@ func NewLocalizationOptionWithDefaults() *LocalizationOption {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LocalizationOption) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *LocalizationOption) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LocalizationOption) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -81,7 +84,7 @@ func (o *LocalizationOption) UnsetName() {
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LocalizationOption) GetValue() string {
-	if o == nil || isNil(o.Value.Get()) {
+	if o == nil || IsNil(o.Value.Get()) {
 		var ret string
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *LocalizationOption) GetValue() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LocalizationOption) GetValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Value.Get(), o.Value.IsSet()
 }
@@ -122,6 +125,14 @@ func (o *LocalizationOption) UnsetValue() {
 }
 
 func (o LocalizationOption) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o LocalizationOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
@@ -129,7 +140,7 @@ func (o LocalizationOption) MarshalJSON() ([]byte, error) {
 	if o.Value.IsSet() {
 		toSerialize["value"] = o.Value.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLocalizationOption struct {

@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the IndexerStatusResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerStatusResource{}
+
 // IndexerStatusResource struct for IndexerStatusResource
 type IndexerStatusResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewIndexerStatusResourceWithDefaults() *IndexerStatusResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerStatusResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *IndexerStatusResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatusResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerStatusResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *IndexerStatusResource) SetId(v int32) {
 
 // GetIndexerId returns the IndexerId field value if set, zero value otherwise.
 func (o *IndexerStatusResource) GetIndexerId() int32 {
-	if o == nil || isNil(o.IndexerId) {
+	if o == nil || IsNil(o.IndexerId) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *IndexerStatusResource) GetIndexerId() int32 {
 // GetIndexerIdOk returns a tuple with the IndexerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatusResource) GetIndexerIdOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexerId) {
-    return nil, false
+	if o == nil || IsNil(o.IndexerId) {
+		return nil, false
 	}
 	return o.IndexerId, true
 }
 
 // HasIndexerId returns a boolean if a field has been set.
 func (o *IndexerStatusResource) HasIndexerId() bool {
-	if o != nil && !isNil(o.IndexerId) {
+	if o != nil && !IsNil(o.IndexerId) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *IndexerStatusResource) SetIndexerId(v int32) {
 
 // GetDisabledTill returns the DisabledTill field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerStatusResource) GetDisabledTill() time.Time {
-	if o == nil || isNil(o.DisabledTill.Get()) {
+	if o == nil || IsNil(o.DisabledTill.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *IndexerStatusResource) GetDisabledTill() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerStatusResource) GetDisabledTillOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledTill.Get(), o.DisabledTill.IsSet()
 }
@@ -149,7 +152,7 @@ func (o *IndexerStatusResource) UnsetDisabledTill() {
 
 // GetMostRecentFailure returns the MostRecentFailure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerStatusResource) GetMostRecentFailure() time.Time {
-	if o == nil || isNil(o.MostRecentFailure.Get()) {
+	if o == nil || IsNil(o.MostRecentFailure.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *IndexerStatusResource) GetMostRecentFailure() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerStatusResource) GetMostRecentFailureOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MostRecentFailure.Get(), o.MostRecentFailure.IsSet()
 }
@@ -191,7 +194,7 @@ func (o *IndexerStatusResource) UnsetMostRecentFailure() {
 
 // GetInitialFailure returns the InitialFailure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerStatusResource) GetInitialFailure() time.Time {
-	if o == nil || isNil(o.InitialFailure.Get()) {
+	if o == nil || IsNil(o.InitialFailure.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *IndexerStatusResource) GetInitialFailure() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerStatusResource) GetInitialFailureOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InitialFailure.Get(), o.InitialFailure.IsSet()
 }
@@ -232,11 +235,19 @@ func (o *IndexerStatusResource) UnsetInitialFailure() {
 }
 
 func (o IndexerStatusResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerStatusResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.IndexerId) {
+	if !IsNil(o.IndexerId) {
 		toSerialize["indexerId"] = o.IndexerId
 	}
 	if o.DisabledTill.IsSet() {
@@ -248,7 +259,7 @@ func (o IndexerStatusResource) MarshalJSON() ([]byte, error) {
 	if o.InitialFailure.IsSet() {
 		toSerialize["initialFailure"] = o.InitialFailure.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerStatusResource struct {

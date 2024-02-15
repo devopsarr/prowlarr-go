@@ -22,6 +22,7 @@ import (
 
 // IndexerProxyAPIService IndexerProxyAPI service
 type IndexerProxyAPIService service
+
 type ApiCreateIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -78,7 +79,10 @@ func (a *IndexerProxyAPIService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *IndexerProxyAPIService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateIndexerProxyActionByNameRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -208,7 +213,7 @@ func (a *IndexerProxyAPIService) CreateIndexerProxyActionByNameExecute(r ApiCrea
 	}
 
 	localVarPath := localBasePath + "/api/v1/indexerproxy/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *IndexerProxyAPIService) CreateIndexerProxyActionByNameExecute(r ApiCrea
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -327,7 +333,7 @@ func (a *IndexerProxyAPIService) DeleteIndexerProxyExecute(r ApiDeleteIndexerPro
 	}
 
 	localVarPath := localBasePath + "/api/v1/indexerproxy/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *IndexerProxyAPIService) DeleteIndexerProxyExecute(r ApiDeleteIndexerPro
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetIndexerProxyByIdRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -446,7 +453,7 @@ func (a *IndexerProxyAPIService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxy
 	}
 
 	localVarPath := localBasePath + "/api/v1/indexerproxy/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -533,12 +540,13 @@ func (a *IndexerProxyAPIService) GetIndexerProxyByIdExecute(r ApiGetIndexerProxy
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
 }
 
-func (r ApiListIndexerProxyRequest) Execute() ([]*IndexerProxyResource, *http.Response, error) {
+func (r ApiListIndexerProxyRequest) Execute() ([]IndexerProxyResource, *http.Response, error) {
 	return r.ApiService.ListIndexerProxyExecute(r)
 }
 
@@ -557,12 +565,12 @@ func (a *IndexerProxyAPIService) ListIndexerProxy(ctx context.Context) ApiListIn
 
 // Execute executes the request
 //  @return []IndexerProxyResource
-func (a *IndexerProxyAPIService) ListIndexerProxyExecute(r ApiListIndexerProxyRequest) ([]*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) ListIndexerProxyExecute(r ApiListIndexerProxyRequest) ([]IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerProxyResource
+		localVarReturnValue  []IndexerProxyResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.ListIndexerProxy")
@@ -657,12 +665,13 @@ func (a *IndexerProxyAPIService) ListIndexerProxyExecute(r ApiListIndexerProxyRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListIndexerProxySchemaRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
 }
 
-func (r ApiListIndexerProxySchemaRequest) Execute() ([]*IndexerProxyResource, *http.Response, error) {
+func (r ApiListIndexerProxySchemaRequest) Execute() ([]IndexerProxyResource, *http.Response, error) {
 	return r.ApiService.ListIndexerProxySchemaExecute(r)
 }
 
@@ -681,12 +690,12 @@ func (a *IndexerProxyAPIService) ListIndexerProxySchema(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []IndexerProxyResource
-func (a *IndexerProxyAPIService) ListIndexerProxySchemaExecute(r ApiListIndexerProxySchemaRequest) ([]*IndexerProxyResource, *http.Response, error) {
+func (a *IndexerProxyAPIService) ListIndexerProxySchemaExecute(r ApiListIndexerProxySchemaRequest) ([]IndexerProxyResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerProxyResource
+		localVarReturnValue  []IndexerProxyResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerProxyAPIService.ListIndexerProxySchema")
@@ -781,6 +790,7 @@ func (a *IndexerProxyAPIService) ListIndexerProxySchemaExecute(r ApiListIndexerP
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -902,6 +912,7 @@ func (a *IndexerProxyAPIService) TestIndexerProxyExecute(r ApiTestIndexerProxyRe
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -1015,6 +1026,7 @@ func (a *IndexerProxyAPIService) TestallIndexerProxyExecute(r ApiTestallIndexerP
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateIndexerProxyRequest struct {
 	ctx context.Context
 	ApiService *IndexerProxyAPIService
@@ -1068,14 +1080,17 @@ func (a *IndexerProxyAPIService) UpdateIndexerProxyExecute(r ApiUpdateIndexerPro
 	}
 
 	localVarPath := localBasePath + "/api/v1/indexerproxy/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

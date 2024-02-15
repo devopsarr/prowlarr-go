@@ -21,12 +21,13 @@ import (
 
 // IndexerDefaultCategoriesAPIService IndexerDefaultCategoriesAPI service
 type IndexerDefaultCategoriesAPIService service
+
 type ApiListIndexerCategoriesRequest struct {
 	ctx context.Context
 	ApiService *IndexerDefaultCategoriesAPIService
 }
 
-func (r ApiListIndexerCategoriesRequest) Execute() ([]*IndexerCategory, *http.Response, error) {
+func (r ApiListIndexerCategoriesRequest) Execute() ([]IndexerCategory, *http.Response, error) {
 	return r.ApiService.ListIndexerCategoriesExecute(r)
 }
 
@@ -45,12 +46,12 @@ func (a *IndexerDefaultCategoriesAPIService) ListIndexerCategories(ctx context.C
 
 // Execute executes the request
 //  @return []IndexerCategory
-func (a *IndexerDefaultCategoriesAPIService) ListIndexerCategoriesExecute(r ApiListIndexerCategoriesRequest) ([]*IndexerCategory, *http.Response, error) {
+func (a *IndexerDefaultCategoriesAPIService) ListIndexerCategoriesExecute(r ApiListIndexerCategoriesRequest) ([]IndexerCategory, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerCategory
+		localVarReturnValue  []IndexerCategory
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerDefaultCategoriesAPIService.ListIndexerCategories")

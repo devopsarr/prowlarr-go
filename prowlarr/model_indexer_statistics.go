@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerStatistics type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerStatistics{}
+
 // IndexerStatistics struct for IndexerStatistics
 type IndexerStatistics struct {
 	IndexerId *int32 `json:"indexerId,omitempty"`
@@ -48,7 +51,7 @@ func NewIndexerStatisticsWithDefaults() *IndexerStatistics {
 
 // GetIndexerId returns the IndexerId field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetIndexerId() int32 {
-	if o == nil || isNil(o.IndexerId) {
+	if o == nil || IsNil(o.IndexerId) {
 		var ret int32
 		return ret
 	}
@@ -58,15 +61,15 @@ func (o *IndexerStatistics) GetIndexerId() int32 {
 // GetIndexerIdOk returns a tuple with the IndexerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetIndexerIdOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexerId) {
-    return nil, false
+	if o == nil || IsNil(o.IndexerId) {
+		return nil, false
 	}
 	return o.IndexerId, true
 }
 
 // HasIndexerId returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasIndexerId() bool {
-	if o != nil && !isNil(o.IndexerId) {
+	if o != nil && !IsNil(o.IndexerId) {
 		return true
 	}
 
@@ -80,7 +83,7 @@ func (o *IndexerStatistics) SetIndexerId(v int32) {
 
 // GetIndexerName returns the IndexerName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerStatistics) GetIndexerName() string {
-	if o == nil || isNil(o.IndexerName.Get()) {
+	if o == nil || IsNil(o.IndexerName.Get()) {
 		var ret string
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *IndexerStatistics) GetIndexerName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerStatistics) GetIndexerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.IndexerName.Get(), o.IndexerName.IsSet()
 }
@@ -122,7 +125,7 @@ func (o *IndexerStatistics) UnsetIndexerName() {
 
 // GetAverageResponseTime returns the AverageResponseTime field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetAverageResponseTime() int32 {
-	if o == nil || isNil(o.AverageResponseTime) {
+	if o == nil || IsNil(o.AverageResponseTime) {
 		var ret int32
 		return ret
 	}
@@ -132,15 +135,15 @@ func (o *IndexerStatistics) GetAverageResponseTime() int32 {
 // GetAverageResponseTimeOk returns a tuple with the AverageResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetAverageResponseTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.AverageResponseTime) {
-    return nil, false
+	if o == nil || IsNil(o.AverageResponseTime) {
+		return nil, false
 	}
 	return o.AverageResponseTime, true
 }
 
 // HasAverageResponseTime returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasAverageResponseTime() bool {
-	if o != nil && !isNil(o.AverageResponseTime) {
+	if o != nil && !IsNil(o.AverageResponseTime) {
 		return true
 	}
 
@@ -154,7 +157,7 @@ func (o *IndexerStatistics) SetAverageResponseTime(v int32) {
 
 // GetNumberOfQueries returns the NumberOfQueries field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfQueries() int32 {
-	if o == nil || isNil(o.NumberOfQueries) {
+	if o == nil || IsNil(o.NumberOfQueries) {
 		var ret int32
 		return ret
 	}
@@ -164,15 +167,15 @@ func (o *IndexerStatistics) GetNumberOfQueries() int32 {
 // GetNumberOfQueriesOk returns a tuple with the NumberOfQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfQueries) {
+		return nil, false
 	}
 	return o.NumberOfQueries, true
 }
 
 // HasNumberOfQueries returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfQueries() bool {
-	if o != nil && !isNil(o.NumberOfQueries) {
+	if o != nil && !IsNil(o.NumberOfQueries) {
 		return true
 	}
 
@@ -186,7 +189,7 @@ func (o *IndexerStatistics) SetNumberOfQueries(v int32) {
 
 // GetNumberOfGrabs returns the NumberOfGrabs field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfGrabs() int32 {
-	if o == nil || isNil(o.NumberOfGrabs) {
+	if o == nil || IsNil(o.NumberOfGrabs) {
 		var ret int32
 		return ret
 	}
@@ -196,15 +199,15 @@ func (o *IndexerStatistics) GetNumberOfGrabs() int32 {
 // GetNumberOfGrabsOk returns a tuple with the NumberOfGrabs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfGrabsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfGrabs) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfGrabs) {
+		return nil, false
 	}
 	return o.NumberOfGrabs, true
 }
 
 // HasNumberOfGrabs returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfGrabs() bool {
-	if o != nil && !isNil(o.NumberOfGrabs) {
+	if o != nil && !IsNil(o.NumberOfGrabs) {
 		return true
 	}
 
@@ -218,7 +221,7 @@ func (o *IndexerStatistics) SetNumberOfGrabs(v int32) {
 
 // GetNumberOfRssQueries returns the NumberOfRssQueries field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfRssQueries() int32 {
-	if o == nil || isNil(o.NumberOfRssQueries) {
+	if o == nil || IsNil(o.NumberOfRssQueries) {
 		var ret int32
 		return ret
 	}
@@ -228,15 +231,15 @@ func (o *IndexerStatistics) GetNumberOfRssQueries() int32 {
 // GetNumberOfRssQueriesOk returns a tuple with the NumberOfRssQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfRssQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfRssQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfRssQueries) {
+		return nil, false
 	}
 	return o.NumberOfRssQueries, true
 }
 
 // HasNumberOfRssQueries returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfRssQueries() bool {
-	if o != nil && !isNil(o.NumberOfRssQueries) {
+	if o != nil && !IsNil(o.NumberOfRssQueries) {
 		return true
 	}
 
@@ -250,7 +253,7 @@ func (o *IndexerStatistics) SetNumberOfRssQueries(v int32) {
 
 // GetNumberOfAuthQueries returns the NumberOfAuthQueries field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfAuthQueries() int32 {
-	if o == nil || isNil(o.NumberOfAuthQueries) {
+	if o == nil || IsNil(o.NumberOfAuthQueries) {
 		var ret int32
 		return ret
 	}
@@ -260,15 +263,15 @@ func (o *IndexerStatistics) GetNumberOfAuthQueries() int32 {
 // GetNumberOfAuthQueriesOk returns a tuple with the NumberOfAuthQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfAuthQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfAuthQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfAuthQueries) {
+		return nil, false
 	}
 	return o.NumberOfAuthQueries, true
 }
 
 // HasNumberOfAuthQueries returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfAuthQueries() bool {
-	if o != nil && !isNil(o.NumberOfAuthQueries) {
+	if o != nil && !IsNil(o.NumberOfAuthQueries) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *IndexerStatistics) SetNumberOfAuthQueries(v int32) {
 
 // GetNumberOfFailedQueries returns the NumberOfFailedQueries field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfFailedQueries() int32 {
-	if o == nil || isNil(o.NumberOfFailedQueries) {
+	if o == nil || IsNil(o.NumberOfFailedQueries) {
 		var ret int32
 		return ret
 	}
@@ -292,15 +295,15 @@ func (o *IndexerStatistics) GetNumberOfFailedQueries() int32 {
 // GetNumberOfFailedQueriesOk returns a tuple with the NumberOfFailedQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfFailedQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfFailedQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfFailedQueries) {
+		return nil, false
 	}
 	return o.NumberOfFailedQueries, true
 }
 
 // HasNumberOfFailedQueries returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfFailedQueries() bool {
-	if o != nil && !isNil(o.NumberOfFailedQueries) {
+	if o != nil && !IsNil(o.NumberOfFailedQueries) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *IndexerStatistics) SetNumberOfFailedQueries(v int32) {
 
 // GetNumberOfFailedGrabs returns the NumberOfFailedGrabs field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfFailedGrabs() int32 {
-	if o == nil || isNil(o.NumberOfFailedGrabs) {
+	if o == nil || IsNil(o.NumberOfFailedGrabs) {
 		var ret int32
 		return ret
 	}
@@ -324,15 +327,15 @@ func (o *IndexerStatistics) GetNumberOfFailedGrabs() int32 {
 // GetNumberOfFailedGrabsOk returns a tuple with the NumberOfFailedGrabs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfFailedGrabsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfFailedGrabs) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfFailedGrabs) {
+		return nil, false
 	}
 	return o.NumberOfFailedGrabs, true
 }
 
 // HasNumberOfFailedGrabs returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfFailedGrabs() bool {
-	if o != nil && !isNil(o.NumberOfFailedGrabs) {
+	if o != nil && !IsNil(o.NumberOfFailedGrabs) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *IndexerStatistics) SetNumberOfFailedGrabs(v int32) {
 
 // GetNumberOfFailedRssQueries returns the NumberOfFailedRssQueries field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfFailedRssQueries() int32 {
-	if o == nil || isNil(o.NumberOfFailedRssQueries) {
+	if o == nil || IsNil(o.NumberOfFailedRssQueries) {
 		var ret int32
 		return ret
 	}
@@ -356,15 +359,15 @@ func (o *IndexerStatistics) GetNumberOfFailedRssQueries() int32 {
 // GetNumberOfFailedRssQueriesOk returns a tuple with the NumberOfFailedRssQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfFailedRssQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfFailedRssQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfFailedRssQueries) {
+		return nil, false
 	}
 	return o.NumberOfFailedRssQueries, true
 }
 
 // HasNumberOfFailedRssQueries returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfFailedRssQueries() bool {
-	if o != nil && !isNil(o.NumberOfFailedRssQueries) {
+	if o != nil && !IsNil(o.NumberOfFailedRssQueries) {
 		return true
 	}
 
@@ -378,7 +381,7 @@ func (o *IndexerStatistics) SetNumberOfFailedRssQueries(v int32) {
 
 // GetNumberOfFailedAuthQueries returns the NumberOfFailedAuthQueries field value if set, zero value otherwise.
 func (o *IndexerStatistics) GetNumberOfFailedAuthQueries() int32 {
-	if o == nil || isNil(o.NumberOfFailedAuthQueries) {
+	if o == nil || IsNil(o.NumberOfFailedAuthQueries) {
 		var ret int32
 		return ret
 	}
@@ -388,15 +391,15 @@ func (o *IndexerStatistics) GetNumberOfFailedAuthQueries() int32 {
 // GetNumberOfFailedAuthQueriesOk returns a tuple with the NumberOfFailedAuthQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatistics) GetNumberOfFailedAuthQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfFailedAuthQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfFailedAuthQueries) {
+		return nil, false
 	}
 	return o.NumberOfFailedAuthQueries, true
 }
 
 // HasNumberOfFailedAuthQueries returns a boolean if a field has been set.
 func (o *IndexerStatistics) HasNumberOfFailedAuthQueries() bool {
-	if o != nil && !isNil(o.NumberOfFailedAuthQueries) {
+	if o != nil && !IsNil(o.NumberOfFailedAuthQueries) {
 		return true
 	}
 
@@ -409,41 +412,49 @@ func (o *IndexerStatistics) SetNumberOfFailedAuthQueries(v int32) {
 }
 
 func (o IndexerStatistics) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerStatistics) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IndexerId) {
+	if !IsNil(o.IndexerId) {
 		toSerialize["indexerId"] = o.IndexerId
 	}
 	if o.IndexerName.IsSet() {
 		toSerialize["indexerName"] = o.IndexerName.Get()
 	}
-	if !isNil(o.AverageResponseTime) {
+	if !IsNil(o.AverageResponseTime) {
 		toSerialize["averageResponseTime"] = o.AverageResponseTime
 	}
-	if !isNil(o.NumberOfQueries) {
+	if !IsNil(o.NumberOfQueries) {
 		toSerialize["numberOfQueries"] = o.NumberOfQueries
 	}
-	if !isNil(o.NumberOfGrabs) {
+	if !IsNil(o.NumberOfGrabs) {
 		toSerialize["numberOfGrabs"] = o.NumberOfGrabs
 	}
-	if !isNil(o.NumberOfRssQueries) {
+	if !IsNil(o.NumberOfRssQueries) {
 		toSerialize["numberOfRssQueries"] = o.NumberOfRssQueries
 	}
-	if !isNil(o.NumberOfAuthQueries) {
+	if !IsNil(o.NumberOfAuthQueries) {
 		toSerialize["numberOfAuthQueries"] = o.NumberOfAuthQueries
 	}
-	if !isNil(o.NumberOfFailedQueries) {
+	if !IsNil(o.NumberOfFailedQueries) {
 		toSerialize["numberOfFailedQueries"] = o.NumberOfFailedQueries
 	}
-	if !isNil(o.NumberOfFailedGrabs) {
+	if !IsNil(o.NumberOfFailedGrabs) {
 		toSerialize["numberOfFailedGrabs"] = o.NumberOfFailedGrabs
 	}
-	if !isNil(o.NumberOfFailedRssQueries) {
+	if !IsNil(o.NumberOfFailedRssQueries) {
 		toSerialize["numberOfFailedRssQueries"] = o.NumberOfFailedRssQueries
 	}
-	if !isNil(o.NumberOfFailedAuthQueries) {
+	if !IsNil(o.NumberOfFailedAuthQueries) {
 		toSerialize["numberOfFailedAuthQueries"] = o.NumberOfFailedAuthQueries
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerStatistics struct {

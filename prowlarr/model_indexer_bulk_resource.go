@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerBulkResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerBulkResource{}
+
 // IndexerBulkResource struct for IndexerBulkResource
 type IndexerBulkResource struct {
-	Ids []*int32 `json:"ids,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Ids []int32 `json:"ids,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	Enable NullableBool `json:"enable,omitempty"`
 	AppProfileId NullableInt32 `json:"appProfileId,omitempty"`
@@ -46,9 +49,9 @@ func NewIndexerBulkResourceWithDefaults() *IndexerBulkResource {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerBulkResource) GetIds() []*int32 {
+func (o *IndexerBulkResource) GetIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Ids
@@ -57,16 +60,16 @@ func (o *IndexerBulkResource) GetIds() []*int32 {
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerBulkResource) GetIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Ids) {
-    return nil, false
+func (o *IndexerBulkResource) GetIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Ids) {
+		return nil, false
 	}
 	return o.Ids, true
 }
 
 // HasIds returns a boolean if a field has been set.
 func (o *IndexerBulkResource) HasIds() bool {
-	if o != nil && isNil(o.Ids) {
+	if o != nil && IsNil(o.Ids) {
 		return true
 	}
 
@@ -74,14 +77,14 @@ func (o *IndexerBulkResource) HasIds() bool {
 }
 
 // SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *IndexerBulkResource) SetIds(v []*int32) {
+func (o *IndexerBulkResource) SetIds(v []int32) {
 	o.Ids = v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerBulkResource) GetTags() []*int32 {
+func (o *IndexerBulkResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -90,16 +93,16 @@ func (o *IndexerBulkResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerBulkResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *IndexerBulkResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *IndexerBulkResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -107,13 +110,13 @@ func (o *IndexerBulkResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *IndexerBulkResource) SetTags(v []*int32) {
+func (o *IndexerBulkResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetApplyTags returns the ApplyTags field value if set, zero value otherwise.
 func (o *IndexerBulkResource) GetApplyTags() ApplyTags {
-	if o == nil || isNil(o.ApplyTags) {
+	if o == nil || IsNil(o.ApplyTags) {
 		var ret ApplyTags
 		return ret
 	}
@@ -123,15 +126,15 @@ func (o *IndexerBulkResource) GetApplyTags() ApplyTags {
 // GetApplyTagsOk returns a tuple with the ApplyTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerBulkResource) GetApplyTagsOk() (*ApplyTags, bool) {
-	if o == nil || isNil(o.ApplyTags) {
-    return nil, false
+	if o == nil || IsNil(o.ApplyTags) {
+		return nil, false
 	}
 	return o.ApplyTags, true
 }
 
 // HasApplyTags returns a boolean if a field has been set.
 func (o *IndexerBulkResource) HasApplyTags() bool {
-	if o != nil && !isNil(o.ApplyTags) {
+	if o != nil && !IsNil(o.ApplyTags) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *IndexerBulkResource) SetApplyTags(v ApplyTags) {
 
 // GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetEnable() bool {
-	if o == nil || isNil(o.Enable.Get()) {
+	if o == nil || IsNil(o.Enable.Get()) {
 		var ret bool
 		return ret
 	}
@@ -157,7 +160,7 @@ func (o *IndexerBulkResource) GetEnable() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetEnableOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Enable.Get(), o.Enable.IsSet()
 }
@@ -187,7 +190,7 @@ func (o *IndexerBulkResource) UnsetEnable() {
 
 // GetAppProfileId returns the AppProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetAppProfileId() int32 {
-	if o == nil || isNil(o.AppProfileId.Get()) {
+	if o == nil || IsNil(o.AppProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *IndexerBulkResource) GetAppProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetAppProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AppProfileId.Get(), o.AppProfileId.IsSet()
 }
@@ -229,7 +232,7 @@ func (o *IndexerBulkResource) UnsetAppProfileId() {
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetPriority() int32 {
-	if o == nil || isNil(o.Priority.Get()) {
+	if o == nil || IsNil(o.Priority.Get()) {
 		var ret int32
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *IndexerBulkResource) GetPriority() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetPriorityOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Priority.Get(), o.Priority.IsSet()
 }
@@ -271,7 +274,7 @@ func (o *IndexerBulkResource) UnsetPriority() {
 
 // GetMinimumSeeders returns the MinimumSeeders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetMinimumSeeders() int32 {
-	if o == nil || isNil(o.MinimumSeeders.Get()) {
+	if o == nil || IsNil(o.MinimumSeeders.Get()) {
 		var ret int32
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *IndexerBulkResource) GetMinimumSeeders() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetMinimumSeedersOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumSeeders.Get(), o.MinimumSeeders.IsSet()
 }
@@ -313,7 +316,7 @@ func (o *IndexerBulkResource) UnsetMinimumSeeders() {
 
 // GetSeedRatio returns the SeedRatio field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetSeedRatio() float64 {
-	if o == nil || isNil(o.SeedRatio.Get()) {
+	if o == nil || IsNil(o.SeedRatio.Get()) {
 		var ret float64
 		return ret
 	}
@@ -325,7 +328,7 @@ func (o *IndexerBulkResource) GetSeedRatio() float64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetSeedRatioOk() (*float64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeedRatio.Get(), o.SeedRatio.IsSet()
 }
@@ -355,7 +358,7 @@ func (o *IndexerBulkResource) UnsetSeedRatio() {
 
 // GetSeedTime returns the SeedTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetSeedTime() int32 {
-	if o == nil || isNil(o.SeedTime.Get()) {
+	if o == nil || IsNil(o.SeedTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -367,7 +370,7 @@ func (o *IndexerBulkResource) GetSeedTime() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetSeedTimeOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeedTime.Get(), o.SeedTime.IsSet()
 }
@@ -397,7 +400,7 @@ func (o *IndexerBulkResource) UnsetSeedTime() {
 
 // GetPackSeedTime returns the PackSeedTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerBulkResource) GetPackSeedTime() int32 {
-	if o == nil || isNil(o.PackSeedTime.Get()) {
+	if o == nil || IsNil(o.PackSeedTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -409,7 +412,7 @@ func (o *IndexerBulkResource) GetPackSeedTime() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerBulkResource) GetPackSeedTimeOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PackSeedTime.Get(), o.PackSeedTime.IsSet()
 }
@@ -438,6 +441,14 @@ func (o *IndexerBulkResource) UnsetPackSeedTime() {
 }
 
 func (o IndexerBulkResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerBulkResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Ids != nil {
 		toSerialize["ids"] = o.Ids
@@ -445,7 +456,7 @@ func (o IndexerBulkResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.ApplyTags) {
+	if !IsNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
 	}
 	if o.Enable.IsSet() {
@@ -469,7 +480,7 @@ func (o IndexerBulkResource) MarshalJSON() ([]byte, error) {
 	if o.PackSeedTime.IsSet() {
 		toSerialize["packSeedTime"] = o.PackSeedTime.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerBulkResource struct {

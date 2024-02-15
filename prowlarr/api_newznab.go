@@ -22,6 +22,7 @@ import (
 
 // NewznabAPIService NewznabAPI service
 type NewznabAPIService service
+
 type ApiGetIndexerDownloadRequest struct {
 	ctx context.Context
 	ApiService *NewznabAPIService
@@ -73,17 +74,17 @@ func (a *NewznabAPIService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadReq
 	}
 
 	localVarPath := localBasePath + "/api/v1/indexer/{id}/download"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.link != nil {
-		localVarQueryParams.Add("link", parameterToString(*r.link, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link", r.link, "")
 	}
 	if r.file != nil {
-		localVarQueryParams.Add("file", parameterToString(*r.file, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "file", r.file, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -157,6 +158,7 @@ func (a *NewznabAPIService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadReq
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetIndexerNewznabRequest struct {
 	ctx context.Context
 	ApiService *NewznabAPIService
@@ -388,107 +390,107 @@ func (a *NewznabAPIService) GetIndexerNewznabExecute(r ApiGetIndexerNewznabReque
 	}
 
 	localVarPath := localBasePath + "/api/v1/indexer/{id}/newznab"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.t != nil {
-		localVarQueryParams.Add("t", parameterToString(*r.t, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "t", r.t, "")
 	}
 	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
 	}
 	if r.cat != nil {
-		localVarQueryParams.Add("cat", parameterToString(*r.cat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cat", r.cat, "")
 	}
 	if r.imdbid != nil {
-		localVarQueryParams.Add("imdbid", parameterToString(*r.imdbid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "imdbid", r.imdbid, "")
 	}
 	if r.tmdbid != nil {
-		localVarQueryParams.Add("tmdbid", parameterToString(*r.tmdbid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbid", r.tmdbid, "")
 	}
 	if r.extended != nil {
-		localVarQueryParams.Add("extended", parameterToString(*r.extended, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "extended", r.extended, "")
 	}
 	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
 	}
 	if r.minage != nil {
-		localVarQueryParams.Add("minage", parameterToString(*r.minage, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "minage", r.minage, "")
 	}
 	if r.maxage != nil {
-		localVarQueryParams.Add("maxage", parameterToString(*r.maxage, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maxage", r.maxage, "")
 	}
 	if r.minsize != nil {
-		localVarQueryParams.Add("minsize", parameterToString(*r.minsize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "minsize", r.minsize, "")
 	}
 	if r.maxsize != nil {
-		localVarQueryParams.Add("maxsize", parameterToString(*r.maxsize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maxsize", r.maxsize, "")
 	}
 	if r.rid != nil {
-		localVarQueryParams.Add("rid", parameterToString(*r.rid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rid", r.rid, "")
 	}
 	if r.tvmazeid != nil {
-		localVarQueryParams.Add("tvmazeid", parameterToString(*r.tvmazeid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tvmazeid", r.tvmazeid, "")
 	}
 	if r.traktid != nil {
-		localVarQueryParams.Add("traktid", parameterToString(*r.traktid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "traktid", r.traktid, "")
 	}
 	if r.tvdbid != nil {
-		localVarQueryParams.Add("tvdbid", parameterToString(*r.tvdbid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tvdbid", r.tvdbid, "")
 	}
 	if r.doubanid != nil {
-		localVarQueryParams.Add("doubanid", parameterToString(*r.doubanid, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "doubanid", r.doubanid, "")
 	}
 	if r.season != nil {
-		localVarQueryParams.Add("season", parameterToString(*r.season, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "season", r.season, "")
 	}
 	if r.ep != nil {
-		localVarQueryParams.Add("ep", parameterToString(*r.ep, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ep", r.ep, "")
 	}
 	if r.album != nil {
-		localVarQueryParams.Add("album", parameterToString(*r.album, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "album", r.album, "")
 	}
 	if r.artist != nil {
-		localVarQueryParams.Add("artist", parameterToString(*r.artist, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artist", r.artist, "")
 	}
 	if r.label != nil {
-		localVarQueryParams.Add("label", parameterToString(*r.label, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "label", r.label, "")
 	}
 	if r.track != nil {
-		localVarQueryParams.Add("track", parameterToString(*r.track, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "track", r.track, "")
 	}
 	if r.year != nil {
-		localVarQueryParams.Add("year", parameterToString(*r.year, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "")
 	}
 	if r.genre != nil {
-		localVarQueryParams.Add("genre", parameterToString(*r.genre, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "genre", r.genre, "")
 	}
 	if r.author != nil {
-		localVarQueryParams.Add("author", parameterToString(*r.author, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "author", r.author, "")
 	}
 	if r.title != nil {
-		localVarQueryParams.Add("title", parameterToString(*r.title, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "title", r.title, "")
 	}
 	if r.publisher != nil {
-		localVarQueryParams.Add("publisher", parameterToString(*r.publisher, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "publisher", r.publisher, "")
 	}
 	if r.configured != nil {
-		localVarQueryParams.Add("configured", parameterToString(*r.configured, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "configured", r.configured, "")
 	}
 	if r.source != nil {
-		localVarQueryParams.Add("source", parameterToString(*r.source, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "")
 	}
 	if r.host != nil {
-		localVarQueryParams.Add("host", parameterToString(*r.host, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "host", r.host, "")
 	}
 	if r.server != nil {
-		localVarQueryParams.Add("server", parameterToString(*r.server, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "server", r.server, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

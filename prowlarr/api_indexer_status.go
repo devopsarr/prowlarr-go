@@ -21,12 +21,13 @@ import (
 
 // IndexerStatusAPIService IndexerStatusAPI service
 type IndexerStatusAPIService service
+
 type ApiListIndexerStatusRequest struct {
 	ctx context.Context
 	ApiService *IndexerStatusAPIService
 }
 
-func (r ApiListIndexerStatusRequest) Execute() ([]*IndexerStatusResource, *http.Response, error) {
+func (r ApiListIndexerStatusRequest) Execute() ([]IndexerStatusResource, *http.Response, error) {
 	return r.ApiService.ListIndexerStatusExecute(r)
 }
 
@@ -45,12 +46,12 @@ func (a *IndexerStatusAPIService) ListIndexerStatus(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []IndexerStatusResource
-func (a *IndexerStatusAPIService) ListIndexerStatusExecute(r ApiListIndexerStatusRequest) ([]*IndexerStatusResource, *http.Response, error) {
+func (a *IndexerStatusAPIService) ListIndexerStatusExecute(r ApiListIndexerStatusRequest) ([]IndexerStatusResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerStatusResource
+		localVarReturnValue  []IndexerStatusResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerStatusAPIService.ListIndexerStatus")

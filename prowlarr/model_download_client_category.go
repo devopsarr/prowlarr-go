@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the DownloadClientCategory type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DownloadClientCategory{}
+
 // DownloadClientCategory struct for DownloadClientCategory
 type DownloadClientCategory struct {
 	ClientCategory NullableString `json:"clientCategory,omitempty"`
-	Categories []*int32 `json:"categories,omitempty"`
+	Categories []int32 `json:"categories,omitempty"`
 }
 
 // NewDownloadClientCategory instantiates a new DownloadClientCategory object
@@ -39,7 +42,7 @@ func NewDownloadClientCategoryWithDefaults() *DownloadClientCategory {
 
 // GetClientCategory returns the ClientCategory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientCategory) GetClientCategory() string {
-	if o == nil || isNil(o.ClientCategory.Get()) {
+	if o == nil || IsNil(o.ClientCategory.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *DownloadClientCategory) GetClientCategory() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientCategory) GetClientCategoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientCategory.Get(), o.ClientCategory.IsSet()
 }
@@ -80,9 +83,9 @@ func (o *DownloadClientCategory) UnsetClientCategory() {
 }
 
 // GetCategories returns the Categories field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientCategory) GetCategories() []*int32 {
+func (o *DownloadClientCategory) GetCategories() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Categories
@@ -91,16 +94,16 @@ func (o *DownloadClientCategory) GetCategories() []*int32 {
 // GetCategoriesOk returns a tuple with the Categories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientCategory) GetCategoriesOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Categories) {
-    return nil, false
+func (o *DownloadClientCategory) GetCategoriesOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Categories) {
+		return nil, false
 	}
 	return o.Categories, true
 }
 
 // HasCategories returns a boolean if a field has been set.
 func (o *DownloadClientCategory) HasCategories() bool {
-	if o != nil && isNil(o.Categories) {
+	if o != nil && IsNil(o.Categories) {
 		return true
 	}
 
@@ -108,11 +111,19 @@ func (o *DownloadClientCategory) HasCategories() bool {
 }
 
 // SetCategories gets a reference to the given []int32 and assigns it to the Categories field.
-func (o *DownloadClientCategory) SetCategories(v []*int32) {
+func (o *DownloadClientCategory) SetCategories(v []int32) {
 	o.Categories = v
 }
 
 func (o DownloadClientCategory) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DownloadClientCategory) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ClientCategory.IsSet() {
 		toSerialize["clientCategory"] = o.ClientCategory.Get()
@@ -120,7 +131,7 @@ func (o DownloadClientCategory) MarshalJSON() ([]byte, error) {
 	if o.Categories != nil {
 		toSerialize["categories"] = o.Categories
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDownloadClientCategory struct {

@@ -22,6 +22,7 @@ import (
 
 // SearchAPIService SearchAPI service
 type SearchAPIService service
+
 type ApiCreateSearchRequest struct {
 	ctx context.Context
 	ApiService *SearchAPIService
@@ -154,6 +155,7 @@ func (a *SearchAPIService) CreateSearchExecute(r ApiCreateSearchRequest) (*Relea
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateSearchBulkRequest struct {
 	ctx context.Context
 	ApiService *SearchAPIService
@@ -286,6 +288,7 @@ func (a *SearchAPIService) CreateSearchBulkExecute(r ApiCreateSearchBulkRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListSearchRequest struct {
 	ctx context.Context
 	ApiService *SearchAPIService
@@ -327,7 +330,7 @@ func (r ApiListSearchRequest) Offset(offset int32) ApiListSearchRequest {
 	return r
 }
 
-func (r ApiListSearchRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
+func (r ApiListSearchRequest) Execute() ([]ReleaseResource, *http.Response, error) {
 	return r.ApiService.ListSearchExecute(r)
 }
 
@@ -346,12 +349,12 @@ func (a *SearchAPIService) ListSearch(ctx context.Context) ApiListSearchRequest 
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *SearchAPIService) ListSearchExecute(r ApiListSearchRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *SearchAPIService) ListSearchExecute(r ApiListSearchRequest) ([]ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseResource
+		localVarReturnValue  []ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.ListSearch")
@@ -366,20 +369,20 @@ func (a *SearchAPIService) ListSearchExecute(r ApiListSearchRequest) ([]*Release
 	localVarFormParams := url.Values{}
 
 	if r.query != nil {
-		localVarQueryParams.Add("query", parameterToString(*r.query, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
 	}
 	if r.type_ != nil {
-		localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
 	}
 	if r.indexerIds != nil {
 		t := *r.indexerIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("indexerIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "indexerIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("indexerIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "indexerIds", t, "multi")
 		}
 	}
 	if r.categories != nil {
@@ -387,17 +390,17 @@ func (a *SearchAPIService) ListSearchExecute(r ApiListSearchRequest) ([]*Release
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("categories", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "categories", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("categories", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "categories", t, "multi")
 		}
 	}
 	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

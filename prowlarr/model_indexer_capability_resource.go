@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerCapabilityResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerCapabilityResource{}
+
 // IndexerCapabilityResource struct for IndexerCapabilityResource
 type IndexerCapabilityResource struct {
 	Id *int32 `json:"id,omitempty"`
 	LimitsMax NullableInt32 `json:"limitsMax,omitempty"`
 	LimitsDefault NullableInt32 `json:"limitsDefault,omitempty"`
-	Categories []*IndexerCategory `json:"categories,omitempty"`
+	Categories []IndexerCategory `json:"categories,omitempty"`
 	SupportsRawSearch *bool `json:"supportsRawSearch,omitempty"`
-	SearchParams []*SearchParam `json:"searchParams,omitempty"`
-	TvSearchParams []*TvSearchParam `json:"tvSearchParams,omitempty"`
-	MovieSearchParams []*MovieSearchParam `json:"movieSearchParams,omitempty"`
-	MusicSearchParams []*MusicSearchParam `json:"musicSearchParams,omitempty"`
-	BookSearchParams []*BookSearchParam `json:"bookSearchParams,omitempty"`
+	SearchParams []SearchParam `json:"searchParams,omitempty"`
+	TvSearchParams []TvSearchParam `json:"tvSearchParams,omitempty"`
+	MovieSearchParams []MovieSearchParam `json:"movieSearchParams,omitempty"`
+	MusicSearchParams []MusicSearchParam `json:"musicSearchParams,omitempty"`
+	BookSearchParams []BookSearchParam `json:"bookSearchParams,omitempty"`
 }
 
 // NewIndexerCapabilityResource instantiates a new IndexerCapabilityResource object
@@ -47,7 +50,7 @@ func NewIndexerCapabilityResourceWithDefaults() *IndexerCapabilityResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerCapabilityResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -57,15 +60,15 @@ func (o *IndexerCapabilityResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerCapabilityResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -79,7 +82,7 @@ func (o *IndexerCapabilityResource) SetId(v int32) {
 
 // GetLimitsMax returns the LimitsMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerCapabilityResource) GetLimitsMax() int32 {
-	if o == nil || isNil(o.LimitsMax.Get()) {
+	if o == nil || IsNil(o.LimitsMax.Get()) {
 		var ret int32
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *IndexerCapabilityResource) GetLimitsMax() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerCapabilityResource) GetLimitsMaxOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LimitsMax.Get(), o.LimitsMax.IsSet()
 }
@@ -121,7 +124,7 @@ func (o *IndexerCapabilityResource) UnsetLimitsMax() {
 
 // GetLimitsDefault returns the LimitsDefault field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerCapabilityResource) GetLimitsDefault() int32 {
-	if o == nil || isNil(o.LimitsDefault.Get()) {
+	if o == nil || IsNil(o.LimitsDefault.Get()) {
 		var ret int32
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *IndexerCapabilityResource) GetLimitsDefault() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerCapabilityResource) GetLimitsDefaultOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LimitsDefault.Get(), o.LimitsDefault.IsSet()
 }
@@ -162,9 +165,9 @@ func (o *IndexerCapabilityResource) UnsetLimitsDefault() {
 }
 
 // GetCategories returns the Categories field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerCapabilityResource) GetCategories() []*IndexerCategory {
+func (o *IndexerCapabilityResource) GetCategories() []IndexerCategory {
 	if o == nil {
-		var ret []*IndexerCategory
+		var ret []IndexerCategory
 		return ret
 	}
 	return o.Categories
@@ -173,16 +176,16 @@ func (o *IndexerCapabilityResource) GetCategories() []*IndexerCategory {
 // GetCategoriesOk returns a tuple with the Categories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerCapabilityResource) GetCategoriesOk() ([]*IndexerCategory, bool) {
-	if o == nil || isNil(o.Categories) {
-    return nil, false
+func (o *IndexerCapabilityResource) GetCategoriesOk() ([]IndexerCategory, bool) {
+	if o == nil || IsNil(o.Categories) {
+		return nil, false
 	}
 	return o.Categories, true
 }
 
 // HasCategories returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasCategories() bool {
-	if o != nil && isNil(o.Categories) {
+	if o != nil && IsNil(o.Categories) {
 		return true
 	}
 
@@ -190,13 +193,13 @@ func (o *IndexerCapabilityResource) HasCategories() bool {
 }
 
 // SetCategories gets a reference to the given []IndexerCategory and assigns it to the Categories field.
-func (o *IndexerCapabilityResource) SetCategories(v []*IndexerCategory) {
+func (o *IndexerCapabilityResource) SetCategories(v []IndexerCategory) {
 	o.Categories = v
 }
 
 // GetSupportsRawSearch returns the SupportsRawSearch field value if set, zero value otherwise.
 func (o *IndexerCapabilityResource) GetSupportsRawSearch() bool {
-	if o == nil || isNil(o.SupportsRawSearch) {
+	if o == nil || IsNil(o.SupportsRawSearch) {
 		var ret bool
 		return ret
 	}
@@ -206,15 +209,15 @@ func (o *IndexerCapabilityResource) GetSupportsRawSearch() bool {
 // GetSupportsRawSearchOk returns a tuple with the SupportsRawSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerCapabilityResource) GetSupportsRawSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsRawSearch) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsRawSearch) {
+		return nil, false
 	}
 	return o.SupportsRawSearch, true
 }
 
 // HasSupportsRawSearch returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasSupportsRawSearch() bool {
-	if o != nil && !isNil(o.SupportsRawSearch) {
+	if o != nil && !IsNil(o.SupportsRawSearch) {
 		return true
 	}
 
@@ -227,9 +230,9 @@ func (o *IndexerCapabilityResource) SetSupportsRawSearch(v bool) {
 }
 
 // GetSearchParams returns the SearchParams field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerCapabilityResource) GetSearchParams() []*SearchParam {
+func (o *IndexerCapabilityResource) GetSearchParams() []SearchParam {
 	if o == nil {
-		var ret []*SearchParam
+		var ret []SearchParam
 		return ret
 	}
 	return o.SearchParams
@@ -238,16 +241,16 @@ func (o *IndexerCapabilityResource) GetSearchParams() []*SearchParam {
 // GetSearchParamsOk returns a tuple with the SearchParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerCapabilityResource) GetSearchParamsOk() ([]*SearchParam, bool) {
-	if o == nil || isNil(o.SearchParams) {
-    return nil, false
+func (o *IndexerCapabilityResource) GetSearchParamsOk() ([]SearchParam, bool) {
+	if o == nil || IsNil(o.SearchParams) {
+		return nil, false
 	}
 	return o.SearchParams, true
 }
 
 // HasSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasSearchParams() bool {
-	if o != nil && isNil(o.SearchParams) {
+	if o != nil && IsNil(o.SearchParams) {
 		return true
 	}
 
@@ -255,14 +258,14 @@ func (o *IndexerCapabilityResource) HasSearchParams() bool {
 }
 
 // SetSearchParams gets a reference to the given []SearchParam and assigns it to the SearchParams field.
-func (o *IndexerCapabilityResource) SetSearchParams(v []*SearchParam) {
+func (o *IndexerCapabilityResource) SetSearchParams(v []SearchParam) {
 	o.SearchParams = v
 }
 
 // GetTvSearchParams returns the TvSearchParams field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerCapabilityResource) GetTvSearchParams() []*TvSearchParam {
+func (o *IndexerCapabilityResource) GetTvSearchParams() []TvSearchParam {
 	if o == nil {
-		var ret []*TvSearchParam
+		var ret []TvSearchParam
 		return ret
 	}
 	return o.TvSearchParams
@@ -271,16 +274,16 @@ func (o *IndexerCapabilityResource) GetTvSearchParams() []*TvSearchParam {
 // GetTvSearchParamsOk returns a tuple with the TvSearchParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerCapabilityResource) GetTvSearchParamsOk() ([]*TvSearchParam, bool) {
-	if o == nil || isNil(o.TvSearchParams) {
-    return nil, false
+func (o *IndexerCapabilityResource) GetTvSearchParamsOk() ([]TvSearchParam, bool) {
+	if o == nil || IsNil(o.TvSearchParams) {
+		return nil, false
 	}
 	return o.TvSearchParams, true
 }
 
 // HasTvSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasTvSearchParams() bool {
-	if o != nil && isNil(o.TvSearchParams) {
+	if o != nil && IsNil(o.TvSearchParams) {
 		return true
 	}
 
@@ -288,14 +291,14 @@ func (o *IndexerCapabilityResource) HasTvSearchParams() bool {
 }
 
 // SetTvSearchParams gets a reference to the given []TvSearchParam and assigns it to the TvSearchParams field.
-func (o *IndexerCapabilityResource) SetTvSearchParams(v []*TvSearchParam) {
+func (o *IndexerCapabilityResource) SetTvSearchParams(v []TvSearchParam) {
 	o.TvSearchParams = v
 }
 
 // GetMovieSearchParams returns the MovieSearchParams field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerCapabilityResource) GetMovieSearchParams() []*MovieSearchParam {
+func (o *IndexerCapabilityResource) GetMovieSearchParams() []MovieSearchParam {
 	if o == nil {
-		var ret []*MovieSearchParam
+		var ret []MovieSearchParam
 		return ret
 	}
 	return o.MovieSearchParams
@@ -304,16 +307,16 @@ func (o *IndexerCapabilityResource) GetMovieSearchParams() []*MovieSearchParam {
 // GetMovieSearchParamsOk returns a tuple with the MovieSearchParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerCapabilityResource) GetMovieSearchParamsOk() ([]*MovieSearchParam, bool) {
-	if o == nil || isNil(o.MovieSearchParams) {
-    return nil, false
+func (o *IndexerCapabilityResource) GetMovieSearchParamsOk() ([]MovieSearchParam, bool) {
+	if o == nil || IsNil(o.MovieSearchParams) {
+		return nil, false
 	}
 	return o.MovieSearchParams, true
 }
 
 // HasMovieSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasMovieSearchParams() bool {
-	if o != nil && isNil(o.MovieSearchParams) {
+	if o != nil && IsNil(o.MovieSearchParams) {
 		return true
 	}
 
@@ -321,14 +324,14 @@ func (o *IndexerCapabilityResource) HasMovieSearchParams() bool {
 }
 
 // SetMovieSearchParams gets a reference to the given []MovieSearchParam and assigns it to the MovieSearchParams field.
-func (o *IndexerCapabilityResource) SetMovieSearchParams(v []*MovieSearchParam) {
+func (o *IndexerCapabilityResource) SetMovieSearchParams(v []MovieSearchParam) {
 	o.MovieSearchParams = v
 }
 
 // GetMusicSearchParams returns the MusicSearchParams field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerCapabilityResource) GetMusicSearchParams() []*MusicSearchParam {
+func (o *IndexerCapabilityResource) GetMusicSearchParams() []MusicSearchParam {
 	if o == nil {
-		var ret []*MusicSearchParam
+		var ret []MusicSearchParam
 		return ret
 	}
 	return o.MusicSearchParams
@@ -337,16 +340,16 @@ func (o *IndexerCapabilityResource) GetMusicSearchParams() []*MusicSearchParam {
 // GetMusicSearchParamsOk returns a tuple with the MusicSearchParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerCapabilityResource) GetMusicSearchParamsOk() ([]*MusicSearchParam, bool) {
-	if o == nil || isNil(o.MusicSearchParams) {
-    return nil, false
+func (o *IndexerCapabilityResource) GetMusicSearchParamsOk() ([]MusicSearchParam, bool) {
+	if o == nil || IsNil(o.MusicSearchParams) {
+		return nil, false
 	}
 	return o.MusicSearchParams, true
 }
 
 // HasMusicSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasMusicSearchParams() bool {
-	if o != nil && isNil(o.MusicSearchParams) {
+	if o != nil && IsNil(o.MusicSearchParams) {
 		return true
 	}
 
@@ -354,14 +357,14 @@ func (o *IndexerCapabilityResource) HasMusicSearchParams() bool {
 }
 
 // SetMusicSearchParams gets a reference to the given []MusicSearchParam and assigns it to the MusicSearchParams field.
-func (o *IndexerCapabilityResource) SetMusicSearchParams(v []*MusicSearchParam) {
+func (o *IndexerCapabilityResource) SetMusicSearchParams(v []MusicSearchParam) {
 	o.MusicSearchParams = v
 }
 
 // GetBookSearchParams returns the BookSearchParams field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerCapabilityResource) GetBookSearchParams() []*BookSearchParam {
+func (o *IndexerCapabilityResource) GetBookSearchParams() []BookSearchParam {
 	if o == nil {
-		var ret []*BookSearchParam
+		var ret []BookSearchParam
 		return ret
 	}
 	return o.BookSearchParams
@@ -370,16 +373,16 @@ func (o *IndexerCapabilityResource) GetBookSearchParams() []*BookSearchParam {
 // GetBookSearchParamsOk returns a tuple with the BookSearchParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerCapabilityResource) GetBookSearchParamsOk() ([]*BookSearchParam, bool) {
-	if o == nil || isNil(o.BookSearchParams) {
-    return nil, false
+func (o *IndexerCapabilityResource) GetBookSearchParamsOk() ([]BookSearchParam, bool) {
+	if o == nil || IsNil(o.BookSearchParams) {
+		return nil, false
 	}
 	return o.BookSearchParams, true
 }
 
 // HasBookSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasBookSearchParams() bool {
-	if o != nil && isNil(o.BookSearchParams) {
+	if o != nil && IsNil(o.BookSearchParams) {
 		return true
 	}
 
@@ -387,13 +390,21 @@ func (o *IndexerCapabilityResource) HasBookSearchParams() bool {
 }
 
 // SetBookSearchParams gets a reference to the given []BookSearchParam and assigns it to the BookSearchParams field.
-func (o *IndexerCapabilityResource) SetBookSearchParams(v []*BookSearchParam) {
+func (o *IndexerCapabilityResource) SetBookSearchParams(v []BookSearchParam) {
 	o.BookSearchParams = v
 }
 
 func (o IndexerCapabilityResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerCapabilityResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.LimitsMax.IsSet() {
@@ -405,7 +416,7 @@ func (o IndexerCapabilityResource) MarshalJSON() ([]byte, error) {
 	if o.Categories != nil {
 		toSerialize["categories"] = o.Categories
 	}
-	if !isNil(o.SupportsRawSearch) {
+	if !IsNil(o.SupportsRawSearch) {
 		toSerialize["supportsRawSearch"] = o.SupportsRawSearch
 	}
 	if o.SearchParams != nil {
@@ -423,7 +434,7 @@ func (o IndexerCapabilityResource) MarshalJSON() ([]byte, error) {
 	if o.BookSearchParams != nil {
 		toSerialize["bookSearchParams"] = o.BookSearchParams
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerCapabilityResource struct {

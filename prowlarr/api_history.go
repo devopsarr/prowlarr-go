@@ -23,6 +23,7 @@ import (
 
 // HistoryAPIService HistoryAPI service
 type HistoryAPIService service
+
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -115,43 +116,49 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	} else {
+		var defaultValue int32 = 1
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+	} else {
+		var defaultValue int32 = 10
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
 	}
 	if r.sortDirection != nil {
-		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("eventType", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("eventType", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "multi")
 		}
 	}
 	if r.successful != nil {
-		localVarQueryParams.Add("successful", parameterToString(*r.successful, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "successful", r.successful, "")
 	}
 	if r.downloadId != nil {
-		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
 	}
 	if r.indexerIds != nil {
 		t := *r.indexerIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("indexerIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "indexerIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("indexerIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "indexerIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -235,6 +242,7 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHistoryIndexerRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -258,7 +266,7 @@ func (r ApiListHistoryIndexerRequest) Limit(limit int32) ApiListHistoryIndexerRe
 	return r
 }
 
-func (r ApiListHistoryIndexerRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+func (r ApiListHistoryIndexerRequest) Execute() ([]HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistoryIndexerExecute(r)
 }
 
@@ -277,12 +285,12 @@ func (a *HistoryAPIService) ListHistoryIndexer(ctx context.Context) ApiListHisto
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryAPIService) ListHistoryIndexerExecute(r ApiListHistoryIndexerRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistoryIndexerExecute(r ApiListHistoryIndexerRequest) ([]HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HistoryResource
+		localVarReturnValue  []HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistoryIndexer")
@@ -297,13 +305,13 @@ func (a *HistoryAPIService) ListHistoryIndexerExecute(r ApiListHistoryIndexerReq
 	localVarFormParams := url.Values{}
 
 	if r.indexerId != nil {
-		localVarQueryParams.Add("indexerId", parameterToString(*r.indexerId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "indexerId", r.indexerId, "")
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
 	}
 	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -386,6 +394,7 @@ func (a *HistoryAPIService) ListHistoryIndexerExecute(r ApiListHistoryIndexerReq
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHistorySinceRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -403,7 +412,7 @@ func (r ApiListHistorySinceRequest) EventType(eventType HistoryEventType) ApiLis
 	return r
 }
 
-func (r ApiListHistorySinceRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+func (r ApiListHistorySinceRequest) Execute() ([]HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistorySinceExecute(r)
 }
 
@@ -422,12 +431,12 @@ func (a *HistoryAPIService) ListHistorySince(ctx context.Context) ApiListHistory
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HistoryResource
+		localVarReturnValue  []HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistorySince")
@@ -442,10 +451,10 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	localVarFormParams := url.Values{}
 
 	if r.date != nil {
-		localVarQueryParams.Add("date", parameterToString(*r.date, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

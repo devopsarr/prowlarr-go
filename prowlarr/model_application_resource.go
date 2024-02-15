@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the ApplicationResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ApplicationResource{}
+
 // ApplicationResource struct for ApplicationResource
 type ApplicationResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*ApplicationResource `json:"presets,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []ApplicationResource `json:"presets,omitempty"`
 	SyncLevel *ApplicationSyncLevel `json:"syncLevel,omitempty"`
 	TestCommand NullableString `json:"testCommand,omitempty"`
 }
@@ -49,7 +52,7 @@ func NewApplicationResourceWithDefaults() *ApplicationResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ApplicationResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -59,15 +62,15 @@ func (o *ApplicationResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ApplicationResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *ApplicationResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplicationResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *ApplicationResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -122,9 +125,9 @@ func (o *ApplicationResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApplicationResource) GetFields() []*Field {
+func (o *ApplicationResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -133,16 +136,16 @@ func (o *ApplicationResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApplicationResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *ApplicationResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *ApplicationResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -150,13 +153,13 @@ func (o *ApplicationResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *ApplicationResource) SetFields(v []*Field) {
+func (o *ApplicationResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplicationResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *ApplicationResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -198,7 +201,7 @@ func (o *ApplicationResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplicationResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -210,7 +213,7 @@ func (o *ApplicationResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -240,7 +243,7 @@ func (o *ApplicationResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplicationResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -252,7 +255,7 @@ func (o *ApplicationResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -282,7 +285,7 @@ func (o *ApplicationResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplicationResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *ApplicationResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -324,7 +327,7 @@ func (o *ApplicationResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *ApplicationResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -334,15 +337,15 @@ func (o *ApplicationResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *ApplicationResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -355,9 +358,9 @@ func (o *ApplicationResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApplicationResource) GetTags() []*int32 {
+func (o *ApplicationResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -366,16 +369,16 @@ func (o *ApplicationResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApplicationResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *ApplicationResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *ApplicationResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -383,14 +386,14 @@ func (o *ApplicationResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ApplicationResource) SetTags(v []*int32) {
+func (o *ApplicationResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApplicationResource) GetPresets() []*ApplicationResource {
+func (o *ApplicationResource) GetPresets() []ApplicationResource {
 	if o == nil {
-		var ret []*ApplicationResource
+		var ret []ApplicationResource
 		return ret
 	}
 	return o.Presets
@@ -399,16 +402,16 @@ func (o *ApplicationResource) GetPresets() []*ApplicationResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApplicationResource) GetPresetsOk() ([]*ApplicationResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *ApplicationResource) GetPresetsOk() ([]ApplicationResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *ApplicationResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -416,13 +419,13 @@ func (o *ApplicationResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []ApplicationResource and assigns it to the Presets field.
-func (o *ApplicationResource) SetPresets(v []*ApplicationResource) {
+func (o *ApplicationResource) SetPresets(v []ApplicationResource) {
 	o.Presets = v
 }
 
 // GetSyncLevel returns the SyncLevel field value if set, zero value otherwise.
 func (o *ApplicationResource) GetSyncLevel() ApplicationSyncLevel {
-	if o == nil || isNil(o.SyncLevel) {
+	if o == nil || IsNil(o.SyncLevel) {
 		var ret ApplicationSyncLevel
 		return ret
 	}
@@ -432,15 +435,15 @@ func (o *ApplicationResource) GetSyncLevel() ApplicationSyncLevel {
 // GetSyncLevelOk returns a tuple with the SyncLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationResource) GetSyncLevelOk() (*ApplicationSyncLevel, bool) {
-	if o == nil || isNil(o.SyncLevel) {
-    return nil, false
+	if o == nil || IsNil(o.SyncLevel) {
+		return nil, false
 	}
 	return o.SyncLevel, true
 }
 
 // HasSyncLevel returns a boolean if a field has been set.
 func (o *ApplicationResource) HasSyncLevel() bool {
-	if o != nil && !isNil(o.SyncLevel) {
+	if o != nil && !IsNil(o.SyncLevel) {
 		return true
 	}
 
@@ -454,7 +457,7 @@ func (o *ApplicationResource) SetSyncLevel(v ApplicationSyncLevel) {
 
 // GetTestCommand returns the TestCommand field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplicationResource) GetTestCommand() string {
-	if o == nil || isNil(o.TestCommand.Get()) {
+	if o == nil || IsNil(o.TestCommand.Get()) {
 		var ret string
 		return ret
 	}
@@ -466,7 +469,7 @@ func (o *ApplicationResource) GetTestCommand() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationResource) GetTestCommandOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TestCommand.Get(), o.TestCommand.IsSet()
 }
@@ -495,8 +498,16 @@ func (o *ApplicationResource) UnsetTestCommand() {
 }
 
 func (o ApplicationResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ApplicationResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -517,7 +528,7 @@ func (o ApplicationResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -526,13 +537,13 @@ func (o ApplicationResource) MarshalJSON() ([]byte, error) {
 	if o.Presets != nil {
 		toSerialize["presets"] = o.Presets
 	}
-	if !isNil(o.SyncLevel) {
+	if !IsNil(o.SyncLevel) {
 		toSerialize["syncLevel"] = o.SyncLevel
 	}
 	if o.TestCommand.IsSet() {
 		toSerialize["testCommand"] = o.TestCommand.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableApplicationResource struct {

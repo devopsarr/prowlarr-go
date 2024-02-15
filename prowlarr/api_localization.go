@@ -21,6 +21,7 @@ import (
 
 // LocalizationAPIService LocalizationAPI service
 type LocalizationAPIService service
+
 type ApiGetLocalizationRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
@@ -134,12 +135,13 @@ func (a *LocalizationAPIService) GetLocalizationExecute(r ApiGetLocalizationRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiListLocalizationOptionsRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiListLocalizationOptionsRequest) Execute() ([]*LocalizationOption, *http.Response, error) {
+func (r ApiListLocalizationOptionsRequest) Execute() ([]LocalizationOption, *http.Response, error) {
 	return r.ApiService.ListLocalizationOptionsExecute(r)
 }
 
@@ -158,12 +160,12 @@ func (a *LocalizationAPIService) ListLocalizationOptions(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []LocalizationOption
-func (a *LocalizationAPIService) ListLocalizationOptionsExecute(r ApiListLocalizationOptionsRequest) ([]*LocalizationOption, *http.Response, error) {
+func (a *LocalizationAPIService) ListLocalizationOptionsExecute(r ApiListLocalizationOptionsRequest) ([]LocalizationOption, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*LocalizationOption
+		localVarReturnValue  []LocalizationOption
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.ListLocalizationOptions")

@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerStatsResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerStatsResource{}
+
 // IndexerStatsResource struct for IndexerStatsResource
 type IndexerStatsResource struct {
 	Id *int32 `json:"id,omitempty"`
-	Indexers []*IndexerStatistics `json:"indexers,omitempty"`
-	UserAgents []*UserAgentStatistics `json:"userAgents,omitempty"`
-	Hosts []*HostStatistics `json:"hosts,omitempty"`
+	Indexers []IndexerStatistics `json:"indexers,omitempty"`
+	UserAgents []UserAgentStatistics `json:"userAgents,omitempty"`
+	Hosts []HostStatistics `json:"hosts,omitempty"`
 }
 
 // NewIndexerStatsResource instantiates a new IndexerStatsResource object
@@ -41,7 +44,7 @@ func NewIndexerStatsResourceWithDefaults() *IndexerStatsResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerStatsResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *IndexerStatsResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerStatsResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,9 +75,9 @@ func (o *IndexerStatsResource) SetId(v int32) {
 }
 
 // GetIndexers returns the Indexers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerStatsResource) GetIndexers() []*IndexerStatistics {
+func (o *IndexerStatsResource) GetIndexers() []IndexerStatistics {
 	if o == nil {
-		var ret []*IndexerStatistics
+		var ret []IndexerStatistics
 		return ret
 	}
 	return o.Indexers
@@ -83,16 +86,16 @@ func (o *IndexerStatsResource) GetIndexers() []*IndexerStatistics {
 // GetIndexersOk returns a tuple with the Indexers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerStatsResource) GetIndexersOk() ([]*IndexerStatistics, bool) {
-	if o == nil || isNil(o.Indexers) {
-    return nil, false
+func (o *IndexerStatsResource) GetIndexersOk() ([]IndexerStatistics, bool) {
+	if o == nil || IsNil(o.Indexers) {
+		return nil, false
 	}
 	return o.Indexers, true
 }
 
 // HasIndexers returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasIndexers() bool {
-	if o != nil && isNil(o.Indexers) {
+	if o != nil && IsNil(o.Indexers) {
 		return true
 	}
 
@@ -100,14 +103,14 @@ func (o *IndexerStatsResource) HasIndexers() bool {
 }
 
 // SetIndexers gets a reference to the given []IndexerStatistics and assigns it to the Indexers field.
-func (o *IndexerStatsResource) SetIndexers(v []*IndexerStatistics) {
+func (o *IndexerStatsResource) SetIndexers(v []IndexerStatistics) {
 	o.Indexers = v
 }
 
 // GetUserAgents returns the UserAgents field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerStatsResource) GetUserAgents() []*UserAgentStatistics {
+func (o *IndexerStatsResource) GetUserAgents() []UserAgentStatistics {
 	if o == nil {
-		var ret []*UserAgentStatistics
+		var ret []UserAgentStatistics
 		return ret
 	}
 	return o.UserAgents
@@ -116,16 +119,16 @@ func (o *IndexerStatsResource) GetUserAgents() []*UserAgentStatistics {
 // GetUserAgentsOk returns a tuple with the UserAgents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerStatsResource) GetUserAgentsOk() ([]*UserAgentStatistics, bool) {
-	if o == nil || isNil(o.UserAgents) {
-    return nil, false
+func (o *IndexerStatsResource) GetUserAgentsOk() ([]UserAgentStatistics, bool) {
+	if o == nil || IsNil(o.UserAgents) {
+		return nil, false
 	}
 	return o.UserAgents, true
 }
 
 // HasUserAgents returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasUserAgents() bool {
-	if o != nil && isNil(o.UserAgents) {
+	if o != nil && IsNil(o.UserAgents) {
 		return true
 	}
 
@@ -133,14 +136,14 @@ func (o *IndexerStatsResource) HasUserAgents() bool {
 }
 
 // SetUserAgents gets a reference to the given []UserAgentStatistics and assigns it to the UserAgents field.
-func (o *IndexerStatsResource) SetUserAgents(v []*UserAgentStatistics) {
+func (o *IndexerStatsResource) SetUserAgents(v []UserAgentStatistics) {
 	o.UserAgents = v
 }
 
 // GetHosts returns the Hosts field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerStatsResource) GetHosts() []*HostStatistics {
+func (o *IndexerStatsResource) GetHosts() []HostStatistics {
 	if o == nil {
-		var ret []*HostStatistics
+		var ret []HostStatistics
 		return ret
 	}
 	return o.Hosts
@@ -149,16 +152,16 @@ func (o *IndexerStatsResource) GetHosts() []*HostStatistics {
 // GetHostsOk returns a tuple with the Hosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerStatsResource) GetHostsOk() ([]*HostStatistics, bool) {
-	if o == nil || isNil(o.Hosts) {
-    return nil, false
+func (o *IndexerStatsResource) GetHostsOk() ([]HostStatistics, bool) {
+	if o == nil || IsNil(o.Hosts) {
+		return nil, false
 	}
 	return o.Hosts, true
 }
 
 // HasHosts returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasHosts() bool {
-	if o != nil && isNil(o.Hosts) {
+	if o != nil && IsNil(o.Hosts) {
 		return true
 	}
 
@@ -166,13 +169,21 @@ func (o *IndexerStatsResource) HasHosts() bool {
 }
 
 // SetHosts gets a reference to the given []HostStatistics and assigns it to the Hosts field.
-func (o *IndexerStatsResource) SetHosts(v []*HostStatistics) {
+func (o *IndexerStatsResource) SetHosts(v []HostStatistics) {
 	o.Hosts = v
 }
 
 func (o IndexerStatsResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerStatsResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Indexers != nil {
@@ -184,7 +195,7 @@ func (o IndexerStatsResource) MarshalJSON() ([]byte, error) {
 	if o.Hosts != nil {
 		toSerialize["hosts"] = o.Hosts
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerStatsResource struct {

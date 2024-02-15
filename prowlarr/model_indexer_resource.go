@@ -15,20 +15,23 @@ import (
 	"time"
 )
 
+// checks if the IndexerResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerResource{}
+
 // IndexerResource struct for IndexerResource
 type IndexerResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*IndexerResource `json:"presets,omitempty"`
-	IndexerUrls []*string `json:"indexerUrls,omitempty"`
-	LegacyUrls []*string `json:"legacyUrls,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []IndexerResource `json:"presets,omitempty"`
+	IndexerUrls []string `json:"indexerUrls,omitempty"`
+	LegacyUrls []string `json:"legacyUrls,omitempty"`
 	DefinitionName NullableString `json:"definitionName,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	Language NullableString `json:"language,omitempty"`
@@ -69,7 +72,7 @@ func NewIndexerResourceWithDefaults() *IndexerResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -79,15 +82,15 @@ func (o *IndexerResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -101,7 +104,7 @@ func (o *IndexerResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *IndexerResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -142,9 +145,9 @@ func (o *IndexerResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerResource) GetFields() []*Field {
+func (o *IndexerResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -153,16 +156,16 @@ func (o *IndexerResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *IndexerResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *IndexerResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -170,13 +173,13 @@ func (o *IndexerResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *IndexerResource) SetFields(v []*Field) {
+func (o *IndexerResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -188,7 +191,7 @@ func (o *IndexerResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -218,7 +221,7 @@ func (o *IndexerResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *IndexerResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -260,7 +263,7 @@ func (o *IndexerResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *IndexerResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -302,7 +305,7 @@ func (o *IndexerResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -314,7 +317,7 @@ func (o *IndexerResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -344,7 +347,7 @@ func (o *IndexerResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *IndexerResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -354,15 +357,15 @@ func (o *IndexerResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *IndexerResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -375,9 +378,9 @@ func (o *IndexerResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerResource) GetTags() []*int32 {
+func (o *IndexerResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -386,16 +389,16 @@ func (o *IndexerResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *IndexerResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *IndexerResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -403,14 +406,14 @@ func (o *IndexerResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *IndexerResource) SetTags(v []*int32) {
+func (o *IndexerResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerResource) GetPresets() []*IndexerResource {
+func (o *IndexerResource) GetPresets() []IndexerResource {
 	if o == nil {
-		var ret []*IndexerResource
+		var ret []IndexerResource
 		return ret
 	}
 	return o.Presets
@@ -419,16 +422,16 @@ func (o *IndexerResource) GetPresets() []*IndexerResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerResource) GetPresetsOk() ([]*IndexerResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *IndexerResource) GetPresetsOk() ([]IndexerResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *IndexerResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -436,14 +439,14 @@ func (o *IndexerResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []IndexerResource and assigns it to the Presets field.
-func (o *IndexerResource) SetPresets(v []*IndexerResource) {
+func (o *IndexerResource) SetPresets(v []IndexerResource) {
 	o.Presets = v
 }
 
 // GetIndexerUrls returns the IndexerUrls field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerResource) GetIndexerUrls() []*string {
+func (o *IndexerResource) GetIndexerUrls() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.IndexerUrls
@@ -452,16 +455,16 @@ func (o *IndexerResource) GetIndexerUrls() []*string {
 // GetIndexerUrlsOk returns a tuple with the IndexerUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerResource) GetIndexerUrlsOk() ([]*string, bool) {
-	if o == nil || isNil(o.IndexerUrls) {
-    return nil, false
+func (o *IndexerResource) GetIndexerUrlsOk() ([]string, bool) {
+	if o == nil || IsNil(o.IndexerUrls) {
+		return nil, false
 	}
 	return o.IndexerUrls, true
 }
 
 // HasIndexerUrls returns a boolean if a field has been set.
 func (o *IndexerResource) HasIndexerUrls() bool {
-	if o != nil && isNil(o.IndexerUrls) {
+	if o != nil && IsNil(o.IndexerUrls) {
 		return true
 	}
 
@@ -469,14 +472,14 @@ func (o *IndexerResource) HasIndexerUrls() bool {
 }
 
 // SetIndexerUrls gets a reference to the given []string and assigns it to the IndexerUrls field.
-func (o *IndexerResource) SetIndexerUrls(v []*string) {
+func (o *IndexerResource) SetIndexerUrls(v []string) {
 	o.IndexerUrls = v
 }
 
 // GetLegacyUrls returns the LegacyUrls field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerResource) GetLegacyUrls() []*string {
+func (o *IndexerResource) GetLegacyUrls() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.LegacyUrls
@@ -485,16 +488,16 @@ func (o *IndexerResource) GetLegacyUrls() []*string {
 // GetLegacyUrlsOk returns a tuple with the LegacyUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerResource) GetLegacyUrlsOk() ([]*string, bool) {
-	if o == nil || isNil(o.LegacyUrls) {
-    return nil, false
+func (o *IndexerResource) GetLegacyUrlsOk() ([]string, bool) {
+	if o == nil || IsNil(o.LegacyUrls) {
+		return nil, false
 	}
 	return o.LegacyUrls, true
 }
 
 // HasLegacyUrls returns a boolean if a field has been set.
 func (o *IndexerResource) HasLegacyUrls() bool {
-	if o != nil && isNil(o.LegacyUrls) {
+	if o != nil && IsNil(o.LegacyUrls) {
 		return true
 	}
 
@@ -502,13 +505,13 @@ func (o *IndexerResource) HasLegacyUrls() bool {
 }
 
 // SetLegacyUrls gets a reference to the given []string and assigns it to the LegacyUrls field.
-func (o *IndexerResource) SetLegacyUrls(v []*string) {
+func (o *IndexerResource) SetLegacyUrls(v []string) {
 	o.LegacyUrls = v
 }
 
 // GetDefinitionName returns the DefinitionName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetDefinitionName() string {
-	if o == nil || isNil(o.DefinitionName.Get()) {
+	if o == nil || IsNil(o.DefinitionName.Get()) {
 		var ret string
 		return ret
 	}
@@ -520,7 +523,7 @@ func (o *IndexerResource) GetDefinitionName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetDefinitionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefinitionName.Get(), o.DefinitionName.IsSet()
 }
@@ -550,7 +553,7 @@ func (o *IndexerResource) UnsetDefinitionName() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -562,7 +565,7 @@ func (o *IndexerResource) GetDescription() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetDescriptionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Description.Get(), o.Description.IsSet()
 }
@@ -592,7 +595,7 @@ func (o *IndexerResource) UnsetDescription() {
 
 // GetLanguage returns the Language field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetLanguage() string {
-	if o == nil || isNil(o.Language.Get()) {
+	if o == nil || IsNil(o.Language.Get()) {
 		var ret string
 		return ret
 	}
@@ -604,7 +607,7 @@ func (o *IndexerResource) GetLanguage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetLanguageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Language.Get(), o.Language.IsSet()
 }
@@ -634,7 +637,7 @@ func (o *IndexerResource) UnsetLanguage() {
 
 // GetEncoding returns the Encoding field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetEncoding() string {
-	if o == nil || isNil(o.Encoding.Get()) {
+	if o == nil || IsNil(o.Encoding.Get()) {
 		var ret string
 		return ret
 	}
@@ -646,7 +649,7 @@ func (o *IndexerResource) GetEncoding() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetEncodingOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Encoding.Get(), o.Encoding.IsSet()
 }
@@ -676,7 +679,7 @@ func (o *IndexerResource) UnsetEncoding() {
 
 // GetEnable returns the Enable field value if set, zero value otherwise.
 func (o *IndexerResource) GetEnable() bool {
-	if o == nil || isNil(o.Enable) {
+	if o == nil || IsNil(o.Enable) {
 		var ret bool
 		return ret
 	}
@@ -686,15 +689,15 @@ func (o *IndexerResource) GetEnable() bool {
 // GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetEnableOk() (*bool, bool) {
-	if o == nil || isNil(o.Enable) {
-    return nil, false
+	if o == nil || IsNil(o.Enable) {
+		return nil, false
 	}
 	return o.Enable, true
 }
 
 // HasEnable returns a boolean if a field has been set.
 func (o *IndexerResource) HasEnable() bool {
-	if o != nil && !isNil(o.Enable) {
+	if o != nil && !IsNil(o.Enable) {
 		return true
 	}
 
@@ -708,7 +711,7 @@ func (o *IndexerResource) SetEnable(v bool) {
 
 // GetRedirect returns the Redirect field value if set, zero value otherwise.
 func (o *IndexerResource) GetRedirect() bool {
-	if o == nil || isNil(o.Redirect) {
+	if o == nil || IsNil(o.Redirect) {
 		var ret bool
 		return ret
 	}
@@ -718,15 +721,15 @@ func (o *IndexerResource) GetRedirect() bool {
 // GetRedirectOk returns a tuple with the Redirect field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetRedirectOk() (*bool, bool) {
-	if o == nil || isNil(o.Redirect) {
-    return nil, false
+	if o == nil || IsNil(o.Redirect) {
+		return nil, false
 	}
 	return o.Redirect, true
 }
 
 // HasRedirect returns a boolean if a field has been set.
 func (o *IndexerResource) HasRedirect() bool {
-	if o != nil && !isNil(o.Redirect) {
+	if o != nil && !IsNil(o.Redirect) {
 		return true
 	}
 
@@ -740,7 +743,7 @@ func (o *IndexerResource) SetRedirect(v bool) {
 
 // GetSupportsRss returns the SupportsRss field value if set, zero value otherwise.
 func (o *IndexerResource) GetSupportsRss() bool {
-	if o == nil || isNil(o.SupportsRss) {
+	if o == nil || IsNil(o.SupportsRss) {
 		var ret bool
 		return ret
 	}
@@ -750,15 +753,15 @@ func (o *IndexerResource) GetSupportsRss() bool {
 // GetSupportsRssOk returns a tuple with the SupportsRss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetSupportsRssOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsRss) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsRss) {
+		return nil, false
 	}
 	return o.SupportsRss, true
 }
 
 // HasSupportsRss returns a boolean if a field has been set.
 func (o *IndexerResource) HasSupportsRss() bool {
-	if o != nil && !isNil(o.SupportsRss) {
+	if o != nil && !IsNil(o.SupportsRss) {
 		return true
 	}
 
@@ -772,7 +775,7 @@ func (o *IndexerResource) SetSupportsRss(v bool) {
 
 // GetSupportsSearch returns the SupportsSearch field value if set, zero value otherwise.
 func (o *IndexerResource) GetSupportsSearch() bool {
-	if o == nil || isNil(o.SupportsSearch) {
+	if o == nil || IsNil(o.SupportsSearch) {
 		var ret bool
 		return ret
 	}
@@ -782,15 +785,15 @@ func (o *IndexerResource) GetSupportsSearch() bool {
 // GetSupportsSearchOk returns a tuple with the SupportsSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetSupportsSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsSearch) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsSearch) {
+		return nil, false
 	}
 	return o.SupportsSearch, true
 }
 
 // HasSupportsSearch returns a boolean if a field has been set.
 func (o *IndexerResource) HasSupportsSearch() bool {
-	if o != nil && !isNil(o.SupportsSearch) {
+	if o != nil && !IsNil(o.SupportsSearch) {
 		return true
 	}
 
@@ -804,7 +807,7 @@ func (o *IndexerResource) SetSupportsSearch(v bool) {
 
 // GetSupportsRedirect returns the SupportsRedirect field value if set, zero value otherwise.
 func (o *IndexerResource) GetSupportsRedirect() bool {
-	if o == nil || isNil(o.SupportsRedirect) {
+	if o == nil || IsNil(o.SupportsRedirect) {
 		var ret bool
 		return ret
 	}
@@ -814,15 +817,15 @@ func (o *IndexerResource) GetSupportsRedirect() bool {
 // GetSupportsRedirectOk returns a tuple with the SupportsRedirect field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetSupportsRedirectOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsRedirect) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsRedirect) {
+		return nil, false
 	}
 	return o.SupportsRedirect, true
 }
 
 // HasSupportsRedirect returns a boolean if a field has been set.
 func (o *IndexerResource) HasSupportsRedirect() bool {
-	if o != nil && !isNil(o.SupportsRedirect) {
+	if o != nil && !IsNil(o.SupportsRedirect) {
 		return true
 	}
 
@@ -836,7 +839,7 @@ func (o *IndexerResource) SetSupportsRedirect(v bool) {
 
 // GetSupportsPagination returns the SupportsPagination field value if set, zero value otherwise.
 func (o *IndexerResource) GetSupportsPagination() bool {
-	if o == nil || isNil(o.SupportsPagination) {
+	if o == nil || IsNil(o.SupportsPagination) {
 		var ret bool
 		return ret
 	}
@@ -846,15 +849,15 @@ func (o *IndexerResource) GetSupportsPagination() bool {
 // GetSupportsPaginationOk returns a tuple with the SupportsPagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetSupportsPaginationOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsPagination) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsPagination) {
+		return nil, false
 	}
 	return o.SupportsPagination, true
 }
 
 // HasSupportsPagination returns a boolean if a field has been set.
 func (o *IndexerResource) HasSupportsPagination() bool {
-	if o != nil && !isNil(o.SupportsPagination) {
+	if o != nil && !IsNil(o.SupportsPagination) {
 		return true
 	}
 
@@ -868,7 +871,7 @@ func (o *IndexerResource) SetSupportsPagination(v bool) {
 
 // GetAppProfileId returns the AppProfileId field value if set, zero value otherwise.
 func (o *IndexerResource) GetAppProfileId() int32 {
-	if o == nil || isNil(o.AppProfileId) {
+	if o == nil || IsNil(o.AppProfileId) {
 		var ret int32
 		return ret
 	}
@@ -878,15 +881,15 @@ func (o *IndexerResource) GetAppProfileId() int32 {
 // GetAppProfileIdOk returns a tuple with the AppProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetAppProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AppProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.AppProfileId) {
+		return nil, false
 	}
 	return o.AppProfileId, true
 }
 
 // HasAppProfileId returns a boolean if a field has been set.
 func (o *IndexerResource) HasAppProfileId() bool {
-	if o != nil && !isNil(o.AppProfileId) {
+	if o != nil && !IsNil(o.AppProfileId) {
 		return true
 	}
 
@@ -900,7 +903,7 @@ func (o *IndexerResource) SetAppProfileId(v int32) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *IndexerResource) GetProtocol() DownloadProtocol {
-	if o == nil || isNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -910,15 +913,15 @@ func (o *IndexerResource) GetProtocol() DownloadProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.Protocol) {
-    return nil, false
+	if o == nil || IsNil(o.Protocol) {
+		return nil, false
 	}
 	return o.Protocol, true
 }
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *IndexerResource) HasProtocol() bool {
-	if o != nil && !isNil(o.Protocol) {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
@@ -932,7 +935,7 @@ func (o *IndexerResource) SetProtocol(v DownloadProtocol) {
 
 // GetPrivacy returns the Privacy field value if set, zero value otherwise.
 func (o *IndexerResource) GetPrivacy() IndexerPrivacy {
-	if o == nil || isNil(o.Privacy) {
+	if o == nil || IsNil(o.Privacy) {
 		var ret IndexerPrivacy
 		return ret
 	}
@@ -942,15 +945,15 @@ func (o *IndexerResource) GetPrivacy() IndexerPrivacy {
 // GetPrivacyOk returns a tuple with the Privacy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetPrivacyOk() (*IndexerPrivacy, bool) {
-	if o == nil || isNil(o.Privacy) {
-    return nil, false
+	if o == nil || IsNil(o.Privacy) {
+		return nil, false
 	}
 	return o.Privacy, true
 }
 
 // HasPrivacy returns a boolean if a field has been set.
 func (o *IndexerResource) HasPrivacy() bool {
-	if o != nil && !isNil(o.Privacy) {
+	if o != nil && !IsNil(o.Privacy) {
 		return true
 	}
 
@@ -964,7 +967,7 @@ func (o *IndexerResource) SetPrivacy(v IndexerPrivacy) {
 
 // GetCapabilities returns the Capabilities field value if set, zero value otherwise.
 func (o *IndexerResource) GetCapabilities() IndexerCapabilityResource {
-	if o == nil || isNil(o.Capabilities) {
+	if o == nil || IsNil(o.Capabilities) {
 		var ret IndexerCapabilityResource
 		return ret
 	}
@@ -974,15 +977,15 @@ func (o *IndexerResource) GetCapabilities() IndexerCapabilityResource {
 // GetCapabilitiesOk returns a tuple with the Capabilities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetCapabilitiesOk() (*IndexerCapabilityResource, bool) {
-	if o == nil || isNil(o.Capabilities) {
-    return nil, false
+	if o == nil || IsNil(o.Capabilities) {
+		return nil, false
 	}
 	return o.Capabilities, true
 }
 
 // HasCapabilities returns a boolean if a field has been set.
 func (o *IndexerResource) HasCapabilities() bool {
-	if o != nil && !isNil(o.Capabilities) {
+	if o != nil && !IsNil(o.Capabilities) {
 		return true
 	}
 
@@ -996,7 +999,7 @@ func (o *IndexerResource) SetCapabilities(v IndexerCapabilityResource) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *IndexerResource) GetPriority() int32 {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -1006,15 +1009,15 @@ func (o *IndexerResource) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetPriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.Priority) {
-    return nil, false
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
 	}
 	return o.Priority, true
 }
 
 // HasPriority returns a boolean if a field has been set.
 func (o *IndexerResource) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -1028,7 +1031,7 @@ func (o *IndexerResource) SetPriority(v int32) {
 
 // GetDownloadClientId returns the DownloadClientId field value if set, zero value otherwise.
 func (o *IndexerResource) GetDownloadClientId() int32 {
-	if o == nil || isNil(o.DownloadClientId) {
+	if o == nil || IsNil(o.DownloadClientId) {
 		var ret int32
 		return ret
 	}
@@ -1038,15 +1041,15 @@ func (o *IndexerResource) GetDownloadClientId() int32 {
 // GetDownloadClientIdOk returns a tuple with the DownloadClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetDownloadClientIdOk() (*int32, bool) {
-	if o == nil || isNil(o.DownloadClientId) {
-    return nil, false
+	if o == nil || IsNil(o.DownloadClientId) {
+		return nil, false
 	}
 	return o.DownloadClientId, true
 }
 
 // HasDownloadClientId returns a boolean if a field has been set.
 func (o *IndexerResource) HasDownloadClientId() bool {
-	if o != nil && !isNil(o.DownloadClientId) {
+	if o != nil && !IsNil(o.DownloadClientId) {
 		return true
 	}
 
@@ -1060,7 +1063,7 @@ func (o *IndexerResource) SetDownloadClientId(v int32) {
 
 // GetAdded returns the Added field value if set, zero value otherwise.
 func (o *IndexerResource) GetAdded() time.Time {
-	if o == nil || isNil(o.Added) {
+	if o == nil || IsNil(o.Added) {
 		var ret time.Time
 		return ret
 	}
@@ -1070,15 +1073,15 @@ func (o *IndexerResource) GetAdded() time.Time {
 // GetAddedOk returns a tuple with the Added field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetAddedOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Added) {
-    return nil, false
+	if o == nil || IsNil(o.Added) {
+		return nil, false
 	}
 	return o.Added, true
 }
 
 // HasAdded returns a boolean if a field has been set.
 func (o *IndexerResource) HasAdded() bool {
-	if o != nil && !isNil(o.Added) {
+	if o != nil && !IsNil(o.Added) {
 		return true
 	}
 
@@ -1092,7 +1095,7 @@ func (o *IndexerResource) SetAdded(v time.Time) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *IndexerResource) GetStatus() IndexerStatusResource {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret IndexerStatusResource
 		return ret
 	}
@@ -1102,15 +1105,15 @@ func (o *IndexerResource) GetStatus() IndexerStatusResource {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerResource) GetStatusOk() (*IndexerStatusResource, bool) {
-	if o == nil || isNil(o.Status) {
-    return nil, false
+	if o == nil || IsNil(o.Status) {
+		return nil, false
 	}
 	return o.Status, true
 }
 
 // HasStatus returns a boolean if a field has been set.
 func (o *IndexerResource) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -1124,7 +1127,7 @@ func (o *IndexerResource) SetStatus(v IndexerStatusResource) {
 
 // GetSortName returns the SortName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerResource) GetSortName() string {
-	if o == nil || isNil(o.SortName.Get()) {
+	if o == nil || IsNil(o.SortName.Get()) {
 		var ret string
 		return ret
 	}
@@ -1136,7 +1139,7 @@ func (o *IndexerResource) GetSortName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerResource) GetSortNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortName.Get(), o.SortName.IsSet()
 }
@@ -1165,8 +1168,16 @@ func (o *IndexerResource) UnsetSortName() {
 }
 
 func (o IndexerResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -1187,7 +1198,7 @@ func (o IndexerResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -1214,52 +1225,52 @@ func (o IndexerResource) MarshalJSON() ([]byte, error) {
 	if o.Encoding.IsSet() {
 		toSerialize["encoding"] = o.Encoding.Get()
 	}
-	if !isNil(o.Enable) {
+	if !IsNil(o.Enable) {
 		toSerialize["enable"] = o.Enable
 	}
-	if !isNil(o.Redirect) {
+	if !IsNil(o.Redirect) {
 		toSerialize["redirect"] = o.Redirect
 	}
-	if !isNil(o.SupportsRss) {
+	if !IsNil(o.SupportsRss) {
 		toSerialize["supportsRss"] = o.SupportsRss
 	}
-	if !isNil(o.SupportsSearch) {
+	if !IsNil(o.SupportsSearch) {
 		toSerialize["supportsSearch"] = o.SupportsSearch
 	}
-	if !isNil(o.SupportsRedirect) {
+	if !IsNil(o.SupportsRedirect) {
 		toSerialize["supportsRedirect"] = o.SupportsRedirect
 	}
-	if !isNil(o.SupportsPagination) {
+	if !IsNil(o.SupportsPagination) {
 		toSerialize["supportsPagination"] = o.SupportsPagination
 	}
-	if !isNil(o.AppProfileId) {
+	if !IsNil(o.AppProfileId) {
 		toSerialize["appProfileId"] = o.AppProfileId
 	}
-	if !isNil(o.Protocol) {
+	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
-	if !isNil(o.Privacy) {
+	if !IsNil(o.Privacy) {
 		toSerialize["privacy"] = o.Privacy
 	}
-	if !isNil(o.Capabilities) {
+	if !IsNil(o.Capabilities) {
 		toSerialize["capabilities"] = o.Capabilities
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.DownloadClientId) {
+	if !IsNil(o.DownloadClientId) {
 		toSerialize["downloadClientId"] = o.DownloadClientId
 	}
-	if !isNil(o.Added) {
+	if !IsNil(o.Added) {
 		toSerialize["added"] = o.Added
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if o.SortName.IsSet() {
 		toSerialize["sortName"] = o.SortName.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerResource struct {

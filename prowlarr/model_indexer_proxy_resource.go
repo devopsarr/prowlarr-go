@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerProxyResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerProxyResource{}
+
 // IndexerProxyResource struct for IndexerProxyResource
 type IndexerProxyResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*IndexerProxyResource `json:"presets,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []IndexerProxyResource `json:"presets,omitempty"`
 	Link NullableString `json:"link,omitempty"`
 	OnHealthIssue *bool `json:"onHealthIssue,omitempty"`
 	SupportsOnHealthIssue *bool `json:"supportsOnHealthIssue,omitempty"`
@@ -52,7 +55,7 @@ func NewIndexerProxyResourceWithDefaults() *IndexerProxyResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerProxyResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -62,15 +65,15 @@ func (o *IndexerProxyResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerProxyResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -84,7 +87,7 @@ func (o *IndexerProxyResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *IndexerProxyResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -125,9 +128,9 @@ func (o *IndexerProxyResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerProxyResource) GetFields() []*Field {
+func (o *IndexerProxyResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -136,16 +139,16 @@ func (o *IndexerProxyResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerProxyResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *IndexerProxyResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -153,13 +156,13 @@ func (o *IndexerProxyResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *IndexerProxyResource) SetFields(v []*Field) {
+func (o *IndexerProxyResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -171,7 +174,7 @@ func (o *IndexerProxyResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -201,7 +204,7 @@ func (o *IndexerProxyResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *IndexerProxyResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -243,7 +246,7 @@ func (o *IndexerProxyResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -255,7 +258,7 @@ func (o *IndexerProxyResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -285,7 +288,7 @@ func (o *IndexerProxyResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -297,7 +300,7 @@ func (o *IndexerProxyResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -327,7 +330,7 @@ func (o *IndexerProxyResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *IndexerProxyResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -337,15 +340,15 @@ func (o *IndexerProxyResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerProxyResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -358,9 +361,9 @@ func (o *IndexerProxyResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerProxyResource) GetTags() []*int32 {
+func (o *IndexerProxyResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -369,16 +372,16 @@ func (o *IndexerProxyResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerProxyResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *IndexerProxyResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -386,14 +389,14 @@ func (o *IndexerProxyResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *IndexerProxyResource) SetTags(v []*int32) {
+func (o *IndexerProxyResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *IndexerProxyResource) GetPresets() []*IndexerProxyResource {
+func (o *IndexerProxyResource) GetPresets() []IndexerProxyResource {
 	if o == nil {
-		var ret []*IndexerProxyResource
+		var ret []IndexerProxyResource
 		return ret
 	}
 	return o.Presets
@@ -402,16 +405,16 @@ func (o *IndexerProxyResource) GetPresets() []*IndexerProxyResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *IndexerProxyResource) GetPresetsOk() ([]*IndexerProxyResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *IndexerProxyResource) GetPresetsOk() ([]IndexerProxyResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -419,13 +422,13 @@ func (o *IndexerProxyResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []IndexerProxyResource and assigns it to the Presets field.
-func (o *IndexerProxyResource) SetPresets(v []*IndexerProxyResource) {
+func (o *IndexerProxyResource) SetPresets(v []IndexerProxyResource) {
 	o.Presets = v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetLink() string {
-	if o == nil || isNil(o.Link.Get()) {
+	if o == nil || IsNil(o.Link.Get()) {
 		var ret string
 		return ret
 	}
@@ -437,7 +440,7 @@ func (o *IndexerProxyResource) GetLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Link.Get(), o.Link.IsSet()
 }
@@ -467,7 +470,7 @@ func (o *IndexerProxyResource) UnsetLink() {
 
 // GetOnHealthIssue returns the OnHealthIssue field value if set, zero value otherwise.
 func (o *IndexerProxyResource) GetOnHealthIssue() bool {
-	if o == nil || isNil(o.OnHealthIssue) {
+	if o == nil || IsNil(o.OnHealthIssue) {
 		var ret bool
 		return ret
 	}
@@ -477,15 +480,15 @@ func (o *IndexerProxyResource) GetOnHealthIssue() bool {
 // GetOnHealthIssueOk returns a tuple with the OnHealthIssue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerProxyResource) GetOnHealthIssueOk() (*bool, bool) {
-	if o == nil || isNil(o.OnHealthIssue) {
-    return nil, false
+	if o == nil || IsNil(o.OnHealthIssue) {
+		return nil, false
 	}
 	return o.OnHealthIssue, true
 }
 
 // HasOnHealthIssue returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasOnHealthIssue() bool {
-	if o != nil && !isNil(o.OnHealthIssue) {
+	if o != nil && !IsNil(o.OnHealthIssue) {
 		return true
 	}
 
@@ -499,7 +502,7 @@ func (o *IndexerProxyResource) SetOnHealthIssue(v bool) {
 
 // GetSupportsOnHealthIssue returns the SupportsOnHealthIssue field value if set, zero value otherwise.
 func (o *IndexerProxyResource) GetSupportsOnHealthIssue() bool {
-	if o == nil || isNil(o.SupportsOnHealthIssue) {
+	if o == nil || IsNil(o.SupportsOnHealthIssue) {
 		var ret bool
 		return ret
 	}
@@ -509,15 +512,15 @@ func (o *IndexerProxyResource) GetSupportsOnHealthIssue() bool {
 // GetSupportsOnHealthIssueOk returns a tuple with the SupportsOnHealthIssue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerProxyResource) GetSupportsOnHealthIssueOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnHealthIssue) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnHealthIssue) {
+		return nil, false
 	}
 	return o.SupportsOnHealthIssue, true
 }
 
 // HasSupportsOnHealthIssue returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasSupportsOnHealthIssue() bool {
-	if o != nil && !isNil(o.SupportsOnHealthIssue) {
+	if o != nil && !IsNil(o.SupportsOnHealthIssue) {
 		return true
 	}
 
@@ -531,7 +534,7 @@ func (o *IndexerProxyResource) SetSupportsOnHealthIssue(v bool) {
 
 // GetIncludeHealthWarnings returns the IncludeHealthWarnings field value if set, zero value otherwise.
 func (o *IndexerProxyResource) GetIncludeHealthWarnings() bool {
-	if o == nil || isNil(o.IncludeHealthWarnings) {
+	if o == nil || IsNil(o.IncludeHealthWarnings) {
 		var ret bool
 		return ret
 	}
@@ -541,15 +544,15 @@ func (o *IndexerProxyResource) GetIncludeHealthWarnings() bool {
 // GetIncludeHealthWarningsOk returns a tuple with the IncludeHealthWarnings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerProxyResource) GetIncludeHealthWarningsOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeHealthWarnings) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeHealthWarnings) {
+		return nil, false
 	}
 	return o.IncludeHealthWarnings, true
 }
 
 // HasIncludeHealthWarnings returns a boolean if a field has been set.
 func (o *IndexerProxyResource) HasIncludeHealthWarnings() bool {
-	if o != nil && !isNil(o.IncludeHealthWarnings) {
+	if o != nil && !IsNil(o.IncludeHealthWarnings) {
 		return true
 	}
 
@@ -563,7 +566,7 @@ func (o *IndexerProxyResource) SetIncludeHealthWarnings(v bool) {
 
 // GetTestCommand returns the TestCommand field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerProxyResource) GetTestCommand() string {
-	if o == nil || isNil(o.TestCommand.Get()) {
+	if o == nil || IsNil(o.TestCommand.Get()) {
 		var ret string
 		return ret
 	}
@@ -575,7 +578,7 @@ func (o *IndexerProxyResource) GetTestCommand() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerProxyResource) GetTestCommandOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TestCommand.Get(), o.TestCommand.IsSet()
 }
@@ -604,8 +607,16 @@ func (o *IndexerProxyResource) UnsetTestCommand() {
 }
 
 func (o IndexerProxyResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerProxyResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -626,7 +637,7 @@ func (o IndexerProxyResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -638,19 +649,19 @@ func (o IndexerProxyResource) MarshalJSON() ([]byte, error) {
 	if o.Link.IsSet() {
 		toSerialize["link"] = o.Link.Get()
 	}
-	if !isNil(o.OnHealthIssue) {
+	if !IsNil(o.OnHealthIssue) {
 		toSerialize["onHealthIssue"] = o.OnHealthIssue
 	}
-	if !isNil(o.SupportsOnHealthIssue) {
+	if !IsNil(o.SupportsOnHealthIssue) {
 		toSerialize["supportsOnHealthIssue"] = o.SupportsOnHealthIssue
 	}
-	if !isNil(o.IncludeHealthWarnings) {
+	if !IsNil(o.IncludeHealthWarnings) {
 		toSerialize["includeHealthWarnings"] = o.IncludeHealthWarnings
 	}
 	if o.TestCommand.IsSet() {
 		toSerialize["testCommand"] = o.TestCommand.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerProxyResource struct {
