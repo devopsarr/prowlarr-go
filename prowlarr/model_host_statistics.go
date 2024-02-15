@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the HostStatistics type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HostStatistics{}
+
 // HostStatistics struct for HostStatistics
 type HostStatistics struct {
 	Host NullableString `json:"host,omitempty"`
@@ -40,7 +43,7 @@ func NewHostStatisticsWithDefaults() *HostStatistics {
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostStatistics) GetHost() string {
-	if o == nil || isNil(o.Host.Get()) {
+	if o == nil || IsNil(o.Host.Get()) {
 		var ret string
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *HostStatistics) GetHost() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostStatistics) GetHostOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Host.Get(), o.Host.IsSet()
 }
@@ -82,7 +85,7 @@ func (o *HostStatistics) UnsetHost() {
 
 // GetNumberOfQueries returns the NumberOfQueries field value if set, zero value otherwise.
 func (o *HostStatistics) GetNumberOfQueries() int32 {
-	if o == nil || isNil(o.NumberOfQueries) {
+	if o == nil || IsNil(o.NumberOfQueries) {
 		var ret int32
 		return ret
 	}
@@ -92,15 +95,15 @@ func (o *HostStatistics) GetNumberOfQueries() int32 {
 // GetNumberOfQueriesOk returns a tuple with the NumberOfQueries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostStatistics) GetNumberOfQueriesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfQueries) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfQueries) {
+		return nil, false
 	}
 	return o.NumberOfQueries, true
 }
 
 // HasNumberOfQueries returns a boolean if a field has been set.
 func (o *HostStatistics) HasNumberOfQueries() bool {
-	if o != nil && !isNil(o.NumberOfQueries) {
+	if o != nil && !IsNil(o.NumberOfQueries) {
 		return true
 	}
 
@@ -114,7 +117,7 @@ func (o *HostStatistics) SetNumberOfQueries(v int32) {
 
 // GetNumberOfGrabs returns the NumberOfGrabs field value if set, zero value otherwise.
 func (o *HostStatistics) GetNumberOfGrabs() int32 {
-	if o == nil || isNil(o.NumberOfGrabs) {
+	if o == nil || IsNil(o.NumberOfGrabs) {
 		var ret int32
 		return ret
 	}
@@ -124,15 +127,15 @@ func (o *HostStatistics) GetNumberOfGrabs() int32 {
 // GetNumberOfGrabsOk returns a tuple with the NumberOfGrabs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostStatistics) GetNumberOfGrabsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfGrabs) {
-    return nil, false
+	if o == nil || IsNil(o.NumberOfGrabs) {
+		return nil, false
 	}
 	return o.NumberOfGrabs, true
 }
 
 // HasNumberOfGrabs returns a boolean if a field has been set.
 func (o *HostStatistics) HasNumberOfGrabs() bool {
-	if o != nil && !isNil(o.NumberOfGrabs) {
+	if o != nil && !IsNil(o.NumberOfGrabs) {
 		return true
 	}
 
@@ -145,17 +148,25 @@ func (o *HostStatistics) SetNumberOfGrabs(v int32) {
 }
 
 func (o HostStatistics) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o HostStatistics) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Host.IsSet() {
 		toSerialize["host"] = o.Host.Get()
 	}
-	if !isNil(o.NumberOfQueries) {
+	if !IsNil(o.NumberOfQueries) {
 		toSerialize["numberOfQueries"] = o.NumberOfQueries
 	}
-	if !isNil(o.NumberOfGrabs) {
+	if !IsNil(o.NumberOfGrabs) {
 		toSerialize["numberOfGrabs"] = o.NumberOfGrabs
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableHostStatistics struct {

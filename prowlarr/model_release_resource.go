@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the ReleaseResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReleaseResource{}
+
 // ReleaseResource struct for ReleaseResource
 type ReleaseResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -40,8 +43,8 @@ type ReleaseResource struct {
 	DownloadUrl NullableString `json:"downloadUrl,omitempty"`
 	InfoUrl NullableString `json:"infoUrl,omitempty"`
 	PosterUrl NullableString `json:"posterUrl,omitempty"`
-	IndexerFlags []*string `json:"indexerFlags,omitempty"`
-	Categories []*IndexerCategory `json:"categories,omitempty"`
+	IndexerFlags []string `json:"indexerFlags,omitempty"`
+	Categories []IndexerCategory `json:"categories,omitempty"`
 	MagnetUrl NullableString `json:"magnetUrl,omitempty"`
 	InfoHash NullableString `json:"infoHash,omitempty"`
 	Seeders NullableInt32 `json:"seeders,omitempty"`
@@ -69,7 +72,7 @@ func NewReleaseResourceWithDefaults() *ReleaseResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ReleaseResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -79,15 +82,15 @@ func (o *ReleaseResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ReleaseResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -101,7 +104,7 @@ func (o *ReleaseResource) SetId(v int32) {
 
 // GetGuid returns the Guid field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetGuid() string {
-	if o == nil || isNil(o.Guid.Get()) {
+	if o == nil || IsNil(o.Guid.Get()) {
 		var ret string
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *ReleaseResource) GetGuid() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetGuidOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Guid.Get(), o.Guid.IsSet()
 }
@@ -143,7 +146,7 @@ func (o *ReleaseResource) UnsetGuid() {
 
 // GetAge returns the Age field value if set, zero value otherwise.
 func (o *ReleaseResource) GetAge() int32 {
-	if o == nil || isNil(o.Age) {
+	if o == nil || IsNil(o.Age) {
 		var ret int32
 		return ret
 	}
@@ -153,15 +156,15 @@ func (o *ReleaseResource) GetAge() int32 {
 // GetAgeOk returns a tuple with the Age field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetAgeOk() (*int32, bool) {
-	if o == nil || isNil(o.Age) {
-    return nil, false
+	if o == nil || IsNil(o.Age) {
+		return nil, false
 	}
 	return o.Age, true
 }
 
 // HasAge returns a boolean if a field has been set.
 func (o *ReleaseResource) HasAge() bool {
-	if o != nil && !isNil(o.Age) {
+	if o != nil && !IsNil(o.Age) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *ReleaseResource) SetAge(v int32) {
 
 // GetAgeHours returns the AgeHours field value if set, zero value otherwise.
 func (o *ReleaseResource) GetAgeHours() float64 {
-	if o == nil || isNil(o.AgeHours) {
+	if o == nil || IsNil(o.AgeHours) {
 		var ret float64
 		return ret
 	}
@@ -185,15 +188,15 @@ func (o *ReleaseResource) GetAgeHours() float64 {
 // GetAgeHoursOk returns a tuple with the AgeHours field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetAgeHoursOk() (*float64, bool) {
-	if o == nil || isNil(o.AgeHours) {
-    return nil, false
+	if o == nil || IsNil(o.AgeHours) {
+		return nil, false
 	}
 	return o.AgeHours, true
 }
 
 // HasAgeHours returns a boolean if a field has been set.
 func (o *ReleaseResource) HasAgeHours() bool {
-	if o != nil && !isNil(o.AgeHours) {
+	if o != nil && !IsNil(o.AgeHours) {
 		return true
 	}
 
@@ -207,7 +210,7 @@ func (o *ReleaseResource) SetAgeHours(v float64) {
 
 // GetAgeMinutes returns the AgeMinutes field value if set, zero value otherwise.
 func (o *ReleaseResource) GetAgeMinutes() float64 {
-	if o == nil || isNil(o.AgeMinutes) {
+	if o == nil || IsNil(o.AgeMinutes) {
 		var ret float64
 		return ret
 	}
@@ -217,15 +220,15 @@ func (o *ReleaseResource) GetAgeMinutes() float64 {
 // GetAgeMinutesOk returns a tuple with the AgeMinutes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetAgeMinutesOk() (*float64, bool) {
-	if o == nil || isNil(o.AgeMinutes) {
-    return nil, false
+	if o == nil || IsNil(o.AgeMinutes) {
+		return nil, false
 	}
 	return o.AgeMinutes, true
 }
 
 // HasAgeMinutes returns a boolean if a field has been set.
 func (o *ReleaseResource) HasAgeMinutes() bool {
-	if o != nil && !isNil(o.AgeMinutes) {
+	if o != nil && !IsNil(o.AgeMinutes) {
 		return true
 	}
 
@@ -239,7 +242,7 @@ func (o *ReleaseResource) SetAgeMinutes(v float64) {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *ReleaseResource) GetSize() int64 {
-	if o == nil || isNil(o.Size) {
+	if o == nil || IsNil(o.Size) {
 		var ret int64
 		return ret
 	}
@@ -249,15 +252,15 @@ func (o *ReleaseResource) GetSize() int64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetSizeOk() (*int64, bool) {
-	if o == nil || isNil(o.Size) {
-    return nil, false
+	if o == nil || IsNil(o.Size) {
+		return nil, false
 	}
 	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *ReleaseResource) HasSize() bool {
-	if o != nil && !isNil(o.Size) {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *ReleaseResource) SetSize(v int64) {
 
 // GetFiles returns the Files field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetFiles() int32 {
-	if o == nil || isNil(o.Files.Get()) {
+	if o == nil || IsNil(o.Files.Get()) {
 		var ret int32
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *ReleaseResource) GetFiles() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetFilesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Files.Get(), o.Files.IsSet()
 }
@@ -313,7 +316,7 @@ func (o *ReleaseResource) UnsetFiles() {
 
 // GetGrabs returns the Grabs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetGrabs() int32 {
-	if o == nil || isNil(o.Grabs.Get()) {
+	if o == nil || IsNil(o.Grabs.Get()) {
 		var ret int32
 		return ret
 	}
@@ -325,7 +328,7 @@ func (o *ReleaseResource) GetGrabs() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetGrabsOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Grabs.Get(), o.Grabs.IsSet()
 }
@@ -355,7 +358,7 @@ func (o *ReleaseResource) UnsetGrabs() {
 
 // GetIndexerId returns the IndexerId field value if set, zero value otherwise.
 func (o *ReleaseResource) GetIndexerId() int32 {
-	if o == nil || isNil(o.IndexerId) {
+	if o == nil || IsNil(o.IndexerId) {
 		var ret int32
 		return ret
 	}
@@ -365,15 +368,15 @@ func (o *ReleaseResource) GetIndexerId() int32 {
 // GetIndexerIdOk returns a tuple with the IndexerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetIndexerIdOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexerId) {
-    return nil, false
+	if o == nil || IsNil(o.IndexerId) {
+		return nil, false
 	}
 	return o.IndexerId, true
 }
 
 // HasIndexerId returns a boolean if a field has been set.
 func (o *ReleaseResource) HasIndexerId() bool {
-	if o != nil && !isNil(o.IndexerId) {
+	if o != nil && !IsNil(o.IndexerId) {
 		return true
 	}
 
@@ -387,7 +390,7 @@ func (o *ReleaseResource) SetIndexerId(v int32) {
 
 // GetIndexer returns the Indexer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetIndexer() string {
-	if o == nil || isNil(o.Indexer.Get()) {
+	if o == nil || IsNil(o.Indexer.Get()) {
 		var ret string
 		return ret
 	}
@@ -399,7 +402,7 @@ func (o *ReleaseResource) GetIndexer() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetIndexerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Indexer.Get(), o.Indexer.IsSet()
 }
@@ -429,7 +432,7 @@ func (o *ReleaseResource) UnsetIndexer() {
 
 // GetSubGroup returns the SubGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetSubGroup() string {
-	if o == nil || isNil(o.SubGroup.Get()) {
+	if o == nil || IsNil(o.SubGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -441,7 +444,7 @@ func (o *ReleaseResource) GetSubGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetSubGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SubGroup.Get(), o.SubGroup.IsSet()
 }
@@ -471,7 +474,7 @@ func (o *ReleaseResource) UnsetSubGroup() {
 
 // GetReleaseHash returns the ReleaseHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetReleaseHash() string {
-	if o == nil || isNil(o.ReleaseHash.Get()) {
+	if o == nil || IsNil(o.ReleaseHash.Get()) {
 		var ret string
 		return ret
 	}
@@ -483,7 +486,7 @@ func (o *ReleaseResource) GetReleaseHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetReleaseHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseHash.Get(), o.ReleaseHash.IsSet()
 }
@@ -513,7 +516,7 @@ func (o *ReleaseResource) UnsetReleaseHash() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -525,7 +528,7 @@ func (o *ReleaseResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -555,7 +558,7 @@ func (o *ReleaseResource) UnsetTitle() {
 
 // GetSortTitle returns the SortTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetSortTitle() string {
-	if o == nil || isNil(o.SortTitle.Get()) {
+	if o == nil || IsNil(o.SortTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -567,7 +570,7 @@ func (o *ReleaseResource) GetSortTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetSortTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortTitle.Get(), o.SortTitle.IsSet()
 }
@@ -597,7 +600,7 @@ func (o *ReleaseResource) UnsetSortTitle() {
 
 // GetImdbId returns the ImdbId field value if set, zero value otherwise.
 func (o *ReleaseResource) GetImdbId() int32 {
-	if o == nil || isNil(o.ImdbId) {
+	if o == nil || IsNil(o.ImdbId) {
 		var ret int32
 		return ret
 	}
@@ -607,15 +610,15 @@ func (o *ReleaseResource) GetImdbId() int32 {
 // GetImdbIdOk returns a tuple with the ImdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetImdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ImdbId) {
-    return nil, false
+	if o == nil || IsNil(o.ImdbId) {
+		return nil, false
 	}
 	return o.ImdbId, true
 }
 
 // HasImdbId returns a boolean if a field has been set.
 func (o *ReleaseResource) HasImdbId() bool {
-	if o != nil && !isNil(o.ImdbId) {
+	if o != nil && !IsNil(o.ImdbId) {
 		return true
 	}
 
@@ -629,7 +632,7 @@ func (o *ReleaseResource) SetImdbId(v int32) {
 
 // GetTmdbId returns the TmdbId field value if set, zero value otherwise.
 func (o *ReleaseResource) GetTmdbId() int32 {
-	if o == nil || isNil(o.TmdbId) {
+	if o == nil || IsNil(o.TmdbId) {
 		var ret int32
 		return ret
 	}
@@ -639,15 +642,15 @@ func (o *ReleaseResource) GetTmdbId() int32 {
 // GetTmdbIdOk returns a tuple with the TmdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetTmdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TmdbId) {
-    return nil, false
+	if o == nil || IsNil(o.TmdbId) {
+		return nil, false
 	}
 	return o.TmdbId, true
 }
 
 // HasTmdbId returns a boolean if a field has been set.
 func (o *ReleaseResource) HasTmdbId() bool {
-	if o != nil && !isNil(o.TmdbId) {
+	if o != nil && !IsNil(o.TmdbId) {
 		return true
 	}
 
@@ -661,7 +664,7 @@ func (o *ReleaseResource) SetTmdbId(v int32) {
 
 // GetTvdbId returns the TvdbId field value if set, zero value otherwise.
 func (o *ReleaseResource) GetTvdbId() int32 {
-	if o == nil || isNil(o.TvdbId) {
+	if o == nil || IsNil(o.TvdbId) {
 		var ret int32
 		return ret
 	}
@@ -671,15 +674,15 @@ func (o *ReleaseResource) GetTvdbId() int32 {
 // GetTvdbIdOk returns a tuple with the TvdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetTvdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TvdbId) {
-    return nil, false
+	if o == nil || IsNil(o.TvdbId) {
+		return nil, false
 	}
 	return o.TvdbId, true
 }
 
 // HasTvdbId returns a boolean if a field has been set.
 func (o *ReleaseResource) HasTvdbId() bool {
-	if o != nil && !isNil(o.TvdbId) {
+	if o != nil && !IsNil(o.TvdbId) {
 		return true
 	}
 
@@ -693,7 +696,7 @@ func (o *ReleaseResource) SetTvdbId(v int32) {
 
 // GetTvMazeId returns the TvMazeId field value if set, zero value otherwise.
 func (o *ReleaseResource) GetTvMazeId() int32 {
-	if o == nil || isNil(o.TvMazeId) {
+	if o == nil || IsNil(o.TvMazeId) {
 		var ret int32
 		return ret
 	}
@@ -703,15 +706,15 @@ func (o *ReleaseResource) GetTvMazeId() int32 {
 // GetTvMazeIdOk returns a tuple with the TvMazeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetTvMazeIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TvMazeId) {
-    return nil, false
+	if o == nil || IsNil(o.TvMazeId) {
+		return nil, false
 	}
 	return o.TvMazeId, true
 }
 
 // HasTvMazeId returns a boolean if a field has been set.
 func (o *ReleaseResource) HasTvMazeId() bool {
-	if o != nil && !isNil(o.TvMazeId) {
+	if o != nil && !IsNil(o.TvMazeId) {
 		return true
 	}
 
@@ -725,7 +728,7 @@ func (o *ReleaseResource) SetTvMazeId(v int32) {
 
 // GetPublishDate returns the PublishDate field value if set, zero value otherwise.
 func (o *ReleaseResource) GetPublishDate() time.Time {
-	if o == nil || isNil(o.PublishDate) {
+	if o == nil || IsNil(o.PublishDate) {
 		var ret time.Time
 		return ret
 	}
@@ -735,15 +738,15 @@ func (o *ReleaseResource) GetPublishDate() time.Time {
 // GetPublishDateOk returns a tuple with the PublishDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetPublishDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.PublishDate) {
-    return nil, false
+	if o == nil || IsNil(o.PublishDate) {
+		return nil, false
 	}
 	return o.PublishDate, true
 }
 
 // HasPublishDate returns a boolean if a field has been set.
 func (o *ReleaseResource) HasPublishDate() bool {
-	if o != nil && !isNil(o.PublishDate) {
+	if o != nil && !IsNil(o.PublishDate) {
 		return true
 	}
 
@@ -757,7 +760,7 @@ func (o *ReleaseResource) SetPublishDate(v time.Time) {
 
 // GetCommentUrl returns the CommentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetCommentUrl() string {
-	if o == nil || isNil(o.CommentUrl.Get()) {
+	if o == nil || IsNil(o.CommentUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -769,7 +772,7 @@ func (o *ReleaseResource) GetCommentUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetCommentUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CommentUrl.Get(), o.CommentUrl.IsSet()
 }
@@ -799,7 +802,7 @@ func (o *ReleaseResource) UnsetCommentUrl() {
 
 // GetDownloadUrl returns the DownloadUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetDownloadUrl() string {
-	if o == nil || isNil(o.DownloadUrl.Get()) {
+	if o == nil || IsNil(o.DownloadUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -811,7 +814,7 @@ func (o *ReleaseResource) GetDownloadUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetDownloadUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadUrl.Get(), o.DownloadUrl.IsSet()
 }
@@ -841,7 +844,7 @@ func (o *ReleaseResource) UnsetDownloadUrl() {
 
 // GetInfoUrl returns the InfoUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetInfoUrl() string {
-	if o == nil || isNil(o.InfoUrl.Get()) {
+	if o == nil || IsNil(o.InfoUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -853,7 +856,7 @@ func (o *ReleaseResource) GetInfoUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetInfoUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoUrl.Get(), o.InfoUrl.IsSet()
 }
@@ -883,7 +886,7 @@ func (o *ReleaseResource) UnsetInfoUrl() {
 
 // GetPosterUrl returns the PosterUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetPosterUrl() string {
-	if o == nil || isNil(o.PosterUrl.Get()) {
+	if o == nil || IsNil(o.PosterUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -895,7 +898,7 @@ func (o *ReleaseResource) GetPosterUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetPosterUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PosterUrl.Get(), o.PosterUrl.IsSet()
 }
@@ -924,9 +927,9 @@ func (o *ReleaseResource) UnsetPosterUrl() {
 }
 
 // GetIndexerFlags returns the IndexerFlags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetIndexerFlags() []*string {
+func (o *ReleaseResource) GetIndexerFlags() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.IndexerFlags
@@ -935,16 +938,16 @@ func (o *ReleaseResource) GetIndexerFlags() []*string {
 // GetIndexerFlagsOk returns a tuple with the IndexerFlags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetIndexerFlagsOk() ([]*string, bool) {
-	if o == nil || isNil(o.IndexerFlags) {
-    return nil, false
+func (o *ReleaseResource) GetIndexerFlagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.IndexerFlags) {
+		return nil, false
 	}
 	return o.IndexerFlags, true
 }
 
 // HasIndexerFlags returns a boolean if a field has been set.
 func (o *ReleaseResource) HasIndexerFlags() bool {
-	if o != nil && isNil(o.IndexerFlags) {
+	if o != nil && IsNil(o.IndexerFlags) {
 		return true
 	}
 
@@ -952,14 +955,14 @@ func (o *ReleaseResource) HasIndexerFlags() bool {
 }
 
 // SetIndexerFlags gets a reference to the given []string and assigns it to the IndexerFlags field.
-func (o *ReleaseResource) SetIndexerFlags(v []*string) {
+func (o *ReleaseResource) SetIndexerFlags(v []string) {
 	o.IndexerFlags = v
 }
 
 // GetCategories returns the Categories field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetCategories() []*IndexerCategory {
+func (o *ReleaseResource) GetCategories() []IndexerCategory {
 	if o == nil {
-		var ret []*IndexerCategory
+		var ret []IndexerCategory
 		return ret
 	}
 	return o.Categories
@@ -968,16 +971,16 @@ func (o *ReleaseResource) GetCategories() []*IndexerCategory {
 // GetCategoriesOk returns a tuple with the Categories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetCategoriesOk() ([]*IndexerCategory, bool) {
-	if o == nil || isNil(o.Categories) {
-    return nil, false
+func (o *ReleaseResource) GetCategoriesOk() ([]IndexerCategory, bool) {
+	if o == nil || IsNil(o.Categories) {
+		return nil, false
 	}
 	return o.Categories, true
 }
 
 // HasCategories returns a boolean if a field has been set.
 func (o *ReleaseResource) HasCategories() bool {
-	if o != nil && isNil(o.Categories) {
+	if o != nil && IsNil(o.Categories) {
 		return true
 	}
 
@@ -985,13 +988,13 @@ func (o *ReleaseResource) HasCategories() bool {
 }
 
 // SetCategories gets a reference to the given []IndexerCategory and assigns it to the Categories field.
-func (o *ReleaseResource) SetCategories(v []*IndexerCategory) {
+func (o *ReleaseResource) SetCategories(v []IndexerCategory) {
 	o.Categories = v
 }
 
 // GetMagnetUrl returns the MagnetUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetMagnetUrl() string {
-	if o == nil || isNil(o.MagnetUrl.Get()) {
+	if o == nil || IsNil(o.MagnetUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -1003,7 +1006,7 @@ func (o *ReleaseResource) GetMagnetUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetMagnetUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MagnetUrl.Get(), o.MagnetUrl.IsSet()
 }
@@ -1033,7 +1036,7 @@ func (o *ReleaseResource) UnsetMagnetUrl() {
 
 // GetInfoHash returns the InfoHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetInfoHash() string {
-	if o == nil || isNil(o.InfoHash.Get()) {
+	if o == nil || IsNil(o.InfoHash.Get()) {
 		var ret string
 		return ret
 	}
@@ -1045,7 +1048,7 @@ func (o *ReleaseResource) GetInfoHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetInfoHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoHash.Get(), o.InfoHash.IsSet()
 }
@@ -1075,7 +1078,7 @@ func (o *ReleaseResource) UnsetInfoHash() {
 
 // GetSeeders returns the Seeders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetSeeders() int32 {
-	if o == nil || isNil(o.Seeders.Get()) {
+	if o == nil || IsNil(o.Seeders.Get()) {
 		var ret int32
 		return ret
 	}
@@ -1087,7 +1090,7 @@ func (o *ReleaseResource) GetSeeders() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetSeedersOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Seeders.Get(), o.Seeders.IsSet()
 }
@@ -1117,7 +1120,7 @@ func (o *ReleaseResource) UnsetSeeders() {
 
 // GetLeechers returns the Leechers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetLeechers() int32 {
-	if o == nil || isNil(o.Leechers.Get()) {
+	if o == nil || IsNil(o.Leechers.Get()) {
 		var ret int32
 		return ret
 	}
@@ -1129,7 +1132,7 @@ func (o *ReleaseResource) GetLeechers() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetLeechersOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Leechers.Get(), o.Leechers.IsSet()
 }
@@ -1159,7 +1162,7 @@ func (o *ReleaseResource) UnsetLeechers() {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *ReleaseResource) GetProtocol() DownloadProtocol {
-	if o == nil || isNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -1169,15 +1172,15 @@ func (o *ReleaseResource) GetProtocol() DownloadProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseResource) GetProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.Protocol) {
-    return nil, false
+	if o == nil || IsNil(o.Protocol) {
+		return nil, false
 	}
 	return o.Protocol, true
 }
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *ReleaseResource) HasProtocol() bool {
-	if o != nil && !isNil(o.Protocol) {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
@@ -1191,7 +1194,7 @@ func (o *ReleaseResource) SetProtocol(v DownloadProtocol) {
 
 // GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetFileName() string {
-	if o == nil || isNil(o.FileName.Get()) {
+	if o == nil || IsNil(o.FileName.Get()) {
 		var ret string
 		return ret
 	}
@@ -1203,7 +1206,7 @@ func (o *ReleaseResource) GetFileName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseResource) GetFileNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.FileName.Get(), o.FileName.IsSet()
 }
@@ -1232,23 +1235,31 @@ func (o *ReleaseResource) UnsetFileName() {
 }
 
 func (o ReleaseResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ReleaseResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Guid.IsSet() {
 		toSerialize["guid"] = o.Guid.Get()
 	}
-	if !isNil(o.Age) {
+	if !IsNil(o.Age) {
 		toSerialize["age"] = o.Age
 	}
-	if !isNil(o.AgeHours) {
+	if !IsNil(o.AgeHours) {
 		toSerialize["ageHours"] = o.AgeHours
 	}
-	if !isNil(o.AgeMinutes) {
+	if !IsNil(o.AgeMinutes) {
 		toSerialize["ageMinutes"] = o.AgeMinutes
 	}
-	if !isNil(o.Size) {
+	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
 	if o.Files.IsSet() {
@@ -1257,7 +1268,7 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	if o.Grabs.IsSet() {
 		toSerialize["grabs"] = o.Grabs.Get()
 	}
-	if !isNil(o.IndexerId) {
+	if !IsNil(o.IndexerId) {
 		toSerialize["indexerId"] = o.IndexerId
 	}
 	if o.Indexer.IsSet() {
@@ -1275,19 +1286,19 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	if o.SortTitle.IsSet() {
 		toSerialize["sortTitle"] = o.SortTitle.Get()
 	}
-	if !isNil(o.ImdbId) {
+	if !IsNil(o.ImdbId) {
 		toSerialize["imdbId"] = o.ImdbId
 	}
-	if !isNil(o.TmdbId) {
+	if !IsNil(o.TmdbId) {
 		toSerialize["tmdbId"] = o.TmdbId
 	}
-	if !isNil(o.TvdbId) {
+	if !IsNil(o.TvdbId) {
 		toSerialize["tvdbId"] = o.TvdbId
 	}
-	if !isNil(o.TvMazeId) {
+	if !IsNil(o.TvMazeId) {
 		toSerialize["tvMazeId"] = o.TvMazeId
 	}
-	if !isNil(o.PublishDate) {
+	if !IsNil(o.PublishDate) {
 		toSerialize["publishDate"] = o.PublishDate
 	}
 	if o.CommentUrl.IsSet() {
@@ -1320,13 +1331,13 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	if o.Leechers.IsSet() {
 		toSerialize["leechers"] = o.Leechers.Get()
 	}
-	if !isNil(o.Protocol) {
+	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
 	if o.FileName.IsSet() {
 		toSerialize["fileName"] = o.FileName.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableReleaseResource struct {

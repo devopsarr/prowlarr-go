@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DevelopmentConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DevelopmentConfigResource{}
+
 // DevelopmentConfigResource struct for DevelopmentConfigResource
 type DevelopmentConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewDevelopmentConfigResourceWithDefaults() *DevelopmentConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DevelopmentConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *DevelopmentConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DevelopmentConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *DevelopmentConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *DevelopmentConfigResource) SetId(v int32) {
 
 // GetConsoleLogLevel returns the ConsoleLogLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DevelopmentConfigResource) GetConsoleLogLevel() string {
-	if o == nil || isNil(o.ConsoleLogLevel.Get()) {
+	if o == nil || IsNil(o.ConsoleLogLevel.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *DevelopmentConfigResource) GetConsoleLogLevel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DevelopmentConfigResource) GetConsoleLogLevelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConsoleLogLevel.Get(), o.ConsoleLogLevel.IsSet()
 }
@@ -117,7 +120,7 @@ func (o *DevelopmentConfigResource) UnsetConsoleLogLevel() {
 
 // GetLogSql returns the LogSql field value if set, zero value otherwise.
 func (o *DevelopmentConfigResource) GetLogSql() bool {
-	if o == nil || isNil(o.LogSql) {
+	if o == nil || IsNil(o.LogSql) {
 		var ret bool
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *DevelopmentConfigResource) GetLogSql() bool {
 // GetLogSqlOk returns a tuple with the LogSql field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DevelopmentConfigResource) GetLogSqlOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSql) {
-    return nil, false
+	if o == nil || IsNil(o.LogSql) {
+		return nil, false
 	}
 	return o.LogSql, true
 }
 
 // HasLogSql returns a boolean if a field has been set.
 func (o *DevelopmentConfigResource) HasLogSql() bool {
-	if o != nil && !isNil(o.LogSql) {
+	if o != nil && !IsNil(o.LogSql) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *DevelopmentConfigResource) SetLogSql(v bool) {
 
 // GetLogIndexerResponse returns the LogIndexerResponse field value if set, zero value otherwise.
 func (o *DevelopmentConfigResource) GetLogIndexerResponse() bool {
-	if o == nil || isNil(o.LogIndexerResponse) {
+	if o == nil || IsNil(o.LogIndexerResponse) {
 		var ret bool
 		return ret
 	}
@@ -159,15 +162,15 @@ func (o *DevelopmentConfigResource) GetLogIndexerResponse() bool {
 // GetLogIndexerResponseOk returns a tuple with the LogIndexerResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DevelopmentConfigResource) GetLogIndexerResponseOk() (*bool, bool) {
-	if o == nil || isNil(o.LogIndexerResponse) {
-    return nil, false
+	if o == nil || IsNil(o.LogIndexerResponse) {
+		return nil, false
 	}
 	return o.LogIndexerResponse, true
 }
 
 // HasLogIndexerResponse returns a boolean if a field has been set.
 func (o *DevelopmentConfigResource) HasLogIndexerResponse() bool {
-	if o != nil && !isNil(o.LogIndexerResponse) {
+	if o != nil && !IsNil(o.LogIndexerResponse) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *DevelopmentConfigResource) SetLogIndexerResponse(v bool) {
 
 // GetLogRotate returns the LogRotate field value if set, zero value otherwise.
 func (o *DevelopmentConfigResource) GetLogRotate() int32 {
-	if o == nil || isNil(o.LogRotate) {
+	if o == nil || IsNil(o.LogRotate) {
 		var ret int32
 		return ret
 	}
@@ -191,15 +194,15 @@ func (o *DevelopmentConfigResource) GetLogRotate() int32 {
 // GetLogRotateOk returns a tuple with the LogRotate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DevelopmentConfigResource) GetLogRotateOk() (*int32, bool) {
-	if o == nil || isNil(o.LogRotate) {
-    return nil, false
+	if o == nil || IsNil(o.LogRotate) {
+		return nil, false
 	}
 	return o.LogRotate, true
 }
 
 // HasLogRotate returns a boolean if a field has been set.
 func (o *DevelopmentConfigResource) HasLogRotate() bool {
-	if o != nil && !isNil(o.LogRotate) {
+	if o != nil && !IsNil(o.LogRotate) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *DevelopmentConfigResource) SetLogRotate(v int32) {
 
 // GetFilterSentryEvents returns the FilterSentryEvents field value if set, zero value otherwise.
 func (o *DevelopmentConfigResource) GetFilterSentryEvents() bool {
-	if o == nil || isNil(o.FilterSentryEvents) {
+	if o == nil || IsNil(o.FilterSentryEvents) {
 		var ret bool
 		return ret
 	}
@@ -223,15 +226,15 @@ func (o *DevelopmentConfigResource) GetFilterSentryEvents() bool {
 // GetFilterSentryEventsOk returns a tuple with the FilterSentryEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DevelopmentConfigResource) GetFilterSentryEventsOk() (*bool, bool) {
-	if o == nil || isNil(o.FilterSentryEvents) {
-    return nil, false
+	if o == nil || IsNil(o.FilterSentryEvents) {
+		return nil, false
 	}
 	return o.FilterSentryEvents, true
 }
 
 // HasFilterSentryEvents returns a boolean if a field has been set.
 func (o *DevelopmentConfigResource) HasFilterSentryEvents() bool {
-	if o != nil && !isNil(o.FilterSentryEvents) {
+	if o != nil && !IsNil(o.FilterSentryEvents) {
 		return true
 	}
 
@@ -244,26 +247,34 @@ func (o *DevelopmentConfigResource) SetFilterSentryEvents(v bool) {
 }
 
 func (o DevelopmentConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DevelopmentConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.ConsoleLogLevel.IsSet() {
 		toSerialize["consoleLogLevel"] = o.ConsoleLogLevel.Get()
 	}
-	if !isNil(o.LogSql) {
+	if !IsNil(o.LogSql) {
 		toSerialize["logSql"] = o.LogSql
 	}
-	if !isNil(o.LogIndexerResponse) {
+	if !IsNil(o.LogIndexerResponse) {
 		toSerialize["logIndexerResponse"] = o.LogIndexerResponse
 	}
-	if !isNil(o.LogRotate) {
+	if !IsNil(o.LogRotate) {
 		toSerialize["logRotate"] = o.LogRotate
 	}
-	if !isNil(o.FilterSentryEvents) {
+	if !IsNil(o.FilterSentryEvents) {
 		toSerialize["filterSentryEvents"] = o.FilterSentryEvents
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDevelopmentConfigResource struct {

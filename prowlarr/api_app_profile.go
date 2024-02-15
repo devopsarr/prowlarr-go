@@ -22,6 +22,7 @@ import (
 
 // AppProfileAPIService AppProfileAPI service
 type AppProfileAPIService service
+
 type ApiCreateAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileAPIService
@@ -154,6 +155,7 @@ func (a *AppProfileAPIService) CreateAppProfileExecute(r ApiCreateAppProfileRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileAPIService
@@ -193,7 +195,7 @@ func (a *AppProfileAPIService) DeleteAppProfileExecute(r ApiDeleteAppProfileRequ
 	}
 
 	localVarPath := localBasePath + "/api/v1/appprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *AppProfileAPIService) DeleteAppProfileExecute(r ApiDeleteAppProfileRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetAppProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *AppProfileAPIService
@@ -312,7 +315,7 @@ func (a *AppProfileAPIService) GetAppProfileByIdExecute(r ApiGetAppProfileByIdRe
 	}
 
 	localVarPath := localBasePath + "/api/v1/appprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -392,8 +395,8 @@ func (a *AppProfileAPIService) GetAppProfileByIdExecute(r ApiGetAppProfileByIdRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-            		newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -410,6 +413,7 @@ func (a *AppProfileAPIService) GetAppProfileByIdExecute(r ApiGetAppProfileByIdRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetAppProfileSchemaRequest struct {
 	ctx context.Context
 	ApiService *AppProfileAPIService
@@ -534,12 +538,13 @@ func (a *AppProfileAPIService) GetAppProfileSchemaExecute(r ApiGetAppProfileSche
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileAPIService
 }
 
-func (r ApiListAppProfileRequest) Execute() ([]*AppProfileResource, *http.Response, error) {
+func (r ApiListAppProfileRequest) Execute() ([]AppProfileResource, *http.Response, error) {
 	return r.ApiService.ListAppProfileExecute(r)
 }
 
@@ -558,12 +563,12 @@ func (a *AppProfileAPIService) ListAppProfile(ctx context.Context) ApiListAppPro
 
 // Execute executes the request
 //  @return []AppProfileResource
-func (a *AppProfileAPIService) ListAppProfileExecute(r ApiListAppProfileRequest) ([]*AppProfileResource, *http.Response, error) {
+func (a *AppProfileAPIService) ListAppProfileExecute(r ApiListAppProfileRequest) ([]AppProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AppProfileResource
+		localVarReturnValue  []AppProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppProfileAPIService.ListAppProfile")
@@ -658,6 +663,7 @@ func (a *AppProfileAPIService) ListAppProfileExecute(r ApiListAppProfileRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateAppProfileRequest struct {
 	ctx context.Context
 	ApiService *AppProfileAPIService
@@ -705,7 +711,7 @@ func (a *AppProfileAPIService) UpdateAppProfileExecute(r ApiUpdateAppProfileRequ
 	}
 
 	localVarPath := localBasePath + "/api/v1/appprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

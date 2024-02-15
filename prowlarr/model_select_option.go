@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SelectOption type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SelectOption{}
+
 // SelectOption struct for SelectOption
 type SelectOption struct {
 	Value *int32 `json:"value,omitempty"`
@@ -42,7 +45,7 @@ func NewSelectOptionWithDefaults() *SelectOption {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *SelectOption) GetValue() int32 {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *SelectOption) GetValue() int32 {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SelectOption) GetValueOk() (*int32, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
+	if o == nil || IsNil(o.Value) {
+		return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *SelectOption) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *SelectOption) SetValue(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SelectOption) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *SelectOption) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SelectOption) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *SelectOption) UnsetName() {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *SelectOption) GetOrder() int32 {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret int32
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *SelectOption) GetOrder() int32 {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SelectOption) GetOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.Order) {
-    return nil, false
+	if o == nil || IsNil(o.Order) {
+		return nil, false
 	}
 	return o.Order, true
 }
 
 // HasOrder returns a boolean if a field has been set.
 func (o *SelectOption) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *SelectOption) SetOrder(v int32) {
 
 // GetHint returns the Hint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SelectOption) GetHint() string {
-	if o == nil || isNil(o.Hint.Get()) {
+	if o == nil || IsNil(o.Hint.Get()) {
 		var ret string
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *SelectOption) GetHint() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SelectOption) GetHintOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Hint.Get(), o.Hint.IsSet()
 }
@@ -190,7 +193,7 @@ func (o *SelectOption) UnsetHint() {
 
 // GetParentValue returns the ParentValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SelectOption) GetParentValue() int32 {
-	if o == nil || isNil(o.ParentValue.Get()) {
+	if o == nil || IsNil(o.ParentValue.Get()) {
 		var ret int32
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *SelectOption) GetParentValue() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SelectOption) GetParentValueOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentValue.Get(), o.ParentValue.IsSet()
 }
@@ -231,14 +234,22 @@ func (o *SelectOption) UnsetParentValue() {
 }
 
 func (o SelectOption) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SelectOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Value) {
+	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	if o.Hint.IsSet() {
@@ -247,7 +258,7 @@ func (o SelectOption) MarshalJSON() ([]byte, error) {
 	if o.ParentValue.IsSet() {
 		toSerialize["parentValue"] = o.ParentValue.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSelectOption struct {

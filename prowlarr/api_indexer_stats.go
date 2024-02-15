@@ -22,6 +22,7 @@ import (
 
 // IndexerStatsAPIService IndexerStatsAPI service
 type IndexerStatsAPIService service
+
 type ApiGetIndexerStatsRequest struct {
 	ctx context.Context
 	ApiService *IndexerStatsAPIService
@@ -96,19 +97,19 @@ func (a *IndexerStatsAPIService) GetIndexerStatsExecute(r ApiGetIndexerStatsRequ
 	localVarFormParams := url.Values{}
 
 	if r.startDate != nil {
-		localVarQueryParams.Add("startDate", parameterToString(*r.startDate, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "startDate", r.startDate, "")
 	}
 	if r.endDate != nil {
-		localVarQueryParams.Add("endDate", parameterToString(*r.endDate, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endDate", r.endDate, "")
 	}
 	if r.indexers != nil {
-		localVarQueryParams.Add("indexers", parameterToString(*r.indexers, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "indexers", r.indexers, "")
 	}
 	if r.protocols != nil {
-		localVarQueryParams.Add("protocols", parameterToString(*r.protocols, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", r.protocols, "")
 	}
 	if r.tags != nil {
-		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -22,6 +22,7 @@ import (
 
 // UpdateLogFileAPIService UpdateLogFileAPI service
 type UpdateLogFileAPIService service
+
 type ApiGetLogFileUpdateByFilenameRequest struct {
 	ctx context.Context
 	ApiService *UpdateLogFileAPIService
@@ -63,7 +64,7 @@ func (a *UpdateLogFileAPIService) GetLogFileUpdateByFilenameExecute(r ApiGetLogF
 	}
 
 	localVarPath := localBasePath + "/api/v1/log/file/update/{filename}"
-	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterToString(r.filename, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,12 +151,13 @@ func (a *UpdateLogFileAPIService) GetLogFileUpdateByFilenameExecute(r ApiGetLogF
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListLogFileUpdateRequest struct {
 	ctx context.Context
 	ApiService *UpdateLogFileAPIService
 }
 
-func (r ApiListLogFileUpdateRequest) Execute() ([]*LogFileResource, *http.Response, error) {
+func (r ApiListLogFileUpdateRequest) Execute() ([]LogFileResource, *http.Response, error) {
 	return r.ApiService.ListLogFileUpdateExecute(r)
 }
 
@@ -174,12 +176,12 @@ func (a *UpdateLogFileAPIService) ListLogFileUpdate(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []LogFileResource
-func (a *UpdateLogFileAPIService) ListLogFileUpdateExecute(r ApiListLogFileUpdateRequest) ([]*LogFileResource, *http.Response, error) {
+func (a *UpdateLogFileAPIService) ListLogFileUpdateExecute(r ApiListLogFileUpdateRequest) ([]LogFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*LogFileResource
+		localVarReturnValue  []LogFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateLogFileAPIService.ListLogFileUpdate")

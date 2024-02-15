@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the HostConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HostConfigResource{}
+
 // HostConfigResource struct for HostConfigResource
 type HostConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -74,7 +77,7 @@ func NewHostConfigResourceWithDefaults() *HostConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *HostConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -84,15 +87,15 @@ func (o *HostConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *HostConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *HostConfigResource) SetId(v int32) {
 
 // GetBindAddress returns the BindAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetBindAddress() string {
-	if o == nil || isNil(o.BindAddress.Get()) {
+	if o == nil || IsNil(o.BindAddress.Get()) {
 		var ret string
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *HostConfigResource) GetBindAddress() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetBindAddressOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BindAddress.Get(), o.BindAddress.IsSet()
 }
@@ -148,7 +151,7 @@ func (o *HostConfigResource) UnsetBindAddress() {
 
 // GetPort returns the Port field value if set, zero value otherwise.
 func (o *HostConfigResource) GetPort() int32 {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		var ret int32
 		return ret
 	}
@@ -158,15 +161,15 @@ func (o *HostConfigResource) GetPort() int32 {
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetPortOk() (*int32, bool) {
-	if o == nil || isNil(o.Port) {
-    return nil, false
+	if o == nil || IsNil(o.Port) {
+		return nil, false
 	}
 	return o.Port, true
 }
 
 // HasPort returns a boolean if a field has been set.
 func (o *HostConfigResource) HasPort() bool {
-	if o != nil && !isNil(o.Port) {
+	if o != nil && !IsNil(o.Port) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *HostConfigResource) SetPort(v int32) {
 
 // GetSslPort returns the SslPort field value if set, zero value otherwise.
 func (o *HostConfigResource) GetSslPort() int32 {
-	if o == nil || isNil(o.SslPort) {
+	if o == nil || IsNil(o.SslPort) {
 		var ret int32
 		return ret
 	}
@@ -190,15 +193,15 @@ func (o *HostConfigResource) GetSslPort() int32 {
 // GetSslPortOk returns a tuple with the SslPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetSslPortOk() (*int32, bool) {
-	if o == nil || isNil(o.SslPort) {
-    return nil, false
+	if o == nil || IsNil(o.SslPort) {
+		return nil, false
 	}
 	return o.SslPort, true
 }
 
 // HasSslPort returns a boolean if a field has been set.
 func (o *HostConfigResource) HasSslPort() bool {
-	if o != nil && !isNil(o.SslPort) {
+	if o != nil && !IsNil(o.SslPort) {
 		return true
 	}
 
@@ -212,7 +215,7 @@ func (o *HostConfigResource) SetSslPort(v int32) {
 
 // GetEnableSsl returns the EnableSsl field value if set, zero value otherwise.
 func (o *HostConfigResource) GetEnableSsl() bool {
-	if o == nil || isNil(o.EnableSsl) {
+	if o == nil || IsNil(o.EnableSsl) {
 		var ret bool
 		return ret
 	}
@@ -222,15 +225,15 @@ func (o *HostConfigResource) GetEnableSsl() bool {
 // GetEnableSslOk returns a tuple with the EnableSsl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetEnableSslOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableSsl) {
-    return nil, false
+	if o == nil || IsNil(o.EnableSsl) {
+		return nil, false
 	}
 	return o.EnableSsl, true
 }
 
 // HasEnableSsl returns a boolean if a field has been set.
 func (o *HostConfigResource) HasEnableSsl() bool {
-	if o != nil && !isNil(o.EnableSsl) {
+	if o != nil && !IsNil(o.EnableSsl) {
 		return true
 	}
 
@@ -244,7 +247,7 @@ func (o *HostConfigResource) SetEnableSsl(v bool) {
 
 // GetLaunchBrowser returns the LaunchBrowser field value if set, zero value otherwise.
 func (o *HostConfigResource) GetLaunchBrowser() bool {
-	if o == nil || isNil(o.LaunchBrowser) {
+	if o == nil || IsNil(o.LaunchBrowser) {
 		var ret bool
 		return ret
 	}
@@ -254,15 +257,15 @@ func (o *HostConfigResource) GetLaunchBrowser() bool {
 // GetLaunchBrowserOk returns a tuple with the LaunchBrowser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetLaunchBrowserOk() (*bool, bool) {
-	if o == nil || isNil(o.LaunchBrowser) {
-    return nil, false
+	if o == nil || IsNil(o.LaunchBrowser) {
+		return nil, false
 	}
 	return o.LaunchBrowser, true
 }
 
 // HasLaunchBrowser returns a boolean if a field has been set.
 func (o *HostConfigResource) HasLaunchBrowser() bool {
-	if o != nil && !isNil(o.LaunchBrowser) {
+	if o != nil && !IsNil(o.LaunchBrowser) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *HostConfigResource) SetLaunchBrowser(v bool) {
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
 func (o *HostConfigResource) GetAuthenticationMethod() AuthenticationType {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		var ret AuthenticationType
 		return ret
 	}
@@ -286,15 +289,15 @@ func (o *HostConfigResource) GetAuthenticationMethod() AuthenticationType {
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetAuthenticationMethodOk() (*AuthenticationType, bool) {
-	if o == nil || isNil(o.AuthenticationMethod) {
-    return nil, false
+	if o == nil || IsNil(o.AuthenticationMethod) {
+		return nil, false
 	}
 	return o.AuthenticationMethod, true
 }
 
 // HasAuthenticationMethod returns a boolean if a field has been set.
 func (o *HostConfigResource) HasAuthenticationMethod() bool {
-	if o != nil && !isNil(o.AuthenticationMethod) {
+	if o != nil && !IsNil(o.AuthenticationMethod) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *HostConfigResource) SetAuthenticationMethod(v AuthenticationType) {
 
 // GetAuthenticationRequired returns the AuthenticationRequired field value if set, zero value otherwise.
 func (o *HostConfigResource) GetAuthenticationRequired() AuthenticationRequiredType {
-	if o == nil || isNil(o.AuthenticationRequired) {
+	if o == nil || IsNil(o.AuthenticationRequired) {
 		var ret AuthenticationRequiredType
 		return ret
 	}
@@ -318,15 +321,15 @@ func (o *HostConfigResource) GetAuthenticationRequired() AuthenticationRequiredT
 // GetAuthenticationRequiredOk returns a tuple with the AuthenticationRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetAuthenticationRequiredOk() (*AuthenticationRequiredType, bool) {
-	if o == nil || isNil(o.AuthenticationRequired) {
-    return nil, false
+	if o == nil || IsNil(o.AuthenticationRequired) {
+		return nil, false
 	}
 	return o.AuthenticationRequired, true
 }
 
 // HasAuthenticationRequired returns a boolean if a field has been set.
 func (o *HostConfigResource) HasAuthenticationRequired() bool {
-	if o != nil && !isNil(o.AuthenticationRequired) {
+	if o != nil && !IsNil(o.AuthenticationRequired) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *HostConfigResource) SetAuthenticationRequired(v AuthenticationRequiredT
 
 // GetAnalyticsEnabled returns the AnalyticsEnabled field value if set, zero value otherwise.
 func (o *HostConfigResource) GetAnalyticsEnabled() bool {
-	if o == nil || isNil(o.AnalyticsEnabled) {
+	if o == nil || IsNil(o.AnalyticsEnabled) {
 		var ret bool
 		return ret
 	}
@@ -350,15 +353,15 @@ func (o *HostConfigResource) GetAnalyticsEnabled() bool {
 // GetAnalyticsEnabledOk returns a tuple with the AnalyticsEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetAnalyticsEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.AnalyticsEnabled) {
-    return nil, false
+	if o == nil || IsNil(o.AnalyticsEnabled) {
+		return nil, false
 	}
 	return o.AnalyticsEnabled, true
 }
 
 // HasAnalyticsEnabled returns a boolean if a field has been set.
 func (o *HostConfigResource) HasAnalyticsEnabled() bool {
-	if o != nil && !isNil(o.AnalyticsEnabled) {
+	if o != nil && !IsNil(o.AnalyticsEnabled) {
 		return true
 	}
 
@@ -372,7 +375,7 @@ func (o *HostConfigResource) SetAnalyticsEnabled(v bool) {
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetUsername() string {
-	if o == nil || isNil(o.Username.Get()) {
+	if o == nil || IsNil(o.Username.Get()) {
 		var ret string
 		return ret
 	}
@@ -384,7 +387,7 @@ func (o *HostConfigResource) GetUsername() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Username.Get(), o.Username.IsSet()
 }
@@ -414,7 +417,7 @@ func (o *HostConfigResource) UnsetUsername() {
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetPassword() string {
-	if o == nil || isNil(o.Password.Get()) {
+	if o == nil || IsNil(o.Password.Get()) {
 		var ret string
 		return ret
 	}
@@ -426,7 +429,7 @@ func (o *HostConfigResource) GetPassword() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetPasswordOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Password.Get(), o.Password.IsSet()
 }
@@ -456,7 +459,7 @@ func (o *HostConfigResource) UnsetPassword() {
 
 // GetPasswordConfirmation returns the PasswordConfirmation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetPasswordConfirmation() string {
-	if o == nil || isNil(o.PasswordConfirmation.Get()) {
+	if o == nil || IsNil(o.PasswordConfirmation.Get()) {
 		var ret string
 		return ret
 	}
@@ -468,7 +471,7 @@ func (o *HostConfigResource) GetPasswordConfirmation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetPasswordConfirmationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordConfirmation.Get(), o.PasswordConfirmation.IsSet()
 }
@@ -498,7 +501,7 @@ func (o *HostConfigResource) UnsetPasswordConfirmation() {
 
 // GetLogLevel returns the LogLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetLogLevel() string {
-	if o == nil || isNil(o.LogLevel.Get()) {
+	if o == nil || IsNil(o.LogLevel.Get()) {
 		var ret string
 		return ret
 	}
@@ -510,7 +513,7 @@ func (o *HostConfigResource) GetLogLevel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetLogLevelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LogLevel.Get(), o.LogLevel.IsSet()
 }
@@ -540,7 +543,7 @@ func (o *HostConfigResource) UnsetLogLevel() {
 
 // GetConsoleLogLevel returns the ConsoleLogLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetConsoleLogLevel() string {
-	if o == nil || isNil(o.ConsoleLogLevel.Get()) {
+	if o == nil || IsNil(o.ConsoleLogLevel.Get()) {
 		var ret string
 		return ret
 	}
@@ -552,7 +555,7 @@ func (o *HostConfigResource) GetConsoleLogLevel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetConsoleLogLevelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConsoleLogLevel.Get(), o.ConsoleLogLevel.IsSet()
 }
@@ -582,7 +585,7 @@ func (o *HostConfigResource) UnsetConsoleLogLevel() {
 
 // GetBranch returns the Branch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetBranch() string {
-	if o == nil || isNil(o.Branch.Get()) {
+	if o == nil || IsNil(o.Branch.Get()) {
 		var ret string
 		return ret
 	}
@@ -594,7 +597,7 @@ func (o *HostConfigResource) GetBranch() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetBranchOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Branch.Get(), o.Branch.IsSet()
 }
@@ -624,7 +627,7 @@ func (o *HostConfigResource) UnsetBranch() {
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetApiKey() string {
-	if o == nil || isNil(o.ApiKey.Get()) {
+	if o == nil || IsNil(o.ApiKey.Get()) {
 		var ret string
 		return ret
 	}
@@ -636,7 +639,7 @@ func (o *HostConfigResource) GetApiKey() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetApiKeyOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ApiKey.Get(), o.ApiKey.IsSet()
 }
@@ -666,7 +669,7 @@ func (o *HostConfigResource) UnsetApiKey() {
 
 // GetSslCertPath returns the SslCertPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetSslCertPath() string {
-	if o == nil || isNil(o.SslCertPath.Get()) {
+	if o == nil || IsNil(o.SslCertPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -678,7 +681,7 @@ func (o *HostConfigResource) GetSslCertPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetSslCertPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertPath.Get(), o.SslCertPath.IsSet()
 }
@@ -708,7 +711,7 @@ func (o *HostConfigResource) UnsetSslCertPath() {
 
 // GetSslCertPassword returns the SslCertPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetSslCertPassword() string {
-	if o == nil || isNil(o.SslCertPassword.Get()) {
+	if o == nil || IsNil(o.SslCertPassword.Get()) {
 		var ret string
 		return ret
 	}
@@ -720,7 +723,7 @@ func (o *HostConfigResource) GetSslCertPassword() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetSslCertPasswordOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertPassword.Get(), o.SslCertPassword.IsSet()
 }
@@ -750,7 +753,7 @@ func (o *HostConfigResource) UnsetSslCertPassword() {
 
 // GetUrlBase returns the UrlBase field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetUrlBase() string {
-	if o == nil || isNil(o.UrlBase.Get()) {
+	if o == nil || IsNil(o.UrlBase.Get()) {
 		var ret string
 		return ret
 	}
@@ -762,7 +765,7 @@ func (o *HostConfigResource) GetUrlBase() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetUrlBaseOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.UrlBase.Get(), o.UrlBase.IsSet()
 }
@@ -792,7 +795,7 @@ func (o *HostConfigResource) UnsetUrlBase() {
 
 // GetInstanceName returns the InstanceName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetInstanceName() string {
-	if o == nil || isNil(o.InstanceName.Get()) {
+	if o == nil || IsNil(o.InstanceName.Get()) {
 		var ret string
 		return ret
 	}
@@ -804,7 +807,7 @@ func (o *HostConfigResource) GetInstanceName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetInstanceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InstanceName.Get(), o.InstanceName.IsSet()
 }
@@ -834,7 +837,7 @@ func (o *HostConfigResource) UnsetInstanceName() {
 
 // GetApplicationUrl returns the ApplicationUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetApplicationUrl() string {
-	if o == nil || isNil(o.ApplicationUrl.Get()) {
+	if o == nil || IsNil(o.ApplicationUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -846,7 +849,7 @@ func (o *HostConfigResource) GetApplicationUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetApplicationUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ApplicationUrl.Get(), o.ApplicationUrl.IsSet()
 }
@@ -876,7 +879,7 @@ func (o *HostConfigResource) UnsetApplicationUrl() {
 
 // GetUpdateAutomatically returns the UpdateAutomatically field value if set, zero value otherwise.
 func (o *HostConfigResource) GetUpdateAutomatically() bool {
-	if o == nil || isNil(o.UpdateAutomatically) {
+	if o == nil || IsNil(o.UpdateAutomatically) {
 		var ret bool
 		return ret
 	}
@@ -886,15 +889,15 @@ func (o *HostConfigResource) GetUpdateAutomatically() bool {
 // GetUpdateAutomaticallyOk returns a tuple with the UpdateAutomatically field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetUpdateAutomaticallyOk() (*bool, bool) {
-	if o == nil || isNil(o.UpdateAutomatically) {
-    return nil, false
+	if o == nil || IsNil(o.UpdateAutomatically) {
+		return nil, false
 	}
 	return o.UpdateAutomatically, true
 }
 
 // HasUpdateAutomatically returns a boolean if a field has been set.
 func (o *HostConfigResource) HasUpdateAutomatically() bool {
-	if o != nil && !isNil(o.UpdateAutomatically) {
+	if o != nil && !IsNil(o.UpdateAutomatically) {
 		return true
 	}
 
@@ -908,7 +911,7 @@ func (o *HostConfigResource) SetUpdateAutomatically(v bool) {
 
 // GetUpdateMechanism returns the UpdateMechanism field value if set, zero value otherwise.
 func (o *HostConfigResource) GetUpdateMechanism() UpdateMechanism {
-	if o == nil || isNil(o.UpdateMechanism) {
+	if o == nil || IsNil(o.UpdateMechanism) {
 		var ret UpdateMechanism
 		return ret
 	}
@@ -918,15 +921,15 @@ func (o *HostConfigResource) GetUpdateMechanism() UpdateMechanism {
 // GetUpdateMechanismOk returns a tuple with the UpdateMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetUpdateMechanismOk() (*UpdateMechanism, bool) {
-	if o == nil || isNil(o.UpdateMechanism) {
-    return nil, false
+	if o == nil || IsNil(o.UpdateMechanism) {
+		return nil, false
 	}
 	return o.UpdateMechanism, true
 }
 
 // HasUpdateMechanism returns a boolean if a field has been set.
 func (o *HostConfigResource) HasUpdateMechanism() bool {
-	if o != nil && !isNil(o.UpdateMechanism) {
+	if o != nil && !IsNil(o.UpdateMechanism) {
 		return true
 	}
 
@@ -940,7 +943,7 @@ func (o *HostConfigResource) SetUpdateMechanism(v UpdateMechanism) {
 
 // GetUpdateScriptPath returns the UpdateScriptPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetUpdateScriptPath() string {
-	if o == nil || isNil(o.UpdateScriptPath.Get()) {
+	if o == nil || IsNil(o.UpdateScriptPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -952,7 +955,7 @@ func (o *HostConfigResource) GetUpdateScriptPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetUpdateScriptPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.UpdateScriptPath.Get(), o.UpdateScriptPath.IsSet()
 }
@@ -982,7 +985,7 @@ func (o *HostConfigResource) UnsetUpdateScriptPath() {
 
 // GetProxyEnabled returns the ProxyEnabled field value if set, zero value otherwise.
 func (o *HostConfigResource) GetProxyEnabled() bool {
-	if o == nil || isNil(o.ProxyEnabled) {
+	if o == nil || IsNil(o.ProxyEnabled) {
 		var ret bool
 		return ret
 	}
@@ -992,15 +995,15 @@ func (o *HostConfigResource) GetProxyEnabled() bool {
 // GetProxyEnabledOk returns a tuple with the ProxyEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetProxyEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ProxyEnabled) {
-    return nil, false
+	if o == nil || IsNil(o.ProxyEnabled) {
+		return nil, false
 	}
 	return o.ProxyEnabled, true
 }
 
 // HasProxyEnabled returns a boolean if a field has been set.
 func (o *HostConfigResource) HasProxyEnabled() bool {
-	if o != nil && !isNil(o.ProxyEnabled) {
+	if o != nil && !IsNil(o.ProxyEnabled) {
 		return true
 	}
 
@@ -1014,7 +1017,7 @@ func (o *HostConfigResource) SetProxyEnabled(v bool) {
 
 // GetProxyType returns the ProxyType field value if set, zero value otherwise.
 func (o *HostConfigResource) GetProxyType() ProxyType {
-	if o == nil || isNil(o.ProxyType) {
+	if o == nil || IsNil(o.ProxyType) {
 		var ret ProxyType
 		return ret
 	}
@@ -1024,15 +1027,15 @@ func (o *HostConfigResource) GetProxyType() ProxyType {
 // GetProxyTypeOk returns a tuple with the ProxyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetProxyTypeOk() (*ProxyType, bool) {
-	if o == nil || isNil(o.ProxyType) {
-    return nil, false
+	if o == nil || IsNil(o.ProxyType) {
+		return nil, false
 	}
 	return o.ProxyType, true
 }
 
 // HasProxyType returns a boolean if a field has been set.
 func (o *HostConfigResource) HasProxyType() bool {
-	if o != nil && !isNil(o.ProxyType) {
+	if o != nil && !IsNil(o.ProxyType) {
 		return true
 	}
 
@@ -1046,7 +1049,7 @@ func (o *HostConfigResource) SetProxyType(v ProxyType) {
 
 // GetProxyHostname returns the ProxyHostname field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetProxyHostname() string {
-	if o == nil || isNil(o.ProxyHostname.Get()) {
+	if o == nil || IsNil(o.ProxyHostname.Get()) {
 		var ret string
 		return ret
 	}
@@ -1058,7 +1061,7 @@ func (o *HostConfigResource) GetProxyHostname() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetProxyHostnameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ProxyHostname.Get(), o.ProxyHostname.IsSet()
 }
@@ -1088,7 +1091,7 @@ func (o *HostConfigResource) UnsetProxyHostname() {
 
 // GetProxyPort returns the ProxyPort field value if set, zero value otherwise.
 func (o *HostConfigResource) GetProxyPort() int32 {
-	if o == nil || isNil(o.ProxyPort) {
+	if o == nil || IsNil(o.ProxyPort) {
 		var ret int32
 		return ret
 	}
@@ -1098,15 +1101,15 @@ func (o *HostConfigResource) GetProxyPort() int32 {
 // GetProxyPortOk returns a tuple with the ProxyPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetProxyPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ProxyPort) {
-    return nil, false
+	if o == nil || IsNil(o.ProxyPort) {
+		return nil, false
 	}
 	return o.ProxyPort, true
 }
 
 // HasProxyPort returns a boolean if a field has been set.
 func (o *HostConfigResource) HasProxyPort() bool {
-	if o != nil && !isNil(o.ProxyPort) {
+	if o != nil && !IsNil(o.ProxyPort) {
 		return true
 	}
 
@@ -1120,7 +1123,7 @@ func (o *HostConfigResource) SetProxyPort(v int32) {
 
 // GetProxyUsername returns the ProxyUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetProxyUsername() string {
-	if o == nil || isNil(o.ProxyUsername.Get()) {
+	if o == nil || IsNil(o.ProxyUsername.Get()) {
 		var ret string
 		return ret
 	}
@@ -1132,7 +1135,7 @@ func (o *HostConfigResource) GetProxyUsername() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetProxyUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ProxyUsername.Get(), o.ProxyUsername.IsSet()
 }
@@ -1162,7 +1165,7 @@ func (o *HostConfigResource) UnsetProxyUsername() {
 
 // GetProxyPassword returns the ProxyPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetProxyPassword() string {
-	if o == nil || isNil(o.ProxyPassword.Get()) {
+	if o == nil || IsNil(o.ProxyPassword.Get()) {
 		var ret string
 		return ret
 	}
@@ -1174,7 +1177,7 @@ func (o *HostConfigResource) GetProxyPassword() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetProxyPasswordOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ProxyPassword.Get(), o.ProxyPassword.IsSet()
 }
@@ -1204,7 +1207,7 @@ func (o *HostConfigResource) UnsetProxyPassword() {
 
 // GetProxyBypassFilter returns the ProxyBypassFilter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetProxyBypassFilter() string {
-	if o == nil || isNil(o.ProxyBypassFilter.Get()) {
+	if o == nil || IsNil(o.ProxyBypassFilter.Get()) {
 		var ret string
 		return ret
 	}
@@ -1216,7 +1219,7 @@ func (o *HostConfigResource) GetProxyBypassFilter() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetProxyBypassFilterOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ProxyBypassFilter.Get(), o.ProxyBypassFilter.IsSet()
 }
@@ -1246,7 +1249,7 @@ func (o *HostConfigResource) UnsetProxyBypassFilter() {
 
 // GetProxyBypassLocalAddresses returns the ProxyBypassLocalAddresses field value if set, zero value otherwise.
 func (o *HostConfigResource) GetProxyBypassLocalAddresses() bool {
-	if o == nil || isNil(o.ProxyBypassLocalAddresses) {
+	if o == nil || IsNil(o.ProxyBypassLocalAddresses) {
 		var ret bool
 		return ret
 	}
@@ -1256,15 +1259,15 @@ func (o *HostConfigResource) GetProxyBypassLocalAddresses() bool {
 // GetProxyBypassLocalAddressesOk returns a tuple with the ProxyBypassLocalAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetProxyBypassLocalAddressesOk() (*bool, bool) {
-	if o == nil || isNil(o.ProxyBypassLocalAddresses) {
-    return nil, false
+	if o == nil || IsNil(o.ProxyBypassLocalAddresses) {
+		return nil, false
 	}
 	return o.ProxyBypassLocalAddresses, true
 }
 
 // HasProxyBypassLocalAddresses returns a boolean if a field has been set.
 func (o *HostConfigResource) HasProxyBypassLocalAddresses() bool {
-	if o != nil && !isNil(o.ProxyBypassLocalAddresses) {
+	if o != nil && !IsNil(o.ProxyBypassLocalAddresses) {
 		return true
 	}
 
@@ -1278,7 +1281,7 @@ func (o *HostConfigResource) SetProxyBypassLocalAddresses(v bool) {
 
 // GetCertificateValidation returns the CertificateValidation field value if set, zero value otherwise.
 func (o *HostConfigResource) GetCertificateValidation() CertificateValidationType {
-	if o == nil || isNil(o.CertificateValidation) {
+	if o == nil || IsNil(o.CertificateValidation) {
 		var ret CertificateValidationType
 		return ret
 	}
@@ -1288,15 +1291,15 @@ func (o *HostConfigResource) GetCertificateValidation() CertificateValidationTyp
 // GetCertificateValidationOk returns a tuple with the CertificateValidation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetCertificateValidationOk() (*CertificateValidationType, bool) {
-	if o == nil || isNil(o.CertificateValidation) {
-    return nil, false
+	if o == nil || IsNil(o.CertificateValidation) {
+		return nil, false
 	}
 	return o.CertificateValidation, true
 }
 
 // HasCertificateValidation returns a boolean if a field has been set.
 func (o *HostConfigResource) HasCertificateValidation() bool {
-	if o != nil && !isNil(o.CertificateValidation) {
+	if o != nil && !IsNil(o.CertificateValidation) {
 		return true
 	}
 
@@ -1310,7 +1313,7 @@ func (o *HostConfigResource) SetCertificateValidation(v CertificateValidationTyp
 
 // GetBackupFolder returns the BackupFolder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostConfigResource) GetBackupFolder() string {
-	if o == nil || isNil(o.BackupFolder.Get()) {
+	if o == nil || IsNil(o.BackupFolder.Get()) {
 		var ret string
 		return ret
 	}
@@ -1322,7 +1325,7 @@ func (o *HostConfigResource) GetBackupFolder() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostConfigResource) GetBackupFolderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFolder.Get(), o.BackupFolder.IsSet()
 }
@@ -1352,7 +1355,7 @@ func (o *HostConfigResource) UnsetBackupFolder() {
 
 // GetBackupInterval returns the BackupInterval field value if set, zero value otherwise.
 func (o *HostConfigResource) GetBackupInterval() int32 {
-	if o == nil || isNil(o.BackupInterval) {
+	if o == nil || IsNil(o.BackupInterval) {
 		var ret int32
 		return ret
 	}
@@ -1362,15 +1365,15 @@ func (o *HostConfigResource) GetBackupInterval() int32 {
 // GetBackupIntervalOk returns a tuple with the BackupInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetBackupIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.BackupInterval) {
-    return nil, false
+	if o == nil || IsNil(o.BackupInterval) {
+		return nil, false
 	}
 	return o.BackupInterval, true
 }
 
 // HasBackupInterval returns a boolean if a field has been set.
 func (o *HostConfigResource) HasBackupInterval() bool {
-	if o != nil && !isNil(o.BackupInterval) {
+	if o != nil && !IsNil(o.BackupInterval) {
 		return true
 	}
 
@@ -1384,7 +1387,7 @@ func (o *HostConfigResource) SetBackupInterval(v int32) {
 
 // GetBackupRetention returns the BackupRetention field value if set, zero value otherwise.
 func (o *HostConfigResource) GetBackupRetention() int32 {
-	if o == nil || isNil(o.BackupRetention) {
+	if o == nil || IsNil(o.BackupRetention) {
 		var ret int32
 		return ret
 	}
@@ -1394,15 +1397,15 @@ func (o *HostConfigResource) GetBackupRetention() int32 {
 // GetBackupRetentionOk returns a tuple with the BackupRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetBackupRetentionOk() (*int32, bool) {
-	if o == nil || isNil(o.BackupRetention) {
-    return nil, false
+	if o == nil || IsNil(o.BackupRetention) {
+		return nil, false
 	}
 	return o.BackupRetention, true
 }
 
 // HasBackupRetention returns a boolean if a field has been set.
 func (o *HostConfigResource) HasBackupRetention() bool {
-	if o != nil && !isNil(o.BackupRetention) {
+	if o != nil && !IsNil(o.BackupRetention) {
 		return true
 	}
 
@@ -1416,7 +1419,7 @@ func (o *HostConfigResource) SetBackupRetention(v int32) {
 
 // GetHistoryCleanupDays returns the HistoryCleanupDays field value if set, zero value otherwise.
 func (o *HostConfigResource) GetHistoryCleanupDays() int32 {
-	if o == nil || isNil(o.HistoryCleanupDays) {
+	if o == nil || IsNil(o.HistoryCleanupDays) {
 		var ret int32
 		return ret
 	}
@@ -1426,15 +1429,15 @@ func (o *HostConfigResource) GetHistoryCleanupDays() int32 {
 // GetHistoryCleanupDaysOk returns a tuple with the HistoryCleanupDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostConfigResource) GetHistoryCleanupDaysOk() (*int32, bool) {
-	if o == nil || isNil(o.HistoryCleanupDays) {
-    return nil, false
+	if o == nil || IsNil(o.HistoryCleanupDays) {
+		return nil, false
 	}
 	return o.HistoryCleanupDays, true
 }
 
 // HasHistoryCleanupDays returns a boolean if a field has been set.
 func (o *HostConfigResource) HasHistoryCleanupDays() bool {
-	if o != nil && !isNil(o.HistoryCleanupDays) {
+	if o != nil && !IsNil(o.HistoryCleanupDays) {
 		return true
 	}
 
@@ -1447,32 +1450,40 @@ func (o *HostConfigResource) SetHistoryCleanupDays(v int32) {
 }
 
 func (o HostConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o HostConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.BindAddress.IsSet() {
 		toSerialize["bindAddress"] = o.BindAddress.Get()
 	}
-	if !isNil(o.Port) {
+	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
-	if !isNil(o.SslPort) {
+	if !IsNil(o.SslPort) {
 		toSerialize["sslPort"] = o.SslPort
 	}
-	if !isNil(o.EnableSsl) {
+	if !IsNil(o.EnableSsl) {
 		toSerialize["enableSsl"] = o.EnableSsl
 	}
-	if !isNil(o.LaunchBrowser) {
+	if !IsNil(o.LaunchBrowser) {
 		toSerialize["launchBrowser"] = o.LaunchBrowser
 	}
-	if !isNil(o.AuthenticationMethod) {
+	if !IsNil(o.AuthenticationMethod) {
 		toSerialize["authenticationMethod"] = o.AuthenticationMethod
 	}
-	if !isNil(o.AuthenticationRequired) {
+	if !IsNil(o.AuthenticationRequired) {
 		toSerialize["authenticationRequired"] = o.AuthenticationRequired
 	}
-	if !isNil(o.AnalyticsEnabled) {
+	if !IsNil(o.AnalyticsEnabled) {
 		toSerialize["analyticsEnabled"] = o.AnalyticsEnabled
 	}
 	if o.Username.IsSet() {
@@ -1511,25 +1522,25 @@ func (o HostConfigResource) MarshalJSON() ([]byte, error) {
 	if o.ApplicationUrl.IsSet() {
 		toSerialize["applicationUrl"] = o.ApplicationUrl.Get()
 	}
-	if !isNil(o.UpdateAutomatically) {
+	if !IsNil(o.UpdateAutomatically) {
 		toSerialize["updateAutomatically"] = o.UpdateAutomatically
 	}
-	if !isNil(o.UpdateMechanism) {
+	if !IsNil(o.UpdateMechanism) {
 		toSerialize["updateMechanism"] = o.UpdateMechanism
 	}
 	if o.UpdateScriptPath.IsSet() {
 		toSerialize["updateScriptPath"] = o.UpdateScriptPath.Get()
 	}
-	if !isNil(o.ProxyEnabled) {
+	if !IsNil(o.ProxyEnabled) {
 		toSerialize["proxyEnabled"] = o.ProxyEnabled
 	}
-	if !isNil(o.ProxyType) {
+	if !IsNil(o.ProxyType) {
 		toSerialize["proxyType"] = o.ProxyType
 	}
 	if o.ProxyHostname.IsSet() {
 		toSerialize["proxyHostname"] = o.ProxyHostname.Get()
 	}
-	if !isNil(o.ProxyPort) {
+	if !IsNil(o.ProxyPort) {
 		toSerialize["proxyPort"] = o.ProxyPort
 	}
 	if o.ProxyUsername.IsSet() {
@@ -1541,25 +1552,25 @@ func (o HostConfigResource) MarshalJSON() ([]byte, error) {
 	if o.ProxyBypassFilter.IsSet() {
 		toSerialize["proxyBypassFilter"] = o.ProxyBypassFilter.Get()
 	}
-	if !isNil(o.ProxyBypassLocalAddresses) {
+	if !IsNil(o.ProxyBypassLocalAddresses) {
 		toSerialize["proxyBypassLocalAddresses"] = o.ProxyBypassLocalAddresses
 	}
-	if !isNil(o.CertificateValidation) {
+	if !IsNil(o.CertificateValidation) {
 		toSerialize["certificateValidation"] = o.CertificateValidation
 	}
 	if o.BackupFolder.IsSet() {
 		toSerialize["backupFolder"] = o.BackupFolder.Get()
 	}
-	if !isNil(o.BackupInterval) {
+	if !IsNil(o.BackupInterval) {
 		toSerialize["backupInterval"] = o.BackupInterval
 	}
-	if !isNil(o.BackupRetention) {
+	if !IsNil(o.BackupRetention) {
 		toSerialize["backupRetention"] = o.BackupRetention
 	}
-	if !isNil(o.HistoryCleanupDays) {
+	if !IsNil(o.HistoryCleanupDays) {
 		toSerialize["historyCleanupDays"] = o.HistoryCleanupDays
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableHostConfigResource struct {

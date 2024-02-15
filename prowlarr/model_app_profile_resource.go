@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AppProfileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AppProfileResource{}
+
 // AppProfileResource struct for AppProfileResource
 type AppProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewAppProfileResourceWithDefaults() *AppProfileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AppProfileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *AppProfileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppProfileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AppProfileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *AppProfileResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppProfileResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *AppProfileResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AppProfileResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -117,7 +120,7 @@ func (o *AppProfileResource) UnsetName() {
 
 // GetEnableRss returns the EnableRss field value if set, zero value otherwise.
 func (o *AppProfileResource) GetEnableRss() bool {
-	if o == nil || isNil(o.EnableRss) {
+	if o == nil || IsNil(o.EnableRss) {
 		var ret bool
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *AppProfileResource) GetEnableRss() bool {
 // GetEnableRssOk returns a tuple with the EnableRss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppProfileResource) GetEnableRssOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableRss) {
-    return nil, false
+	if o == nil || IsNil(o.EnableRss) {
+		return nil, false
 	}
 	return o.EnableRss, true
 }
 
 // HasEnableRss returns a boolean if a field has been set.
 func (o *AppProfileResource) HasEnableRss() bool {
-	if o != nil && !isNil(o.EnableRss) {
+	if o != nil && !IsNil(o.EnableRss) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *AppProfileResource) SetEnableRss(v bool) {
 
 // GetEnableAutomaticSearch returns the EnableAutomaticSearch field value if set, zero value otherwise.
 func (o *AppProfileResource) GetEnableAutomaticSearch() bool {
-	if o == nil || isNil(o.EnableAutomaticSearch) {
+	if o == nil || IsNil(o.EnableAutomaticSearch) {
 		var ret bool
 		return ret
 	}
@@ -159,15 +162,15 @@ func (o *AppProfileResource) GetEnableAutomaticSearch() bool {
 // GetEnableAutomaticSearchOk returns a tuple with the EnableAutomaticSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppProfileResource) GetEnableAutomaticSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableAutomaticSearch) {
-    return nil, false
+	if o == nil || IsNil(o.EnableAutomaticSearch) {
+		return nil, false
 	}
 	return o.EnableAutomaticSearch, true
 }
 
 // HasEnableAutomaticSearch returns a boolean if a field has been set.
 func (o *AppProfileResource) HasEnableAutomaticSearch() bool {
-	if o != nil && !isNil(o.EnableAutomaticSearch) {
+	if o != nil && !IsNil(o.EnableAutomaticSearch) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *AppProfileResource) SetEnableAutomaticSearch(v bool) {
 
 // GetEnableInteractiveSearch returns the EnableInteractiveSearch field value if set, zero value otherwise.
 func (o *AppProfileResource) GetEnableInteractiveSearch() bool {
-	if o == nil || isNil(o.EnableInteractiveSearch) {
+	if o == nil || IsNil(o.EnableInteractiveSearch) {
 		var ret bool
 		return ret
 	}
@@ -191,15 +194,15 @@ func (o *AppProfileResource) GetEnableInteractiveSearch() bool {
 // GetEnableInteractiveSearchOk returns a tuple with the EnableInteractiveSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppProfileResource) GetEnableInteractiveSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableInteractiveSearch) {
-    return nil, false
+	if o == nil || IsNil(o.EnableInteractiveSearch) {
+		return nil, false
 	}
 	return o.EnableInteractiveSearch, true
 }
 
 // HasEnableInteractiveSearch returns a boolean if a field has been set.
 func (o *AppProfileResource) HasEnableInteractiveSearch() bool {
-	if o != nil && !isNil(o.EnableInteractiveSearch) {
+	if o != nil && !IsNil(o.EnableInteractiveSearch) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *AppProfileResource) SetEnableInteractiveSearch(v bool) {
 
 // GetMinimumSeeders returns the MinimumSeeders field value if set, zero value otherwise.
 func (o *AppProfileResource) GetMinimumSeeders() int32 {
-	if o == nil || isNil(o.MinimumSeeders) {
+	if o == nil || IsNil(o.MinimumSeeders) {
 		var ret int32
 		return ret
 	}
@@ -223,15 +226,15 @@ func (o *AppProfileResource) GetMinimumSeeders() int32 {
 // GetMinimumSeedersOk returns a tuple with the MinimumSeeders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppProfileResource) GetMinimumSeedersOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumSeeders) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumSeeders) {
+		return nil, false
 	}
 	return o.MinimumSeeders, true
 }
 
 // HasMinimumSeeders returns a boolean if a field has been set.
 func (o *AppProfileResource) HasMinimumSeeders() bool {
-	if o != nil && !isNil(o.MinimumSeeders) {
+	if o != nil && !IsNil(o.MinimumSeeders) {
 		return true
 	}
 
@@ -244,26 +247,34 @@ func (o *AppProfileResource) SetMinimumSeeders(v int32) {
 }
 
 func (o AppProfileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AppProfileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.EnableRss) {
+	if !IsNil(o.EnableRss) {
 		toSerialize["enableRss"] = o.EnableRss
 	}
-	if !isNil(o.EnableAutomaticSearch) {
+	if !IsNil(o.EnableAutomaticSearch) {
 		toSerialize["enableAutomaticSearch"] = o.EnableAutomaticSearch
 	}
-	if !isNil(o.EnableInteractiveSearch) {
+	if !IsNil(o.EnableInteractiveSearch) {
 		toSerialize["enableInteractiveSearch"] = o.EnableInteractiveSearch
 	}
-	if !isNil(o.MinimumSeeders) {
+	if !IsNil(o.MinimumSeeders) {
 		toSerialize["minimumSeeders"] = o.MinimumSeeders
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAppProfileResource struct {
