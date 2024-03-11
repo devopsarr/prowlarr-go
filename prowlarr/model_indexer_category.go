@@ -179,7 +179,7 @@ func (o *IndexerCategory) GetSubCategoriesOk() ([]IndexerCategory, bool) {
 
 // HasSubCategories returns a boolean if a field has been set.
 func (o *IndexerCategory) HasSubCategories() bool {
-	if o != nil && IsNil(o.SubCategories) {
+	if o != nil && !IsNil(o.SubCategories) {
 		return true
 	}
 

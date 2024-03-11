@@ -947,7 +947,7 @@ func (o *ReleaseResource) GetIndexerFlagsOk() ([]string, bool) {
 
 // HasIndexerFlags returns a boolean if a field has been set.
 func (o *ReleaseResource) HasIndexerFlags() bool {
-	if o != nil && IsNil(o.IndexerFlags) {
+	if o != nil && !IsNil(o.IndexerFlags) {
 		return true
 	}
 
@@ -980,7 +980,7 @@ func (o *ReleaseResource) GetCategoriesOk() ([]IndexerCategory, bool) {
 
 // HasCategories returns a boolean if a field has been set.
 func (o *ReleaseResource) HasCategories() bool {
-	if o != nil && IsNil(o.Categories) {
+	if o != nil && !IsNil(o.Categories) {
 		return true
 	}
 

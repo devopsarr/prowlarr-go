@@ -95,7 +95,7 @@ func (o *IndexerStatsResource) GetIndexersOk() ([]IndexerStatistics, bool) {
 
 // HasIndexers returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasIndexers() bool {
-	if o != nil && IsNil(o.Indexers) {
+	if o != nil && !IsNil(o.Indexers) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *IndexerStatsResource) GetUserAgentsOk() ([]UserAgentStatistics, bool) {
 
 // HasUserAgents returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasUserAgents() bool {
-	if o != nil && IsNil(o.UserAgents) {
+	if o != nil && !IsNil(o.UserAgents) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *IndexerStatsResource) GetHostsOk() ([]HostStatistics, bool) {
 
 // HasHosts returns a boolean if a field has been set.
 func (o *IndexerStatsResource) HasHosts() bool {
-	if o != nil && IsNil(o.Hosts) {
+	if o != nil && !IsNil(o.Hosts) {
 		return true
 	}
 

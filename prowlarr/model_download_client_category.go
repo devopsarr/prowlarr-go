@@ -103,7 +103,7 @@ func (o *DownloadClientCategory) GetCategoriesOk() ([]int32, bool) {
 
 // HasCategories returns a boolean if a field has been set.
 func (o *DownloadClientCategory) HasCategories() bool {
-	if o != nil && IsNil(o.Categories) {
+	if o != nil && !IsNil(o.Categories) {
 		return true
 	}
 

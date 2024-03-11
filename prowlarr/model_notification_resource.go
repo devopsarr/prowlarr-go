@@ -155,7 +155,7 @@ func (o *NotificationResource) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *NotificationResource) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -388,7 +388,7 @@ func (o *NotificationResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *NotificationResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *NotificationResource) GetPresetsOk() ([]NotificationResource, bool) {
 
 // HasPresets returns a boolean if a field has been set.
 func (o *NotificationResource) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 
