@@ -145,7 +145,7 @@ func (o *ApplicationResource) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *ApplicationResource) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -378,7 +378,7 @@ func (o *ApplicationResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *ApplicationResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *ApplicationResource) GetPresetsOk() ([]ApplicationResource, bool) {
 
 // HasPresets returns a boolean if a field has been set.
 func (o *ApplicationResource) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 

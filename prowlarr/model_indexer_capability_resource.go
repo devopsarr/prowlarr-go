@@ -185,7 +185,7 @@ func (o *IndexerCapabilityResource) GetCategoriesOk() ([]IndexerCategory, bool) 
 
 // HasCategories returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasCategories() bool {
-	if o != nil && IsNil(o.Categories) {
+	if o != nil && !IsNil(o.Categories) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *IndexerCapabilityResource) GetSearchParamsOk() ([]SearchParam, bool) {
 
 // HasSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasSearchParams() bool {
-	if o != nil && IsNil(o.SearchParams) {
+	if o != nil && !IsNil(o.SearchParams) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *IndexerCapabilityResource) GetTvSearchParamsOk() ([]TvSearchParam, bool
 
 // HasTvSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasTvSearchParams() bool {
-	if o != nil && IsNil(o.TvSearchParams) {
+	if o != nil && !IsNil(o.TvSearchParams) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *IndexerCapabilityResource) GetMovieSearchParamsOk() ([]MovieSearchParam
 
 // HasMovieSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasMovieSearchParams() bool {
-	if o != nil && IsNil(o.MovieSearchParams) {
+	if o != nil && !IsNil(o.MovieSearchParams) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *IndexerCapabilityResource) GetMusicSearchParamsOk() ([]MusicSearchParam
 
 // HasMusicSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasMusicSearchParams() bool {
-	if o != nil && IsNil(o.MusicSearchParams) {
+	if o != nil && !IsNil(o.MusicSearchParams) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *IndexerCapabilityResource) GetBookSearchParamsOk() ([]BookSearchParam, 
 
 // HasBookSearchParams returns a boolean if a field has been set.
 func (o *IndexerCapabilityResource) HasBookSearchParams() bool {
-	if o != nil && IsNil(o.BookSearchParams) {
+	if o != nil && !IsNil(o.BookSearchParams) {
 		return true
 	}
 
