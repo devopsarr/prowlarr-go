@@ -404,7 +404,7 @@ Other parameters are passed through a pointer to a apiListIndexerProxySchemaRequ
 
 ## TestIndexerProxy
 
-> TestIndexerProxy(ctx).IndexerProxyResource(indexerProxyResource).Execute()
+> TestIndexerProxy(ctx).ForceTest(forceTest).IndexerProxyResource(indexerProxyResource).Execute()
 
 
 
@@ -421,11 +421,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	indexerProxyResource := *prowlarrClient.NewIndexerProxyResource() // IndexerProxyResource |  (optional)
 
 	configuration := prowlarrClient.NewConfiguration()
 	apiClient := prowlarrClient.NewAPIClient(configuration)
-	r, err := apiClient.IndexerProxyAPI.TestIndexerProxy(context.Background()).IndexerProxyResource(indexerProxyResource).Execute()
+	r, err := apiClient.IndexerProxyAPI.TestIndexerProxy(context.Background()).ForceTest(forceTest).IndexerProxyResource(indexerProxyResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerProxyAPI.TestIndexerProxy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,6 +445,7 @@ Other parameters are passed through a pointer to a apiTestIndexerProxyRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **indexerProxyResource** | [**IndexerProxyResource**](IndexerProxyResource.md) |  | 
 
 ### Return type

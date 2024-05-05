@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ## TestApplications
 
-> TestApplications(ctx).ApplicationResource(applicationResource).Execute()
+> TestApplications(ctx).ForceTest(forceTest).ApplicationResource(applicationResource).Execute()
 
 
 
@@ -549,11 +549,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	applicationResource := *prowlarrClient.NewApplicationResource() // ApplicationResource |  (optional)
 
 	configuration := prowlarrClient.NewConfiguration()
 	apiClient := prowlarrClient.NewAPIClient(configuration)
-	r, err := apiClient.ApplicationAPI.TestApplications(context.Background()).ApplicationResource(applicationResource).Execute()
+	r, err := apiClient.ApplicationAPI.TestApplications(context.Background()).ForceTest(forceTest).ApplicationResource(applicationResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationAPI.TestApplications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -572,6 +573,7 @@ Other parameters are passed through a pointer to a apiTestApplicationsRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **applicationResource** | [**ApplicationResource**](ApplicationResource.md) |  | 
 
 ### Return type
