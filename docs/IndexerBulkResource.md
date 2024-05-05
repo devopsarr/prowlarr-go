@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **SeedRatio** | Pointer to **NullableFloat64** |  | [optional] 
 **SeedTime** | Pointer to **NullableInt32** |  | [optional] 
 **PackSeedTime** | Pointer to **NullableInt32** |  | [optional] 
-**RejectBlocklistedTorrentHashesWhileGrabbing** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -375,41 +374,6 @@ HasPackSeedTime returns a boolean if a field has been set.
 `func (o *IndexerBulkResource) UnsetPackSeedTime()`
 
 UnsetPackSeedTime ensures that no value is present for PackSeedTime, not even an explicit nil
-### GetRejectBlocklistedTorrentHashesWhileGrabbing
-
-`func (o *IndexerBulkResource) GetRejectBlocklistedTorrentHashesWhileGrabbing() bool`
-
-GetRejectBlocklistedTorrentHashesWhileGrabbing returns the RejectBlocklistedTorrentHashesWhileGrabbing field if non-nil, zero value otherwise.
-
-### GetRejectBlocklistedTorrentHashesWhileGrabbingOk
-
-`func (o *IndexerBulkResource) GetRejectBlocklistedTorrentHashesWhileGrabbingOk() (*bool, bool)`
-
-GetRejectBlocklistedTorrentHashesWhileGrabbingOk returns a tuple with the RejectBlocklistedTorrentHashesWhileGrabbing field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRejectBlocklistedTorrentHashesWhileGrabbing
-
-`func (o *IndexerBulkResource) SetRejectBlocklistedTorrentHashesWhileGrabbing(v bool)`
-
-SetRejectBlocklistedTorrentHashesWhileGrabbing sets RejectBlocklistedTorrentHashesWhileGrabbing field to given value.
-
-### HasRejectBlocklistedTorrentHashesWhileGrabbing
-
-`func (o *IndexerBulkResource) HasRejectBlocklistedTorrentHashesWhileGrabbing() bool`
-
-HasRejectBlocklistedTorrentHashesWhileGrabbing returns a boolean if a field has been set.
-
-### SetRejectBlocklistedTorrentHashesWhileGrabbingNil
-
-`func (o *IndexerBulkResource) SetRejectBlocklistedTorrentHashesWhileGrabbingNil(b bool)`
-
- SetRejectBlocklistedTorrentHashesWhileGrabbingNil sets the value for RejectBlocklistedTorrentHashesWhileGrabbing to be an explicit nil
-
-### UnsetRejectBlocklistedTorrentHashesWhileGrabbing
-`func (o *IndexerBulkResource) UnsetRejectBlocklistedTorrentHashesWhileGrabbing()`
-
-UnsetRejectBlocklistedTorrentHashesWhileGrabbing ensures that no value is present for RejectBlocklistedTorrentHashesWhileGrabbing, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
