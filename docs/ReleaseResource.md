@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **Leechers** | Pointer to **NullableInt32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **FileName** | Pointer to **NullableString** |  | [optional] [readonly] 
+**DownloadClientId** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -1020,6 +1021,41 @@ HasFileName returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetFileName()`
 
 UnsetFileName ensures that no value is present for FileName, not even an explicit nil
+### GetDownloadClientId
+
+`func (o *ReleaseResource) GetDownloadClientId() int32`
+
+GetDownloadClientId returns the DownloadClientId field if non-nil, zero value otherwise.
+
+### GetDownloadClientIdOk
+
+`func (o *ReleaseResource) GetDownloadClientIdOk() (*int32, bool)`
+
+GetDownloadClientIdOk returns a tuple with the DownloadClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientId
+
+`func (o *ReleaseResource) SetDownloadClientId(v int32)`
+
+SetDownloadClientId sets DownloadClientId field to given value.
+
+### HasDownloadClientId
+
+`func (o *ReleaseResource) HasDownloadClientId() bool`
+
+HasDownloadClientId returns a boolean if a field has been set.
+
+### SetDownloadClientIdNil
+
+`func (o *ReleaseResource) SetDownloadClientIdNil(b bool)`
+
+ SetDownloadClientIdNil sets the value for DownloadClientId to be an explicit nil
+
+### UnsetDownloadClientId
+`func (o *ReleaseResource) UnsetDownloadClientId()`
+
+UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
