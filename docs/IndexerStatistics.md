@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **IndexerId** | Pointer to **int32** |  | [optional] 
 **IndexerName** | Pointer to **NullableString** |  | [optional] 
 **AverageResponseTime** | Pointer to **int32** |  | [optional] 
+**AverageGrabResponseTime** | Pointer to **int32** |  | [optional] 
 **NumberOfQueries** | Pointer to **int32** |  | [optional] 
 **NumberOfGrabs** | Pointer to **int32** |  | [optional] 
 **NumberOfRssQueries** | Pointer to **int32** |  | [optional] 
@@ -119,6 +120,31 @@ SetAverageResponseTime sets AverageResponseTime field to given value.
 `func (o *IndexerStatistics) HasAverageResponseTime() bool`
 
 HasAverageResponseTime returns a boolean if a field has been set.
+
+### GetAverageGrabResponseTime
+
+`func (o *IndexerStatistics) GetAverageGrabResponseTime() int32`
+
+GetAverageGrabResponseTime returns the AverageGrabResponseTime field if non-nil, zero value otherwise.
+
+### GetAverageGrabResponseTimeOk
+
+`func (o *IndexerStatistics) GetAverageGrabResponseTimeOk() (*int32, bool)`
+
+GetAverageGrabResponseTimeOk returns a tuple with the AverageGrabResponseTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAverageGrabResponseTime
+
+`func (o *IndexerStatistics) SetAverageGrabResponseTime(v int32)`
+
+SetAverageGrabResponseTime sets AverageGrabResponseTime field to given value.
+
+### HasAverageGrabResponseTime
+
+`func (o *IndexerStatistics) HasAverageGrabResponseTime() bool`
+
+HasAverageGrabResponseTime returns a boolean if a field has been set.
 
 ### GetNumberOfQueries
 
