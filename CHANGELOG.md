@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/devopsarr/prowlarr-go/compare/v1.0.0...v1.1.0) (2024-07-28)
+
+
+### Miscellaneous Chores
+
+* release 1.1.0 ([572c02d](https://github.com/devopsarr/prowlarr-go/commit/572c02d9f335716e10025173336904183407162b))
+
 ## [1.0.0](https://github.com/devopsarr/prowlarr-go/compare/v0.4.0...v1.0.0) (2024-02-15)
 
 
