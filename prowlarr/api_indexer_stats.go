@@ -97,19 +97,19 @@ func (a *IndexerStatsAPIService) GetIndexerStatsExecute(r ApiGetIndexerStatsRequ
 	localVarFormParams := url.Values{}
 
 	if r.startDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "startDate", r.startDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "startDate", r.startDate, "form", "")
 	}
 	if r.endDate != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endDate", r.endDate, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endDate", r.endDate, "form", "")
 	}
 	if r.indexers != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "indexers", r.indexers, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "indexers", r.indexers, "form", "")
 	}
 	if r.protocols != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", r.protocols, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", r.protocols, "form", "")
 	}
 	if r.tags != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

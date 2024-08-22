@@ -81,10 +81,10 @@ func (a *NewznabAPIService) GetIndexerDownloadExecute(r ApiGetIndexerDownloadReq
 	localVarFormParams := url.Values{}
 
 	if r.link != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "link", r.link, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "link", r.link, "form", "")
 	}
 	if r.file != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "file", r.file, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "file", r.file, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -397,100 +397,100 @@ func (a *NewznabAPIService) GetIndexerNewznabExecute(r ApiGetIndexerNewznabReque
 	localVarFormParams := url.Values{}
 
 	if r.t != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "t", r.t, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "t", r.t, "form", "")
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.cat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "cat", r.cat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cat", r.cat, "form", "")
 	}
 	if r.imdbid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "imdbid", r.imdbid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "imdbid", r.imdbid, "form", "")
 	}
 	if r.tmdbid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbid", r.tmdbid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbid", r.tmdbid, "form", "")
 	}
 	if r.extended != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "extended", r.extended, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "extended", r.extended, "form", "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}
 	if r.offset != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	if r.minage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "minage", r.minage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "minage", r.minage, "form", "")
 	}
 	if r.maxage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maxage", r.maxage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maxage", r.maxage, "form", "")
 	}
 	if r.minsize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "minsize", r.minsize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "minsize", r.minsize, "form", "")
 	}
 	if r.maxsize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maxsize", r.maxsize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maxsize", r.maxsize, "form", "")
 	}
 	if r.rid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rid", r.rid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rid", r.rid, "form", "")
 	}
 	if r.tvmazeid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tvmazeid", r.tvmazeid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tvmazeid", r.tvmazeid, "form", "")
 	}
 	if r.traktid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "traktid", r.traktid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "traktid", r.traktid, "form", "")
 	}
 	if r.tvdbid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tvdbid", r.tvdbid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tvdbid", r.tvdbid, "form", "")
 	}
 	if r.doubanid != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "doubanid", r.doubanid, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "doubanid", r.doubanid, "form", "")
 	}
 	if r.season != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "season", r.season, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "season", r.season, "form", "")
 	}
 	if r.ep != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ep", r.ep, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ep", r.ep, "form", "")
 	}
 	if r.album != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "album", r.album, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "album", r.album, "form", "")
 	}
 	if r.artist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artist", r.artist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artist", r.artist, "form", "")
 	}
 	if r.label != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "label", r.label, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "label", r.label, "form", "")
 	}
 	if r.track != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "track", r.track, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "track", r.track, "form", "")
 	}
 	if r.year != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "form", "")
 	}
 	if r.genre != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "genre", r.genre, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "genre", r.genre, "form", "")
 	}
 	if r.author != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "author", r.author, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "author", r.author, "form", "")
 	}
 	if r.title != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "title", r.title, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "title", r.title, "form", "")
 	}
 	if r.publisher != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "publisher", r.publisher, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "publisher", r.publisher, "form", "")
 	}
 	if r.configured != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "configured", r.configured, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "configured", r.configured, "form", "")
 	}
 	if r.source != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "form", "")
 	}
 	if r.host != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "host", r.host, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "host", r.host, "form", "")
 	}
 	if r.server != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "server", r.server, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "server", r.server, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
