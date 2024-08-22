@@ -79,7 +79,7 @@ func (a *IndexerProxyAPIService) CreateIndexerProxyExecute(r ApiCreateIndexerPro
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceSave = &defaultValue
@@ -845,7 +845,7 @@ func (a *IndexerProxyAPIService) TestIndexerProxyExecute(r ApiTestIndexerProxyRe
 	localVarFormParams := url.Values{}
 
 	if r.forceTest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceTest = &defaultValue
@@ -1099,7 +1099,7 @@ func (a *IndexerProxyAPIService) UpdateIndexerProxyExecute(r ApiUpdateIndexerPro
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceSave = &defaultValue
