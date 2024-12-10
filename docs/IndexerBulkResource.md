@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **SeedRatio** | Pointer to **NullableFloat64** |  | [optional] 
 **SeedTime** | Pointer to **NullableInt32** |  | [optional] 
 **PackSeedTime** | Pointer to **NullableInt32** |  | [optional] 
+**PreferMagnetUrl** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -374,6 +375,41 @@ HasPackSeedTime returns a boolean if a field has been set.
 `func (o *IndexerBulkResource) UnsetPackSeedTime()`
 
 UnsetPackSeedTime ensures that no value is present for PackSeedTime, not even an explicit nil
+### GetPreferMagnetUrl
+
+`func (o *IndexerBulkResource) GetPreferMagnetUrl() bool`
+
+GetPreferMagnetUrl returns the PreferMagnetUrl field if non-nil, zero value otherwise.
+
+### GetPreferMagnetUrlOk
+
+`func (o *IndexerBulkResource) GetPreferMagnetUrlOk() (*bool, bool)`
+
+GetPreferMagnetUrlOk returns a tuple with the PreferMagnetUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreferMagnetUrl
+
+`func (o *IndexerBulkResource) SetPreferMagnetUrl(v bool)`
+
+SetPreferMagnetUrl sets PreferMagnetUrl field to given value.
+
+### HasPreferMagnetUrl
+
+`func (o *IndexerBulkResource) HasPreferMagnetUrl() bool`
+
+HasPreferMagnetUrl returns a boolean if a field has been set.
+
+### SetPreferMagnetUrlNil
+
+`func (o *IndexerBulkResource) SetPreferMagnetUrlNil(b bool)`
+
+ SetPreferMagnetUrlNil sets the value for PreferMagnetUrl to be an explicit nil
+
+### UnsetPreferMagnetUrl
+`func (o *IndexerBulkResource) UnsetPreferMagnetUrl()`
+
+UnsetPreferMagnetUrl ensures that no value is present for PreferMagnetUrl, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
