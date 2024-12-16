@@ -42,6 +42,7 @@ Name | Type | Description | Notes
 **BackupInterval** | Pointer to **int32** |  | [optional] 
 **BackupRetention** | Pointer to **int32** |  | [optional] 
 **HistoryCleanupDays** | Pointer to **int32** |  | [optional] 
+**TrustCgnatIpAddresses** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -1201,6 +1202,31 @@ SetHistoryCleanupDays sets HistoryCleanupDays field to given value.
 `func (o *HostConfigResource) HasHistoryCleanupDays() bool`
 
 HasHistoryCleanupDays returns a boolean if a field has been set.
+
+### GetTrustCgnatIpAddresses
+
+`func (o *HostConfigResource) GetTrustCgnatIpAddresses() bool`
+
+GetTrustCgnatIpAddresses returns the TrustCgnatIpAddresses field if non-nil, zero value otherwise.
+
+### GetTrustCgnatIpAddressesOk
+
+`func (o *HostConfigResource) GetTrustCgnatIpAddressesOk() (*bool, bool)`
+
+GetTrustCgnatIpAddressesOk returns a tuple with the TrustCgnatIpAddresses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustCgnatIpAddresses
+
+`func (o *HostConfigResource) SetTrustCgnatIpAddresses(v bool)`
+
+SetTrustCgnatIpAddresses sets TrustCgnatIpAddresses field to given value.
+
+### HasTrustCgnatIpAddresses
+
+`func (o *HostConfigResource) HasTrustCgnatIpAddresses() bool`
+
+HasTrustCgnatIpAddresses returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
