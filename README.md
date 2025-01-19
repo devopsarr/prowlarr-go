@@ -181,7 +181,6 @@ Class | Method | HTTP request | Description
 *SearchAPI* | [**CreateSearch**](docs/SearchAPI.md#createsearch) | **Post** /api/v1/search | 
 *SearchAPI* | [**CreateSearchBulk**](docs/SearchAPI.md#createsearchbulk) | **Post** /api/v1/search/bulk | 
 *SearchAPI* | [**ListSearch**](docs/SearchAPI.md#listsearch) | **Get** /api/v1/search | 
-*StaticResourceAPI* | [**Get**](docs/StaticResourceAPI.md#get) | **Get** / | 
 *StaticResourceAPI* | [**GetByPath**](docs/StaticResourceAPI.md#getbypath) | **Get** /{path} | 
 *StaticResourceAPI* | [**GetContentByPath**](docs/StaticResourceAPI.md#getcontentbypath) | **Get** /content/{path} | 
 *StaticResourceAPI* | [**GetLogin**](docs/StaticResourceAPI.md#getlogin) | **Get** /login | 
