@@ -1,3 +1,3 @@
 module github.com/devopsarr/prowlarr-go
 
-go 1.19
+go 1.23
