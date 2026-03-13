@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/prowlarr-go/compare/v1.2.1...v1.2.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency prowlarr/prowlarr to v2.1.5.5216 ([1272992](https://github.com/devopsarr/prowlarr-go/commit/1272992a88b89b4c8b9cd0d0d6835bd0cd8cee61))
+* **deps:** update dependency prowlarr/prowlarr to v2.3.0.5236 ([376481c](https://github.com/devopsarr/prowlarr-go/commit/376481c2c61329dc1aa1a85091bfe474f9976648))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.16.0 ([bd6f726](https://github.com/devopsarr/prowlarr-go/commit/bd6f726ec4741ac92818fd8ee593c84d848ea8fa))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([41fe9a6](https://github.com/devopsarr/prowlarr-go/commit/41fe9a6b762baf905f4324db13050f6c0edbd4bb))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([9219d96](https://github.com/devopsarr/prowlarr-go/commit/9219d96e819001b3f2be0091cc907c588522d721))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([b6272e6](https://github.com/devopsarr/prowlarr-go/commit/b6272e6fde5e142a1bf4bc032d5f60aac0dedfc3))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([15547dc](https://github.com/devopsarr/prowlarr-go/commit/15547dcdce3b9f7c51df35e9ed6f056c2fb9e221))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([0dcb735](https://github.com/devopsarr/prowlarr-go/commit/0dcb7350ff1e8f02910cf79b06c598a434e6a3bb))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([6bf3bf6](https://github.com/devopsarr/prowlarr-go/commit/6bf3bf6d788b27c8e50150be392135e469b0888f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([8332733](https://github.com/devopsarr/prowlarr-go/commit/833273361f642c28cefbc4590ac91eca3262da25))
+
 ## [1.2.1](https://github.com/devopsarr/prowlarr-go/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
