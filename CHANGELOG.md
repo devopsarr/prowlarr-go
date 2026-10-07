@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.3](https://github.com/devopsarr/prowlarr-go/compare/v1.2.2...v1.2.3) (2026-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.26.0 ([d8c6e11](https://github.com/devopsarr/prowlarr-go/commit/d8c6e110e7d30e910a2a01522a0de62636ba9d94))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.26.0 ([d554a5f](https://github.com/devopsarr/prowlarr-go/commit/d554a5f265277ed6eb9a4a3c2d1cb371c173ab8f))
+
 ## [1.2.2](https://github.com/devopsarr/prowlarr-go/compare/v1.2.1...v1.2.2) (2026-10-05)
 
 
