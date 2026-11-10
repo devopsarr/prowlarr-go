@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.3](https://github.com/devopsarr/prowlarr-go/compare/v1.2.2...v1.2.3) (2026-11-10)
+
+
+### Bug Fixes
+
+* add go releaser file version ([fdfaabe](https://github.com/devopsarr/prowlarr-go/commit/fdfaabe05be393c07440e82fcee54d70921e8fd9))
+* add go releaser file version ([3c056dc](https://github.com/devopsarr/prowlarr-go/commit/3c056dc1f4ef2c9f13adaa6c91118e0927bee977))
+* **deps:** update dependency prowlarr/prowlarr to v2.7.0.5723 ([d8cc99a](https://github.com/devopsarr/prowlarr-go/commit/d8cc99a0c42a748d70833c643ab3ffe2c5e4390f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.26.0 ([d8c6e11](https://github.com/devopsarr/prowlarr-go/commit/d8c6e110e7d30e910a2a01522a0de62636ba9d94))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.26.0 ([d554a5f](https://github.com/devopsarr/prowlarr-go/commit/d554a5f265277ed6eb9a4a3c2d1cb371c173ab8f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.27.0 ([b660976](https://github.com/devopsarr/prowlarr-go/commit/b6609762f060e5cda54c744fae73d5848a225287))
+
 ## [1.2.2](https://github.com/devopsarr/prowlarr-go/compare/v1.2.1...v1.2.2) (2026-10-05)
 
 
