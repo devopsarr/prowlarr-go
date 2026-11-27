@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.2.3 (2026-11-27)
+
+## What's Changed
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.26.0 by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/87
+* fix(deps): update dependency prowlarr/prowlarr to v2.7.0.5723 by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/89
+* chore: align-versions by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/90
+* fix: add go releaser file version by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/91
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/92
+* fix(deps): update dependency seerr-team/seerr to v3.5.2 by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/93
+* fix(deps): update dependency prowlarr/prowlarr to v3 by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/94
+* fix(deps): update dependency prowlarr/prowlarr to v3.1.0.5799 by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/95
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.28.0 by @devopsarr[bot] in https://github.com/devopsarr/prowlarr-go/pull/96
+
+
+**Full Changelog**: https://github.com/devopsarr/prowlarr-go/compare/v1.2.2...v1.2.3
+
 ## [1.2.2](https://github.com/devopsarr/prowlarr-go/compare/v1.2.1...v1.2.2) (2026-10-05)
 
 
